@@ -1,0 +1,294 @@
+Repeat θ
+	ClrHome
+	1→θ
+	Disp "Please type the","words to encode:","
+	Input "",Str1
+	ClrHome
+	Output(1,1,"Validating…
+	"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:→Str2
+	" →Str3
+	"abcdefghijklmnopqrstuvwxyz→Str4
+	0→Y
+	" "+Str1+" →Str1
+	For(I,2,length(Str1)-1
+		inString(Str4,sub(Str1,I,1→X
+		If X
+		Then
+			1→Y
+			sub(Str1,1,I-1)+sub(Str2,X+10,1)+sub(Str1,I+1,length(Str1)-I→Str1
+		End
+	End
+	DelVar Str4
+	1→I
+	While I+1<length(Str1
+		I+1→I
+		If not(inString(Str2,sub(Str1,I,1
+		Then
+			Str3+sub(Str1,I,1→Str3
+			If 3=length(Str1
+			Then
+				9+length(Str1→I
+				"²→Str1
+			Else
+				sub(Str1,1,I-1)+sub(Str1,I+1,length(Str1)-I→Str1
+				I-1→I
+			End
+		End
+	End
+	If Str1="²
+	Then
+		Disp "Your entire","message was","invalid!
+		Pause 
+		ClrHome
+		Return
+	End
+	sub(Str1,2,length(Str1)-2→Str1
+	If Y
+	Then
+		ClrHome
+		Disp "Some lowercase","letters were","capitalized.
+		Pause 
+		ClrHome
+	End
+	If 1<length(Str3
+	Then
+		Disp "The following","invalid chars","were ignored:","",sub(Str3,2,length(Str3)-1
+		Pause 
+		ClrHome
+	End
+	If 25<length(Str1
+	Then
+		ClrHome
+		Disp "Your message is","    characters.","","It has been","trimmed to 25.
+		Output(2,1,length(Str1
+		sub(Str1,1,25→Str1
+		1→Y
+		Pause 
+		ClrHome
+	End
+	If Y or 1<length(Str3
+	Then
+		Disp "Your message:
+		Output(3,1,Str1
+		1→A
+		Output(6,1,"►Continue
+		Output(7,2,"Start over
+		Output(8,2,"Quit
+		Repeat K=105
+			getKey→K
+			If K=25 or K=34
+			Then
+				Output(A+5,1," 
+				If K=25
+					A-1→A
+				If K=34
+					A+1→A
+				If A<1
+					3→A
+				If A>3
+					1→A
+				Output(A+5,1,"►
+			End
+		End
+		If A=3
+		Then
+			ClrHome
+			Return
+		End
+		If A=2
+			0→θ
+	End	
+End
+DelVar Str3
+ClrHome
+Output(1,1,"Validated! 
+Output(2,1,"Encoding…
+augment({0,0,1,0},int(2fPart(length(Str1)/{512,256,128,64,32,16,8,4,2→L₁
+For(I,1,length(Str1),2)
+	If I=length(Str1
+		inString(Str2,sub(Str1,I,1))-1→A
+	If I≠length(Str1
+		45(inString(Str2,sub(Str1,I,1))-1)+inString(Str2,sub(Str1,I+1,1))-1→A
+	If I=length(Str1
+		augment(L₁,int(2fPart(A/{64,32,16,8,4,2→L₁
+	If I≠length(Str1
+		augment(L₁,int(2fPart(A/{2048,1024,512,256,128,64,32,16,8,4,2→L₁
+End
+DelVar Str2
+Output(2,1,"Encoded! 
+Output(3,1,"Padding…
+For(I,1,4)
+	If 152>dim(L₁
+	augment(L₁,{0→L₁
+End
+If fPart(dim(L₁)/8
+Then
+	For(I,1,8-8fPart(dim(L₁)/8
+		augment(L₁,{0→L₁
+	End
+End
+While 152>dim(L₁
+	augment(L₁,{1,1,1,0,1,1,0,0→L₁
+	If 152>dim(L₁
+		augment(L₁,{0,0,0,1,0,0,0,1→L₁
+End
+Output(3,1,"Padded! 
+Output(4,1,"Extracting…
+0→dim(L₂
+0→dim(L₃
+For(I,1,dim(L₁),8
+	128L₁(I)+64L₁(I+1)+32L₁(I+2)+16L₁(I+3)+8L₁(I+4)+4L₁(I+5)+2L₁(I+6)+L₁(I+7→L₂(dim(L₂)+1
+End
+dim(L₂)+7→dim(L₂
+{0,87,229,146,149,238,102,21→L₃
+{1,2,4,8,16,32,64,128,29,58,116,232,205,135,19,38,76,152,45,90,180,117,234,201,143,3,6,12,24,48,96,192,157,39,78,156,37,74,148,53,106,212,181,119,238,193,159,35,70,140,5,10,20,40,80,160,93,186,105,210,185,111,222,161,95,190,97,194,153,47,94,188,101,202,137,15,30,60,120,240,253,231,211,187,107,214,177,127,254,225,223,163,91,182,113,226,217,175,67,134,17,34,68,136,13,26,52,104,208,189,103,206,129,31,62,124,248,237,199,147,59,118,236,197,151,51,102,204,133,23,46,92,184,109,218,169,79,158,33,66,132,21,42,84,168,77,154,41,82,164,85,170,73,146,57,114,228,213,183,115,230,209,191,99,198,145,63,126,252,229,215,179,123,246,241,255,227,219,171,75,150,49,98,196,149,55,110,220,165,87,174,65,130,25,50,100,200,141,7,14,28,56,112,224,221,167,83,166,81,162,89,178,121,242,249,239,195,155,43,86,172,69,138,9,18,36,72,144,61,122,244,245,247,243,251,235,203,139,11,22,44,88,176,125,250,233,207,131,27,54,108,216,173,71,142,1→L₄
+Output(4,1,"Extracted! 
+Output(5,1,"Dividing…
+For(I,1,dim(L₂)-7
+	Output(6,1,sub("----------------",1,min(16,1+iPart(16I/(dim(L₂)-7
+	While not(L₂(I
+		I+1→I
+	End
+	iPart(1.001+255fPart((L₃+sum(not(cumSum(L₄=L₂(I))))-1)/255→L₅
+	seq(L₄(L₅(J)+1),J,1,dim(L₅→L₅
+	For(J,1,dim(L₅
+		sum({128,64,32,16,8,4,2,1}((int(2fPart(L₅(J)/{256,128,64,32,16,8,4,2})) xor (int(2fPart(L₂(J+I-1)/{256,128,64,32,16,8,4,2→L₂(J+I-1
+	End
+End
+Output(5,1,"Divided! 
+Output(6,1,"Encoding…       
+DelVar L₃
+DelVar L₄
+DelVar L₅
+For(I,dim(L₂)-6,dim(L₂
+	augment(L₁,int(2fPart(L₂(I)/{256,128,64,32,16,8,4,2→L₁
+End
+DelVar L₂
+Output(6,1,"Encoded! 
+ClrDraw
+StoreGDB GDB1
+−π^10→Ymin
+Ymin+.01→Ymax
+Ymin→Xmin
+Ymax→Xmax
+Func
+DelVar Y₁
+DelVar Y₂
+DelVar Y₃
+DelVar Y₄
+DelVar Y₅
+DelVar Y₆
+DelVar Y₇
+DelVar Y₈
+DelVar Y₉
+DelVar Y₀
+CoordOff
+GridOff
+AxesOff
+LabelOff
+ExprOff
+ClrDraw
+For(I,0,6
+	Pxl-On(I,0
+	Pxl-On(I,6
+	Pxl-On(0,I
+	Pxl-On(6,I
+	Pxl-On(I+14,0
+	Pxl-On(I+14,6
+	Pxl-On(14,I
+	Pxl-On(20,I
+	Pxl-On(I,14
+	Pxl-On(I,20
+	Pxl-On(0,I+14
+	Pxl-On(6,I+14
+End
+For(I,2,4
+	For(J,2,4
+		Pxl-On(I,J
+		Pxl-On(I+14,J
+		Pxl-On(I,J+14
+	End
+End
+Pxl-On(8,6
+Pxl-On(10,6
+Pxl-On(12,6
+Pxl-On(6,8
+Pxl-On(6,10
+Pxl-On(6,12
+Pxl-On(13,8
+Pxl-On(8,0
+Pxl-On(8,1
+Pxl-On(8,2
+Pxl-On(8,5
+Pxl-On(8,8
+Pxl-On(7,8
+Pxl-On(5,8
+Pxl-On(4,8
+Pxl-On(1,8
+Pxl-On(0,8
+Pxl-On(20,8
+Pxl-On(19,8
+Pxl-On(18,8
+Pxl-On(15,8
+Pxl-On(8,13
+Pxl-On(8,14
+Pxl-On(8,15
+Pxl-On(8,16
+Pxl-On(8,19
+Pxl-On(8,20
+20→X
+20→Y
+−1→D
+1→E
+For(I,1,dim(L₁))
+	If not(L₁(I) xor fPart(Y/2
+		Pxl-On(Y,X
+	If E
+	Then
+		X-1→X
+	Else
+		Y+D→Y
+		X+1→X
+	End
+	not(E→E
+	If Y=6
+	Y+D→Y
+	If Y=21 and X=10
+	Then
+		−D→D
+		12→Y
+		8→X
+	End
+	If Y=8 and X=8
+	Then
+		−D→D
+		9→Y
+		5→X
+	End
+	If (Y=8 and (X≥14 or X≤5) or (Y=21) or (Y=−1) or (Y=13 and X≤5
+	Then
+		X-2→X
+		−D→D
+		Y+D→Y
+		End
+End
+For(I,0,20)
+	For(J,0,20)
+		If pxl-Test(I,J
+		Then
+			Pxl-On(3I,3J+27
+			Pxl-On(3I+1,3J+27
+			Pxl-On(3I+2,3J+27
+			Pxl-On(3I,3J+28
+			Pxl-On(3I+1,3J+28
+			Pxl-On(3I+2,3J+28
+			Pxl-On(3I,3J+29
+			Pxl-On(3I+1,3J+29
+			Pxl-On(3I+2,3J+29
+		End
+	End
+End
+Pause 
+ClrHome
+RecallGDB GDB1
+DelVar GDB1
