@@ -1,0 +1,268 @@
+ClrHome
+{9,11→dim([A]
+0→F
+1→T
+ClrHome
+Output(4,5,"Loading…
+Output(5,8,"9
+{0→L₁
+For(I,1,9
+	Output(5,7,I
+	Matr►list([A],I,L₂
+	augment(L₁,L₂→L₁
+End
+ClrHome
+If [A](3,11)=𝑒^𝑒 and sum(L₁
+Then
+	Disp "There is an","unfinished game!","What to do?",""," Continue"," Restart"," Discard"," Quit
+	1→S
+	1→θ
+	0→K
+	While K≠105 and K≠45
+		0→K
+		While K=0 and not(θ
+			getKey→K
+		End
+		If K=25 or K=34 or θ
+		Then
+			0→θ
+			Output(S+4,1," 
+			If K=25
+				S-1→S
+			If K=34
+				S+1→S
+			If S>4
+				1→S
+			If S<1
+				4→S
+			Output(S+4,1,"►
+		End
+	End
+	ClrHome
+	If S=3
+		DelVar [A]
+	If K=45 or S=3 or S=4
+		Return
+	If S=2
+		Fill(0,[A]
+	If S=1
+	Then
+		[A](1,11→F
+		[A](2,11→T
+	End
+Else
+	Fill(0,[A]
+End
+ClrHome
+"-XO.₊xo~"→Str1
+DelVar L₁
+DelVar L₂
+Output(1,16,sub(Str1,1+T,1
+For(I,1,9
+	Output(iPart((I+2)/3),remainder(I-1,3)+1,sub(Str1,4+(I=F)+[A](I,10)+([A](I,10)>0),1
+End
+5→X
+1→θ
+0→W
+0→J
+While 1
+	0→K
+	While not(K=105 and (X=F or not(F)) and not([A](X,10
+		0→K
+		While not(K) and not(θ
+			getKey→K
+		End
+		If K=45
+		Then
+			Output(7,1,"CLEAR = resume
+			Output(8,1,"ENTER = quit
+			0→K
+			While K≠45 and K≠105
+				getKey→K
+			End
+			If K=105
+			Then
+				ClrHome
+				F→[A](1,11
+				T→[A](2,11
+				𝑒^𝑒→[A](3,11
+				DelVar Str1
+				DelVar L₁
+				Return
+			End
+			If K=45
+			Then
+				Output(7,1,"              
+				Output(8,1,"            
+			End
+		End
+		If fPart(K/10)≥.2 and fPart(K/10)≤.4 and K>70 and K<100
+		Then
+			1→θ
+			Output(iPart((X+2)/3),remainder(X-1,3)+1,sub(Str1,4+(X=F)+[A](X,10)+([A](X,10)>0),1
+			3(iPart(K/10)-6)+10fPart(K/10)-4→X
+		End
+		If K=24 or K=25 or K=26 or K=34 or θ
+		Then
+			0→θ
+			Output(iPart((X+2)/3),remainder(X-1,3)+1,sub(Str1,4+(X=F)+[A](X,10)+([A](X,10)>0),1
+			If K=24
+			Then
+				X-1→X
+				If not(remainder(X,3
+					X+3→X
+			End
+			If K=25
+				X-3→X
+			If K=26
+			Then
+				X+1→X
+				If not(remainder(X-1,3
+					X-3→X
+			End
+			If K=34
+				X+3→X
+			If X>9
+				X-9→X
+			If X<1
+				X+9→X
+			If J>0
+			Then
+				J→X
+				0→J
+			End
+			Output(iPart((X+2)/3),remainder(X-1,3)+1,"▫
+			For(I,2,6
+				Output(I,6,"       
+			End
+			Matr►list([A],X,L₁
+			If not([A](X,10
+			Then
+				For(I,1,9
+					Output(2iPart((I+2)/3),3remainder(I-1,3)+6,sub(Str1,L₁(I)+1,1
+				End
+			End
+			If 1=[A](X,10
+			Then
+				Output(2,7,"\   /
+				Output(3,8,"\ /
+				Output(4,9,"ˣ
+				Output(5,8,"/ \
+				Output(6,7,"/   \
+			End
+			If 2=[A](X,10
+			Then
+				Output(2,8,"___
+				Output(3,7,"/   \
+				Output(4,6,"|     |
+				Output(5,6,"|     |
+				Output(6,7,"\___/
+			End
+			If 3=[A](X,10
+			Then
+				Output(3,8,"Ó Ò
+				Output(4,9,"_
+				Output(5,8,"/ \
+			End
+			If W>0
+			Then
+				Output(iPart((X+2)/3),remainder(X-1,3)+1,sub(Str1,5+[A](X,10),1
+				Output(1,16," 
+				If W=3
+				Then
+					Output(8,1,"Just a lame tie…
+				Else
+					Output(8,1,"The winner is  !
+					Output(8,15,sub(Str1,1+W,1
+				End
+				0→K
+				While K≠105 and K≠45
+					getKey→K
+				End
+				ClrHome
+				DelVar [A]
+				DelVar Str1
+				DelVar L₁
+				Return
+			End
+		End
+	End
+	Output(8,1,"Select a space
+	5→Y
+	1→θ
+	0→K
+	While K≠45 and not(K=105 and not(L₁(Y
+		0→K
+		While not(K) and not(θ
+			getKey→K
+		End
+		If fPart(K/10)≥.2 and fPart(K/10)≤.4 and K>70 and K<100
+		Then
+			1→θ
+			Output(2iPart((Y+2)/3),3remainder(Y-1,3)+6,sub(Str1,L₁(Y)+1,1
+			3(iPart(K/10)-6)+10fPart(K/10)-4→Y
+		End
+		If K=24 or K=25 or K=26 or K=34 or θ
+		Then
+			0→θ
+			Output(2iPart((Y+2)/3),3remainder(Y-1,3)+6,sub(Str1,L₁(Y)+1,1
+			If K=24
+			Then
+				Y-1→Y
+				If not(remainder(Y,3
+					Y+3→Y
+			End
+			If K=25
+				Y-3→Y
+			If K=26
+			Then
+				Y+1→Y
+				If not(remainder(Y-1,3
+					Y-3→Y
+			End
+			If K=34
+				Y+3→Y
+			If Y>9
+				Y-9→Y
+			If Y<1
+				Y+9→Y
+			Output(2iPart((Y+2)/3),3remainder(Y-1,3)+6,"#
+		End
+	End
+	Output(8,1,"                
+	If K=105
+	Then
+		T→[A](Y,X
+		T→L₁(Y
+		Y→F
+		If (L₁(1)=L₁(2) and L₁(1)=L₁(3) and L₁(1)) or (L₁(4)=L₁(5) and L₁(4)=L₁(6) and L₁(4)) or (L₁(7)=L₁(8) and L₁(7)=L₁(9) and L₁(7)) or (L₁(1)=L₁(4) and L₁(1)=L₁(7) and L₁(1)) or (L₁(2)=L₁(5) and L₁(2)=L₁(8) and L₁(2)) or (L₁(3)=L₁(6) and L₁(3)=L₁(9) and L₁(3)) or (L₁(1)=L₁(5) and L₁(1)=L₁(9) and L₁(1)) or (L₁(3)=L₁(5) and L₁(3)=L₁(7) and L₁(3
+		Then
+			T→[A](X,10
+			1→θ
+			If ([A](1,10)=[A](2,10) and [A](1,10)=[A](3,10) and [A](1,10)) or ([A](4,10)=[A](5,10) and [A](4,10)=[A](6,10) and [A](4,10)) or ([A](7,10)=[A](8,10) and [A](7,10)=[A](9,10) and [A](7,10)) or ([A](1,10)=[A](4,10) and [A](1,10)=[A](7,10) and [A](1,10)) or ([A](2,10)=[A](5,10) and [A](2,10)=[A](8,10) and [A](2,10)) or ([A](3,10)=[A](6,10) and [A](3,10)=[A](9,10) and [A](3,10)) or ([A](1,10)=[A](5,10) and [A](1,10)=[A](9,10) and [A](1,10)) or ([A](3,10)=[A](5,10) and [A](3,10)=[A](7,10) and [A](3,10
+				T→W
+		Else
+			If prod(L₁)≠0
+			Then
+				3→[A](X,10
+				1→θ
+			End
+		End
+		Matr►list([A],10,L₂
+		If prod(L₂
+			3→W
+		DelVar L₂
+		If 0<[A](Y,10
+			0→F
+		If X≠F and F
+		Then
+			F→J
+			1→θ
+		End
+		T+1→T
+		If T>2
+			1→T
+		Output(1,16,sub(Str1,1+T,1
+	End
+	Output(2iPart((Y+2)/3),3remainder(Y-1,3)+6,sub(Str1,L₁(Y)+1,1
+End
