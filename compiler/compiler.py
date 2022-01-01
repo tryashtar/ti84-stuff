@@ -1,11 +1,14 @@
+import os
+import bisect
 import xmltodict
 
-with open("tokens.xml", "r", encoding="utf8") as token_file:
+here = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(here, "tokens.xml"), "r", encoding="utf8") as token_file:
     tokens = xmltodict.parse(token_file.read())
 
 token_symbol = {}
 symbol_token = {}
-
 def listy(thing):
     if type(thing) is list:
         return thing
@@ -26,10 +29,19 @@ def load_token(leading_bytes, data):
     if "Alt" in data:
         for alt in listy(data["Alt"]):
             symbol_token[alt["@string"]] = code
-    
 
 for token in tokens["Tokens"]["Token"]:
     load_token(bytes(), token)
+symbol_list = list(symbol_token.keys())
+symbol_list.sort()
+ambiguous_symbols = {}
+for s1 in symbol_list:
+    if len(s1) > 0:
+        ambiguous_symbols[s1] = []
+        for s2 in symbol_list:
+            if s2.endswith(s1) and len(s2) > len(s1):
+                ambiguous_symbols[s1].append(s2)
+print(ambiguous_symbols)
 
 class Program:
     def __init__(self, name, comment, code, version=(0,0), archived=False):
@@ -72,7 +84,6 @@ class Program:
         data += "**TI83F*".encode('ascii')
         data += bytes([26, 10, 0])
         data += (self.comment.ljust(42, '\0')).encode('ascii')
-        symbol = ""
         token_data = bytes()
         pos = 0
         while pos<len(self.code):
@@ -102,21 +113,25 @@ class Program:
             bc += 1
             byte_string = stream[position:position+bc]
             symbol = token_symbol.get(byte_string)
-        possible = list(filter(lambda x: len(x) > len(symbol) and x.endswith(symbol) and (so_far+symbol).endswith(x), symbol_token.keys()))
-        if len(possible) > 0:
-            symbol = "‗" + symbol
+        potential = so_far + symbol
+        for ambig in ambiguous_symbols[symbol]:
+            if potential.endswith(ambig):
+                symbol = "‗" + symbol
+                break
         return (symbol, bc, byte_string)
     def parse_token(self, stream, position):
         current = position + 1
         too_far = False
-        possible = list(symbol_token.keys())
+        possible = symbol_list
+        
         while True:
             word = stream[position:current]
             if len(word) == 0:
                 return None
             if too_far and word in symbol_token:
                 return word
-            possible = list(filter(lambda x: x.startswith(word), possible))
+            next_word = word[0:len(word)-1]+chr(ord(word[-1])+1)
+            possible = possible[bisect.bisect_left(possible, word):bisect.bisect_left(possible, next_word)]
             if len(possible) == 1 and len(possible[0]) == len(word):
                 return word
             if len(possible) == 0 or current > len(stream):
