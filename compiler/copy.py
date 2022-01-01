@@ -6,7 +6,7 @@ import compiler
 with open("copy.yaml", "r") as file:
     data = yaml.safe_load(file.read())
 
-project_folder = "D:/Projects/TI-Basic/Calculator Backups"
+project_folder = "D:/Projects/TI-Basic"
 folders = [x for x in os.listdir(project_folder) if os.path.isdir(os.path.join(project_folder, x))]
 folders.sort(key = lambda x: datetime.datetime.strptime(x, "%Y.%m.%d"), reverse = True)
 folders = [os.path.join(project_folder, x) for x in folders]

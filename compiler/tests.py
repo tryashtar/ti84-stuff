@@ -1,9 +1,9 @@
 import os
 import compiler
 
-output_files = False
+output_files = True
 
-for root, directories, filenames in os.walk('D:/Projects/TI-Basic/Calculator Backups'): 
+for root, directories, filenames in os.walk('D:/Projects/TI-Basic'): 
     for filename in filenames:
         with open(os.path.join(root,filename), "rb") as program:
             original = program.read()

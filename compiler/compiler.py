@@ -39,13 +39,13 @@ class Program:
         self.archived = archived
         self.version = version
     def __init__(self, data):
-        self.name = data[60:60+8].decode('ascii').rstrip('\0')
+        self.name = data[60:60+8].decode('ascii').rstrip(' \0')
         self.version = int(data[68])
         self.comment = data[11:11+42].decode('ascii').rstrip(' \0')
+        self.archived = data[69] == 0x80
         self.code = ""
         pos = 72
-        self.archived = data[55] == 13
-        if self.archived:
+        if data[55] == 13:
             pos += 2
         indents = 0
         in_if = False
@@ -71,7 +71,7 @@ class Program:
         data = bytes()
         data += "**TI83F*".encode('ascii')
         data += bytes([26, 10, 0])
-        data += (self.comment.ljust(42, ' ')).encode('ascii')
+        data += (self.comment.ljust(42, '\0')).encode('ascii')
         symbol = ""
         token_data = bytes()
         pos = 0
