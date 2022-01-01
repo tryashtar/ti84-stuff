@@ -27,7 +27,7 @@ for category, items in data.items():
                 with open(os.path.join(dest, nice_item + ".txt"), "w", encoding="utf8") as src:
                     src.write(prgm.code)
                 with open(os.path.join(dest, "metadata.yaml"), "w", encoding="utf8") as meta:
-                    data = {'name': prgm.name, 'comment': prgm.comment, 'version': f'{prgm.version[0]}.{prgm.version[1]}'}
+                    data = {'name': prgm.name, 'comment': prgm.comment, 'version': prgm.version}
                     yaml.dump(data, meta, default_flow_style=False)
                 with open(os.path.join(dest, nice_item + ".8xp"), "wb") as code:
                     code.write(prgm.compile())

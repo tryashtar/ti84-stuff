@@ -30,8 +30,7 @@ class Program:
         self.version = version
     def __init__(self, data):
         self.name = data[60:60+8].decode('ascii').rstrip('\0')
-        v = data[68:70]
-        self.version = (int(v[0]), int(v[1]))
+        self.version = int(data[68])
         self.comment = data[11:11+42].decode('ascii').rstrip(' \0')
         self.code = ""
         pos = 72
@@ -78,7 +77,8 @@ class Program:
         section += (len(token_data)+2).to_bytes(2, 'little')
         section += bytes([5])
         section += self.name.ljust(8, '\0').encode("ascii")
-        section += bytes(self.version)
+        section += bytes([self.version])
+        section += bytes([0x80]) if self.archived else bytes([0x00])
         section += (len(token_data)+2).to_bytes(2, 'little')
         section += (len(token_data)).to_bytes(2, 'little')
         section += token_data
