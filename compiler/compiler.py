@@ -6,20 +6,24 @@ with open("tokens.xml", "r", encoding="utf8") as token_file:
 token_symbol = {}
 symbol_token = {}
 
+def load_token(leading_bytes, data):
+    code = leading_bytes + int(data["@byte"][1:],16).to_bytes(1, 'big')
+    if "@string" in data:
+        if "@group" not in data or data["@group"] in ['_default','Greek','Y-Vars','Drawing Commands','Accented Letters']:
+            symbol = data["@string"]
+            if symbol == "\\n":
+                symbol = "\n"
+            token_symbol[code] = symbol
+            symbol_token[symbol] = code
+    if "Token" in data:
+        subs = data["Token"]
+        if type(subs) is not list:
+            subs = [subs]
+        for subtoken in subs:
+            load_token(code, subtoken)
+
 for token in tokens["Tokens"]["Token"]:
-    top_byte = int(token["@byte"][1:],16).to_bytes(1, 'big')
-    if "@string" in token:
-        symbol = token["@string"]
-        if symbol == "\\n":
-            symbol = "\n"
-        token_symbol[top_byte] = symbol
-        symbol_token[symbol] = top_byte
-    else:
-        for subtoken in token["Token"]:
-            bottom_byte = int(subtoken["@byte"][1:],16).to_bytes(1, 'big')
-            combined = top_byte + bottom_byte
-            token_symbol[combined] = subtoken["@string"]
-            symbol_token[subtoken["@string"]] = combined            
+    load_token(bytes(), token)
 
 class Program:
     def __init__(self, name, comment, code, version=(0,0), archived=False):
