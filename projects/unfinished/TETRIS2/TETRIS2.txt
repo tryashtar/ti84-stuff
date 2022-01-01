@@ -1,0 +1,38 @@
+ClrHome
+{1,0,0,0,1,1,1,0,0,0,1,0,1,1,1,0,1,1,0,0,1,1,0,0,0,1,1,0,1,1,0,0,1,1,0,0,0,1,1,0,0,1,0,0,1,1,1,0,1,1,1,1,0,0,0,0→L₁
+While 1
+	randInt(1,7→B
+	randInt(1,7-(L₁(8B-4) or L₁(8B))-(L₁(8B-5) or L₁(8B-1→X
+	1→Y
+	1→θ
+	⁻1→D
+	While θ
+		For(I,8B,8B-7,⁻1)
+			If L₁(I
+			Then
+				Output(remainder(I,4)+X-1,Y+(I>8B-4)," 
+				Output(remainder(I,4)+X+D,Y+1+(I>8B-4),"*
+			End
+		End
+		X+D+1→X
+		⁻1→D
+		For(I,1,50
+			getKey
+			If Ans=25
+			Then
+				99→I
+				⁻2→D
+			Else
+				If Ans=34
+				Then
+					99→I
+					0→D
+				Else
+					If Ans=26
+						99→I
+				End
+			End
+		End
+		Y+1→Y
+	End
+End

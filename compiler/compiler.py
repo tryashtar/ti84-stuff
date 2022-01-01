@@ -6,6 +6,11 @@ with open("tokens.xml", "r", encoding="utf8") as token_file:
 token_symbol = {}
 symbol_token = {}
 
+def listy(thing):
+    if type(thing) is list:
+        return thing
+    return [thing]
+
 def load_token(leading_bytes, data):
     code = leading_bytes + int(data["@byte"][1:],16).to_bytes(1, 'big')
     if "@string" in data:
@@ -16,11 +21,12 @@ def load_token(leading_bytes, data):
             token_symbol[code] = symbol
             symbol_token[symbol] = code
     if "Token" in data:
-        subs = data["Token"]
-        if type(subs) is not list:
-            subs = [subs]
-        for subtoken in subs:
+        for subtoken in listy(data["Token"]):
             load_token(code, subtoken)
+    if "Alt" in data:
+        for alt in listy(data["Alt"]):
+            symbol_token[alt["@string"]] = code
+    
 
 for token in tokens["Tokens"]["Token"]:
     load_token(bytes(), token)

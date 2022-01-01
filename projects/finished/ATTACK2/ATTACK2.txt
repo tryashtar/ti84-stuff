@@ -45,13 +45,13 @@ Then
 		End
 		L₂(Y)+1→L₂(Y
 		If Y=1
-			Output(4,1,"You pick up a   laser!
+			Output(4,1,"You p‗ick up a   laser!
 		If Y=2
-			Output(4,1,"You pick up a   potion!
+			Output(4,1,"You p‗ick up a   potion!
 		If Y=3
-			Output(4,1,"You pick up a   shield!
+			Output(4,1,"You p‗ick up a   shield!
 		If Y=4
-			Output(4,1,"You pick up an  ether!
+			Output(4,1,"You p‗ick up an  ether!
 		Pause 
 	End
 	If W>0

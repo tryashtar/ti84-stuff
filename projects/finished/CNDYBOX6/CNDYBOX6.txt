@@ -125,7 +125,7 @@ While 1
 				If D=2
 				Then
 					Output(4,1,ʟCB6(15
-					Output(4,8,"->    C⁄S
+					Output(4,8,"-‗>    C⁄S
 					Output(4,11,ʟCB6(3)+1
 				End
 			End
@@ -416,7 +416,7 @@ While 1
 			If ʟCB6(16)=1
 			Then
 				6→ʟSLCT(6
-				Output(1,13,"->
+				Output(1,13,"-‗>
 				Output(2,2,"Î Forest
 				Output(3,2,"Δ Mt. Goblin
 				Output(4,2,"|~ Ocean
@@ -440,7 +440,7 @@ While 1
 			If ʟCB6(17)=1
 			Then
 				6→ʟSLCT(7
-				Output(1,13,"->
+				Output(1,13,"-‗>
 				Output(2,3,"None
 				Output(3,3,"Wood sword
 				Output(4,3,"Stone sword

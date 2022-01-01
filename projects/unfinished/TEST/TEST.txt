@@ -1,0 +1,73 @@
+ClrHome
+
+DelVar [A]
+{1,1→dim([A]
+
+Disp "Alphabet:
+Input "",Str4
+length(Str4→L
+
+Disp "Initial State Name:"
+
+Input "",Str3
+ClrHome
+
+"#"+Str3→Str2
+
+{2,3+length(Str3→L₁
+1→T
+
+{1→L₂
+
+
+While dim(L₂
+	L₂(dim(L₂→S
+	Disp "Transitions for State",sub(Str2,L₁(S),L₁(S+1)-L₁(S)-1
+	"!→Str3
+	While Str3≠"." and Str3≠"*
+		Input "",Str3
+		If Str3≠"." and Str3≠"*
+		Then
+			sub(Str3,1,1→Str5
+			inString(Str4,Str5→C
+			"#"+sub(Str3,2,length(Str3)-1→Str5
+			inString(Str2,Str5→N
+			If not(N
+			Then
+				Str2+Str5→Str2
+				length(Str3)+L₁(dim(L₁→L₁(1+dim(L₁
+				T+1→T
+				augment({T},L₂→L₂
+				T→N
+			Else
+				For(I,1,T)
+					If N+1=L₁(I
+					Then
+						I→N
+						T+1→I
+					End
+				End
+			End
+			C+L*(S-1→R
+			dim([A]→L₃
+			{L*T,L₃(2→dim([A]
+			For(I,1,L₃(2))
+				If not([A](R,I
+				Then
+					N→[A](R,I
+					1+L₃(2→I
+				End
+			End
+			If I=1+L₃(2
+			Then
+				{L*T,I→dim([A]
+				N→[A](R,I
+			End
+		End
+	End
+	dim(L₂)-1→dim(L₂
+End
+
+Matr►list([A],L₄
+If 1=L₃(2) and min(L₄
+	Disp "This is a DFA!

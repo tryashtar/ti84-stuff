@@ -75,7 +75,7 @@ Then
 	Menu("SELECT ACTION","ATTACK",2,"MAGIC",6,"ITEMS",10,"<-",0)
 Else
 	U-1→U
-	Disp "YOU ARE TOO","TIRED TO MOVE..."
+	Disp "YOU ARE TOO","TIRED TO MOVE..‗."
 	Pause 
 	Goto 15
 End
@@ -133,7 +133,7 @@ If randInt(1,3)≥2
 Then
 	1→U
 	Pause 
-	Disp "","YOU GET TIRED..."
+	Disp "","YOU GET TIRED..‗."
 End
 Pause 
 Goto 15

@@ -46,7 +46,7 @@ Repeat θ
 	If Y
 	Then
 		ClrHome
-		Disp "Some lowercase","letters were","capitalized.
+		Disp "Some lowercase","letters were","cap‗italized.
 		Pause 
 		ClrHome
 	End

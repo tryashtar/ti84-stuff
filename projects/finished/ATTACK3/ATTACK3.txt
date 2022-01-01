@@ -52,7 +52,7 @@ While 1
 		If Y≤4
 		Then
 			L₂(Y)+1→L₂(Y
-			Output(4,1,"You pick up a
+			Output(4,1,"You p‗ick up a
 			If Y=1
 				Output(5,1,"laser!
 			If Y=2
