@@ -40,7 +40,7 @@ class Program:
             pos += 2
         indents = 0
         in_if = False
-        after_newline = False
+        after_newline = True
         while pos<len(data)-2:
             (symbol, lg, token) = self.write_symbol(self.code, data, pos)
             if after_newline:
