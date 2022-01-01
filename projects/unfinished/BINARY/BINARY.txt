@@ -1,0 +1,62 @@
+ClrHome
+"0123456789"→Str1
+Output(2,6,"Input:
+Output(4,2,"Decimal
+Output(5,2,"Binary
+2→S
+1→θ
+0→K
+While K≠105
+	0→K
+	While K=0 and θ=0
+		getKey→K
+	End
+	If K=25 or K=34 or θ=1
+	Then
+		0→θ
+		Output(S+3,1," 
+		S+1→S
+		If S>2
+			1→S
+		Output(S+3,1,"►
+	End
+End
+ClrHome
+Output(1,1,"Input‗ number…
+" "→Str2
+0→K
+While not(K=105 and length(Str2)≥2
+	0→K
+	While K=0
+		getKey→K
+	End
+	If K=45
+	Then
+		" "→Str2
+		For(I,2,8
+			Output(I,1,"                
+		End
+	End
+	If K=23 and length(Str2)≥2
+	Then
+		sub(Str2,1,length(Str2)-1)→Str2
+		For(I,2,8
+			Output(I,1,"                
+		End
+		If length(Str2)>1
+			Output(2,1,sub(Str2,2,length(Str2)-1
+	End
+	If (K≥72 and K≤94 and fPart(K/10)≥.2 and fPart(K/10)≤.4) or K=102
+	Then
+		26-3iPart(K/10)+10fPart(K/10)→Z
+		If K=102
+			0→Z
+		If not(Z=0 and length(Str2)=1) and (S=1 or (S=2 and (Z=0 or Z=1)))
+		Then
+			Str2+sub(Str1,Z+1,1)→Str2
+			Output(2,1,sub(Str2,2,length(Str2)-1
+		End
+	End
+End
+ClrHome
+Output(1,1,"Dunno lol

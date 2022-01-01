@@ -1,0 +1,13 @@
+finished:
+- ATTACK0
+- ATTACK1
+- ATTACK2
+- ATTACK3
+
+small:
+- _theta_CLRMEM
+
+unfinished:
+- ALLDERIV
+- ARTISTIC
+- _theta_BINARY

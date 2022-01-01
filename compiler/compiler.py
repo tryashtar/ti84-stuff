@@ -29,25 +29,40 @@ class Program:
         self.archived = archived
         self.version = version
     def __init__(self, data):
-        self.name = data[60:60+8].decode('ascii')
+        self.name = data[60:60+8].decode('ascii').rstrip('\0')
         v = data[68:70]
         self.version = (int(v[0]), int(v[1]))
-        self.comment = data[11:11+42].decode('ascii')
+        self.comment = data[11:11+42].decode('ascii').rstrip(' \0')
         self.code = ""
         pos = 72
         self.archived = data[55] == 13
         if self.archived:
             pos += 2
-        byte_string = bytes()
+        indents = 0
+        in_if = False
+        after_newline = False
         while pos<len(data)-2:
-            (symbol, lg) = self.write_symbol(self.code, data, pos)
+            (symbol, lg, token) = self.write_symbol(self.code, data, pos)
+            if after_newline:
+                after_newline = False
+                itoken = int.from_bytes(token, 'little')
+                if in_if and itoken != 0xCF:
+                    self.code += "\t"
+                if itoken in [0xD4, 0xD0]:
+                    indents = max(0, indents-1)
+                self.code += "\t" * indents
+                if itoken in [0xD0, 0xD1, 0xD2, 0xD3, 0xCF]:
+                    indents += 1
+                in_if = itoken == 0xCE
+            if symbol == "\n":
+                after_newline = True
             self.code += symbol
             pos += lg
     def compile(self):
         data = bytes()
         data += "**TI83F*".encode('ascii')
         data += bytes([26, 10, 0])
-        data += (self.comment.ljust(42)).encode('ascii')
+        data += (self.comment.ljust(42, ' ')).encode('ascii')
         symbol = ""
         token_data = bytes()
         pos = 0
@@ -79,8 +94,8 @@ class Program:
             symbol = token_symbol.get(byte_string)
         possible = list(filter(lambda x: len(x) > len(symbol) and x.endswith(symbol) and (so_far+symbol).endswith(x), symbol_token.keys()))
         if len(possible) > 0:
-            symbol = "\t" + symbol
-        return (symbol, bc)
+            symbol = "‗" + symbol
+        return (symbol, bc, byte_string)
     def parse_token(self, stream, position):
         current = position + 1
         too_far = False

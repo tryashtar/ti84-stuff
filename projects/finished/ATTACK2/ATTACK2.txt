@@ -1,0 +1,667 @@
+ClrHome
+Output(3,3,"ATTACK v2.5
+Output(4,1,"…………………………………………
+Output(7,3,"Press ENTER       to play
+Pause 
+Lbl 0
+ClrHome
+If randInt(1,1000)=1
+Then
+	Output(3,1,"Another monsiéurappears!
+Else
+	Output(3,1,"Another monster appears!
+End
+Pause 
+{100,100,400→L₄
+L₄→L₁
+{1,1,1,1→L₂
+{15,20,25,15→L₃
+{92,93,94,82,83,84,72,73,74}→L₅
+1→S
+0→W
+0→V
+0→N
+0→L
+0→G
+0→O
+Output(1,1,"HP   MP   BOSS
+Lbl 1
+If L₁(1)*L₁(3)=0
+	Goto 15
+If N=1
+Then
+	If O=0
+		iPart(G/2)→G
+	0→O
+	If S≠2
+		L₁(2)+5→L₁(2
+	If L₁(2)>100
+		100→L₁(2
+	randInt(1,25)→Y
+	If Y≤4
+	Then
+		For(I,4,8
+			Output(I,1,"                
+		End
+		L₂(Y)+1→L₂(Y
+		If Y=1
+			Output(4,1,"You pick up a   laser!
+		If Y=2
+			Output(4,1,"You pick up a   potion!
+		If Y=3
+			Output(4,1,"You pick up a   shield!
+		If Y=4
+			Output(4,1,"You pick up an  ether!
+		Pause 
+	End
+	If W>0
+	Then
+		W-1→W
+		For(I,4,8
+			Output(I,1,"                
+		End
+		Output(4,1,"You are too weakto move…
+		Pause 
+		Goto 10
+	End
+End
+0→N
+For(I,2,8
+	Output(I,1,"                
+End
+Output(2,1,L₁(1
+Output(2,6,L₁(2
+Output(2,11,L₁(3
+Lbl 2
+For(I,4,6
+	Output(I,1,"                
+End
+Output(4,2,"Attack
+Output(5,2,"Magic
+Output(6,2,"Items
+Lbl 18
+For(I,3,8
+	Output(I,1," 
+End
+Output(S+3,1,"►
+0→K
+While K=0
+	getKey→K
+End
+If K=25
+	S-1→S
+If K=34
+	S+1→S
+If S>3
+	1→S
+If S<1
+	3→S
+If K=105
+	Goto 3
+Goto 18
+Lbl 3
+For(I,4,8)
+	Output(I,1,"                
+End
+If S=1
+Then
+	Output(4,2,"Norma‗l hit
+	Output(5,2,"Multi-strike
+	Output(6,2,"Strong blow
+	Output(7,2,"Skill swing
+End
+If S=2
+Then
+	Output(4,2,"Fireball
+	Output(5,2,"Heal
+	Output(6,2,"Conjure
+	Output(7,2,"Soul sear
+	For(I,1,dim(L₃
+		Output(I+3,15,L₃(I
+	End
+End
+If S=3
+Then
+	Output(4,2,"Laser
+	Output(5,2,"Potion
+	Output(6,2,"Shield
+	Output(7,2,"Ether
+	For(I,1,dim(L₂
+		Output(I+3,15,L₂(I
+	End
+End
+1→T
+Lbl 4
+For(I,4,8
+	Output(I,1," 
+End
+Output(T+3,1,"►
+0→K
+While K=0
+	getKey→K
+End
+If K=25
+	T-1→T
+If K=34
+	T+1→T
+If S=3
+Then
+	If T<1
+		dim(L₂)→T
+	If T>dim(L₂)
+		1→T
+End
+If S=2
+Then
+	If T<1
+		dim(L₃)→T
+	If T>dim(L₃)
+		1→T
+End
+If S=1
+Then
+	If T<1
+		4→T
+	If T>4
+		1→T
+End
+If S=3 and K=105 and L₂(T)>0
+Then
+	L₂(T)-1→L₂(T)
+	Goto 5
+End
+If S=2
+Then
+	If K=105 and L₁(2)≥L₃(T
+	Then
+		L₁(2)-L₃(T)→L₁(2
+		Output(2,6,"    
+		Output(2,6,L₁(2
+		Goto 5
+	End
+End
+If S=1 and K=105
+	Goto 5
+If K=45
+	Goto 1
+Goto 4
+Lbl 5
+For(I,1,4
+	Output(3+I,1,"                
+End
+If S=1
+Then
+	If T=1
+	Then
+		If randInt(1,8)=1
+		Then
+			randInt(15,27)→Y
+			Output(4,1,"You land a      critical blow!
+		Else
+			randInt(8,16)→Y
+			Output(4,1,"You swing your  sword and‗ hit!
+		End
+		Output(7,1,"Damage:
+		Output(7,9,Y
+		L₁(3)-Y→L₁(3
+		If L₁(3)<0
+			0→L₁(3)
+	End
+	If T=2
+	Then
+		2→H
+		For(I,1,4
+			If randInt(1,I+2)=1
+				H+1→H
+		End
+		0→Q
+		For(I,1,H
+			Output(4,1,"Hit #
+			Output(4,6,I
+			randInt(3,6)→Y
+			Q+Y→Q
+			Output(6,1,"Damage:
+			Output(6,9,Y
+			L₁(3)-Y→L₁(3
+			If L₁(3)<0
+				0→L₁(3
+			Output(2,11,"    
+			Output(2,11,L₁(3
+			Pause 
+		End
+		Output(4,1,"                
+		Output(6,1,"                
+		Output(4,1,"Total hits:
+		Output(6,1,"Total damage:
+		Output(4,13,H
+		Output(6,15,Q
+	End
+	If T=3
+	Then
+		randInt(18,29)→Y
+		Output(4,1,"You swing with  great strength!
+		Output(7,1,"Damage:
+		Output(7,9,Y
+		L₁(3)-Y→L₁(3
+		If L₁(3)<0
+			0→L₁(3)
+		Output(2,11,"    
+		Output(2,11,L₁(3
+		If randInt(1,2)=1
+		Then
+			1→W
+			randInt(1,30)→Y
+			Pause 
+			If Y=1
+			Then
+				2→W
+				Output(8,1,"You collapse!
+			Else
+				Output(8,1,"You get tired…
+			End
+		End
+	End
+	If T=4
+	Then
+		randInt(4,9)→Y
+		DelVar L₆
+		79→dim(L₆)
+		While sum(L₆)<Y
+			randInt(1,5)→X
+			randInt(1,16)→Z
+			1→L₆(X*Z
+			Output(X+3,Z,"X
+		End
+		rand(Y*4)
+		0→K
+		0→Z
+		For(J,1,20)
+			getKey→K
+			If K≠0 and Z=0
+			Then
+				For(I,4,8)
+					Output(I,1,"                
+				End
+				If L₅(Y)=K
+				Then
+					1→Z
+					randInt(11,36)+Y→Y
+					Output(4,1,"You skillfully  slash at the    monster!
+					Output(8,1,"Damage:
+					Output(8,9,Y
+					L₁(3)-Y→L₁(3)
+					If L₁(3)<0
+						0→L₁(3)
+					Output(2,11,"   
+					Output(2,11,L₁(3
+				Else
+					2→Z
+					randInt(4,10)→Y
+					Output(4,1,"You fail the    attack and‗ hurt yourself!
+					Output(8,1,"Damage:
+					Output(8,9,Y
+					L₁(1)-Y→L₁(1)
+					If L₁(1)<0
+						0→L₁(1)
+					Output(2,1,"   
+					Output(2,1,L₁(1
+				End
+			End
+		End
+		If Z=0
+		Then
+			For(I,4,8
+				Output(I,1,"                
+			End
+			Output(4,1,"You were too    slow and‗ the    monster dodged.
+		End
+	End
+End
+If S=2
+Then
+	If T=1
+	Then
+		max({randInt(12,20)-G,1}→Y
+		G+3→G
+		1→O
+		Output(4,1,"You cast a ball of fire!
+		Output(7,1,"Damage:
+		Output(7,9,Y
+		L₁(3)-Y→L₁(3
+		If L₁(3)<0
+			0→L₁(3
+		Output(2,11,"    
+		Output(2,11,L₁(3
+		If randInt(1,iPart(3+(G/2)))=1 and V=0
+		Then
+			Pause 
+			If randInt(1,15)=1
+			Then
+				randInt(3,6→V
+				Output(8,1,"It sears!
+			Else
+				randInt(2,4→V
+				Output(8,1,"It burns!
+			End
+			Output(8,11,V
+		End
+	End
+	If T=2
+	Then
+		randInt(16,24)→Y
+		Output(4,1,"You heal your   wounds!
+		Output(7,1,"Health:
+		Output(7,9,Y
+		L₁(1)+Y→L₁(1
+		If L₁(1)>L₄(1
+			L₄(1)→L₁(1
+	End
+	If T=3
+	Then
+		randInt(1,4)→Y
+		Output(4,1,"You conjure a
+		If Y=1
+			Output(5,1,"laser!
+		If Y=2
+			Output(5,1,"potion!
+		If Y=3
+			Output(5,1,"shield!
+		If Y=4
+		Then
+			Output(4,14,"n
+			Output(5,1,"ether!
+		End
+		L₂(Y)+1→L₂(Y
+	End
+	If T=4
+	Then
+		If randInt(1,50)=1
+		Then
+			Output(4,1,"What…?
+			⁻randInt(4,13)→Y
+			Output(8,1,"Healing:
+			Output(8,10,⁻Y
+		Else
+			Output(4,1,"You sear your   soul to attack!
+			randInt(32,46)→Y
+			Output(8,1,"Damage:
+			Output(8,9,Y
+		End
+		randInt(10,21)→Z
+		Output(7,1,"Health lost:
+		Output(7,14,Z
+		L₁(1)-Z→L₁(1)
+		If L₁(1)<0
+			0→L₁(1)
+		L₁(3)-Y→L₁(3)
+		If L₁(3)<0
+			0→L₁(3)
+		If L₁(3)>L₄(3
+			L₄(3)→L₁(3)
+	End
+End
+If S=3
+Then
+	If T=1
+	Then
+		If randInt(1,40)=1
+		Then
+			randInt(24,40)→Y
+			Output(4,1,"You fire a superomicron beam!
+		Else
+			randInt(19,31)→Y
+			Output(4,1,"You fire a      powerful laser!
+		End
+		Output(7,1,"Damage:
+		Output(7,9,Y
+		L₁(3)-Y→L₁(3
+		If L₁(3)<0
+			0→L₁(3
+	End
+	If T=2
+	Then
+		randInt(18,26)→Y
+		If randInt(1,20)=1
+		Then
+			Output(4,1,"You are filled  with healing!
+			Output(8,1,"+10 max HP!
+			L₄(1)+10→L₄(1)
+		Else
+			Output(4,1,"You drink a     healing potion!
+		End
+		Output(7,1,"Health:
+		Output(7,9,Y
+		L₁(1)+Y→L₁(1
+		If L₁(1)>L₄(1
+			L₄(1)→L₁(1)
+	End
+	If T=3
+	Then
+		randInt(2,4→Y
+		Output(4,1,"You use an iron shield!
+		Output(7,1,"Invincible: +
+		Output(7,14,Y
+		L+Y→L
+	End
+	If T=4
+	Then
+		If randInt(1,40)=1
+		Then
+			randInt(6,12)*5→Y
+			Output(4,1,"Glowing rocks   give you mana!
+		Else
+			randInt(3,7)*5→Y
+			Output(4,1,"You use an etherto gain mana!
+		End
+		Output(7,1,"Mana:
+		Output(7,7,Y
+		L₁(2)+Y→L₁(2
+		If L₁(2)>L₄(2
+			L₄(2)→L₁(2
+	End
+End
+Output(2,1,"                
+Output(2,1,L₁(1
+Output(2,6,L₁(2
+Output(2,11,L₁(3
+Pause 
+Goto 10
+Lbl 10
+If L₁(1)=0 or L₁(3)=0
+	Goto 15
+1→N
+Output(2,1,"                
+Output(2,1,L₁(1
+Output(2,6,L₁(2
+Output(2,11,L₁(3
+If V>0
+Then
+	For(I,4,8
+		Output(I,1,"                
+	End
+	V-1→V
+	randInt(3,5→Y
+	Output(4,1,"The monster is  burned!
+	Output(7,1,"Damage:
+	Output(7,9,Y
+	Output(8,1,"Turns left:
+	Output(8,13,V
+	L₁(3)-Y→L₁(3
+	If L₁(3)<0
+		0→L₁(3
+	Output(2,11,"    
+	Output(2,11,L₁(3
+	If L₁(3)=0
+		Goto 15
+	Pause 
+End
+For(I,1,5
+	Output(I+3,1,"                
+End
+0→A
+randInt(1,8)→X
+If X=1 and L₁(3)<L₄(3)/2
+	1→A
+If A=0
+Then
+	If randInt(1,100)<100-(30log(max({3L₁(3),1})))-7
+	Then
+		Output(4,1,"The monster usesa super attack!
+		randInt(13,21)→Y
+	Else
+		randInt(1,5)→Y
+		Output(4,1,"The monster
+		If Y=1
+			Output(5,1,"attacks!
+		If Y=2
+			Output(5,1,"strikes!
+		If Y=3
+			Output(5,1,"lunges!
+		If Y=4
+			Output(5,1,"slashes!
+		If Y=5
+			Output(5,1,"claws!
+		If randInt(1,200)=1
+			Output(5,1,"slaps your face!
+		randInt(6,14)→Y
+	End
+	If randInt(1,7)=1
+	Then
+		Output(7,1,"It missed!
+	Else
+		If L>0
+		Then
+			L-1→L
+			Output(7,1,"Damage absorbed!
+			Output(8,1,"Turns left:
+			Output(8,13,L
+		Else
+			randInt(1,9)→Z
+			Output(7,1,"Press  !
+			Output(7,7,Z
+			0→θ
+			0→K
+			For(I,1,18
+				If K=0
+					getKey→K
+				If K=L₅(Z)
+					1→θ
+			End
+			If θ=0
+			Then
+				Output(7,1,"Damage: 
+				Output(7,9,Y
+			Else
+				iPart(Y/2)→Y
+				Output(7,1,"Blocked!
+				Output(8,1,"Damage:
+				Output(8,9,Y
+			End
+			L₁(1)-Y→L₁(1)
+			If L₁(1)<0
+				0→L₁(1)
+		End
+	End
+End
+If A=1
+Then
+	Output(4,1,"The monster     clamps its jaws!
+	randInt(5,9)→Y
+	If L>0
+	Then
+		L-1→L
+		Output(7,1,"Damage absorbed!
+		Output(8,1,"Turns left:
+		Output(8,13,L
+	Else
+		randInt(1,9)→Z
+		Output(7,1,"Press  !
+		Output(7,7,Z
+		0→θ
+		0→K
+		For(I,1,20)
+			If K=0
+				getKey→K
+			If K=L₅(Z)
+				1→θ
+		End
+		If θ=0
+		Then
+			Output(7,1,"Damage: 
+			Output(7,9,Y
+			randInt(10,20)→J
+			Output(8,1,"Monster heal:
+			Output(8,15,J
+			L₁(3)+J→L₁(3)
+			If L₁(3)>L₄(3)
+				L₄(3)→L₁(3)
+		Else
+			iPart(Y/2)→Y
+			Output(7,1,"Blocked!
+			Output(8,1,"Damage: 
+			Output(8,9,Y
+		End
+		L₁(1)-Y→L₁(1)
+		If L₁(1)<0
+			0→L₁(1)
+	End
+End
+Output(2,1,"                
+Output(2,1,L₁(1
+Output(2,6,L₁(2
+Output(2,11,L₁(3
+Pause 
+Goto 1
+Lbl 15
+For(I,4,8
+	Output(I,1,"                
+End
+If L₁(1)=0
+	Output(4,1,"You lose…
+If L₁(3)=0
+	Output(4,1,"You win!
+If L₁(1)+L₁(3)=0
+Then
+	Output(4,1,"You sacrificed  yourself in a   valiant effort  to slay the foe.
+	Pause 
+	Output(4,1,"                                                                 
+	Output(4,1,"Truly you have  learned the realmeaning of      sacrifice.
+	Pause 
+	Output(4,1,"                                                                
+	Output(4,1,"But you still   died, scrub.
+End
+Pause 
+For(I,4,8
+	Output(I,1,"                
+End
+Output(4,1,"Play again?
+Output(6,2,"Yes
+Output(7,2,"No
+1→S
+Lbl 16
+Output(6,1," 
+Output(7,1," 
+Output(S+5,1,"►
+0→K
+While K=0
+	getKey→K
+End
+If K=25
+	S-1→S
+If K=34
+	S+1→S
+If S<1
+	2→S
+If S>2
+	1→S
+If K=105
+Then
+	If S=1
+		Goto 0
+	If S=2
+	Then
+		ClrHome
+		Return
+	End
+End
+Goto 16

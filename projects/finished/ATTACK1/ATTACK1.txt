@@ -1,0 +1,371 @@
+ClrHome
+0→U
+0→V
+0→F
+0→T
+0→G
+100→H
+50→M
+250→B
+{1,1,1,1}→L₁
+{20,25,35}→L₂
+Disp "A MONSTER","APPEARS!"
+Pause 
+Lbl 0
+ClrHome
+If H>100
+Then
+	100→H
+End
+If M>100
+Then
+	100→M
+End
+If B>250
+Then
+	250→B
+End
+If H≤0 or B≤0
+Then
+	Goto 16
+End
+If N=1
+Then
+	T+1→T
+	If M≤95
+	Then
+		M+5→M
+	End
+End
+randInt(1,50)→Y
+If N=1 and Y≤4
+Then
+	L₁(Y)+1→L₁(Y)
+	If Y=1
+	Then
+		Disp "YOU FOUND A","LASER ON THE","GROUND!"
+	End
+	If Y=2
+	Then
+		Disp "YOU FOUND A","POTION ON THE","GROUND!"
+	End
+	If Y=3
+	Then
+		Disp "YOU FOUND A","SHIELD ON THE","GROUND!"
+	End
+	If Y=4
+	Then
+		Disp "YOU FOUND A","MANA RESTORER ON","THE GROUND!"
+	End
+	Pause 
+End
+0→N
+ClrHome
+Output(1,1,"HEALTH:")
+Output(2,1,"MANA:")
+Output(4,1,"BOSS HP:")
+Output(1,9,H)
+Output(2,7,M)
+Output(4,10,B)
+Pause 
+Lbl 1
+ClrHome
+If U=0
+Then
+	Menu("SELECT ACTION","ATTACK",2,"MAGIC",6,"ITEMS",10,"<-",0)
+Else
+	U-1→U
+	Disp "YOU ARE TOO","TIRED TO MOVE..."
+	Pause 
+	Goto 15
+End
+Lbl 2
+ClrHome
+Menu("SELECT ATTACK","NORMAL HIT",3,"MULTI-STRIKE",4,"STRONG BLOW",5,"<-",1)
+Lbl 3
+ClrHome
+randInt(1,15)→Z
+If Z=1
+Then
+	randInt(17,28)→Y
+	Disp "YOU CRITICALLY","STRIKE AND DEAL","THIS DAMAGE:",Y
+End
+If Z=2
+Then
+	0→Y
+	Disp "YOU MISS!"
+End
+If Z>2
+Then
+	randInt(9,19)→Y
+	Disp "YOU STRIKE THE","MONSTER AND DEAL","THIS DAMAGE:",Y
+End
+B-Y→B
+Pause 
+Goto 15
+Lbl 4
+ClrHome
+2→Y
+For(I,1,4)
+	If randInt(1,4)=1
+	Then
+		Y+1→Y
+	End
+End
+0→θ
+For(I,1,Y)
+	randInt(3,6)→Z
+	B-Z→B
+	θ+Z→θ
+	Disp "YOU HIT!","DAMAGE:",Z,""
+	Pause 
+End
+ClrHome
+Disp "     TOTAL HITS:",Y,"","   TOTAL DAMAGE:",θ
+Pause 
+Goto 15
+Lbl 5
+ClrHome
+randInt(25,38)→Y
+B-Y→B
+Disp "YOU STRIKE WITH","GREAT FORCE AND","DEAL THIS MUCH","DAMAGE:",Y
+If randInt(1,3)≥2
+Then
+	1→U
+	Pause 
+	Disp "","YOU GET TIRED..."
+End
+Pause 
+Goto 15
+Lbl 6
+ClrHome
+Menu("SELECT SPELL","FIREBALL    20",7,"HEAL        25",8,"FORCEFIELD  35",9,"<-",1)
+Lbl 7
+ClrHome
+If M≥L₂(1)
+Then
+	M-L₂(1)→M
+	randInt(9,18)→Y
+	B-Y→B
+	Disp "YOU CAST A","FIREBALL SPELL","WHICH DOES THIS","MUCH DAMAGE:",Y
+	randInt(1,10)→Y
+	If Y≤3
+	Then
+		Y→F
+		Pause 
+		ClrHome
+		Disp "THE MONSTER IS","BURNED FOR THIS","MANY TURNS:",F
+	End
+	Pause 
+	Goto 15
+Else
+	Disp "NOT ENOUGH MANA!","","       YOU HAVE:",M,"       YOU NEED:",L₂(1)
+	Pause 
+	Goto 6
+End
+Lbl 8
+ClrHome
+If M≥L₂(2)
+Then
+	M-L₂(2)→M
+	randInt(15,24)→Y
+	H+Y→H
+	Disp "YOU CAST A HEAL","SPELL AND GAIN","THIS MUCH HP:",Y
+	Pause 
+	Goto 15
+Else
+	Disp "NOT ENOUGH MANA!","","       YOU HAVE:",M,"       YOU NEED:",L₂(2)
+	Pause 
+	Goto 6
+End
+Lbl 9
+ClrHome
+If M≥L₂(3)
+Then
+	M-L₂(3)→M
+	randInt(2,3)→Y
+	V+Y→V
+	Disp "YOU CAST A FORCE","FIELD SPELL AND","GAIN THIS MANY","INVUL TURNS:",Y
+	Pause 
+	Goto 15
+Else
+	Disp "NOT ENOUGH MANA!","","       YOU HAVE:",M,"       YOU NEED:",L₂(3)
+	Pause 
+	Goto 6
+End
+Lbl 10
+ClrHome
+Menu("SELECT ITEM","LASER",11,"POTION",12,"SHIELD",13,"MANA RESTORER",14,"<-",1)
+Lbl 11
+ClrHome
+If L₁(1)>0
+Then
+	Disp "YOU HAVE THIS","MANY LASERS:",L₁(1),"","USE ONE?"
+	Input "",X
+	ClrHome
+	If X=0
+	Then
+		Goto 10
+	Else
+		L₁(1)-1→L₁(1)
+		randInt(20,31)→Y
+		B-Y→B
+		Disp "YOU SHOOT THE","LASER AND DEAL","THIS DAMAGE:",Y
+		Pause 
+		Goto 15
+	End
+Else
+	Disp "YOU DO NOT HAVE","ANY LASERS."
+	Pause 
+	Goto 10
+End
+Lbl 12
+ClrHome
+If L₁(2)>0
+Then
+	Disp "YOU HAVE THIS","MANY POTIONS:",L₁(2),"","USE ONE?"
+	Input "",X
+	ClrHome
+	If X=0
+	Then
+		Goto 10
+	Else
+		L₁(2)-1→L₁(2)
+		randInt(17,26)→Y
+		H+Y→H
+		Disp "YOU DRINK THE","POTION AND GAIN","THIS HEALTH:",Y
+		Pause 
+		Goto 15
+	End
+Else
+	Disp "YOU DO NOT HAVE","ANY POTIONS."
+	Pause 
+	Goto 10
+End
+Lbl 13
+ClrHome
+If L₁(3)>0
+Then
+	Disp "YOU HAVE THIS","MANY SHIELDS:",L₁(3),"","USE ONE?"
+	Input "",X
+	ClrHome
+	If X=0
+	Then
+		Goto 10
+	Else
+		L₁(3)-1→L₁(3)
+		randInt(2,4)→Y
+		V+Y→V
+		Disp "YOU ACTIVATE A","SHIELD AND GAIN","THIS MANY INVUL","TURNS:",Y
+		Pause 
+		Goto 15
+	End
+Else
+	Disp "YOU DO NOT HAVE","ANY SHIELDS."
+	Pause 
+	Goto 10
+End
+Lbl 14
+ClrHome
+If L₁(4)>0
+Then
+	Disp "YOU HAVE THIS","MANY MANA","RESTORERS:",L₁(4),"","USE ONE?"
+	Input "",X
+	ClrHome
+	If X=0
+	Then
+		Goto 10
+	Else
+		L₁(4)-1→L₁(4)
+		randInt(7,13)→Y
+		Y*5→Y
+		M+Y→M
+		Disp "YOU USE A MANA","RESTORER AND","GAIN THIS MANA:",Y
+		Pause 
+		Goto 15
+	End
+Else
+	Disp "YOU DO NOT HAVE","ANY MANA","RESTORERS."
+	Pause 
+	Goto 10
+End
+
+Lbl 15
+ClrHome
+1→N
+If H>100
+Then
+	100→H
+End
+If M>100
+Then
+	100→M
+End
+If B>250
+Then
+	250→B
+End
+If H≤0 or B≤0
+Then
+	Goto 16
+End
+If F>0
+Then
+	F-1→F
+	randInt(3,6)→Y
+	B-Y→B
+	Disp "THE MONSTER IS","BURNED AND TAKES","DAMAGE:",Y
+	Pause 
+	ClrHome
+End
+If B≤100 and G=0
+Then
+	1→G
+	Disp "THE MONTER","ENRAGES AND NOW","HAS NEW POWERS!"
+	Pause 
+	ClrHome
+End
+randInt(1,iPart(B/5))→Y
+If Y=1
+Then
+	randInt(15,28)→Y
+	Disp "THE MONSTER","DOES A SUPER","ATTACK!"
+End
+If Y>1 and G=0 or Y>4 and G=1
+Then
+	randInt(7,18)→Y
+	Disp "THE MONSTER","CLAWS AT YOU!"
+End
+If V>0
+Then
+	V-1→V
+	Disp "","NO DAMAGE","DEALT!
+Else
+	If randInt(1,7)=1
+	Then
+		Disp "","BUT IT MISSED!"
+	Else
+		H-Y→H
+		Disp "","DAMAGE DEALT:",Y
+	End
+End
+Pause 
+Goto 0
+Lbl 16
+ClrHome
+If H>0
+Then
+	Disp "YOU WON!
+Else
+	Disp "YOU LOST!"
+End
+Disp "","IT TOOK THIS","MANY TURNS:",T
+Pause 
+ClrHome
+Disp "PLAY AGAIN?"
+Input "",X
+If X=0
+Then
+Else
+	prgmATTACK
+End

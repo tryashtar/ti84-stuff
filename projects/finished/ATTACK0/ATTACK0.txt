@@ -1,0 +1,267 @@
+ClrHome
+1→P
+1→L
+1→S
+1→R
+0→I
+100→H
+100→M
+200→F
+0→T
+Disp "A WILD MONSTER","APPEARS!"
+Pause 
+ClrHome
+Lbl A
+If M>100
+Then
+	100→M
+End
+If H>100
+Then
+	100→H
+End
+If M<0
+Then
+	0→M
+End
+If H>0
+Then
+	randInt(1,40)→Y
+	If T=1
+	Then
+		If Y=1
+		Then
+			Disp "YOU SEE A POTION","AND PICK IT UP!"
+			P+1→P
+			Pause 
+		End
+		If Y=2
+		Then
+			Disp "YOU SEE A LASER","AND PICK IT UP!"
+			L+1→L
+			Pause 
+		End
+		If Y=3
+		Then
+			Disp "YOU SEE A SHIELD","AND PICK IT UP!"
+			S+1→S
+			Pause 
+		End
+		If Y=4
+		Then
+			Disp "YOU SEE A MANA","RESTORER AND","PICK IT UP!"
+			R+1→R
+			Pause 
+		End
+	End
+	0→T
+	ClrHome
+	Disp H,M,F,"1-ATTACK","2-MAGIC","3-ITEMS",""
+	Input X
+	ClrHome
+	If X=1
+	Then
+		randInt(3,15)→Y
+		F-Y→F
+		Disp "YOU SWING YOUR","SWORD!","","DAMAGE DEALT:",Y
+		Pause 
+	Else
+		If X=2
+		Then
+			If M>0
+			Then
+				Disp "MAGIC","","1-FIREBALL","2-HEAL","3-PROTECT",""
+				Input X
+				ClrHome
+				randInt(1,10)→Y
+				If Y=1
+				Then
+					randInt(10,20)→Y
+					randInt(5,15)→Z
+					F+Y→F
+					M-Z→M
+					Disp "SPELL BACKFIRES!","MONSTER HEALED!","","HEALTH GIVEN:",Y,"MANA LOST:",Z
+					Pause 
+				Else
+					If X=1
+					Then
+						randInt(7,25)→Y
+						randInt(10,20)→Z
+						F-Y→F
+						M-Z→M
+						Disp "YOU CAST A","FIREBALL!","","DAMAGE DEALT:",Y,"MANA LOST:",Z
+						Pause 
+					Else
+						If X=2
+						Then
+							randInt(10,25)→Y
+							randInt(15,25)→Z
+							H+Y→H
+							M-Z→M
+							Disp "YOU HEAL","YOURSELF!","","HEALTH RESTORED:",Y,"MANA LOST:",Z
+							Pause 
+						Else
+							If X=3
+							Then
+								randInt(2,3)→Y
+								randInt(20,40)→Z
+								I+Y→I
+								M-Z→M
+								Disp "YOU USE A","PROTECT SPELL!","","INVINCIBLE TURNS","ADDED:",Y,"MANA LOST:",Z
+								Pause 
+							Else
+								Disp "INVALID INPUT."
+								Pause 
+								Goto A
+							End
+						End
+					End
+				End
+			Else
+				Disp "YOU HAVE NO","MANA!"
+				Pause 
+				Goto A
+			End
+		Else
+			If X=3
+			Then
+				Disp "ITEMS",""
+				If P>0
+				Then
+					Disp "1-POTION"
+				End
+				If L>0
+				Then
+					Disp "2-LASER"
+				End
+				If S>0
+				Then
+					Disp "3-SHIELD"
+				End
+				If R>0
+				Then
+					Disp "4-MANA RESTORER"
+				End
+				Disp ""
+				Input X
+				ClrHome
+				If X=1
+				Then
+					If P>0
+					Then
+						P-1→P
+						randInt(15,30)→Y
+						H+Y→H
+						Disp "YOU DRINK THE","POTION!","","HEALTH RESTORED:",Y
+						Pause 
+					Else
+						Disp "NO POTIONS!"
+						Pause 
+						Goto A
+					End
+				Else
+					If X=2
+					Then
+						If L>0
+						Then
+							L-1→L
+							randInt(20,40)→Y
+							F-Y→F
+							Disp "YOU SHOOT THE","MONSTER!","","DAMAGE DEALT:",Y
+							Pause 
+						Else
+							Disp "NO LASERS!"
+							Pause 
+							Goto A
+						End
+					Else
+						If X=3
+						Then
+							If S>0
+							Then
+								S-1→S
+								randInt(2,4)→Y
+								I+Y→I
+								Disp "YOU PROTECT","YOURSELF!","","INVINCIBLE TURNS ADDED:",Y
+								Pause 
+							Else
+								Disp "NO SHIELDS!"
+								Pause 
+								Goto A
+							End
+						Else
+							If X=4
+							Then
+								If R>0
+								Then
+									R-1→R
+									randInt(20,45)→Y
+									M+Y→M
+									Disp "YOU GAIN MANA!","MANA RESTORED:",Y
+									Pause 
+								Else
+									Disp "NO MANA","RESTORERS!"
+									Pause 
+									Goto A
+								End
+							Else
+								Disp "INVALID INPUT."
+								Pause 
+								Goto A
+							End
+						End
+					End
+				End
+			Else
+				Disp "INVALID INPUT."
+				Pause 
+				Goto A
+			End
+		End
+	End
+Else
+	Disp "SADLY, YOU DIED.","GAME OVER!"
+	Return
+End
+ClrHome
+1→T
+randInt(1,iPart(F/3)+1)→Y
+randInt(1,5)→Z
+If Y=1
+Then
+	Disp "THE MONSTER USES","A SUPER ATTACK!",""
+Else
+	If Z=1
+	Then
+		Disp "THE MONSTER","ATTACKS!",""
+	End
+	If Z=2
+	Then
+		Disp "THE DEMON","LUNGES!",""
+	End
+	If Z=3
+	Then
+		Disp "THE FOE REACTS!",""
+	End
+	If Z=4
+	Then
+		Disp "THE CREATURE","STRIKES!",""
+	End
+	If Z=5
+	Then
+		Disp "THE BEAST","FIGHTS!",""
+	End
+End
+If I>0
+Then
+	I-1→I
+	Disp "NO EFFECT!"
+	Pause 
+	Goto A
+Else
+	randInt(3,15)→Y
+	H-Y→H
+	Disp "DAMAGE DEALT:",Y
+	Pause 
+	Goto A
+End

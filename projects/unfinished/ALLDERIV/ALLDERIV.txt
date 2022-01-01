@@ -1,0 +1,38 @@
+{0}→L₁
+"+   -   *   /   ^   √   log sin cos tan csc sec cot sinˉ¹cosˉ¹tanˉ¹cscˉ¹secˉ¹cotˉ¹abs "→Str1
+"+    -    *    /    ^    √(    log(    sin(    cos(    tan(    csc  sec  cot  sin⁻¹(    cos⁻¹(    tan⁻¹(    csc⁻1sec⁻1cot⁻1abs(    "→Str2
+{2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1}→L₂
+0→I
+1→M
+While M>0
+	0→P
+	I+1→I
+	M-1→M
+	ClrHome
+	Disp "Type one:","A number,","X,","or an operation",""
+	Input "",Str3
+	While length(Str3)<5
+		Str3+" "→Str3
+	End
+	For(J,1,dim(L₃
+		If sub(Str2,5J-4,5)=Str3
+		Then
+			J[i]→L₁(I)
+			1→P
+			M+L₂(J)→M
+		End
+	End
+	If P=0
+	Then
+		While " "=sub(Str3,length(Str3),1
+			sub(Str3,1,length(Str3)-2)→Str3
+		End
+		If Str3="X
+			⁻[i]→L₁(I
+		If Str3≠"X
+			expr(Str3)→L₁(I
+	End
+End
+
+ClrHome
+

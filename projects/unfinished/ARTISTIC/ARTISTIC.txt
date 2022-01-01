@@ -1,0 +1,76 @@
+1→P
+0→F
+1→Q
+
+ClrHome
+If P=0
+Then
+	Func
+	Disp "Input‗ function:
+	Input "",Str1
+Else
+	Param
+	Disp "Using T, X=
+	Input "",Str1
+	Disp "","Y=
+	Input "",Str2
+End
+ClrHome
+Output(4,3,"Doing stuff…
+If P=0
+Then
+	String►Equ(Str1,Y₁
+Else
+	String►Equ(Str1,X₁ᴛ
+	String►Equ(Str2,Y₁ᴛ
+End
+If F=1
+	ZoomFit
+If F=0
+	ZStandard
+If F=2
+	ZTrig
+If Q=1
+	ZSquare
+DelVar Y₁
+DelVar X₁ᴛ
+DelVar Y₁ᴛ
+ClrHome
+Disp "Sample every:
+Input "",S
+ClrHome
+If P=0
+Then
+	For(X,Xmin,Xmax,S
+		Pt-On(X,expr(Str1
+	End
+Else
+	For(T,Tmin,Tmax,S
+		Pt-On(expr(Str1),expr(Str2
+	End
+End
+Pause 
+ClrHome
+Disp "Skip:"
+Input "",K
+ClrHome
+If P=0
+Then
+	For(X,Xmin-KS,Xmax+KS,S
+		X+(KS)→X
+		expr(Str1)→Y
+		X-(KS)→X
+		Line(X,expr(Str1),X+(KS),Y
+	End
+Else
+	For(T,Tmin-KS,Tmax+PS,S
+		expr(Str1)→X
+		expr(Str2)→Y
+		T+KS→T
+		Line(X,Y,expr(Str1),expr(Str2
+		T-KS→T
+	End
+End
+Pause 
+ClrHome
+Func

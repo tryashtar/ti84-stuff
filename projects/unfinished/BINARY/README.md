@@ -1,0 +1,1 @@
+This program was supposed to convert between decimal and binary numbers, but I never finished it. It lets you type in a number and then just says "Dunno lol".
