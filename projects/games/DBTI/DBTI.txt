@@ -1,0 +1,71 @@
+ClrHome
+1→T
+1→H
+DelVar [A]
+{6,5}→dim([A])
+randInt(1,6)→A
+randInt(1,5)→B
+2→[A](A,B)
+For(I,1,6)
+	For(J,1,5)
+		Output(I,2+2J,"[]")
+	End
+End
+For(I,1,7)
+	Output(I,3,"|
+	Output(I,14,"|
+End
+Output(7,4,"__________"
+Output(A,2+2B,"{}")
+Output(1,1,H)
+Lbl 5
+If T>2
+	1→T
+Output(8,1,"                ")
+Output(8,1,"PLAYER:")
+Output(8,9,T)
+0→K
+0→L
+0→M
+While iPart(K)<1 or iPart(K)>6 or fPart(K)*10<1 or fPart(K)*10>5
+	getKey→K
+	If iPart(K/10)=1
+	Then
+		fPart(K/10)*10→H
+		Output(1,1,H)
+	End
+	K/10→K
+	K-3→K
+End
+iPart(K)→L
+fPart(K)*10→M
+If [A](L,M)≠1
+Then
+	1→[A](L,M)
+	Output(L,2+2M,"  ")
+	For(I,1,randInt(H,2H))
+		randInt(⁻1,1)→X
+		randInt(⁻1,1)→Y
+		If L+X≥1 and L+X≤6 and M+Y≥1 and M+Y≤5
+		Then
+			L+X→L
+			M+Y→M
+			If [A](L,M)≠1
+			Then
+				1→[A](L,M)
+				Output(L,2+2(M-Y)+2Y,"  ")
+			End
+		End
+	End
+Else
+	Goto 5
+End
+If [A](A,B)=1
+	Goto 6
+T+1→T
+Goto 5
+Lbl 6
+Output(A,2+2B,"XX")
+Output(8,1,"                ")
+Output(8,1,"LOSER:")
+Output(8,8,T)

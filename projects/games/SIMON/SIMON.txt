@@ -1,0 +1,86 @@
+ClrHome
+{0}→L₁
+{24,25,26,34}→L₂
+"◄↑►↓"→Str1
+0→A
+1→W
+While W=1
+	ClrHome
+	A+1→A
+	randInt(1,4)→B
+	B→L₁(A
+	105→K
+	While K=105
+		ClrHome
+		For(I,1,A
+			Output(4,8,sub(Str1,L₁(I),1
+			rand(40
+			If A≠I
+			Then
+				Output(4,8," 
+				rand(10
+			End
+		End
+		Output(6,2,"ENTER - replay
+		0→K
+		0→θ
+		While K≠45 and K≠105 and K≠103
+			getKey→K
+			θ+1→θ
+			If θ>30
+				45→K
+		End
+		
+		If K=103
+		Then
+			ClrHome
+			Return
+		End
+	End
+	ClrHome
+	Output(6,3,"Ready to go!
+	0→V
+	1→W
+	While W=1 and V<A
+		V+1→V
+		0→K
+		While K≠24 and K≠25 and K≠26 and K≠34
+			getKey→K
+		End
+		Output(6,1,"                
+		Output(4,8,sub(Str1,L₁(V),1
+		If L₂(L₁(V))≠K
+			0→W
+	End
+	If W=0
+	Then
+		Output(6,5,"Dang it!
+		Output(7,2,"You reached
+		Output(7,14,A
+		0→K
+		While K≠45 and K≠105
+			getKey→K
+		End
+		ClrHome
+		Return
+	End
+	Output(6,4,"Nice work!
+	If A=5
+		Output(6,3,"Keep it up!
+	If A=10
+		Output(6,3,"Nice moves!
+	If A=15
+		Output(6,2,"Proud of you!
+	If A=20
+		Output(6,4,"Excellent!
+	0→K
+	0→θ
+	While K≠45 and K≠105
+		getKey→K
+		θ+1→θ
+		If θ>30
+			45→K
+	End
+	ClrHome
+	rand(30
+End

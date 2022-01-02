@@ -15,22 +15,32 @@ folders.sort(key = lambda x: datetime.datetime.strptime(os.path.basename(x), "%Y
 for category, items in data.items():
     cat_folder = os.path.join(here, '..', 'projects', category)
     for item in items:
-        nice_item = item.replace("_theta_", "")
-        print(item)
+        if type(item) is str:
+            item = {'name':item}
+        name = item['name']
+        nice_name = name.replace("_theta_", "")
+        print(nice_name)
         for folder in folders:
-            file = os.path.join(folder, item + ".8xp")
+            file = os.path.join(folder, name + ".8xp")
             if os.path.exists(file):
-                dest = os.path.join(cat_folder, nice_item)
+                dest = os.path.join(cat_folder, nice_name)
                 os.makedirs(dest, exist_ok = True)
                 with open(file, "rb") as code:
                     prgm = compiler.Program(code.read())
                 prgm.archived = False
-                with open(os.path.join(dest, nice_item + ".txt"), "w", encoding="utf8") as src:
+                if 'remove' in item:
+                    lines = prgm.code.splitlines()
+                    remove = item['remove']
+                    remove.sort()
+                    for i, r in enumerate(remove):
+                        del lines[r-i]
+                    prgm.code = '\n'.join(lines)
+                with open(os.path.join(dest, nice_name + ".txt"), "w", encoding="utf8") as src:
                     src.write(prgm.code)
                 with open(os.path.join(dest, "metadata.yaml"), "w", encoding="utf8") as meta:
                     data = {'name': prgm.name, 'comment': prgm.comment, 'version': prgm.version}
                     yaml.dump(data, meta, default_flow_style=False)
-                with open(os.path.join(dest, nice_item + ".8xp"), "wb") as code:
+                with open(os.path.join(dest, nice_name + ".8xp"), "wb") as code:
                     code.write(prgm.compile())
                 readme = os.path.join(dest, "README.md")
                 if not os.path.exists(readme):

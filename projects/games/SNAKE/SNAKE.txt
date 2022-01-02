@@ -1,0 +1,41 @@
+ClrHome
+{8}→L₁
+{4}→L₂
+randInt(1,16)→X
+randInt(1,8)→Y
+Output(Y,X,".
+⁻1→D
+While 1
+	getKey→K
+	If K=24 and D≠3
+		1→D
+	If K=25 and D≠4
+		2→D
+	If K=26 and D≠1
+		3→D
+	If K=34 and D≠2
+		4→D
+	Output(L₂(dim(L₂)),L₁(dim(L₁))," 
+	For(I,2,dim(L₁
+		L₁(I-1)→L₁(I
+		L₂(I-1)→L₂(I
+	End
+	If D=1
+		L₁(1)-1→L₁(1
+	If D=2
+		L₂(1)-1→L₂(1
+	If D=3
+		L₁(1)+1→L₁(1
+	If D=4
+		L₂(1)+1→L₂(1
+	Output(L₂(1),L₁(1),"o
+	If L₂(1)=Y and L₁(1)=X
+	Then
+		randInt(1,8)→Y
+		randInt(1,16)→X
+		Output(Y,X,".
+		augment(L₁,{L₁(1)})→L₁
+		augment(L₂,{L₂(1)})→L₂
+	End
+	rand(3
+End

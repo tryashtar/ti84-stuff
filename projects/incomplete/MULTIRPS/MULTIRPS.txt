@@ -1,0 +1,23 @@
+ClrHome
+Output(1,1,"Welcome!
+Output(3,1,"Please connect
+Output(4,1,"to another
+Output(5,1,"calculator.
+rand→A
+8675309→B
+A→C
+B→D
+0→E
+While E=0
+	If A=C
+		GetCalc(A
+	If A≠C
+	Then
+		GetCalc(B
+		B=D→E
+		D→B
+	End
+End
+ClrHome
+Output(4,1,"Thanks!
+Pause 

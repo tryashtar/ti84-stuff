@@ -1,0 +1,97 @@
+ClrHome
+Output(2,7,"F
+rand(8
+Output(2,8,"I
+rand(8
+Output(2,9,"F
+rand(8
+Output(2,10,"A
+rand(50
+Output(4,1,"     *  ***
+Output(5,1,"     *  *
+Output(6,1,"     *  ***
+Output(7,1,"     *    *
+Output(8,1,"     *  ***
+rand(70
+Output(3,3,"Press ENTER!
+Pause 
+ClrHome
+Output(1,1,"SELECT PLAYER
+Output(2,2,"Messi
+Output(3,2,"Pedro
+Output(4,2,"Beckerman
+Output(5,2,"Costa
+Output(6,2,"Rimando
+Output(7,2,"Vlades
+Output(8,2,"Neymar
+2→S
+Output(S,1,"►
+0→K
+While K≠105
+	0→K
+	While K=0
+		getKey→K
+	End
+	Output(S,1," 
+	If K=25
+		S-1→S
+	If K=34
+		S+1→S
+	If S>8
+		2→S
+	If S<2
+		8→S
+	Output(S,1,"►
+End
+ClrHome
+8→T
+0→X
+0→Y
+Output(8,T,"&
+0→P
+0.3→R
+While 1
+	If X=0
+	Then
+		randInt(1,16)→X
+		While abs(X-T)>11
+			randInt(1,16)→X
+		End
+		randInt(⁻3,⁻5)-round(3R,0)→Y
+	End
+	0→K
+	getKey→K
+	If K=24 or K=26
+		Output(8,T," 
+	If K=24
+		T-1→T
+	If K=26
+		T+1→T
+	If T>16
+		16→T
+	If T<1
+		1→T
+	Output(8,T,"&
+	If round(Y,0)>0 and round(Y,0)<9 and round(X)*round(Y)≠1
+		Output(round(Y,0),X," 
+	Y+R→Y
+	If round(Y,0)>0 and round(Y,0)<9 and round(X)*round(Y)≠1
+		Output(round(Y,0),X,"θ
+	If round(Y,0)=8 and X=T
+	Then
+		0→X
+		P+1→P
+		Output(1,1,P
+		R+.05→R
+	End
+	If Y≥8 and X≠T and X≠0
+		Goto 5
+End
+Lbl 5
+Pause 
+ClrHome
+Output(3,6,"Loser!
+Output(5,5,"Score:
+Output(5,12,P
+Pause 
+ClrHome

@@ -1,0 +1,314 @@
+ClrHome
+ClrDraw
+AxesOff
+GridOff
+⁻47→Xmin
+47→Xmax
+⁻31→Ymin
+31→Ymax
+DelVar Y₁
+1→A
+While 1
+	ClrHome
+	Output(1,1,"FORMULA SHEET
+	Output(2,2,"Se‗quences
+	Output(3,2,"Trig IDs
+	Output(4,2,"Unit Circle
+	Output(5,2,"Law of Sines
+	Output(6,2,"Conic Sections
+	Output(7,2,"Interest Stuff
+	Output(8,2,"Exit
+	Output(A+1,1,"►
+	0→K
+	While K≠105
+		getKey→K
+		If K=25 or K=34
+		Then
+			Output(A+1,1," 
+			If K=25
+				A-1→A
+			If K=34
+				A+1→A
+			If A>7
+				1→A
+			If A<1
+				7→A
+			Output(A+1,1,"►
+		End
+	End
+	ClrDraw
+	If A=7
+	Then
+		ClrHome
+		⁻10→Xmin
+		10→Xmax
+		⁻10→Ymin
+		10→Ymax
+		AxesOn
+		Return
+	End
+	If A=1
+	Then
+		Text(⁻1,1,1,"Arithmetic:
+		Text(10,1,"Recursive: a    = a            +d
+		Text(13,41,"n
+		Text(13,54,"n-1
+		Text(20,1,"Explicit: a    = a    +d(n-1)
+		Text(23,34,"n
+		Text(23,47,"1
+		Text(30,1,"Sum:       (a    + a    )
+		Text(30,20,"-
+		Text(26,20,"n
+		Text(34,20,"2
+		Text(33,31,"1
+		Text(33,44,"n
+		Pause 
+		ClrDraw
+		Text(⁻1,1,1,"Geometric:
+		Text(10,1,"Recursive: a    = r*a
+		Text(13,41,"n
+		Text(13,64,"n-1
+		Text(25,1,"Explicit: a    = a    *r
+		Text(28,34,"n
+		Text(28,47,"1
+		Text(22,61,"n-1
+		Text(40,1,"Sum: a    * ----
+		Line(⁻14,⁻12,0,⁻12
+		Text(43,22,"1
+		Text(36,35,"1-r
+		Text(34,47,"n
+		Text(44,35,"1-r
+		Text(53,1,"Inf Sum: ---
+		Text(49,30,"a
+		Text(51,34,"1
+		Line(⁻17,⁻25,⁻7,⁻25
+		Text(57,30,"1-r
+	End
+	If A=2
+	Then
+		Text(6,1,"sin X = ---
+		Text(2,25,"1
+		Text(10,20,"csc X
+		Text(6,51,"cos X = ---
+		Text(2,77,"1
+		Text(10,72,"sec X
+		Text(26,1,"tan X = ---
+		Text(22,27,"1
+		Text(30,22,"cot X
+		Text(26,51,"tan X = ---
+		Text(22,73,"sin X
+		Text(30,72,"cos X
+		Line(⁻26,22,⁻14,22
+		Line(26,22,39,22
+		Line(⁻24,2,⁻12,2
+		Line(26,2,38,2
+		Text(40,1,"sin² X + cos² X = 1
+		Text(47,1,"cot² X + 1 = csc² X
+		Text(54,1,"1 + tan² X = sec² X
+	End
+	If A=3
+	Then
+		27→X
+		⁻13→O
+		Circle(0+O,0,X,{[i]
+		Line(0+O,X,0+O,⁻X
+		Line(X+O,0,⁻X+O,0
+		Line(1/2X+O,√(3)/2X,⁻1/2X+O,⁻√(3)/2X
+		Line(√(2)/2X+O,√(2)/2X,⁻√(2)/2X+O,⁻√(2)/2X
+		Line(√(3)/2X+O,1/2X,⁻√(3)/2X+O,⁻1/2X
+		Line(√(3)/2X+O,⁻1/2X,⁻√(3)/2X+O,1/2X
+		Line(√(2)/2X+O,⁻√(2)/2X,⁻√(2)/2X+O,√(2)/2X
+		Line(1/2X+O,⁻√(3)/2X,⁻1/2X+O,√(3)/2X
+		Text(1,32,"1
+		Text(2,47,"2
+		Text(6,55,"3
+		Text(14,60,"4
+		Text(28,63,"5
+		Text(43,60,"6
+		Text(49,55,"7
+		Text(54,50,"8
+		Text(57,32,"9
+		Text(56,18,"A
+		Text(51,11,"B
+		Text(44,6,"C
+		Text(28,2,"D
+		Text(13,4,"E
+		Text(7,11,"F
+		Text(2,17,"G
+		Line(20,31,20,⁻31
+		Line(20,11,47,11
+		Line(20,⁻9,47,⁻9
+		Text(1,70,"1: 0
+		Text(7,77,"1
+		Text(13,77,"π⁄2
+		Text(21,70,"2: 1/2
+		Text(27,77,"√3/2
+		Text(33,77,"π⁄3
+		Text(41,70,"3: √2/2
+		Text(47,77,"√2/2
+		Text(53,77,"π⁄4
+		Pause 
+		Text(1,70,"4: √3/2
+		Text(7,77,"1/2
+		Text(13,77,"π⁄6
+		Text(21,70,"5: 1            
+		Text(27,77,"0               
+		Text(33,77,"0               
+		Text(41,70,"6: √3/2
+		Text(47,77,"⁻1/2
+		Text(53,73,"11π⁄6
+		Pause 
+		Text(1,70,"7: √2/2
+		Text(7,74,"⁻√2/2
+		Text(13,77,"7π⁄4
+		Text(21,70,"8: 1/2
+		Text(27,74,"⁻√3/2
+		Text(33,77,"5π⁄3
+		Text(41,70,"9: 0            
+		Text(47,77,"⁻1              
+		Text(53,73,"    3π⁄2
+		Pause 
+		Text(1,70,"A: ⁻1/2
+		Text(7,74,"⁻√3/2
+		Text(13,77,"4π⁄3
+		Text(21,69,"B:⁻√2/2
+		Text(27,74,"⁻√2/2
+		Text(33,77,"5π⁄4
+		Text(41,69,"C:⁻√3/2
+		Text(47,77,"⁻1/2
+		Text(53,77,"7π⁄6
+		Pause 
+		Text(1,69," D: ⁻1          
+		Text(7,73,"     0            
+		Text(13,73,"    π           
+		Text(21,69,"E:⁻√3/2
+		Text(27,74,"    1/2         
+		Text(33,77,"5π⁄6
+		Text(41,69,"F:⁻√2/2
+		Text(47,77,"√2/2
+		Text(53,77,"3π⁄4
+		Pause 
+		Text(1,70,"G: ⁻1/2
+		Text(7,77,"√3/2
+		Text(13,77,"2π⁄3
+		Text(21,69,"                         
+		Text(27,74,"                         
+		Text(33,74,"                         
+		Text(41,69,"                         
+		Text(47,74,"                         
+		Text(53,74,"                         
+	End
+	If A=4
+	Then
+		Text(1,15,"sin A           sin B           sin C
+		Text(8,15,"   a                     b                       c
+		Text(4,33,"=
+		Text(4,57,"=
+		Line(⁻34,23,⁻19,23
+		Line(⁻9,23,7,23
+		Line(16,23,32,23
+		Text(20,1,"a² = b² + c² - 2bc * cos A
+		Text(30,1,"b² = a² + c² - 2ac * cos B
+		Text(40,1,"c² = a² + b² - 2ab * cos C
+	End
+	If A=5
+	Then
+		Text(⁻1,1,1,"Parabolas:
+		Text(10,1,"(X-h)² = 4p(Y-k)
+		Text(17,1,"Up or‗ down
+		Text(24,1,"Focus: (h,k+p)
+		Text(39,1,"(Y-k)² = 4p(X-h)
+		Text(46,1,"Right or‗ left
+		Text(53,1,"Focus: (h+p,k)
+		Pause 
+		ClrDraw
+		Text(⁻1,1,1,"Ellipses:
+		Text(10,1,"(X-h)²     (Y-k)²
+		Text(17,1,"     a²                   b²
+		Text(14,23,"+
+		Text(14,50,"= 1
+		Line(⁻46,14,⁻26,14
+		Line(⁻19,14,1,14
+		Text(24,1,"Vertices: (h+-a,k)
+		Text(40,1,"(Y-k)²     (X-h)²
+		Text(47,1,"     a²                   b²
+		Text(44,23,"+
+		Text(44,50,"= 1
+		Line(⁻46,⁻16,⁻26,⁻16
+		Line(⁻19,⁻16,1,⁻16
+		Text(54,1,"Vertices: (h,k+-a)
+		Pause 
+		Text(⁻1,1,1,"Hyperbolas:
+		Text(14,23,"-
+		Text(44,23,"-
+	End
+	If A=6
+	Then
+		Text(⁻1,1,1,"K compounds⁄yr:
+		Text(⁻1,18,12,"P 1+
+		Text(13,37,"r
+		Text(23,37,"k
+		Text(10,46,"kt
+		Line(⁻11,10,⁻7,10
+		Line(⁻27,4,⁻27,16
+		Line(⁻4,4,⁻4,16
+		Pt-On(⁻26,4
+		Pt-On(⁻26,16
+		Pt-On(⁻5,4
+		Pt-On(⁻5,16
+		Text(⁻1,35,1,"Continuous:
+		Text(⁻1,47,12,"P[e]
+		Text(45,25,"rt
+		Pause 
+		ClrDraw
+		Text(⁻1,1,1,"Future Value:
+		Text(⁻1,30,10,"R
+		Text(38,45,"r
+		Text(47,45,"k
+		Text(⁻1,20,25,"1+    -1
+		Text(15,40,"r
+		Text(24,40,"k
+		Text(12,48,"kt
+		Line(⁻9,8,⁻4,8
+		Line(⁻28,16,⁻28,⁻23
+		Line(30,16,30,⁻23
+		Pt-On(⁻27,16
+		Pt-On(⁻27,⁻23
+		Pt-On(29,16
+		Pt-On(29,⁻23
+		Line(⁻23,1,⁻23,15
+		Line(⁻2,1,⁻2,15
+		Pt-On(⁻22,1
+		Pt-On(⁻22,15
+		Pt-On(⁻3,1
+		Pt-On(⁻3,15
+		Line(⁻23,⁻2,26,⁻2
+		Line(⁻4,⁻15,1,⁻15
+		Pause 
+		ClrDraw
+		Text(⁻1,1,1,"Present Value:
+		Text(⁻1,30,10,"R
+		Text(38,45,"r
+		Text(47,45,"k
+		Text(⁻1,20,23,"1- 1+
+		Text(15,53,"r
+		Text(24,53,"k
+		Text(12,61,"⁻kt
+		Line(⁻23,⁻2,26,⁻2
+		Line(⁻28,16,⁻28,⁻23
+		Line(30,16,30,⁻23
+		Pt-On(⁻27,16
+		Pt-On(⁻27,⁻23
+		Pt-On(29,16
+		Pt-On(29,⁻23
+		Line(⁻10,1,⁻10,15
+		Line(11,1,11,15
+		Pt-On(⁻9,1
+		Pt-On(⁻9,15
+		Pt-On(10,1
+		Pt-On(10,15
+		Line(⁻4,⁻15,2,⁻15
+		Line(6,8,9,8
+	End
+	Pause 
+End

@@ -1,0 +1,52 @@
+ClrHome
+Disp "A × B
+Input "",Str1
+Input "",Str2
+ClrHome
+DelVar L₁
+length(Str1)→dim(L₁)
+DelVar L₂
+length(Str2)→dim(L₂
+Disp "Piecing number 1
+For(I,1,dim(L₁
+	expr(sub(Str1,I,1))→L₁(I
+End
+ClrHome
+Disp "Piecing number 2
+For(I,1,dim(L₂
+	expr(sub(Str2,I,1))→L₂(I
+End
+ClrHome
+DelVar L₃
+dim(L₁)+dim(L₂)→dim(L₃
+Disp "Multiplying…
+For(I,dim(L₁),1,⁻1
+	For(J,dim(L₂),1,⁻1
+		L₃(I+J)+(L₁(I)L₂(J))→L₃(I+J)
+		L₃(I+J-1)+iPart(L₃(I+J)/10)→L₃(I+J-1)
+		10fPart(L₃(I+J)/10)→L₃(I+J)
+	End
+End
+ClrHome
+If L₃(1)=0
+	seq(L₃(I),I,2,dim(L₃),1)→L₃
+0→A
+For(I,1,8
+	For(J,1,16
+		A+1→A
+		If A>dim(L₃
+			Goto 1
+		Output(I,J,L₃(A
+	End
+End
+Lbl 1
+If dim(L₃)>8*16
+	Output(8,16,"…
+Pause 
+ClrHome
+Pause L₃
+ClrHome
+Output(1,1,"Digits:
+Output(1,9,dim(L₃
+Pause 
+ClrHome

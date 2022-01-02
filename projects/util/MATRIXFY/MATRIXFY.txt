@@ -1,0 +1,67 @@
+ClrHome
+Input "Width:  ",W
+Input "Height: ",H
+ClrHome
+DelVar [A]
+{H,W}→dim([A]
+For(I,1,H
+	For(J,1,W
+		ClrHome
+		Output(1,1,"Row      #
+		Output(1,5,I
+		Output(1,11,J
+		Disp "
+		Input "",X
+		X→[A](I,J
+	End
+End
+ClrHome
+Pause [A]
+ClrHome
+0→B
+For(I,1,W
+	Matr►list([A],I,L₁
+	B+sum(L₁)→B
+End
+Output(1,1,"Row Sums:
+1→A
+For(I,1,H
+	A+1→A
+	If A>8
+	Then
+		1→A
+		Pause 
+		ClrHome
+	End
+	Matr►list([A]ᵀ,I,L₁
+	Output(A,1,I
+	Output(A,3,":            %
+	sum(L₁)→C
+	Output(A,5,C
+	Output(A,12,round(100C/B,1
+End
+Pause 
+ClrHome
+Output(1,1,"Column Sums:
+1→A
+For(I,1,W
+	A+1→A
+	If A>8
+	Then
+		1→A
+		Pause 
+		ClrHome
+	End
+	Matr►list([A],I,L₁
+	Output(A,1,I
+	Output(A,3,":            %
+	sum(L₁)→C
+	Output(A,5,C
+	Output(A,12,round(100C/B,1
+End
+Pause 
+ClrHome
+Output(1,1,"Gran‗d Total:
+Output(2,1,B
+Pause 
+ClrHome

@@ -1,0 +1,44 @@
+2→U
+7→D
+ClrHome
+Disp "Equation:","(Use X as var)",""
+Input "",Str1
+ClrHome
+Disp "Equals…","(No variables)",""
+Input "",θ
+ClrHome
+DelVar L₁
+U+D→dim(L₁
+For(I,1,dim(L₁
+	0→A
+	Output(1,1,round(I/dim(L₁)*100,0
+	For(J,1,dim(L₁
+		If I≠J
+			A+(L₁(J)*10^‗(⁻J+U))→A
+	End
+	For(J,9,0,⁻1
+		A+(J*10^‗(⁻I+U))→X
+		If expr(Str1)≤abs(θ
+		Then
+			J→L₁(I
+			⁻1000→J
+		End
+	End
+End
+0→A
+For(I,1,dim(L₁
+	A+1(L₁(I)*(10^‗(⁻I+U)))→A
+End
+ClrHome
+A→X
+If expr(Str1)<10^‗(⁻D+1)+θ
+Then
+	Output(1,1,A
+Else
+	If ⁻expr(Str1)<10^‗(⁻D+1)+θ
+	Then
+		Output(1,1,⁻A
+		⁻A→X
+	End
+End
+Disp ""

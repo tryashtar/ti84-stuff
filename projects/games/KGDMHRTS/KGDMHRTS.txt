@@ -1,0 +1,130 @@
+ClrHome
+Output(4,2,"Kingdom Hearts
+rand(30)
+17→J
+For(I,1,16
+	J-1→J
+	Output(3,I,"-
+	Output(5,J,"-
+	rand
+End
+Pause 
+8→J
+For(I,8,1,⁻1
+	J+1→J
+	Output(3,I," 
+	Output(4,I," 
+	Output(5,I," 
+	Output(3,J," 
+	Output(4,J," 
+	Output(5,J," 
+End
+rand(20)
+Output(2,5,"New game
+Output(6,5,"Load game
+1→S
+1→θ
+0→K
+While K≠105
+	0→K
+	While K=0 and θ=0
+		getKey→K
+	End
+	If K=25 or K=34 or θ=1
+	Then
+		0→θ
+		If S=1
+		Then
+			Output(1,5,"        
+			Output(3,5,"        
+		End
+		If S=2
+		Then
+			Output(5,5,"         
+			Output(7,5,"         
+		End
+		If K=25
+			max({S-1,1})→S
+		If K=34
+			min({S+1,2})→S
+		If S=1
+		Then
+			Output(1,5,"--------
+			Output(3,5,"--------
+		End
+		If S=2
+		Then
+			Output(5,5,"---------
+			Output(7,5,"---------
+		End
+	End
+End
+If S=1
+Then
+End
+ClrHome
+DelVar [A]
+{8,16}→dim([A]
+ClrHome
+{1,1}→L₁
+1→θ
+1→F
+DelVar L₅
+DelVar L₆
+1→dim(L₅
+1→dim(L₆
+For(I,1,dim(L₅
+	randInt(1,8)→L₅(I
+	randInt(1,16)→L₆(I
+End
+While 1
+	For(I,1,dim(L₅
+		Output(L₅(I),L₆(I)," 
+		randInt(⁻2,2)→M
+		If abs(M)=1 and L₅(I)+M>0 and L₅(I)+M<9
+			L₅(I)+M→L₅(I
+		If abs(M)=2 and L₆(I)+(M/2)>0 and L₆(I)+(M/2)<17
+			L₆(I)+(M/2)→L₆(I
+		Output(L₅(I),L₆(I),"W
+	End
+	getKey→K
+	If K=25 or K=34
+	Then
+		If K=25
+			⁻1→Z
+		If K=34
+			1→Z
+		If L₁(1)+Z≥1 and L₁(1)+Z≤8
+		Then
+			Output(L₁(1),L₁(2),"  
+			L₁(1)+Z→L₁(1)
+			1→θ
+		End
+	End
+	If K=24 or K=26
+	Then
+		If K=24
+			⁻1→Z
+		If K=26
+			1→Z
+		If F≠Z
+		Then
+			Z→F
+			1→θ
+		End
+		If F=Z and L₁(2)+Z≥1 and L₁(2)+Z≤15
+		Then
+			Output(L₁(1),L₁(2),"  
+			L₁(2)+Z→L₁(2)
+			1→θ
+		End
+	End
+	If θ=1
+	Then
+		0→θ
+		If F=1
+			Output(L₁(1),L₁(2),"o/
+		If F=⁻1
+			Output(L₁(1),L₁(2),"\o
+	End
+End

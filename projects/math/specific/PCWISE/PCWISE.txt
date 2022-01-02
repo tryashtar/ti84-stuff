@@ -1,0 +1,29 @@
+ClrHome
+Disp "How many p‗ieces?"
+Input "",X
+"("→Str1
+For(I,1,X
+	ClrHome
+	Disp "Equation:",""
+	Input "",Str2
+	If I=1
+		"("+Str2+")"→Str1
+	If I>1
+		Str1+"("+Str2+")"→Str1
+	ClrHome
+	Disp "Qualifier","use ≥<‗= or‗ logic",""
+	Input "",Str2
+	Str1+"("+Str2+")"→Str1
+	If I<X
+		Str1+"+"→Str1
+End
+ClrHome
+Output(1,1,Str1)
+Pause 
+ClrHome
+String►Equ(Str1,Y₁)
+Disp "Set Y₁ to that.","Press ENTER."
+Pause 
+ClrHome
+ClrDraw
+DispGraph

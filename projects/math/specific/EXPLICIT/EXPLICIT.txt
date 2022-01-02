@@ -1,0 +1,44 @@
+ClrHome
+Disp "How many values","do you know?"
+Input "",N
+ClrHome
+Disp "Input‗ term #?
+DelVar L₁
+For(I,1,N
+	If I<8
+		Output(1,13,I
+	Input "",X
+	X→L₁(I
+End
+ClrHome
+Disp "Testing…
+Output(2,1,"Additive…
+DeltaList(L₁)→L₂
+Output(2,1,"Multiplicative…
+DelVar L₃
+dim(L₁)-1→dim(L₃
+For(I,1,dim(L₁)-1
+	1/(L₁(I)/L₁(I+1))→L₃(I
+End
+ClrHome
+DelVar L₄
+If L₂(1)*(dim(L₂))=sum(L₂)
+Then
+	Output(1,1,L₁(1)
+	Output(2,1,"+
+	Output(2,2,L₂(1)
+	Output(3,1,"*(N-1)
+	seq(L₁(1)+(L₂(1)*(I-1)),I,1,20,1)→L₄
+End
+If L₃(1)*(dim(L₃))=sum(L₃)
+Then
+	Output(1,1,L₁(1)
+	Output(2,1,"*
+	Output(2,2,L₃(1)
+	Output(3,1,"^(N-1)
+	seq(L₁(1)*(L₃(1)^(I-1)),I,1,20,1)→L₄
+End
+Pause 
+ClrHome
+Pause L₄
+ClrHome

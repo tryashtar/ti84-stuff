@@ -1,0 +1,98 @@
+ClrHome
+For(I,1,4
+	Output(2,2I+3,sub("FIFA",I,1
+	rand(5
+End
+rand(5
+Output(4,1,"invertedequalinvertedequalinvertedequal
+Output(5,3,"invertedequal
+Output(6,1,"invertedequalinvertedequalinvertedequal
+Output(7,1,"invertedequal
+Output(8,1,"invertedequalinvertedequalinvertedequal
+rand(10
+Output(4,5,"invertedequalinvertedequalinvertedequal
+Output(5,5,"invertedequal invertedequal
+Output(6,5,"invertedequal invertedequal
+Output(7,5,"invertedequal invertedequal
+Output(8,5,"invertedequalinvertedequalinvertedequal
+rand(10
+Output(4,9,"invertedequalinvertedequal
+Output(5,10,"invertedequal
+Output(6,10,"invertedequal
+Output(7,10,"invertedequal
+Output(8,9,"invertedequalinvertedequalinvertedequal
+rand(10
+Output(4,13,"invertedequalinvertedequalinvertedequal
+Output(5,13,"invertedequal
+Output(6,13,"invertedequalinvertedequalinvertedequal
+Output(7,13,"invertedequal invertedequal
+Output(8,13,"invertedequalinvertedequalinvertedequal
+Pause 
+For(I,1,8
+	Output(I,1,"                
+	rand
+End
+Output(1,1,"Select Player:
+Output(2,2,"Messi
+Output(3,2,"Renaldo
+Output(8,2,"LOCKED!
+1→S
+1→θ
+0→K
+While K≠105
+	0→K
+	While K=0 and θ=0
+		getKey→K
+	End
+	If K=45
+	Then
+		ClrHome
+		Return
+	End
+	If K=25 or K=34 or θ=1
+	Then
+		0→θ
+		Output(S+1,1," 
+		remainder(S+(K=34)-(K=25)+6,7)+1→S
+		Output(S+1,1,"►
+	End
+End
+ClrHome
+Output(3,5,"Loading…
+Output(4,8,"0%
+rand(70
+Output(4,7,"100%
+rand(20
+ClrHome
+8→X
+randInt(1,16)→B
+10→Y
+2→R
+Output(8,X,"&
+0→K
+While 1
+	0→K
+	While K=0
+		getKey→K
+		If Y>20
+		Then
+			randInt(1,8)→B
+			⁻2→Y
+			R^1.05→R
+		End
+		If Y≤8 and Y≥1 and iPart(Y+R/10)≠iPart(Y
+			Output(iPart(Y),B," 
+		If Y≤8 and Y≥1 and iPart(Y+R/10)≠iPart(Y
+			Output(iPart(Y+R/10),B,"θ
+		Y+R/10→Y
+		If iPart(Y)=8
+		Then
+		End
+	End
+	If K=24 or K=26
+	Then
+		Output(8,X," 
+		max(1,min(16,X+(K=26)-(K=24)))→X
+		Output(8,X,"&
+	End
+End

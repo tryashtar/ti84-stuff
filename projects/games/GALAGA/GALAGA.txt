@@ -1,0 +1,70 @@
+ClrHome
+DelVar [A]
+{8,16}→dim([A]
+For(I,1,8
+	For(J,1,4
+		randInt(1,3)→[A](I,J+12
+		If [A](I,J+12)=1
+			Output(I,J+12,"Φ
+		If [A](I,J+12)=2
+			Output(I,J+12,"ρ
+		If [A](I,J+12)=3
+			Output(I,J+12,"δ
+	End
+End
+1→θ
+1→C
+4→Y
+{0,0,0}→L₁
+{0,0,0}→L₂
+While 1
+	getKey→K
+	If K=25 or K=34 or θ=1
+	Then
+		0→θ
+		Output(Y,1," 
+		If K=25
+			max({Y-1,1})→Y
+		If K=34
+			min({Y+1,8})→Y
+		Output(Y,1,"ε
+	End
+	If K=26
+	Then
+		0→A
+		For(I,1,dim(L₁
+			If L₁(I)=0
+				I→A
+		End
+		If A≠0
+			2→L₁(A
+		If A≠0
+			Y→L₂(A
+	End
+	C+1→C
+	If C>2
+		1→C
+	For(I,1,dim(L₁
+		If L₁(I)≠0
+		Then
+			If C=1
+			Then
+				Output(L₂(I),L₁(I)," 
+				L₁(I)+1→L₁(I
+				If L₁(I)>16
+					0→L₁(I
+				If L₁(I)≠0
+				Then
+					If [A](L₂(I),L₁(I))>0
+					Then
+						0→[A](L₂(I),L₁(I
+						Output(L₂(I),L₁(I)," 
+						0→L₁(I
+					End
+				End
+			End
+			If L₁(I)≠0
+				Output(L₂(I),L₁(I),"|~
+		End
+	End
+End

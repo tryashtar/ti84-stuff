@@ -1,0 +1,196 @@
+Repeat A=1 or A=2
+	ClrHome
+	Disp "W[|e]'[r][|e] [|e][s][t]im[|a][t]i[n]g","1- m[|e][|a][n] |v[|a]l|u[|e]","2- [p][r]o[p]o[r][t]io[n]","
+	Input "",A
+End
+ClrHome
+If A=1
+Then
+	Repeat B=1 or B=2 or B=3
+		ClrHome
+		Disp "Sol|vi[n]g fo[r]","1- [p]o[p] m[|e][|a][n] μ","2- [s][|a]m[p]l[|e] [s]i[z][|e] [recursiven]","3- [s]ig[n]ifi[|c][|a][n][|c][|e]","
+		Input "",B
+	End
+	ClrHome
+	If B=1
+	Then
+		Repeat C=1 or C=2
+			ClrHome
+			Disp "O|u[r] [s][t][|d] [|d][|e]|v i[s]","1- [p]o[p]|ul[|a][t]io[n] σ","2- [s][|a]m[p]l[|e] σ","
+			Input "",C
+		End
+		ClrHome
+		Disp "S[|a]m[p]l[|e] [s]i[z][|e] [recursiven]:
+		Input "",N
+		Disp "","S[t][|a][n][|d][|a][r][|d] [|d][|e]|v σ:
+		Input "",S
+		Disp "","Co[n]fi[|d][|e][n][|c][|e]:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Pl[|e][|a][s][|e] [t]y[p][|e] [t]h[|e]","[|c]o[n]fi[|d][|e][n][|c][|e] [|a][s] [|a]","[p][|e][r][|c][|e][n][t] [|b][|e][t]|w[|e][|e][n]","0 and 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "Cool Tool[|b]ox:","","V[|e][r]ify [t]h[|a][t] [t]h[|e]","[p]o[p] [s]i[z][|e] ≥","[|a][n][|d] SRS |w[|a][s] |u[s][|e][|d]","[t]o g[|e][t] [n]o[r]m[|a]l.
+		If N<30
+		Then
+			Disp "[!] N=   (<30)
+			Output(7,7,N
+		End
+		Output(4,12,10N
+		Pause 
+		ClrHome
+		Disp "S[t][|a][n][|d][|a][r][|d] E[r][r]o[r]:","","M[|a][r]gi[n] of E[r][r]o[r]:","…","","  % [|c]o[n]fi[|d][|e][n][|c][|e]","ẋ-MOE ≤μ≥ ẋ+MOE
+		Output(2,1,S/√(N
+		If C=1
+			Output(4,1,⁻invNorm((1-F)/2,0,1)S/√(N
+		If C=2
+			Output(4,1,⁻invT((1-F)/2,N-1)S/√(N
+		Output(6,1,round(100F,0
+		Pause 
+		ClrHome
+	End
+	If B=2
+	Then
+		Disp "M[|a][r]gi[n] of E[r][r]o[r]:
+		Input "",M
+		Disp "","S[t][|a][n][|d][|a][r][|d] [|d][|e]|v σ:
+		Input "",S
+		Disp "","Co[n]fi[|d][|e][n][|c][|e]:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Pl[|e][|a][s][|e] [t]y[p][|e] [t]h[|e]","[|c]o[n]fi[|d][|e][n][|c][|e] [|a][s] [|a]","[p][|e][r][|c][|e][n][t] [|b][|e][t]|w[|e][|e][n]","0 and 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "N[|e][|e][|d][|e][|d] [s][|a]m[p]l[|e]:","…
+		Output(2,1,(⁻invNorm((1-F)/2,0,1)S/M)²
+		Pause 
+		ClrHome
+	End
+	If B=3
+	Then
+		Repeat C=1 or C=2 or C=3
+			ClrHome
+			Disp "P[r]o|v[|e] [s][|a]m[p] [p]o[p] μ
+			Disp "1- g[r][|e][|a][t][|e][r] [t]h[|a][n]","2- l[|e][s][s] [t]h[|a][n]","3- [n]o[t] [|e]q|u[|a]l [t]o","
+			Input "",C
+		End
+		ClrHome
+		Disp "Po[p] m[|e][|a][n] μ:
+		Input "",M
+		Disp "","Po[p] [s][t][|d] [|d][|e]|v σ:
+		Input "",S
+		Disp "","S[|a]m[p]l[|e] [s]i[z][|e] [recursiven]:
+		Input "",N
+		Disp "","S[|a]m[p]l[|e] m[|e][|a][n] ẋ:
+		Input "",X
+		ClrHome
+		Disp "U[n][|c]ool Tool[|b]ox:","D[|e]fi[n][|e] μ","H₀: μ=","H[|a]: μ","E[n][s]|u[r][|e] SRS","Normal? (N>30)","I[n][|d][p][t]? ([p]o[p]>10N)
+		If C=1
+			Output(4,6,">
+		If C=2
+			Output(4,6,"<
+		If C=3
+			Output(4,6,"≠
+		Output(3,7,M
+		Output(4,7,M
+		Pause 
+		ClrHome
+		Disp "M[|a][t]h:","((ẋ-μ)√(N))/σ","Z:
+		((X-M)√(N))/S→Z
+		Output(3,4,Z
+		Disp "P:
+		If C=1
+			Output(4,4,1-normalcdf(⁻1ᴇ99,Z,0,1
+		If C=2
+			Output(4,4,normalcdf(⁻1ᴇ99,Z,0,1
+		If C=3
+			Output(4,4,2(1-normalcdf(⁻1ᴇ99,Z,0,1
+		Disp "If [p]<α, |w[|e] [|c][|a][n]","[r][|e]j[|e][|c][t] H₀ [|a][n][|d]","[|a][|c][|c][|e][p][t] H[|a]
+		Pause 
+		ClrHome
+	End
+End
+If A=2
+Then
+	Repeat B=1 or B=2 or B=3
+		ClrHome
+		Disp "Sol|vi[n]g fo[r]","1- [p]o[p] [p]o[r][t]io[n] [p]","2- [s][|a]m[p]l[|e] [s]i[z][|e] [recursiven]","3- [s]ig[n]ifi[|c][|a][n][|c][|e]","
+		Input "",B
+	End
+	ClrHome
+	If B=1
+	Then
+		Disp "S[|a]m[p]l[|e] [s]i[z][|e] [recursiven]:
+		Input "",N
+		Disp "","S[|a]m[p] [p]o[r][t]io[n] [ṗ]:
+		Input "",P
+		While P>1
+			ClrHome
+			Disp "Pl[|e][|a][s][|e] [t]y[p][|e] [t]h[|e]","[p][r]o[p]o[r][t]io[n] [|a][s] [|a]","[p][|e][r][|c][|e][n][t] [|b][|e][t]|w[|e][|e][n]","0 and 1:
+			Input "",P
+		End
+		Disp "","Co[n]fi[|d][|e][n][|c][|e]:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Pl[|e][|a][s][|e] [t]y[p][|e] [t]h[|e]","[|c]o[n]fi[|d][|e][n][|c][|e] [|a][s] [|a]","[p][|e][r][|c][|e][n][t] [|b][|e][t]|w[|e][|e][n]","0 and 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "Cool Tool[|b]ox:","","V[|e][r]ify [t]h[|a][t] [t]h[|e]","[p]o[p] [s]i[z][|e] ≥","[|a][n][|d] |u[s][|e][|d] SRS.
+		Output(4,12,10N
+		If NP<10
+		Then
+			Disp "[!] N[ṗ]=    <10
+			Output(6,8,round(NP,1
+		End
+		If N(1-P)<10
+		Then
+			Disp "[!] N-N[ṗ]=    <10
+			Output(6+(NP<10),10,N-NP
+		End
+		Pause 
+		ClrHome
+		Disp "S[t][|a][n][|d][|a][r][|d] E[r][r]o[r]:","","M[|a][r]gi[n] of E[r][r]o[r]:","…","  % [|c]o[n]fi[|d][|e][n][|c][|e] [p]","i[s] [|b][|e][t]|w[|e][|e][n]","      [|a][n][|d]
+		Output(2,1,√((P-P²)/N)
+		⁻invNorm((1-F)/2,0,1)√((P-P²)/N)→M
+		Output(4,1,M
+		Output(5,1,round(100F,0
+		Output(7,1,max(0,round(P-M,4
+		Output(7,11,min(1,round(P+M,4
+		Pause 
+		ClrHome
+	End
+	If B=2
+	Then
+		Disp "M[|a][r]gi[n] of E[r][r]o[r]:
+		Input "",M
+		Disp "","E[s][t]m [p]o[r][t]io[n] [p]ˣ:
+		Input "",P
+		While P>1
+			ClrHome
+			Disp "Pl[|e][|a][s][|e] [t]y[p][|e] [t]h[|e]","[|e][s][t]im[|a][t][|e] [|a][s] [|a]","[p][|e][r][|c][|e][n][t] [|b][|e][t]|w[|e][|e][n]","0 and 1:
+			Input "",P
+		End
+		Disp "","Co[n]fi[|d][|e][n][|c][|e]:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Pl[|e][|a][s][|e] [t]y[p][|e] [t]h[|e]","[|c]o[n]fi[|d][|e][n][|c][|e] [|a][s] [|a]","[p][|e][r][|c][|e][n][t] [|b][|e][t]|w[|e][|e][n]","0 and 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "N[|e][|e][|d][|e][|d] [s][|a]m[p]l[|e]:","…
+		Output(2,1,((P-P²)(⁻invNorm((1-F)/2,0,1)))/(M²
+		Pause 
+		ClrHome
+	End
+	If B=3
+	Then
+		Pause 
+	End
+End

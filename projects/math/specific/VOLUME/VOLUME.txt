@@ -1,0 +1,21 @@
+ClrHome
+Disp "1=SPHERE","2=CYLINDER","3=HEXAPYRAMID"
+Input "",X
+ClrHome
+If X=1
+Then
+	Input "RADIUS=",R
+	Disp 4/3πR^3
+End
+If X=2
+Then
+	Input "RADIUS=",R
+	Input "HEIGHT=",H
+	Disp πR‗²H
+End
+If X=3
+Then
+	Input "APOTHEM=",A
+	Input "HEIGHT=",H
+	Disp (√(3)/2)(A²)(H)
+End

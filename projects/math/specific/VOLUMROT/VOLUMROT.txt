@@ -1,0 +1,36 @@
+ClrHome
+Disp "Fun‗ctions:","(Type . to end)
+"0"→Str1
+" "→Str2
+0→N
+While Str2≠".
+	N+1→N
+	Input "",Str2
+	If Str2≠".
+	Then
+		If N=1
+			Str1+"+"→Str1
+		If N>1
+			Str1+"-"→Str1
+		Str1+"(:-("+Str2+"))²"→Str1
+	End
+End
+ClrHome
+Disp "Rotate around Y=
+Input "",Str3
+For(I,1,length(Str1
+	If sub(Str1,I,1)=":
+		sub(Str1,1,I-1)+Str3+sub(Str1,I+1,length(Str1)-I)→Str1
+End
+Disp "","Bounds:
+Input "",A
+Input "",B
+ClrHome
+String►Equ(Str1,Y₀
+Output(4,3,"Making math…
+πfnInt(Y₀,X,A,B)
+ClrHome
+Disp abs(Ans
+DelVar Y₀
+Pause 
+ClrHome

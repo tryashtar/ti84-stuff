@@ -1,0 +1,163 @@
+Lbl 21
+ClrHome
+Input "HEIGHT: ",H
+If H>8
+	8→H
+If H<1
+	1→H
+Output(1,9,"    ")
+Output(1,9,H)
+Input "WIDTH: ",W
+If W>16
+	16→W
+If W<1
+	1→W
+Output(2,8,"    ")
+Output(2,8,W)
+Input "BOMBS: ",B
+Lbl 20
+ClrHome
+DelVar [A]
+{H,W}→dim([A])
+DelVar [B]
+{H,W}→dim([B])
+For(I,1,B)
+	randInt(1,W)→R
+	randInt(1,H)→C
+	If [A](C,R)=0
+	Then
+		9→[A](C,R)
+	Else
+		I-1→I
+	End
+End
+Lbl 30
+For(I,1,H)
+	For(J,1,W)
+		Output(I,J,"-")
+		0→V
+		For(K,⁻1,1)
+			For(L,⁻1,1)
+				If [A](I,J)=0 and I+K≤H and I+K≥1 and J+L≤W and J+L≥1
+				Then
+					If [A](I+K,J+L)=9
+						V+1→V
+				End
+			End
+		End
+		If V>0
+			V→[A](I,J)
+	End
+End
+1→C
+1→R
+Output(C,R,"X")
+0→T
+Lbl 3
+0→K
+While K=0
+	getKey→K
+End
+If K=24 or K=25 or K=26 or K=34
+Then
+	If [B](C,R)=0
+		Output(C,R,"-")
+	If [B](C,R)=1
+	Then
+		If [A](C,R)=0
+		Then
+			Output(C,R," ")
+		Else
+			Output(C,R,[A](C,R))
+		End
+	End
+	If [B](C,R)=2
+		Output(C,R,"=")
+End
+If K=24
+Then
+	If R>1
+		R-1→R
+	Output(C,R,"X")
+End
+If K=25
+Then
+	If C>1
+		C-1→C
+	Output(C,R,"X")
+End
+If K=26
+Then
+	If R<W
+		R+1→R
+	Output(C,R,"X")
+End
+If K=34
+Then
+	If C<H
+		C+1→C
+	Output(C,R,"X")
+End
+If K=95 and ([B](C,R)=0 or [B](C,R)=2)
+Then
+	If [B](C,R)=2
+	Then
+		0→[B](C,R)
+	Else
+		2→[B](C,R)
+	End
+End
+If K=105
+Then
+	Goto 7
+Else
+	Goto 3
+End
+Lbl 7
+If [B](C,R)=0 or [B](C,R)=2
+Then
+	1→[B](C,R)
+	T+1→T
+End
+If [A](C,R)=9
+Then
+	Output(C,R,"*")
+	Goto 10
+End
+If T=(W*H)-B
+Then
+	Goto 11
+Else
+	Goto 3
+End
+Lbl 10
+For(I,1,H)
+	For(J,1,W)
+		If [A](I,J)=9
+			Output(I,J,"*")
+	End
+End
+Output(8,1,"YOU LOSE!")
+Pause 
+ClrHome
+Goto 15
+Lbl 11
+For(I,1,H)
+	For(J,1,W)
+		If [A](I,J)=9
+			Output(I,J,"*")
+	End
+End
+Output(8,1,"YOU WIN!")
+Pause 
+ClrHome
+Goto 15
+Lbl 15
+Menu("OPTIONS","NEW",20,"NEW DIM",21,"RETRY",22,"QUIT",23)
+Lbl 22
+DelVar [B]
+{H,W}→dim([B])
+Goto 30
+Lbl 23
+ClrHome
+Stop

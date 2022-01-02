@@ -1,0 +1,51 @@
+ClrHome
+Disp "How many groups?
+Input "",G
+DelVar [A]
+1→M
+For(I,1,G
+	ClrHome
+	Disp "Highest exponent
+	Input "",T
+	ClrHome
+	If T+1>M
+	Then
+		T+1→M
+		{G,M}→dim([A]
+	End
+	Disp ""
+	For(J,T,0,⁻1
+		Output(1,1,"Term X^  :
+		Output(1,8,J
+		Input "",V
+		V→[A](I,J+1
+	End
+End
+ClrHome
+Output(4,3,"Doin' work…
+DelVar L₃
+2G+2M→dim(L₃
+For(A,1,G-1
+	Matr►list([A]ᵀ,A,L₁
+	Matr►list([A]ᵀ,A+1,L₂
+	G+M→dim(L₁
+	G+M→dim(L₂
+	For(I,1,dim(L₁
+		For(J,1,dim(L₂
+			L₃(I+J)+(L₁(I)L₂(J))→L₃(I+J)
+		End
+	End
+End
+ClrHome
+0→P
+For(I,dim(L₃),1,⁻1
+	If L₃(I)≠0
+	Then
+		P+1→P
+		Output(P,1,L₃(I
+		Output(P,5,"X^
+		Output(P,7,I-2
+	End
+End
+Pause 
+ClrHome

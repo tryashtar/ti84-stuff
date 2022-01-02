@@ -1,0 +1,93 @@
+ClrHome
+Input "F(X)=",Str1
+Input "G(X)=",Str2
+Lbl 1
+ClrHome
+Disp "Type:","1 - F(X)","2 - F(3)"
+Input "",A
+ClrHome
+Output(1,1,"An‗swers in order
+Output(2,1,"F(G(X))
+Output(3,1,"G(F(X))
+Output(4,1,"F(F(X))
+Output(5,1,"G(G(X))
+Pause 
+ClrHome
+If A=1
+Then
+	"("+Str1+")"→Str1
+	"("+Str2+")"→Str2
+	For(J,1,4
+		If J=1
+		Then
+			Str1→Str3
+			Str2→Str4
+		End
+		If J=2
+		Then
+			Str2→Str3
+			Str1→Str4
+		End
+		If J=3
+		Then
+			Str1→Str3
+			Str1→Str4
+		End
+		If J=4
+		Then
+			Str2→Str3
+			Str2→Str4
+		End
+		For(I,1,length(Str4
+			If sub(Str4,I,1)="X"
+				sub(Str4,1,I-1)+"Y"+sub(Str4,I+1,length(Str4)-I→Str4
+		End
+		length(Str3)→L
+		0→I
+		While I<L
+			I+1→I
+			If sub(Str3,I,1)="X"
+				sub(Str3,1,I-1)+Str4+sub(Str3,I+1,length(Str3)-I→Str3
+			length(Str3)→L
+		End
+		For(I,1,length(Str3
+			If sub(Str3,I,1)="Y"
+				sub(Str3,1,I-1)+"X"+sub(Str3,I+1,length(Str3)-I→Str3
+		End
+		Output(2J-1,1,Str3
+	End
+End
+If A=2
+Then
+	Input "X: ",B
+	ClrHome
+	For(J,1,4
+		If J=1
+		Then
+			Str1→Str3
+			Str2→Str4
+		End
+		If J=2
+		Then
+			Str2→Str3
+			Str1→Str4
+		End
+		If J=3
+		Then
+			Str1→Str3
+			Str1→Str4
+		End
+		If J=4
+		Then
+			Str2→Str3
+			Str2→Str4
+		End
+		B→X
+		expr(Str4)→X
+		expr(Str3)→X
+		Output(2J-1,1,X
+	End
+End
+Pause 
+ClrHome
+Goto 1

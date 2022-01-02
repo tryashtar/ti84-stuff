@@ -1,0 +1,83 @@
+ClrHome
+2→T
+DelVar [A]
+{3,3}→dim([A])
+For(I,1,3)
+	For(J,1,3)
+		Output(I*2,4+J*2,"-")
+	End
+End
+Menu("PLAYERS","ONE",11,"TWO",12)
+Lbl 11
+1→P
+Goto 1
+Lbl 12
+2→P
+Goto 1
+Lbl 1
+If T=1
+Then
+	2→T
+Else
+	1→T
+End
+Lbl 2
+For(I,1,3)
+	If ([A](I,1)>0 and [A](I,1)=[A](I,2) and [A](I,2)=[A](I,3)) or ([A](1,I)>0 and [A](1,I)=[A](2,I) and [A](2,I)=[A](3,I)) or ([A](1,1)>0 and [A](1,1)=[A](2,2) and [A](2,2)=[A](3,3)) or ([A](1,3)>0 and [A](1,3)=[A](2,2) and [A](2,2)=[A](3,1))
+	Then
+		If T=1
+			Goto 6
+		If T=2
+			Goto 7
+	End
+End
+0→Q
+For(I,1,3)
+	For(J,1,3)
+		If [A](I,J)=0
+			1→Q
+	End
+End
+If Q=0
+	Goto 8
+0→K
+While K=0
+	If T=2 and P=1
+	Then
+		randInt(7,9)→K
+		randInt(2,4)→L
+		(K*10)+L→K
+	Else
+		getKey→K
+	End
+End
+K/10→K
+If iPart(K)≥7 and iPart(K)≤9 and fPart(K)*10≥2 and fPart(K)*10≤4
+Then
+	If [A](iPart(K)-6,fPart(K)*10-1)=0
+	Then
+		T→[A](iPart(K)-6,fPart(K)*10-1)
+		If T=1
+			Output((iPart(K)-6)*2,4+(fPart(K)*10-1)*2,"X")
+		If T=2
+			Output((iPart(K)-6)*2,4+(fPart(K)*10-1)*2,"O")
+		Goto 1
+	End
+End
+Goto 2
+Lbl 6
+If P=1
+Then
+	Output(8,1,"THE CPU WON?")
+Else
+	Output(8,1,"PLAYER 2 WINS!")
+End
+Pause 
+Return
+Lbl 7
+Output(8,1,"PLAYER 1 WINS!")
+Pause 
+Return
+Lbl 8
+Output(8,1,"A TIE?!")
+Pause 

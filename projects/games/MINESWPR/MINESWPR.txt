@@ -1,0 +1,312 @@
+16→A
+8→B
+1→P
+Lbl 0
+ClrHome
+"----------------"→Str1
+"|               |               |               |               |               |               |               |→Str2
+"|/-\|/-\"→Str3
+0→K
+1→θ
+While K≠105
+	getKey→K
+	If K=45
+	Then
+		DelVar [A]
+		DelVar Str1
+		DelVar Str2
+		DelVar Str3
+		ClrHome
+		Return
+	End
+	If K=24 or K=26 or K=25 or K=34 or θ=1
+	Then
+		0→θ
+		Output(B,1,"                
+		For(I,1,B-1
+			Output(I,A," 
+		End
+		Output(B,A," 
+		If K=24
+			max(A-1,1)→A
+		If K=26
+			min(A+1,16)→A
+		If K=25
+			max(B-1,1)→B
+		If K=34
+			min(B+1,8)→B
+		If B≥2
+			Output(1,A,sub(Str2,1,16B-31
+		If A≥2
+			Output(B,1,sub(Str1,1,A-1
+		Output(B,A,"*
+	End
+End
+ClrHome
+Output(1,1,"Mine number:
+Disp ""
+Input "",M
+min(max(iPart(real(M)),1),AB-1)→M
+ClrHome
+Lbl 1
+Output(1,1,"Mines:
+Output(1,8,M
+Output(3,1,"0   %
+DelVar [A]
+{B,A}→dim([A]
+For(I,1,M
+	randInt(1,B)→C
+	randInt(1,A)→D
+	While [A](C,D)<0
+		randInt(1,B)→C
+		randInt(1,A)→D
+	End
+	⁻5000→[A](C,D)
+	If C-1≥1
+	Then
+		If D-1≥1
+			[A](C-1,D-1)+1→[A](C-1,D-1
+		[A](C-1,D)+1→[A](C-1,D
+		If D+1≤A
+			[A](C-1,D+1)+1→[A](C-1,D+1
+	End
+	If D-1≥1
+		[A](C,D-1)+1→[A](C,D-1
+	If D+1≤A
+		[A](C,D+1)+1→[A](C,D+1
+	If C+1≤B
+	Then
+		If D-1≥1
+			[A](C+1,D-1)+1→[A](C+1,D-1
+		[A](C+1,D)+1→[A](C+1,D
+		If D+1≤A
+			[A](C+1,D+1)+1→[A](C+1,D+1
+	End
+	Output(3,1,"    
+	Output(3,1,round(100I/M,1
+	If round(16I/M,0)≥1
+		Output(4,1,sub(Str1,1,round(16I/M,0
+End
+Lbl 2
+ClrHome
+For(I,1,A
+	For(J,1,B
+		Output(J,I,"mathprintbox
+	End
+End
+1→X
+1→Y
+0→U
+0→F
+Output(1,1,"×
+While F≤0
+	0→K
+	While K≠105
+		0→K
+		0→I
+		While K=0
+			getKey→K
+			I+1→I
+			If I>500
+			Then
+				0→I
+				Output(Y,X,"#
+				Pause 
+				Output(Y,X,"×
+			End
+		End
+		[A](Y,X)→θ
+		If K=103
+		Then
+			Output(Y,X,"?
+			While K≠105 and K≠45
+				getKey→K
+			End
+			If K=105
+				Goto 10
+			Output(Y,X,"×
+			0→K
+		End
+		If K=24 or K=25 or K=26 or K=34
+		Then
+			If fPart(θ)=0
+				Output(Y,X,"mathprintbox
+			If fPart(θ)=.1
+				Output(Y,X,iPart(θ
+			If [A](Y,X)=.1
+				Output(Y,X," 
+			If abs(fPart(θ))=.2
+				Output(Y,X,"invertedequal
+			If K=24
+				X-1→X
+			If K=25
+				Y-1→Y
+			If K=26
+				X+1→X
+			If K=34
+				Y+1→Y
+			If X>A
+				1→X
+			If X<1
+				A→X
+			If Y>B
+				1→Y
+			If Y<1
+				B→Y
+			Output(Y,X,"×
+		End
+		If K=45
+		Then
+			If fPart(θ)=0
+				iPart(θ)+(.3*(2(θ≥0)-1))→[A](Y,X
+			If abs(fPart(θ))=.2
+				iPart(θ)→[A](Y,X
+			If abs(fPart([A](Y,X)))=.3
+				iPart(θ)+(.2*(2(θ≥0)-1))→[A](Y,X
+		End
+	End
+	If fPart(θ)=0
+	Then
+		θ+.1→[A](Y,X
+		If θ<0
+			1→F
+		U+1→U
+		If U=AB-M and F=0
+			2→F
+		
+		
+		
+		If iPart(θ)=0
+		Then
+			{Y}→L₁
+			{X}→L₂
+			0→W
+			While dim(L₁)>0
+				L₁(dim(L₁→C
+				L₂(dim(L₂→D
+				dim(L₁)-1→dim(L₁
+				dim(L₂)-1→dim(L₂
+				For(I,C-1,C+1
+					For(J,D-1,D+1
+						If I>0 and I≤B and J>0 and J≤A
+						Then
+							Output(Y,X,sub(Str3,remainder(W,length(Str3))+1,1)
+							W+1→W
+							If fPart([A](I,J))≠.1
+							Then
+								[A](I,J)→Z
+								If Z=0
+								Then
+									dim(L₁)+1→dim(L₁
+									dim(L₂)+1→dim(L₂
+									I→L₁(dim(L₁
+									J→L₂(dim(L₂
+								End
+								If fPart(Z)=0
+								Then
+									Z+.1→[A](I,J
+									Z+.1→Z
+									U+1→U
+									If U≥AB-M and F=0
+										2→F
+									If Z=.1
+										Output(I,J," 
+									If Z≥1
+										Output(I,J,iPart(Z
+								End
+							End
+						End
+					End
+				End
+			End
+		End
+		Output(Y,X,"×
+		
+		
+		
+	End
+End
+If F=1
+Then
+	For(I,1,A
+		For(J,1,B
+			If [A](J,I)<0
+				Output(J,I,"*
+		End
+	End
+	Pause 
+	ClrHome
+	Output(4,4,"You lose!
+End
+If F=2
+Then
+	If iPart([A](Y,X))=0
+		Output(Y,X," 
+	If iPart([A](Y,X))>0
+		Output(Y,X,iPart([A](Y,X)
+	For(I,1,A
+		For(J,1,B
+			If [A](J,I)<0
+				Output(J,I,"-
+		End
+	End
+	Pause 
+	ClrHome
+	Output(4,5,"You win!
+End
+Pause 
+ClrHome
+Output(1,1,"Options
+Output(2,2,"New game
+Output(3,2,"Randomize mines
+Output(4,2,"Retry map
+Output(5,2,"Quit
+Output(P+1,1,"►
+0→K
+While K≠105
+	0→K
+	While K=0
+		getKey→K
+	End
+	If K=25 or K=34
+	Then
+		Output(P+1,1," 
+		If K=25
+			P-1→P
+		If K=34
+			P+1→P
+		If P<1
+			4→P
+		If P>4
+			1→P
+		Output(P+1,1,"►
+	End
+End
+ClrHome
+If P=1
+	Goto 0
+If P=2
+Then
+	DelVar [A]
+	{B,A}→dim([A]
+	Goto 1
+End
+If P=3
+Then
+	For(I,1,A
+		For(J,1,B
+			iPart([A](J,I))→[A](J,I
+		End
+	End
+	Goto 2
+End
+If P=4
+	Goto 10
+
+Lbl 10
+ClrHome
+DelVar Str1
+DelVar Str2
+DelVar Str3
+DelVar [A]
+Return

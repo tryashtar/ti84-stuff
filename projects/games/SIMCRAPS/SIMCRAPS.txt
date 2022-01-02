@@ -1,0 +1,54 @@
+ClrHome
+0→A
+0→B
+0→C
+0→D
+For(I,1,40
+	ClrHome
+	0→E
+	randInt(1,6)+randInt(1,6)→R
+	Output(1,1,"First roll:
+	Output(1,13,R
+	If max(R={7,11
+	Then
+		1→E
+		A+1→A
+		Output(2,1,"First roll win!
+	End
+	If max(R={2,3,12
+	Then
+		1→E
+		B+1→B
+		Output(2,1,"First roll lose.
+	End
+	If E=0
+		Disp "",""
+	While E=0
+		randInt(1,6)+randInt(1,6)→N
+		
+		Disp N
+		If N=7
+		Then
+			1→E
+			D+1→D
+			Disp "Target lose.
+		End
+		If N=R
+		Then
+			1→E
+			C+1→C
+			Disp "Target win!
+		End
+	End
+End
+ClrHome
+Output(1,1,"First win:
+Output(2,1,"First lose:
+Output(3,1,"Target win:
+Output(4,1,"Target lose:
+Output(1,14,A
+Output(2,14,B
+Output(3,14,C
+Output(4,14,D
+Pause 
+ClrHome

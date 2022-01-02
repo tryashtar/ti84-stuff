@@ -1,0 +1,268 @@
+ClrHome
+Output(2,5,"Compound
+Output(3,4,"Conversion
+Output(4,4,"…………………………
+Output(6,7,"v1.2
+Pause 
+ClrHome
+DelVar L₁
+{1.008,4.003,6.941,9.012,10.811,12.011,14.007,15.999,18.998,20.180,22.990,24.305,26.982,28.086,30.974,32.066,35.453,39.948,39.098,40.078,44.956,47.88,50.942,51.996,54.938,55.847,58.933,58.693,63.546,65.39,69.723,72.61,74.922,78.96,79.904,83.80,85.468,87.62,88.906,91.224,92.906,95.94,97.907,101.07,102.906,106.42,107.868,112.411,114.82,118.710,121.757,127.60,126.904,131.290,132.905,137.327,138.906,140.115,140.908,144.24,144.913,150.36,151.965,157.25,158.925,162.5,164.93,167.26,168.934,173.04,174.967,178.49,180.948,183.84,186.207,190.2,192.22,195.08,196.967,200.59,204.383,207.2,208.98,208.982,209.978,222.018,223.02,226.025,227.028,232.038,231.038,238.029,237.048,244.064,243.061,247.07,247.07,251.08,252.083,257.095,258.099,259.101,260.105,261,262,263,262,265,266}→L₂
+1→S
+1→T
+1→P
+1→A
+DelVar L₁
+DelVar L₃
+7→dim(L₁
+7→dim(L₃
+While 1
+	Output(P+1,1,"►
+	Output(1,1,"MAIN MENU
+	Output(2,2,"Compound
+	Output(3,2,"Amount:
+	Output(3,10,A
+	If S=1
+		Output(4,2,"Molecules
+	If S=2
+		Output(4,2,"Moles
+	Output(6,2,"Convert!
+	If S=3
+		Output(4,2,"Grams
+	If S=4
+		Output(4,2,"AMUs
+	If T=1
+		Output(5,2,"Molecules
+	If T=2
+		Output(5,2,"Moles
+	If T=3
+		Output(5,2,"Grams
+	If T=4
+		Output(5,2,"AMUs
+	0→K
+	While K≠105
+		0→K
+		While K=0
+			getKey→K
+		End
+		If K=45
+		Then
+			ClrHome
+			Stop
+		End
+		Output(P+1,1," 
+		If K=25
+			P-1→P
+		If K=34
+			P+1→P
+		If P>5
+			1→P
+		If P<1
+			5→P
+		Output(P+1,1,"►
+	End
+	If P=3
+	Then
+		Output(4,1,"                
+		S+1→S
+	End
+	If P=4
+	Then
+		Output(5,1,"                
+		T+1→T
+	End
+	If S>4
+		1→S
+	If T>4
+		1→T
+	If P=2
+	Then
+		ClrHome
+		Disp "Input‗ amount:
+		Input "",A
+		ClrHome
+	End
+	If P=5
+	Then
+		DelVar L₄
+		dim(L₁)→dim(L₄
+		For(I,1,dim(L₁
+			If L₁(I)=0
+			Then
+				0→L₄(I
+			Else
+				L₂(L₁(I))→L₄(I
+			End
+		End
+		If S=1
+		Then
+			If T=1
+				A→B
+			If T=2
+				A/(6.022ᴇ23)→B
+			If T=3
+				(A/(6.022ᴇ23))*sum(L₄*L₃)→B
+			If T=4
+				A*(sum(L₄*L₃))→B
+		End
+		If S=2
+		Then
+			If T=1
+				A*(6.022ᴇ23)→B
+			If T=2
+				A→B
+			If T=3
+				A*(sum(L₄*L₃))→B
+			If T=4
+				(A*(sum(L₄*L₃)))*(6.022ᴇ23)→B
+		End
+		If S=3
+		Then
+			If T=1
+				(A/(sum(L₄*L₃)))*(6.022ᴇ23)→B
+			If T=2
+				A/(sum(L₄*L₃))→B
+			If T=3
+				A→B
+			If T=4
+				A*(6.022ᴇ23)→B
+		End
+		If S=4
+		Then
+			If T=1
+				A/(sum(L₄*L₃)→B
+			If T=2
+				(A/(sum(L₄*L₃)))/(6.022ᴇ23)→B
+			If T=3
+				A/(6.022ᴇ23)→B
+			If T=4
+				A→B
+		End
+		Output(7,1,"                                
+		Output(7,1,B
+	End
+	If P=1
+	Then
+		For(I,1,8
+			Output(I,1,"                
+		End
+		Output(1,1,"ATOMIC# / AMOUNT
+		For(I,1,7
+			If L₁(I)≠0
+			Then
+				Output(I+1,2,L₁(I
+				Output(I+1,14,L₃(I
+			End
+		End
+		1→P
+		1→Q
+		Output(P+1,Q,"►
+		0→K
+		While K≠105
+			0→K
+			While K=0
+				getKey→K
+			End
+			Output(P+1,Q," 
+			If K=25
+				P-1→P
+			If K=34
+				P+1→P
+			If P>7
+				1→P
+			If P<1
+				7→P
+			If K=24
+				1→Q
+			If K=26
+				13→Q
+			Output(P+1,Q,"►
+			If K=45
+			Then
+				0→L₁(P
+				0→L₃(P
+				1→Q
+				Output(P+1,Q,"►
+				Output(P+1,2,"               
+			End
+			If Q=1
+			Then
+				If K=95
+					L₁(P)+1→L₁(P)
+				If K=85
+					L₁(P)-1→L₁(P
+				If L₁(P)<1
+				Then
+					0→L₁(P)
+					0→L₃(P)
+				End
+				If K=92
+					10→L₁(P
+				If K=93
+					20→L₁(P
+				If K=94
+					30→L₁(P
+				If K=82
+					40→L₁(P
+				If K=83
+					50→L₁(P
+				If K=84
+					60→L₁(P
+				If K=72
+					70→L₁(P
+				If K=73
+					80→L₁(P
+				If K=74
+					90→L₁(P
+				If L₁(P)≠0 and L₃(P)=0
+				Then
+					1→L₃(P
+					Output(P+1,14,L₃(P
+				End
+				Output(P+1,2,"    
+				Output(P+1,2,L₁(P
+				If L₁(P)=0
+					Output(P+1,2,"                
+			End
+			If Q≠1
+			Then
+				If K=95 and L₁(P)≠0
+					L₃(P)+1→L₃(P)
+				If K=85 and L₁(P)≠0
+					L₃(P)-1→L₃(P)
+				If L₁(P)≠0
+				Then
+					If K=92
+						1→L₃(P
+					If K=93
+						2→L₃(P
+					If K=94
+						3→L₃(P
+					If K=82
+						4→L₃(P
+					If K=83
+						5→L₃(P
+					If K=84
+						6→L₃(P
+					If K=72
+						7→L₃(P
+					If K=73
+						8→L₃(P
+					If K=74
+						9→L₃(P
+				End
+				If L₃(P)<1 and L₁(P)≠0
+					1→L₃(P)
+				If L₃(P)<1 and L₁(P)=0
+					0→L₃(P
+				Output(P+1,14,"  
+				Output(P+1,14,L₃(P
+				If L₃(P)=0
+					Output(P+1,14,"  
+			End
+		End
+		For(I,1,8
+			Output(I,1,"                
+		End
+		1→P
+	End
+End

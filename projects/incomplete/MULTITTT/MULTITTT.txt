@@ -1,0 +1,20 @@
+ClrHome
+Disp "Please connect","to another","calculator…
+rand→A
+A→B
+π[e]sin(8°→C
+C→D
+While A=B
+	GetCalc(A
+	Output(1,1,A
+	Output(2,1,B
+End
+B→A
+Disp "C
+Repeat C=D
+	GetCalc(C
+End
+ClrHome
+Disp "Done, probably
+DelVar C
+DelVar D

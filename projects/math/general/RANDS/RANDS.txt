@@ -1,0 +1,16 @@
+ClrHome
+Input "Size: ",S
+Input "Number: ",N
+ClrHome
+{0}→L₁
+For(I,1,N
+	randInt(1,S)→A
+	If max(A=L₁
+	Then
+		I-1→I
+	Else
+		A→L₁(I
+	End
+End
+Pause L₁
+ClrHome

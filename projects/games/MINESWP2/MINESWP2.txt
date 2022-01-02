@@ -1,0 +1,180 @@
+ClrHome
+16→A
+8→B
+1→θ
+Repeat max(K={45,105
+	getKey
+	0→K
+	Repeat θ=1 or max(Ans={24,25,26,34,45,105
+		getKey
+	End
+	Ans→K
+	If θ=1 or max(K={24,25,26,34
+	Then
+		A→X
+		B→Y
+		If K=24
+			max(A-1,1→A
+		If K=25
+			max(B-1,1→B
+		If K=26
+			min(A+1,16→A
+		If K=34
+			min(B+1,8→B
+		If X≠A or Y≠B or θ=1
+		Then
+			ClrHome
+			If A>1
+				Output(B,1,sub("--------------------------",1,A-1
+			For(I,1,B-1
+				Output(I,A,"|
+			End
+			Output(B,A,"×
+		End
+		0→θ
+	End
+End
+ClrHome
+If K=45
+	Return
+Output(1,1,"Mine Number:
+Disp "
+Input "",M
+ClrHome
+Output(3,2,"Initializing…
+{1,1,0,⁻1,⁻1,1,⁻1,0,1}→L₃
+DelVar [D]
+{B+2,A+2}→dim([D]
+For(I,1,B+2
+	⁻1000→[D](I,1
+	⁻1000→[D](I,A+2
+End
+For(I,1,A+2
+	⁻1000→[D](1,I
+	⁻1000→[D](B+2,I
+End
+ClrHome
+Output(3,3,"Generating…
+min(iPart(real(M)),BA-1)→M
+Output(5,4,"Mines:
+Output(5,11,M
+Output(6,6,"0   %
+For(I,1,M
+	Repeat [D](Y,X)≥0
+		randInt(0,BA-1)→R
+		iPart(R/A)+2→Y
+		remainder(R+A,A)+2→X
+	End
+	⁻10→[D](Y,X
+	[D](Y-1,X-1)+1→[D](Y-1,X-1
+	[D](Y-1,X)+1→[D](Y-1,X
+	[D](Y-1,X+1)+1→[D](Y-1,X+1
+	[D](Y,X-1)+1→[D](Y,X-1
+	[D](Y,X+1)+1→[D](Y,X+1
+	[D](Y+1,X-1)+1→[D](Y+1,X-1
+	[D](Y+1,X)+1→[D](Y+1,X
+	[D](Y+1,X+1)+1→[D](Y+1,X+1
+	Output(4,1,sub("--------------------------",1,iPart(16I/M)+1
+	Output(6,6,"    
+	Output(6,6,round(100I/M,1
+End
+ClrHome
+For(I,1,B
+	Output(I,1,sub("mathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintbox",1,A
+End
+If A<16
+Then
+	For(I,1,B
+		Output(I,A+1,"|
+	End
+End
+If B<8
+	Output(B+1,1,sub("--------------------------",1,A
+If A<16 and B<8
+	Output(B+1,A+1,"/
+1→Y
+1→X
+0→W
+0→H
+Output(1,1,"×
+While W=0
+	getKey
+	0→K
+	Repeat max(Ans={24,25,26,34,45,105
+		getKey
+	End
+	Ans→K
+	If max(K={24,25,26,34
+	Then
+		Output(Y,X,sub("mathprintbox 123456789invertedequal",min(12,max([D](Y+1,X+1)-8,1)),1
+		If K=24
+			remainder(X+A-2,A)+1→X
+		If K=26
+			remainder(X+A,A)+1→X
+		If K=25
+			remainder(Y+B-2,B)+1→Y
+		If K=34
+			remainder(Y+B,B)+1→Y
+		Output(Y,X,"×
+	End
+	If K=105 and [D](Y+1,X+1)<10
+	Then
+		If [D](Y+1,X+1)=0
+		Then
+			Output(Y,X,"_
+			10→[D](Y+1,X+1
+			{Y+1→L₁
+			{X+1→L₂
+			While dim(L₁)>0
+				L₁(dim(L₁→O
+				L₂(dim(L₂→P
+				dim(L₁)-1→dim(L₁
+				dim(L₂)-1→dim(L₂
+				For(J,1,8
+					O+L₃(J)→Q
+					P+L₃(J+1)→R
+					If [D](Q,R)<10 and [D](Q,R)≥0
+					Then
+						H+1→H
+						If [D](Q,R)=0
+						Then
+							Q→L₁(dim(L₁)+1
+							R→L₂(dim(L₂)+1
+						End
+						If Q>1 and Q<B+2 and R>1 and R<A+2
+							Output(Q-1,R-1,sub(" 123456789",[D](Q,R)+1,1
+						[D](Q,R)+10→[D](Q,R
+					End
+				End
+			End
+			Output(Y,X,"×
+		Else
+			If [D](Y+1,X+1)<0
+			Then
+				2→W
+				Output(Y,X,"#
+			End
+			[D](Y+1,X+1)+10→[D](Y+1,X+1
+		End
+		H+1→H
+		If H=AB-M and W=0
+			1→W
+	End
+	If K=45 and ([D](Y+1,X+1)<10 or [D](Y+1,X+1)≥20
+	Then
+		If [D](Y+1,X+1)>10
+		Then
+			[D](Y+1,X+1)-30→[D](Y+1,X+1
+		Else
+			[D](Y+1,X+1)+30→[D](Y+1,X+1
+		End
+	End
+End
+For(I,1,A)
+	For(J,1,B)
+		If [D](J+1,I+1)<0 or ([D](J+1,I+1)≥20 and [D](J+1,I+1)<30)
+			Output(J,I,sub("-*",W,1
+	End
+End
+Pause 
+ClrHome

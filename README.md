@@ -1,4 +1,4 @@
-A collection of some of the TI-Basic programs I wrote on my TI-84 mostly during 2016 and 2017.
+A collection of some of the TI-Basic programs I wrote on my TI-84 mostly between 2014 and 2017.
 
 The compiled tokenized `.8xp` files are provided as well as the source code in text form.
 

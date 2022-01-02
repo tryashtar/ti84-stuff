@@ -1,0 +1,68 @@
+ClrHome
+Disp "Seconds:
+Input "",T
+T+1→S
+ClrHome
+startTmr→X
+While 1
+	If checkTmr(X)>0
+	Then
+		S-1→S
+		startTmr→X
+		{iPart(S/10),10fPart(S/10)}→L₁
+		ClrHome
+		For(I,1,dim(L₁))
+			If L₁(I)=0
+			Then
+				Output(2,6I-5," ____
+				Output(3,6I-5,"/    \
+				Output(4,6I-5,"|    |
+				Output(5,6I-5,"|    |
+				Output(6,6I-5,"|    |
+				Output(7,6I-5,"\____/
+			End
+			If L₁(I)=1
+			Then
+				Output(2,6I-3,"|
+				Output(3,6I-3,"|
+				Output(4,6I-3,"|
+				Output(5,6I-3,"|
+				Output(6,6I-3,"|
+				Output(7,6I-3,"|
+			End
+			If L₁(I)=2
+			Then
+				Output(4,5I-4,2
+			End
+			If L₁(I)=3
+			Then
+				Output(4,5I-4,3
+			End
+			If L₁(I)=4
+			Then
+				Output(4,5I-4,4
+			End
+			If L₁(I)=5
+			Then
+				Output(4,5I-4,5
+			End
+			If L₁(I)=6
+			Then
+				Output(4,5I-4,6
+			End
+			If L₁(I)=7
+			Then
+				Output(4,5I-4,7
+			End
+			If L₁(I)=8
+			Then
+				Output(4,5I-4,8
+			End
+			If L₁(I)=9
+			Then
+				Output(4,5I-4,9
+			End
+		End
+		
+	End
+End

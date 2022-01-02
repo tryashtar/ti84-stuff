@@ -1,0 +1,370 @@
+ClrHome
+2→P
+0→K
+1→O
+0→H
+0→V
+0→θ
+Output(1,1,"Players:
+Output(1,10,P
+While K≠105
+	getKey→K
+	If K=25
+		min({P+1,9})→P
+	If K=34
+		max({P-1,2})→P
+	If K=45
+	Then
+		ClrHome
+		Return
+	End
+	If K=25 or K=34
+		Output(1,10,P
+End
+ClrHome
+Output(1,1,"Preparing game…
+Output(3,1,"Shuffling…
+{1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1,11.1,12.1,1.2,2.2,3.2,4.2,5.2,6.2,7.2,8.2,9.2,10.2,11.2,12.2,1.3,2.3,3.3,4.3,5.3,6.3,7.3,8.3,9.3,10.3,11.3,12.3,1.4,2.4,3.4,4.4,5.4,6.4,7.4,8.4,9.4,10.4,11.4,12.4,13,13,14,14}→L₁
+augment(L₁,L₁)→L₁
+DelVar L₃
+dim(L₁)→dim(L₃
+DelVar L₂
+rand(dim(L₁))→L₂
+SortA(L₂,L₁)
+Output(3,1,"Dealing cards…
+DelVar [A]
+{P,20}→dim([A]
+For(I,1,P
+	For(J,1,5
+		L₁(dim(L₁))→[A](I,J)
+		dim(L₁)-1→dim(L₁
+	End
+End
+L₁(dim(L₁))→L₃(1)
+dim(L₁)-1→dim(L₁)
+ClrHome
+Output(1,1,"Ready!
+Pause 
+0→I
+While 1
+	If H=2 and V≠3
+	Then
+		ClrHome
+		Output(1,1,"The last player
+		Output(2,1,"should have said
+		Output(3,1,"UNO! Did they?
+		Output(5,2,"Yes
+		Output(6,2,"No
+		1→S
+		1→θ
+		0→K
+		While K≠105
+			getKey→K
+			While K=0 and θ=0
+				getKey→K
+			End
+			0→θ
+			Output(S+4,1," 
+			If K=25 or K=34
+				S+1→S
+			If S>2
+				1→S
+			Output(S+4,1,"►
+		End
+		If S=1
+			Output(8,1,"Phew! Good!
+		If S=2
+		Then
+			Output(8,1,"Ouch! +2 cards!
+			L₁(dim(L₁))→[A](I,H
+			L₁(dim(L₁)-1)→[A](I,H+1
+			dim(L₁)-2→dim(L₁
+		End
+		Pause 
+		ClrHome
+	End
+	If dim(L₁)≤5
+	Then
+		ClrHome
+		Output(1,1,"Out of cards!
+		Output(2,1,"Reshuffling…
+		0→M
+		L₃(1)→C
+		0→L₃(1
+		For(J,1,dim(L₃
+			L₃(J+1)→L₃(J
+			If L₃(J+1)=0
+				dim(L₃)→J
+		End
+		dim(L₃)-1→dim(L₃
+		For(J,dim(L₃),1,⁻1
+			If L₃(J)≠0 and M=0
+			Then
+				J→M
+				2→J
+			End
+		End
+		seq(L₃(J),J,1,M,1)→L₃
+		augment(L₁,L₃)→L₃
+		rand(dim(L₃))→L₂
+		SortA(L₂,L₃)
+		L₃→L₁
+		DelVar L₃
+		dim(L₁)→dim(L₃
+		C→L₃(1
+		ClrHome
+	End
+	I+O→I
+	If O=1 and I>P
+		1→I
+	If O=⁻1 and I<1
+		P→I
+	ClrHome
+	Output(8,15,"P
+	Output(8,16,I
+	Output(5,1,"Current card:
+	20→H
+	For(J,1,20
+		If [A](I,J)=0 and H=20
+			J-1→H
+	End
+	0→V
+	Lbl 0
+	If V=0
+		0→Z
+	If V=5
+	Then
+		2→V
+		H→Z
+	End
+	For(J,Z,H
+		If J≠0
+			[A](I,J)→C
+		If J=0
+			L₃(1)→C
+		If C≠0
+		Then
+			iPart((J/5)-0.001)+1→Y
+			3(J-5(iPart((J/5)-0.001)))-2→X
+			If J=0
+			Then
+				5→Y
+				15→X
+			End
+			If iPart(C)≤9
+				Output(Y,X+1,iPart(C
+			If iPart(C)=10
+				Output(Y,X+1,"θ
+			If iPart(C)=11
+				Output(Y,X+1,"δ
+			If iPart(C)=12
+				Output(Y,X+1,"₂
+			If C=13
+				Output(Y,X,"@!
+			If C=14
+				Output(Y,X,"@₄
+			If J=0 and (iPart(C)=13 or iPart(C)=14) and fPart(C)≠0
+				Output(Y,X+1,"@
+			If fPart(C)≠0
+			Then
+				If fPart(C)=.1
+					Output(Y,X,"R
+				If fPart(C)=.2
+					Output(Y,X,"G
+				If fPart(C)=.3
+					Output(Y,X,"B
+				If fPart(C)=.4
+					Output(Y,X,"Y
+			End
+		End
+	End
+	If V≠2
+		1→S
+	1→θ
+	While V=0 or V=2
+		0→K
+		While K≠105 and K≠45
+			0→K
+			While K=0 and θ=0
+				getKey→K
+			End
+			If K=24 or K=26 or K=25 or K=34 or θ=1
+			Then
+				iPart((S/5)-0.001)+1→Y
+				3(S-5iPart((S/5)-0.001))→X
+				Output(Y,X," 
+				0→θ
+				If K=24
+					S-1→S
+				If K=26
+					S+1→S
+				If K=25 and S-5≥1
+					S-5→S
+				If K=34 and S+5≤H
+					S+5→S
+				If S<1
+					H→S
+				If S>H
+					1→S
+				iPart((S/5)-0.0001)+1→Y
+				3(S-5(iPart((S/5)-0.001))→X
+				Output(Y,X,"◄
+			End
+		End
+		If K=105 and (iPart([A](I,S))=iPart(L₃(1)) or fPart([A](I,S))=fPart(L₃(1)) or [A](I,S)=13 or [A](I,S)=14 or fPart(L₃(1))=0)
+		Then
+			If V=0
+				1→V
+			If V=2
+				4→V
+		End
+		If K=45
+		Then
+			If V=2
+				3→V
+			If V=0
+			Then
+				5→V
+				H+1→J
+				L₁(dim(L₁))→[A](I,H+1
+				dim(L₁)-1→dim(L₁
+				H+1→H
+			End
+		End
+	End
+	If V=5
+		Goto 0
+	ClrHome
+	If V=3
+	Then
+		Output(1,1,"Card drawn!
+	Else
+		If [A](I,S)=13 or [A](I,S)=14
+		Then
+			ClrHome
+			Output(1,1,"Select new color
+			Output(2,2,"Red
+			Output(3,2,"Green
+			Output(4,2,"Blue
+			Output(5,2,"Yellow
+			1→T
+			0→K
+			1→θ
+			While K≠105
+				0→K
+				While K=0 and θ=0
+					getKey→K
+				End
+				If K=25 or K=34 or θ=1
+				Then
+					0→θ
+					Output(T+1,1," 
+					If K=25
+						T-1→T
+					If K=34
+						T+1→T
+					If T>4
+						1→T
+					If T<1
+						4→T
+					Output(T+1,1,"►
+				End
+			End
+			(T/10)+[A](I,S)→[A](I,S)
+			ClrHome
+		End
+		augment({[A](I,S)},L₃)→L₃
+		dim(L₃)-1→dim(L₃
+		[A](I,S)→C
+		0→[A](I,S)
+		If S≠H
+		Then
+			For(J,S+1,H
+				[A](I,J)→[A](I,J-1)
+			End
+			0→[A](I,H
+		End
+		If V=1
+			Output(1,1,"Card played!
+		If V=4
+			Output(1,1,"Drawn & played!
+		If [A](I,1)=0
+		Then
+			Output(1,1,"Winner! Yay!"
+			Output(2,1,"Player
+			Output(2,8,I
+			Output(2,10,"wins!
+			Pause 
+			ClrHome
+			Return
+		End
+		If iPart(C)=10
+		Then
+			I+O→I
+			dim([A])→L₆
+			If I>L₆(1
+				1→I
+			If I<1
+				L₆(1)→I
+			Output(1,1,"Skip!           
+		End
+		If iPart(C)=11
+		Then
+			⁻O→O
+			Output(1,1,"Reverse!       
+		End
+		If iPart(C)=12
+		Then
+			I+O→I
+			dim([A])→L₆
+			If I>L₆(1
+				1→I
+			If I<1
+				L₆(1)→I
+			20→H
+			For(J,1,20
+				If [A](I,J)=0 and H=20
+				Then
+					J-1→H
+					20→J
+				End
+			End
+			L₁(dim(L₁))→[A](I,H+1
+			L₁(dim(L₁)-1)→[A](I,H+2
+			dim(L₁)-2→dim(L₁
+			Output(1,1,"Draw two!      
+		End
+		If iPart(C)=13
+			Output(1,1,"Wild!           
+		If iPart(C)=14
+		Then
+			I+O→I
+			dim([A])→L₆
+			If I>L₆(1
+				1→I
+			If I<1
+				L₆(1)→I
+			20→H
+			For(J,1,20
+				If [A](I,J)=0 and H=20
+				Then
+					J-1→H
+					20→J
+				End
+			End
+			For(J,1,4
+				L₁(dim(L₁)-J+1)→[A](I,H+J)
+			End
+			dim(L₁)-4→dim(L₁
+			Output(1,1,"Wild +4!        
+		End
+	End
+	Output(2,1,"Pass to player
+	I+O→Z
+	If Z>P
+		1→Z
+	If Z<1
+		P→Z
+	Output(2,16,Z
+	Pause 
+End

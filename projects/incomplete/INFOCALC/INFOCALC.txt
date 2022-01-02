@@ -1,0 +1,123 @@
+Lbl 1
+ClrHome
+Disp "Fun‗ction:","* = type list","Y = fetch Y₁","
+Input "",Str1
+If Str1="Y
+	Equ►String(Y₁,Str1
+If Str1="*
+Then
+	ClrHome
+	DelVar L₁
+	DelVar L₂
+	Disp "How many values?
+	Input "",X
+	ClrHome
+	Disp "X values:
+	For(I,1,X
+		Input "",A
+		A→L₁(I
+	End
+	ClrHome
+	Disp "Y values:
+	For(I,1,X
+		Input "",A
+		A→L₂(I
+	End
+End
+1→θ
+1→A
+While 1
+	0→K
+	While K≠105 and K≠45
+		0→K
+		While K=0 and θ=0
+			getKey→K
+		End
+		If θ=1
+		Then
+			ClrHome
+			Output(1,1,"Calculus
+			Output(2,2,"Fun‗ction info
+			Output(3,2,"Point info
+			Output(4,2,"Range info
+			Output(5,2,"New function
+			If Str1≠"*
+				Output(7,1,Str1
+		End
+		If K=25 or K=34 or θ=1
+		Then
+			0→θ
+			Output(A+1,1," 
+			A+(K=34)-(K=25)→A
+			If A>4
+				1→A
+			If A<1
+				4→A
+			Output(A+1,1,"►
+		End
+	End
+	ClrHome
+	If K=45
+	Then
+		DelVar Str1
+		DelVar L₁
+		DelVar L₂
+		Return
+	End
+	1→θ
+	If A=2
+	Then
+		Disp "Point:
+		Input "",V
+		ClrHome
+		V-.0000000000001→X
+		Output(1,1,"Lim-:
+		expr(Str1)→Y
+		If Y≥100000000
+		Then
+			Output(1,7,"Infinity
+		Else
+			If Y≤⁻100000000
+			Then
+				Output(1,7,"⁻Infinity
+			Else
+				Output(1,7,round(Y,8
+			End
+		End
+		V+.0000000000001→X
+		Output(2,1,"Lim+:
+		expr(Str1→Y
+		If Y≥100000000
+		Then
+			Output(2,7,"Infinity
+		Else
+			If Y≤⁻100000000
+			Then
+				Output(2,7,"⁻Infinity
+			Else
+				Output(2,7,round(Y,8
+			End
+		End
+		ALSO PRINT TAN/NORMAL LINES
+		CONCAVITY (U/D/NEITHER)
+	End
+	If A=3
+	Then
+		Disp "Lower bound:
+		Input "",L
+		Disp "","Upper bound:
+		Input "",R
+		ClrHome
+		PRINT:
+		INTEGRAL (AND  ALL APPROXES)
+		AROC
+		CONCAVITY (UP, DOWN, NONE, OR  MIX)
+		MAXES, MINS,   AND INFLECTION  POINTS
+		AVG VAL OF FUNCACROSS INTERVAL
+		TOTAL AREA (ABSVALUE INTEGRAL)
+		USE P1 TAN LINETO APPX P2
+	End
+	If A=4
+		Goto 1
+	Pause 
+End

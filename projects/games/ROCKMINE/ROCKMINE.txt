@@ -1,0 +1,107 @@
+ClrHome
+{0,0,0,0,0,0,0,0,0,0}→ʟRMM
+1→θ
+1→W
+1→S
+While 1
+	If θ=1
+	Then
+		ClrHome
+		Output(1,1,"ROCK MINE!
+		Output(2,2,"Materials
+		Output(3,2,"Upgrades
+		Output(4,2,"Mines
+	End
+	0→K
+	While K≠105
+		0→K
+		While K=0 and W=0
+			getKey→K
+		End
+		If K=25 or K=34 or W=1
+		Then
+			0→W
+			Output(S+1,1," 
+			If K=25
+				S-1→S
+			If K=34
+				S+1→S
+			If S>3
+				1→S
+			If S<1
+				3→S
+			Output(S+1,1,"►
+		End
+	End
+	ClrHome
+	DelVar L₁
+	128→dim(L₁
+	1→θ
+	1→L₁(1
+	For(I,2,dim(L₁
+		If randInt(1,2)=1
+			2→L₁(I
+		If randInt(1,500)=1
+			3→L₁(I
+		If randInt(1,100)=1
+			4→L₁(I
+		If randInt(1,10)=1
+			5→L₁(I
+		If L₁(I)≠0
+		Then
+			iPart((I/16)-0.001)+1→Y
+			I-(16(iPart((I/16)-0.001)))→X
+			If L₁(I)=2
+				Output(Y,X,"O
+			If L₁(I)=3
+				Output(Y,X,"Δ
+			If L₁(I)=4
+				Output(Y,X,"Φ
+			If L₁(I)=5
+				Output(Y,X,"o
+		End
+	End
+	Output(1,1,"&
+	1→X
+	1→Y
+	{0,0,0}→L₂
+	While not(XY=128)
+		X+1→A
+		Y→B
+		If A=17
+		Then
+			1→A
+			Y+1→B
+		End
+		If B≠9
+		Then
+			If L₂(1)≤0
+			Then
+				If L₁(16B+A-16)=2
+					{4,1,1}→L₂
+				If L₁(16B+A-16)=3
+					{50,1,2}→L₂
+				If L₁(16B+A-16)=4
+					{100,1,3}→L₂
+				If L₁(16B+A-16)=5
+					{2,randInt(0,1),1}→L₂
+			End
+			L₂(1)-1→L₂(1
+			If L₂(1)≤0 and L₁(16B+A-16)≠0
+			Then
+				0→L₁(16B+A-16)
+				ʟRMM(L₂(3))+L₂(2)→ʟRMM(L₂(3))
+			End
+		End
+		If L₁(16B+A-16)=0
+		Then
+			Output(B,A,"&
+			Output(Y,X," 
+			A→X
+			B→Y
+		End
+	End
+	
+	
+	
+End

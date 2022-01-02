@@ -1,0 +1,25 @@
+ClrHome
+Disp "Input‗ number of
+Disp "outcomes:
+Input "",O
+DelVar L₁
+O→dim(L₁
+L₁→L₂
+For(I,1,O
+	ClrHome
+	Disp "Outcome value:
+	Input "",X
+	X→L₁(I
+	Disp "","Probability:
+	Input "",X
+	X→L₂(I
+End
+ClrHome
+Output(1,1,"Mean μ =
+Output(3,1,"Std Dev σ =
+sum(L₁L₂)→M
+Output(1,10,M
+√(sum((L₁-M)²L₂))→S
+Output(3,13,S
+Pause 
+ClrHome

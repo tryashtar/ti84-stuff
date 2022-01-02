@@ -1,0 +1,90 @@
+ClrHome
+Output(4,3,"Generating…
+"mathprintbox‗₁₂₃₄₅₆₇₈₉mathprintbox123456789"→Str1
+{9,9}→dim([B]
+Fill(0,[B]
+ClrHome
+For(I,1,8
+	For(J,1,9
+		Output(I,J,sub(Str1,iPart([B](I,J))+1,1
+	End
+End
+1→Y
+1→X
+1→θ
+0→K
+While 1
+	0→K
+	While not(K≥72 and K≤94 and fPart(K/10)≥.2 and fPart(K/10)≤.4) and K≠45 and K≠105
+		0→K
+		While K=0 and θ=0
+			getKey→K
+		End
+		If K=24 or K=25 or K=26 or K=34 or θ=1
+		Then
+			0→θ
+			Output(8,11," 
+			Output(min(8,Y),X,sub(Str1,iPart([B](min(Y,8),X))+1,1
+			If K=24
+				X-1→X
+			If K=25
+				Y-1→Y
+			If K=26
+				X+1→X
+			If K=34
+				Y+1→Y
+			If X>9
+				1→X
+			If X<1
+				9→X
+			If Y>9
+				1→Y
+			If Y<1
+				9→Y
+			If Y<9
+				Output(Y,X,"_
+			If Y=9
+			Then
+				Output(8,X,"↓
+				Output(8,11,sub(Str1,11+iPart([B](Y,X)),1
+			End
+		End
+	End
+	If K=105
+	Then
+		Output(4,11,"Check…
+		Output(8,11," 
+		Output(min(Y,8),X,sub(Str1,iPart([B](min(Y,8),X))+1,1
+		1→θ
+		1→W
+		For(I,1,9
+			For(J,1,9
+				If iPart([B](I,J))≠10fPart([B](I,J))
+					0→W
+			End
+		End
+		If W=0
+		Then
+			Output(4,11,"Failed
+			Pause 
+			Output(4,11,"      
+		Else
+			Output(4,11,"Winner
+			DelVar [B]
+			DelVar Str1
+			Pause 
+			ClrHome
+			Return
+		End
+	Else
+		If K=45
+			0→K
+		If K>0
+			26-3iPart(K/10)+10fPart(K/10)→K
+		K+fPart([B](Y,X))→[B](Y,X
+		If Y<9
+			Output(Y,X,sub(Str1,K+1,1
+		If Y=9
+			Output(8,11,sub(Str1,iPart([B](Y,X))+11,1
+	End
+End

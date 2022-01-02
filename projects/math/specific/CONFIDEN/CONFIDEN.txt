@@ -1,0 +1,196 @@
+Repeat A=1 or A=2
+	ClrHome
+	Disp "We're estimating","1- mean value","2- proportion","
+	Input "",A
+End
+ClrHome
+If A=1
+Then
+	Repeat B=1 or B=2 or B=3
+		ClrHome
+		Disp "Solving for","1- pop mean μ","2- sample size [recursiven]","3- significance","
+		Input "",B
+	End
+	ClrHome
+	If B=1
+	Then
+		Repeat C=1 or C=2
+			ClrHome
+			Disp "Our std dev is","1- population σ","2- sample σ","
+			Input "",C
+		End
+		ClrHome
+		Disp "Sample size [recursiven]:
+		Input "",N
+		Disp "","Standard dev σ:
+		Input "",S
+		Disp "","Confidence:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "Cool Toolbox:","","Verify that the","pop size ≥","and SRS was used","to get normal.
+		If N<30
+		Then
+			Disp "[!] N=   (<30)
+			Output(7,7,N
+		End
+		Output(4,12,10N
+		Pause 
+		ClrHome
+		Disp "Standard Error:","","Margin of Error:","…","","  % confidence","ẋ-MOE ≤μ≥ ẋ+MOE
+		Output(2,1,S/√(N
+		If C=1
+			Output(4,1,⁻invNorm((1-F)/2,0,1)S/√(N
+		If C=2
+			Output(4,1,⁻invT((1-F)/2,N-1)S/√(N
+		Output(6,1,round(100F,0
+		Pause 
+		ClrHome
+	End
+	If B=2
+	Then
+		Disp "Margin of Error:
+		Input "",M
+		Disp "","Standard dev σ:
+		Input "",S
+		Disp "","Confidence:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "Needed sample:","…
+		Output(2,1,(⁻invNorm((1-F)/2,0,1)S/M)²
+		Pause 
+		ClrHome
+	End
+	If B=3
+	Then
+		Repeat C=1 or C=2 or C=3
+			ClrHome
+			Disp "Prove samp pop μ
+			Disp "1- greater than","2- less than","3- not equal to","
+			Input "",C
+		End
+		ClrHome
+		Disp "Pop mean μ:
+		Input "",M
+		Disp "","Pop std dev σ:
+		Input "",S
+		Disp "","Sample size [recursiven]:
+		Input "",N
+		Disp "","Sample mean ẋ:
+		Input "",X
+		ClrHome
+		Disp "Uncool Toolbox:","Define μ","H₀: μ=","Ha: μ","Ensure SRS","Norma‗l? (N>30)","Indpt? (pop>10N)
+		If C=1
+			Output(4,6,">
+		If C=2
+			Output(4,6,"<
+		If C=3
+			Output(4,6,"≠
+		Output(3,7,M
+		Output(4,7,M
+		Pause 
+		ClrHome
+		Disp "Math:","((ẋ-μ)√(N))/σ","Z:
+		((X-M)√(N))/S→Z
+		Output(3,4,Z
+		Disp "P:
+		If C=1
+			Output(4,4,1-normalcdf(⁻1ᴇ99,Z,0,1
+		If C=2
+			Output(4,4,normalcdf(⁻1ᴇ99,Z,0,1
+		If C=3
+			Output(4,4,2(1-normalcdf(⁻1ᴇ99,Z,0,1
+		Disp "If‗ p<α, we can","reject H₀ and","accept Ha
+		Pause 
+		ClrHome
+	End
+End
+If A=2
+Then
+	Repeat B=1 or B=2 or B=3
+		ClrHome
+		Disp "Solving for","1- pop portion p","2- sample size [recursiven]","3- significance","
+		Input "",B
+	End
+	ClrHome
+	If B=1
+	Then
+		Disp "Sample size [recursiven]:
+		Input "",N
+		Disp "","Samp portion ṗ:
+		Input "",P
+		While P>1
+			ClrHome
+			Disp "Please type the","proportion as a","percent between","0 and‗ 1:
+			Input "",P
+		End
+		Disp "","Confidence:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "Cool Toolbox:","","Verify that the","pop size ≥","and used SRS.
+		Output(4,12,10N
+		If NP<10
+		Then
+			Disp "[!] Nṗ=    <10
+			Output(6,8,round(NP,1
+		End
+		If N(1-P)<10
+		Then
+			Disp "[!] N-Nṗ=    <10
+			Output(6+(NP<10),10,N-NP
+		End
+		Pause 
+		ClrHome
+		Disp "Standard Error:","","Margin of Error:","…","  % confidence p","is between","      and
+		Output(2,1,√((P-P²)/N)
+		⁻invNorm((1-F)/2,0,1)√((P-P²)/N)→M
+		Output(4,1,M
+		Output(5,1,round(100F,0
+		Output(7,1,max(0,round(P-M,4
+		Output(7,11,min(1,round(P+M,4
+		Pause 
+		ClrHome
+	End
+	If B=2
+	Then
+		Disp "Margin of Error:
+		Input "",M
+		Disp "","Estm portion pˣ:
+		Input "",P
+		While P>1
+			ClrHome
+			Disp "Please type the","estimate as a","percent between","0 and‗ 1:
+			Input "",P
+		End
+		Disp "","Confidence:
+		Input "",F
+		While F>1
+			ClrHome
+			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Input "",F
+		End
+		ClrHome
+		Disp "Needed sample:","…
+		Output(2,1,((P-P²)(⁻invNorm((1-F)/2,0,1)))/(M²
+		Pause 
+		ClrHome
+	End
+	If B=3
+	Then
+		Pause 
+	End
+End

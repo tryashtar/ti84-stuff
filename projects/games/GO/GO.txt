@@ -1,0 +1,201 @@
+ClrHome
+2→T
+1→M
+{10,18}→dim([E]
+If [E](1,1)=sin([e][e][e]
+Then
+	Output(1,1,"Found a saved
+	Output(2,1,"game! Do what?
+	Output(4,2,"Resume
+	Output(5,2,"Restart
+	Output(6,2,"Discard
+	Output(7,2,"Quit
+	1→T
+	Output(4,1,"►
+	getKey
+	0→K
+	While K≠105 and K≠45
+		0→K
+		While K=0
+			getKey→K
+		End
+		If K=25 or K=34
+		Then
+			Output(T+3,1," 
+			If K=25
+				T-1→T
+			If K=34
+				T+1→T
+			If T>4
+				1→T
+			If T<1
+				4→T
+			Output(T+3,1,"►
+		End
+	End
+	If K=45 or T=3 or T=4
+	Then
+		If K=105 and T=3
+			DelVar [E]
+		ClrHome
+		Return
+	End
+End
+ClrHome
+Output(4,1,"Building Board…
+"mathprintbox@O→Str1
+{⁻1,1,0,0}→L₃
+If T=2
+Then
+	Fill(0,[E]
+	0→M
+	For(I,1,18
+		3→[E](1,I
+		3→[E](10,I
+	End
+	For(I,2,9
+		3→[E](I,1
+		3→[E](I,18
+	End
+	4→[E](1,2
+	4→[E](1,3
+	4→[E](1,4
+	For(I,1,8
+		Output(I,1,"mathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintbox
+	End
+End
+If T=1
+Then
+	For(I,1,8
+		For(J,1,16
+			Output(I,J,sub(Str1,[E](I+1,J+1)+1,1
+		End
+	End
+End
+[E](1,2)-3→T
+[E](1,3)-3→Y
+[E](1,4)-3→X
+Output(Y,X,"×
+While 1
+	getKey
+	0→K
+	While K=0
+		getKey→K
+	End
+	If K=45
+	Then
+		Output(Y,X,"?
+		0→K
+		While K≠45 and K≠105
+			getKey→K
+		End
+		If K=105
+		Then
+			sin([e][e][e])→[E](1,1
+			3+T→[E](1,2
+			3+Y→[E](1,3
+			3+X→[E](1,4
+			If M=0
+				DelVar [E]
+			ClrHome
+			Return
+		End
+		Output(Y,X,"×
+	End
+	If K=24 or K=25 or K=26 or K=34
+	Then
+		Output(Y,X,sub(Str1,[E](Y+1,X+1)+1,1
+		If K=24
+			X-1→X
+		If K=26
+			X+1→X
+		If K=25
+			Y-1→Y
+		If K=34
+			Y+1→Y
+		remainder(X+15,16)+1→X
+		remainder(Y+7,8)+1→Y
+		Output(Y,X,"×
+	End
+	If K=105 and [E](Y+1,X+1)=0
+	Then
+		Output(Y,X,"_
+		T→[E](Y+1,X+1
+		T→U
+		T+1→T
+		If T≥3
+			1→T
+		0→W
+		For(I,1,4
+			0→dim(L₁
+			0→dim(L₂
+			If [E](Y+1+L₃(I),X+1+L₃(5-I))=T
+			Then
+				Y+1+L₃(I)→L₁(dim(L₁)+1
+				X+1+L₃(5-I)→L₂(dim(L₂)+1
+			End
+			1→J
+			0→S
+			While J≤dim(L₁
+				T+.5→[E](L₁(J),L₂(J
+				For(L,1,4
+					If [E](L₁(J)+L₃(L),L₂(J)+L₃(5-L))=T
+					Then
+						L₁(J)+L₃(L)→L₁(dim(L₁)+1
+						L₂(J)+L₃(5-L)→L₂(dim(L₂)+1
+					End
+					If [E](L₁(J)+L₃(L),L₂(J)+L₃(5-L))=0
+					Then
+						5→L
+						dim(L₁)+1→J
+						1→S
+					End
+				End
+				J+1→J
+			End
+			If S=0 and dim(L₁)>0
+			Then
+				1→W
+				For(J,1,dim(L₁
+					Output(L₁(J)-1,L₂(J)-1,"mathprintbox
+					0→[E](L₁(J),L₂(J
+				End
+			End
+		End
+		If W=0
+		Then
+			{Y+1}→L₁
+			{X+1}→L₂
+			1→I
+			While I≤dim(L₁
+				U+.5→[E](L₁(I),L₂(I
+				For(J,1,4
+					If [E](L₁(I)+L₃(J),L₂(I)+L₃(5-J))=U
+					Then
+						L₁(I)+L₃(J)→L₁(dim(L₁)+1
+						L₂(I)+L₃(5-J)→L₂(dim(L₂)+1
+					End
+					If [E](L₁(I)+L₃(J),L₂(I)+L₃(5-J))=0
+					Then
+						5→J
+						dim(L₁)+1→I
+						1→W
+					End
+				End
+				I+1→I
+			End
+		End
+		iPart([E])→[E]
+		sin([e][e][e])→[E](1,1
+		If W=1
+		Then
+			1→M
+			Output(Y,X,sub(Str1,U+1,1
+		Else
+			U→T
+			0→[E](Y+1,X+1
+			Output(Y,X,"×
+		End
+	End
+End
+End

@@ -1,0 +1,216 @@
+ClrHome
+Output(3,5,"Players
+2→P
+Output(4,8,P
+0→K
+While K≠105
+	0→K
+	While K=0
+		getKey→K
+	End
+	Output(4,9," 
+	If K=25 or K=26
+		P+1→P
+	If K=34 or K=24
+		P-1→P
+	If P>50
+		50→P
+	If P<2
+		2→P
+	Output(4,8,P
+	If K=45
+	Then
+		ClrHome
+		Return
+	End
+End
+"Ones:Twos:Threes:Fours:Fives:Sixes:Ful‗lHouse:3ofKind:4ofKind:SmStraight:LgStraight:Yahtzee:Chance:→Str1
+"₁₂₃₄₅₆₇₈₉₁₀→Str2
+{1,5,5,7,6,6,6,10,8,8,11,11,8,7}→L₆
+cumSum(L₆)→L₆
+{P,13}→dim([A]
+Fill(⁻1,[A]
+ClrHome
+For(V,1,13
+	1→R
+	For(T,1,P
+		DelVar L₄
+		13→dim(L₄
+		5→dim(L₂
+		If R=1
+		Then
+			1→A
+			1→B
+			1→C
+			Fill(0,L₂
+			ClrHome
+			Output(1,16,sub(Str2,T,1
+		End
+		5→dim(L₁
+		For(I,1,5
+			If L₂(I)=0
+				randInt(1,6)→L₁(I
+			Output(1,3I-1,L₁(I
+		End
+		L₁→L₃
+		SortD(L₃
+		If L₃(1)=L₃(2) and L₃(3)=L₃(4) and L₃(4)=L₃(5
+			25→L₄(7
+		SortA(L₃
+		If L₃(1)=L₃(2) and L₃(3)=L₃(4) and L₃(4)=L₃(5
+			25→L₄(7
+		For(I,1,6
+			Isum(L₃=I)→L₄(I
+		End
+		sum(DeltaList(L₃)=1)→X
+		If X≥3
+			30→L₄(10
+		If X≥4
+			40→L₄(11
+		sum(L₃=L₃(3))→X
+		sum(L₃)→Y
+		If X≥3
+			Y→L₄(8
+		If X≥4
+			Y→L₄(9
+		If L₃(1)=L₃(5
+			50→L₄(12
+		Y→L₄(13
+		0→K
+		1→θ
+		While not((K=105 and [A](T,A+B-1)=⁻1) or (K=45 and R<3 and prod(L₂)=0
+			0→K
+			While K=0 and θ=0
+				getKey→K
+			End
+			If K=103
+			Then
+				not(L₂(C))→L₂(C
+				If L₂(C)=1
+				Then
+					Output(1,3C,"}
+					Output(1,3C-2,"{
+				Else
+					Output(1,3C," 
+					Output(1,3C-2,"*
+				End
+			End
+			If K=24 or K=26 or θ=1
+			Then
+				If L₂(C)=1
+				Then
+					Output(1,3C-2,"[
+					Output(1,3C,"]
+				Else
+					Output(1,3C-2," 
+				End
+				If K=24
+					C-1→C
+				If K=26
+					C+1→C
+				If C>5
+					1→C
+				If C<1
+					5→C
+				If L₂(C)=1
+				Then
+					Output(1,3C-2,"{
+					Output(1,3C,"}
+				Else
+					Output(1,3C-2,"*
+				End
+			End
+			If K=25 or K=34 or θ=1
+			Then
+				Output(A+1,1," 
+				If K=25
+					A-1→A
+				If K=34
+					A+1→A
+				If A>7
+				Then
+					1→A
+					1→θ
+					If B=7
+					Then
+						1→B
+					Else
+						7→B
+					End
+				End
+				If A<1
+				Then
+					7→A
+					1→θ
+					If B=1
+					Then
+						7→B
+					Else
+						1→B
+					End
+				End
+				Output(A+1,1,"►
+			End
+			If θ=1
+			Then
+				0→θ
+				For(I,B,B+6
+					Output(I+2-B,2,"               
+					Output(I+2-B,2,sub(Str1,L₆(I),L₆(I+1)-L₆(I
+					If [A](T,I)=⁻1
+					Then
+						If L₄(I)≥10
+						Then
+							Output(I+2-B,13,"(  )
+						Else
+							Output(I+2-B,14,"( )
+						End
+						Output(I+2-B,14+(L₄(I)<10),L₄(I
+					Else
+						Output(I+2-B,15,[A](T,I
+					End
+				End
+			End
+		End
+		If K=45
+		Then
+			R+1→R
+			T-1→T
+		End
+		If K=105
+		Then
+			1→R
+			L₄(B+A-1)→[A](T,B+A-1
+		End
+	End
+End
+ClrHome
+Output(1,3,"Score Card:
+1→D
+For(I,1,P
+	D+1→D
+	If D>7 and P>7
+	Then
+		2→D
+		Output(8,1,"ENTER = more…
+		Pause 
+		For(J,2,8
+			Output(J,1,"                
+		End
+	End
+	Matr►list([A]ᵀ,I,L₁
+	Output(D,1,"Player  :
+	Output(D,8,I
+	Output(D,11,sum(L₁
+End
+Pause 
+ClrHome
+Output(3,4,"Thanks for
+Output(4,5,"playing!
+DelVar [A]
+DelVar L₁
+DelVar L₂
+DelVar L₃
+DelVar L₄
+DelVar Str1
+DelVar Str2

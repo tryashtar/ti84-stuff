@@ -1,0 +1,64 @@
+ClrHome
+DelVar [A]
+{8,17}→dim([A]
+0→X
+0→Y
+5→T
+While 1
+	getKey→K
+	If K=26 or K=105
+		0→T
+	If (K=25 or K=34) and X>0
+	Then
+		Y→Z
+		Output(Y,X," 
+		If K=25
+			max(1,Y-1)→Y
+		If K=34
+			min(8,Y+1)→Y
+		If [A](Y,X)=1
+			Z→Y
+		Output(Y,X,"invertedequal
+		If T>0
+			1→T
+	End
+	If X=0
+	Then
+		Repeat [A](Y,1)=0
+			randInt(1,8)→Y
+		End
+		0→X
+	End
+	T-1→T
+	If T≤0
+	Then
+		0→R
+		If T=0
+			5→T
+		If X=16 or [A](Y,X+1)=1
+		Then
+			1→R
+			1→[A](Y,X
+			15→T
+			Matr►list([A],X,L₁
+			If min(L₁
+			Then
+				For(I,1,8
+					0→[A](I,X
+					Output(I,X," 
+				End
+				2→R
+			End
+		End
+		If R=0
+		Then
+			If X≥1
+				Output(Y,X," 
+			If X<16
+				X+1→X
+			Output(Y,X,"invertedequal
+		Else
+			0→X
+		End
+	End
+End

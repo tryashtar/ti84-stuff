@@ -1,0 +1,265 @@
+0+0[i]→W
+If 0
+	TO ADD DISPLAYOF SQRT AND π
+ClrHome
+Output(2,2,"Trigonomicron
+Output(3,2,"|~|~|~|~|~|~|~|~|~|~|~|~|~
+randInt(1,28)→X
+If X=2
+	Output(5,1,"Negatives okay!
+If X=3
+	Output(5,2,"Input‗ non-90°!
+If X=4
+	Output(5,3,"Trig sucks!
+If X=5
+	Output(5,5,"Triggy!
+If X=6
+	Output(5,4,"Cos'ecant!
+If X=7
+	Output(5,3,"Totally RAD!
+If X=8
+	Output(5,3,"Totally DEG!
+If X=9
+	Output(5,6,"2π4u!
+If X=10
+	Output(5,1,"98% crash-free!
+If X=11
+	Output(5,4,"Get HYPed!
+If X=12
+	Output(5,2,"It's a sine!
+If X=13
+	Output(5,4,"Intuitive!
+If X=14
+	Output(5,2,"On a tangent!
+If X=15
+	Output(5,2,"sin(B)⁄tan(B)
+If X=16
+	Output(5,3,"tan(gerine)!
+If X=17
+	Output(5,3,"Wave hello!
+If X=18
+	Output(5,1,"Also try ATTACK!
+If X=19
+	Output(5,4,"Fast, fun!
+If X=20
+	Output(5,1,"Simple, smooth!
+If X=22
+	Output(5,4,"μαθ[recursiven]ματ[i]kα
+If X=23
+	Output(5,2,"d⁄dx [e]^|F = |F[e]
+If X=24
+	Output(5,3,"NP is in P!
+If X=25
+	Output(5,3,"Press ENTER!
+If X=26
+	Output(5,3,"SOH CAH TOA!
+If X=27
+	Output(5,2,"τρlγwvoμΣτρ[i]α
+If X=28
+	Output(5,1,"Decimal approx.!
+Pause 
+ClrHome
+Output(1,1,"What is known?
+Output(8,1,"Press 1 and‗ 2!
+Output(2,2,"Opp leg
+Output(3,2,"Adj leg
+Output(4,2,"Hypotenuse
+Output(5,2,"Angle
+1→S
+0→A
+0→B
+0→K
+1→θ
+While not(K=105 and S=5)
+	0→K
+	While K=0 and θ=0
+		getKey→K
+	End
+	0→θ
+	If S≠5
+		Output(S+1,1," 
+	If S=5
+		Output(S+2,1," 
+	If K=25
+		S-1→S
+	If K=34
+		S+1→S
+	If (S>4 and AB=0 or S>5 and AB≠0)
+		1→S
+	If S<1 and AB=0
+		4→S
+	If S<1 and AB=0
+		5→S
+	If S<1 and AB≠0
+		5→S
+	If A≠0
+		Output(A+1,1,"₁
+	If B≠0
+		Output(B+1,1,"₂
+	If S≠5
+		Output(S+1,1,"►
+	If S=5
+		Output(S+2,1,"►
+	If K=92 and S≠5 and B≠S
+	Then
+		Output(8,1,"                
+		If A≠0
+			Output(A+1,1," 
+		S→A
+		1→θ
+	End
+	If K=93 and S≠5 and A≠S
+	Then
+		Output(8,1,"                
+		If B≠0
+			Output(B+1,1," 
+		S→B
+		1→θ
+	End
+	If AB≠0
+		Output(7,2,"Done!
+End
+ClrHome
+{0,0}→L₆
+{W,W}→L₅
+{W,W,W}→L₁
+{90°+W,W,W}→L₂
+A→L₆(1
+B→L₆(2
+For(I,1,2
+	Disp "Input:
+	If L₆(I)=1
+		Disp "Opp leg
+	If L₆(I)=2
+		Disp "Adj leg
+	If L₆(I)=3
+		Disp "Hypotenuse
+	If L₆(I)=4
+		Disp "Angle
+	Input "",X
+	If L₆(I)≤3
+	Then
+		X+W→L₁(L₆(I))
+		abs(X)→X
+	End
+	If L₆(I)=4
+	Then
+		1→θ
+		1→S
+		0→K
+		Output(5,2,"Degre‗es
+		Output(6,2,"Radia‗ns
+		While K≠105
+			0→K
+			While K=0 and θ=0
+				getKey→K
+			End
+			0→θ
+			Output(S+4,1," 
+			If K=25 or K=34
+				S+1→S
+			If S>2
+				1→S
+			If S<1
+				2→S
+			Output(S+4,1,"►
+		End
+		If S=1
+			X°+W→L₂(2
+		If S=2
+			Xʳ+W→L₂(2
+	End
+	ClrHome
+End
+Output(1,1,"Calculizing…
+1→Z
+While (prod(augment(L₁,L₂))=W) and Z<5
+	Z+1→Z
+	If L₂(2)≠W and L₂(3)=W
+	Then
+		90°-L₂(2)→L₂(3)
+		real(L₂(3))°+0[i]→L₂(3
+	End
+	If L₁(1)≠W and L₁(2)≠W and L₁(3)=W
+		√(L₁(1)²+L₁(2)²)→L₁(3)
+	If L₁(2)≠W and L₁(3)≠W and L₁(1)=W
+		√(L₁(3)²-L₁(2)²)→L₁(1)
+	If L₁(1)≠W and L₁(3)≠W and L₁(2)=W
+		√(L₁(3)²-L₁(1)²)→L₁(2)
+	If L₂(2)≠W and L₁(1)≠W and L₁(3)=W and imag(L₂(2))=0
+		(1/(sin(real(L₂(2))))*(L₁(1))→L₁(3
+	If L₂(2)≠W and L₁(2)≠W and L₁(3)=W and imag(L₂(2))=0
+		(1/(cos(real(L₂(2))))*(L₁(2))→L₁(3
+	If L₂(2)≠W and L₁(3)≠W and L₁(1)=W and imag(L₂(2))=0
+		(sin(real(L₂(2))))*(L₁(3))→L₁(1
+	If L₁(1)≠W and L₁(2)≠W and L₂(2)=W
+	Then
+		If imag(L₁(1)/L₁(2))=0
+			tan⁻¹(real(L₁(1)/L₁(2)))→L₂(2)
+	End
+End
+ClrHome
+If Z≥5
+Then
+	Disp "Tim‗ed out!","Your triangle","was probably","not a real right","triangle.","","Sorry!
+	Pause 
+	ClrHome
+	Stop
+Else
+	Output(1,1,"Opp:
+	Output(2,1,"Adj:
+	Output(3,1,"Hyp:
+	Output(5,1,"Rangle:
+	Output(6,1,"Mangle:
+	Output(7,1,"Langle:
+	If sin(180)=0
+	Then
+		Output(8,1,"Degre‗es ^
+	Else
+		Output(8,1,"Radia‗ns ^
+	End
+	For(I,1,3
+		Output(I,5,iPart(L₁(I)*1000)/1000
+	End
+	For(I,1,3
+		Output(I+4,8,iPart(L₂(I)*1000)/1000
+	End
+End
+Pause 
+ClrHome
+Output(1,1,"sin=
+Output(2,1,"cos=
+Output(3,1,"tan=
+Output(4,1,"csc=
+Output(5,1,"sec=
+Output(6,1,"cot=
+For(I,1,6
+	Output(I,10,"⁄
+End
+Output(1,6,round(L₁(1),2
+Output(2,6,round(L₁(2),2
+Output(3,6,round(L₁(1),2
+Output(4,6,round(L₁(3),2
+Output(5,6,round(L₁(3),2
+Output(6,6,round(L₁(2),2
+Output(1,11,round(L₁(3),2
+Output(2,11,round(L₁(3),2
+Output(3,11,round(L₁(2),2
+Output(4,11,round(L₁(1),2
+Output(5,11,round(L₁(2),2
+Output(6,11,round(L₁(1),2
+Pause 
+ClrHome
+ClrDraw
+0→Xmin
+94→Xmax
+0→Ymin
+62→Ymax
+46cos(real(L₂(2)))→A
+46sin(real(L₂(2)))→B
+Line(10,10,A+10,10
+Line(A+10,10,A+10,B+10
+Line(A+10,B+10,10,10
+Pause 
+ClrDraw
+ClrHome

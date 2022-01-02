@@ -1,0 +1,346 @@
+ClrHome
+ClrDraw
+DelVar Y₁
+DelVar Y₁
+DelVar Y₂
+DelVar Y₃
+DelVar Y₄
+DelVar Y₅
+DelVar Y₆
+DelVar Y₇
+DelVar Y₈
+DelVar Y₉
+DelVar Y₀
+Xmin→O
+Xmax→P
+Ymin→Q
+Ymax→R
+0→Xmin
+10→Xmax
+0→Ymin
+10→Ymax
+DispGraph
+0→Z
+If sin(90)=1
+	1→Z
+pxl-Test(0,0)→W
+Degree
+AxesOff
+Line(2,2,8,2)
+Line(8,2,5,8)
+Line(5,8,2,2)
+Text(⁻1,41,29,"A
+Text(⁻1,41,60,"B
+Text(⁻1,20,45,"C
+Text(⁻1,26,68,"a
+Text(⁻1,26,22,"b
+Text(⁻1,52,45,"c
+{0,0,0,0,0,0}→L₁
+{0,0,0,0,0,0}→L₂
+1→T
+Text(⁻1,3,3,"A:
+0→K
+1→V
+While not(K=105 and V=0)
+	0→K
+	While K=0
+		getKey→K
+	End
+	If K=45
+		Goto 1
+	If K=105
+	Then
+		0→V
+		If L₁(4)+L₁(5)+L₁(6)=0
+		Then
+			1→V
+			Text(55,1,"Enter a side     
+		End
+		If (L₁(1)+L₁(2)+L₁(3)>180 or (L₁(1)L₁(2)L₁(3)>0 and L₁(1)+L₁(2)+L₁(3)<180))
+		Then
+			1→V
+			Text(55,1,"False angles
+		End
+		If sum(L₂)<3
+		Then
+			1→V
+			Text(55,1,"You need 3        
+		End
+	End
+	If K=24 or K=26
+	Then
+		If K=24
+			T-1→T
+		If K=26
+			T+1→T
+		If T>6
+			1→T
+		If T<1
+			6→T
+		If T=1
+			Text(⁻1,3,3,"A:
+		If T=2
+			Text(⁻1,3,3,"B:
+		If T=3
+			Text(⁻1,3,3,"C:
+		If T=4
+			Text(⁻1,3,3,"a:
+		If T=5
+			Text(⁻1,3,3,"b:
+		If T=6
+			Text(⁻1,3,3,"c:
+		Text(⁻1,3,20,"          
+		If L₁(T)>0
+			Text(⁻1,3,20,L₁(T
+	End
+	If K=23
+	Then
+		iPart(L₁(T)/10)→L₁(T
+		Text(⁻1,3,20,"         
+		If L₁(T)=0
+			0→L₂(T
+		If L₁(T)>0
+			Text(⁻1,3,20,L₁(T
+	End
+	If L₁(T)≤999999 and (K=102 or (K≥72 and K≤94 and fPart(K/10)≥.2 and fPart(K/10)≤.4))
+	Then
+		If K=102
+		Then
+			0→X
+		Else
+			26-3iPart(K/10)+10fPart(K/10)→X
+		End
+		10L₁(T)+X→L₁(T
+		If L₁(T)>0
+			Text(⁻1,3,20,L₁(T
+		If L₁(T)>0
+			1→L₂(T
+	End
+End
+L₁(1)→A
+L₁(2)→B
+L₁(3)→C
+L₁(4)→D
+L₁(5)→E
+L₁(6)→F
+Goto 2
+Lbl 1
+ClrHome
+Disp "0 = unknown
+Input "A: ",A
+Input "B: ",B
+Input "C: ",C
+Input "a: ",D
+Input "b: ",E
+Input "c: ",F
+ClrHome
+Goto 2
+Lbl 2
+{A≠0,B≠0,C≠0,D≠0,E≠0,F≠0}→L₆
+ClrHome
+Output(4,5,"Solving…
+0→I
+While I<10 and ABCDEF=0
+	I+1→I
+	If ABC=0
+	Then
+		If A>0 and B>0
+			180-A-B→C
+		If A>0 and C>0
+			180-A-C→B
+		If B>0 and C>0
+			180-B-C→A
+		If D>0 and B>0 and E>0
+		Then
+			If abs(sin(B)/E*D)≤1
+				sin⁻¹(sin(B)/E*D)→A
+		End
+		If D>0 and C>0 and F>0
+		Then
+			If abs(sin(C)/F*D)≤1
+				sin⁻¹(sin(C)/F*D)→A
+		End
+		If E>0 and A>0 and D>0
+		Then
+			If abs(sin(A)/D*E)≤1
+				sin⁻¹(sin(A)/D*E)→B
+		End
+		If E>0 and C>0 and F>0
+		Then
+			If abs(sin(C)/F*E)≤1
+				sin⁻¹(sin(C)/F*E)→B
+		End
+		If F>0 and A>0 and D>0
+		Then
+			If abs(sin(A)/D*F)≤1
+				sin⁻¹(sin(A)/D*F)→C
+		End
+		If F>0 and B>0 and E>0
+		Then
+			If abs(sin(B)/E*F)≤1
+				sin⁻¹(sin(B)/E*F)→C
+		End
+		If DEF≠0
+		Then
+			If abs((D²-E²-F²)/(⁻2EF))≤1
+				cos⁻¹((D²-E²-F²)/(⁻2EF))→A
+			If abs((E²-D²-F²)/(⁻2DF))≤1
+				cos⁻¹((E²-D²-F²)/(⁻2DF))→B
+			If abs((F²-D²-E²)/(⁻2DE))≤1
+				cos⁻¹((F²-D²-E²)/(⁻2DE))→C
+		End
+	End
+	If DEF=0
+	Then
+		If A>0 and B>0 and E>0
+			sin(A)*E/sin(B)→D
+		If A>0 and C>0 and F>0
+			sin(A)*F/sin(C)→D
+		If B>0 and A>0 and D>0
+			sin(B)*D/sin(A)→E
+		If B>0 and C>0 and F>0
+			sin(B)*F/sin(C)→E
+		If C>0 and A>0 and D>0
+			sin(C)*D/sin(A)→F
+		If C>0 and B>0 and E>0
+			sin(C)*E/sin(B)→F
+		If A>0 and E>0 and F>0
+			√(E²+F²-2EFcos(A))→D
+		If B>0 and D>0 and F>0
+			√(D²+F²-2DFcos(B))→E
+		If C>0 and D>0 and E>0
+			√(D²+E²-2DEcos(C))→F
+	End
+End
+ClrHome
+ClrDraw
+O→Xmin
+P→Xmax
+Q→Ymin
+R→Ymax
+If Z=0
+	Radian
+If W=1
+	AxesOn
+If A+B+C≠180 or ABCDEF=0
+Then
+	Output(1,1,"No triangle
+	Output(2,1,"could be
+	Output(3,1,"determined.
+	Pause 
+	ClrHome
+Else
+	0→Z
+	0→W
+	L₆(1)+L₆(2)+L₆(3)→Y
+	If (Y=L₆(1)) or (Y=L₆(2)) or (Y=L₆(3))
+		1→Z
+	If L₆(4)L₆(5)L₆(6)=0
+		Z+1→Z
+	((L₆(1) and L₆(4) and L₆(5)) or (L₆(1) and L₆(4) and L₆(6)) or (L₆(2) and L₆(5) and L₆(4)) or (L₆(2) and L₆(5) and L₆(6)) or (L₆(3) and L₆(6) and L₆(4)) or (L₆(3) and L₆(6) and L₆(5)))+Z→Z
+	If Z=3
+	Then
+		If L₆(1)
+		Then
+			L₁(1)→T
+			L₁(4)→U
+			If L₆(5)
+				L₁(5)→V
+			If L₆(6)
+				L₁(6)→V
+		End
+		If L₆(2)
+		Then
+			L₁(2)→T
+			L₁(5)→U
+			If L₆(4)
+				L₁(4)→V
+			If L₆(6)
+				L₁(6)→V
+		End
+		If L₆(3)
+		Then
+			L₁(3)→T
+			L₁(6)→U
+			If L₆(4)
+				L₁(4)→V
+			If L₆(5)
+				L₁(5)→V
+		End
+		If U<V
+			1→W
+	End
+	If W=0
+	Then
+		Output(1,1,"One triangle is
+		Output(2,1,"possible.
+	End
+	If W=1
+	Then
+		Output(1,1,"Two triangles
+		Output(2,1,"are possible.
+	End
+	Pause 
+	ClrHome
+	For(I,1,W+1
+		If I=2
+		Then
+			If V=D
+			Then
+				180-A→A
+				If T=B
+				Then
+					180-A-T→C
+					E/sin(B)sin(C)→F
+				End
+				If T=C
+				Then
+					180-A-T→B
+					F/sin(C)sin(B)→E
+				End
+			End
+			If V=E
+			Then
+				180-B→B
+				If T=A
+				Then
+					180-B-T→C
+					D/sin(A)sin(C)→F
+				End
+				If T=C
+				Then
+					180-B-T→A
+					F/sin(C)sin(A)→D
+				End
+			End
+			If V=F
+			Then
+				180-C→C
+				If T=A
+				Then
+					180-C-T→B
+					D/sin(A)sin(B)→E
+				End
+				If T=B
+				Then
+					180-C-T→A
+					E/sin(B)sin(A)→D
+				End
+			End
+		End
+		Output(1,1,"Triangle # :
+		Output(1,11,I
+		Output(3,1,"A:
+		Output(4,1,"B:
+		Output(5,1,"C:
+		Output(6,1,"a:
+		Output(7,1,"b:
+		Output(8,1,"c:
+		{A,B,C,D,E,F}→L₁
+		For(J,1,6
+			Output(J+2,4,round(L₁(J),4)
+		End
+		Pause 
+		ClrHome
+	End
+End

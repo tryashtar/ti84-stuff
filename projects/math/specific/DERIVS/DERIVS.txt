@@ -1,0 +1,30 @@
+ClrHome
+"nDeriv("→Str1
+Disp "Input‗ equation:",""
+Input "",Str2
+ClrHome
+Str1+Str2+",X,"→Str1
+Disp "X=?",""
+Input "",Str3
+ClrHome
+Str1+Str3→Str1
+expr(Str3)→X
+expr(Str2)→Y
+expr(Str1)→M
+Y-MX→B
+Output(1,1,"IROC: 
+Output(1,7,M
+Output(3,1,"tan line:
+Output(4,1,"Y="
+Output(4,3,M
+Output(4,6,"X+"
+Output(4,8,B
+⁻1/M→M
+Output(6,1,"norm line:
+Output(7,1,"Y=
+Output(7,3,M
+Output(7,6,"X+
+Y-MX→B
+Output(7,8,B
+Pause 
+ClrHome

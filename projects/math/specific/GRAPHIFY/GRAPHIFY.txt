@@ -1,0 +1,225 @@
+ClrHome
+Disp "  Type values"," (. when done)","
+SetUpEditor L₁
+If dim(L₁)=0
+	{0}→L₁
+L₁→L₂
+{0}→L₁
+" "→Str1
+0→I
+While Str1≠"." and Str1≠"*
+	I+1→I
+	Input "",Str1
+	If Str1≠"." and Str1≠"*" and Str1≠"L₁
+	Then
+		If sub(Str1,1,1)="*
+		Then
+			I-1→I
+			sub(Str1,2,length(Str1)-1→Str1
+		End
+		expr(Str1)→L₁(I
+	End
+	If Str1="L₁
+		L₂→L₁
+End
+ClrHome
+DelVar L₄
+dim(L₁)→dim(L₄
+If I=1
+Then
+	Disp "Please actually","type numbers","next time.
+	Return
+End
+If min(L₁)<0
+Then
+	Disp "Negative values","are not allowed.
+	Return
+End
+If sum(L₁=L₄)=dim(L₁
+Then
+	Disp "Your list cannot","be all zeroes.
+	Return
+End
+6max(L₁)/5→Ymax
+45→D
+1→E
+⁻1→F
+If Str1="*
+Then
+	Disp "    Settings","   (* = auto)","
+	Input "Interval: ",Str1
+	If Str1≠"*
+		expr(Str1)→E
+	Input "Bar Max: ",Str1
+	If Str1≠"*
+		expr(Str1)→Ymax
+	Input "Histo Max: ",Str1
+	If Str1≠"*
+		expr(Str1)→F
+	Input "Circle Size: ",Str1
+	If Str1≠"*
+		expr(Str1)→D
+	Input "Sort (1/0): ",Str1
+	If Str1="1
+		SortA(L₁
+End
+ClrDraw
+{Xmin,Xmax,Ymin,Ymax}→L₂
+0→Ymin
+dim(L₁)+2→Xmax
+0→Xmin
+For(I,1,dim(L₁
+	Line(I,0,I,L₁(I
+	Line(I+1,0,I+1,L₁(I
+	Line(I,L₁(I),I+1,L₁(I
+End
+Text(0,5,"Bar graph
+Pause 
+ClrDraw
+L₁→L₃
+DelVar L₄
+SortA(L₃
+iPart(L₃/E)→L₃
+1→A
+0→B
+For(I,2,dim(L₃
+	If L₃(I)=L₃(I-1
+	Then
+		A+1→A
+	Else
+		B+1→B
+		L₃(I-1)+A[i]→L₄(B
+		1→A
+	End
+End
+L₃(dim(L₃))+A[i]→L₄(B+1
+max(0,min(real(L₄)-1)→Xmin
+max(real(L₄))+2→Xmax
+6max(imag(L₄))/5→Ymax
+If F≠⁻1
+	F→Ymax
+For(I,1,dim(L₄
+	Line(real(L₄(I)),0,real(L₄(I)),imag(L₄(I
+	Line(real(L₄(I)),imag(L₄(I)),real(L₄(I))+1,imag(L₄(I
+	Line(real(L₄(I))+1,0,real(L₄(I))+1,imag(L₄(I
+End
+Text(0,5,"Histogra‗m (interval=",E,")
+Pause 
+ClrDraw
+0→Xmin
+150→Xmax
+0→Ymin
+100→Ymax
+Circle(75,50,D,{[i]
+sum(L₁)→B
+90→A
+For(I,1,dim(L₁
+	A+360L₁(I)/B→A
+	If L₁(I)/B≠1 and L₁(I)/B≠0
+		Line(75,50,75+Dcos(A°),50+Dsin(A°
+End
+Text(0,5,"Pie chart
+Pause 
+ClrDraw
+L₂(1)→Xmin
+L₂(2)→Xmax
+L₂(3)→Ymin
+L₂(4)→Ymax
+ClrHome
+L₁→L₃
+SortA(L₃
+⁻1→A
+0→B
+0→C
+iPart(logBASE(L₃(dim(L₃)),10))→D
+If D=0
+	1→D
+For(I,1,dim(L₃
+	iPart(L₃(I))/10→L₃(I
+	If iPart(L₃(I))>A
+	Then
+		iPart(L₃(I))→A
+		B+1→B
+		If B>8
+		Then
+			Pause 
+			ClrHome
+			1→B
+		End
+		0→C
+		Output(B,1,A
+		Output(B,1+D,"|
+	End
+	C+1→C
+	If C+D>15
+	Then
+		B+1→B
+		If B>8
+		Then
+			Pause 
+			ClrHome
+			1→B
+		End
+		Output(B,1+D,"|
+		1→C
+	End
+	Output(B,C+D+1,10fPart(L₃(I
+End
+Pause 
+ClrHome
+L₁→L₃
+SortA(L₃
+0→A
+0→B
+0→C
+0→D
+For(I,2,dim(L₃
+	If L₃(I)=L₃(I-1
+	Then
+		If I=2
+			1→D
+		A+1→A
+		If A≥B
+		Then
+			A→B
+			I→C
+		End
+	Else
+		0→A
+	End
+End
+If C=dim(L₁) and D=1
+	0→C
+Disp "Mean:","Median:","Mode:","Range:","StdDev:","Outly >","Outly <
+Output(1,9,round(mean(L₁),2
+Output(2,9,round(median(L₁),2
+If C=0
+	Output(3,9,"(none)
+If C≠0
+	Output(3,9,round(L₃(C),2
+Output(4,9,round(max(L₁)-min(L₁),2
+If dim(L₁)=1
+Then
+	Output(5,9,"(none)
+Else
+	Output(5,9,round(stdDev(L₁),4
+End
+If dim(L₁)=1
+Then
+	Output(6,9,"(none)
+	Output(7,9,"(none)
+Else
+	L₁→L₃
+	L₁→L₄
+	SortA(L₄
+	SortD(L₃
+	iPart(dim(L₄)/2)→dim(L₄
+	iPart(dim(L₃)/2)→dim(L₃
+	Output(6,9,median(L₃)+1.5(median(L₃)-median(L₄
+	Output(7,9,median(L₄)-1.5(median(L₃)-median(L₄
+End
+Pause 
+ClrHome
+DelVar L₂
+DelVar L₃
+DelVar L₄

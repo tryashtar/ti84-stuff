@@ -1,0 +1,62 @@
+ClrHome
+Disp "Choose a number","between..‗.",""
+Input "",A
+round(A,0)→A
+Disp "and
+Input "",B
+round(B,0)→B
+ClrHome
+Disp "How many people","are guessing?",""
+Input "",C
+round(C,0)→C
+ClrHome
+DelVar L₁
+C→dim(L₁
+L₁→L₂
+randInt(A,B)→D
+For(I,1,C
+	A-1→X
+	0→Y
+	While X<A or X>B
+		ClrHome
+		Disp "The guess of","person #",""
+		Output(2,9,I
+		If Y=1
+		Then
+			Output(6,1,"Pick a number
+			Output(7,1,"between
+			Output(7,9,A
+			Output(8,1,"and
+			Output(8,5,B
+		End
+		Input "",X
+		round(X,0)→X
+		If X<A or X>B
+		Then
+			1→Y
+		Else
+			X→L₁(I
+			abs(D-X)→L₂(I
+		End
+	End
+End
+ClrHome
+Disp "The number:","","","Press ENTER to","see winners
+Output(1,13,D
+Pause 
+ClrHome
+min(L₂)→E
+1→F
+Output(1,1,"Winners:
+For(I,1,C
+	If L₂(I)=E
+	Then
+		F+1→F
+		Output(F,1,"Player #
+		Output(F,9,I
+	End
+End
+If F=2
+	Output(1,1,"Winner:         
+Pause 
+ClrHome

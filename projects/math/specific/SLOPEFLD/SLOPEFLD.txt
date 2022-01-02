@@ -1,0 +1,31 @@
+ClrHome
+Disp "Input‗ dy⁄dx:
+Input "",Str0
+If Str0≠".
+	Str0→Str1
+ClrHome
+Disp Str1,"","Going through:
+Input "",A
+Input "",B
+ClrHome
+Disp "Precision:
+Input "",P
+ClrDraw
+A→X
+B→Y
+While X<Xmax
+	expr(Str1)→S
+	Line(X,Y,X+P,Y+PS
+	Y+PS→Y
+	X+P→X
+End
+A→X
+B→Y
+While X>Xmin
+	expr(Str1)→S
+	Line(X,Y,X-P,Y-PS
+	Y-PS→Y
+	X-P→X
+End
+Pause 
+ClrHome

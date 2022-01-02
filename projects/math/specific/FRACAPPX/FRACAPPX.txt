@@ -1,0 +1,23 @@
+ClrHome
+Disp "Please input the","start function:",""
+Input "",Str1
+ClrHome
+Disp Str1,"","Input‗ deriv:",""
+Input "",Str2
+ClrHome
+Disp "Value to base","approximation:",""
+Input "",X
+ClrHome
+Disp "Value to guess:",""
+Input "",Z
+ClrHome
+expr(Str2)→M
+expr(Str1)-MX→B
+MZ+B→Y
+Disp "Approx value:",Str1,"where X=","based on X=
+Output(4,12,X
+Output(3,9,Z
+Y►Frac
+Disp "",Ans
+Pause 
+ClrHome

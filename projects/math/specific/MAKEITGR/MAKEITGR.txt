@@ -1,0 +1,27 @@
+ClrHome
+Disp "Input‗ F´(X):
+Input "",Str1
+Disp "","F(A)=B
+Input "A: ",A
+Input "B: ",B
+ClrHome
+Output(4,1,B
+Output(4,3,"+∫
+Output(3,4,"X
+Output(5,4,A
+
+"("→Str2
+For(I,1,length(Str1
+	If sub(Str1,I,1)="X
+	Then
+		Str2+"t"→Str2
+	Else
+		Str2+sub(Str1,I,1)→Str2
+	End
+End
+Str2+")dt"→Str2
+Output(4,6,Str2
+DelVar Str1
+DelVar Str2
+Pause 
+ClrHome

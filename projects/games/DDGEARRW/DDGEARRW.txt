@@ -1,0 +1,130 @@
+ClrHome
+1→C
+3→N
+3→M
+1→P
+0→H
+"(^.^)"→Str1
+"(x.x)"→Str2
+If C=1
+Then
+	Input "ARROWS: ",N
+	Input "ARRW SPD: ",P
+	Input "METEORS: ",M
+	Input "ALLW HORZ MOVE: ",H
+	Input "DRAW YOU!       ",Str1
+	Input "DRAW YOU DEAD..‗.",Str2
+	ClrHome
+End
+" "→Str3
+For(J,1,length(Str1))
+	Str3+" "→Str3
+End
+N→dim(L₁)
+N→dim(L₂)
+N→dim(L₃)
+N→dim(L₄)
+M→dim(L₅)
+M→dim(L₆)
+5→Y
+1→X
+0→S
+0→T
+For(I,1,M)
+	randInt(⁻4,⁻8)→L₆(I)
+	randInt(1,16)→L₅(I)
+End
+For(I,1,N)
+	P→L₃(I)
+	0→L₄(I)
+	randInt(17,21)→L₂(I)
+	randInt(1,8)→L₁(I)
+End
+Lbl 1
+Output(1,1,S)
+Output(2,1,T)
+getKey→K
+If K=23
+	Pause 
+If K=25 and Y>1
+Then
+	Output(Y,X,Str3)
+	Y-1→Y
+End
+If K=34 and Y<8
+Then
+	Output(Y,X,Str3)
+	Y+1→Y
+End
+If H=1
+Then
+	If K=24 and X>1
+	Then
+		Output(Y,X,Str3)
+		X-1→X
+	End
+	If K=26 and X<17-length(Str1)
+	Then
+		Output(Y,X,Str3)
+		X+1→X
+	End
+End
+Output(Y,X,Str1)
+For(I,1,M)
+	If iPart(L₆(I))>0 and iPart(L₆(I))<9
+		Output(iPart(L₆(I)),L₅(I)," ")
+	L₆(I)+0.5→L₆(I)
+	If iPart(L₆(I))>0 and iPart(L₆(I))<9
+		Output(iPart(L₆(I)),L₅(I),"*")
+	If iPart(L₆(I))=Y and L₅(I)=6
+		Goto 5
+	If iPart(L₆(I))>9
+	Then
+		T+1→T
+		randInt(⁻2,⁻5)→L₆(I)
+		randInt(1,16)→L₅(I)
+	End
+End
+For(I,1,N)
+	L₂(I)-L₃(I)→L₂(I)
+	If L₂(I)=0
+		Output(L₁(I),1,"--=")
+	If L₂(I)=⁻1
+		Output(L₁(I),1,"-=")
+	If L₂(I)=⁻2
+		Output(L₁(I),1,"=")
+	If L₂(I)<17 and L₂(I)>0
+		Output(L₁(I),L₂(I),"<--=")
+	If L₂(I)+4≥1
+	Then
+		If L₂(I)+4≥16
+		Then
+			Output(L₁(I),16,"    ")
+		Else
+			Output(L₁(I),L₂(I)+4,"    ")
+		End
+	End
+	If L₄(I)=1 and L₂(I)+4>0 and L₂(I)+4<17
+		Output(L₁(I),L₂(I)+4,"*")
+	If L₂(I)<⁻3
+	Then
+		If randInt(1,2)=1
+		Then
+			randInt(1,8)→L₁(I)
+		Else
+			Y→L₁(I)
+		End
+		randInt(17,21)→L₂(I)
+		0→L₄(I)
+		If randInt(2,7)=1
+			1→L₄(I)
+		S+1→S
+	End
+	If L₁(I)=Y and L₂(I)<length(Str1)+X and L₂(I)>X
+		Goto 5
+End
+Goto 1
+Lbl 5
+Output(Y,X,Str2)
+Pause 
+Stop

@@ -1,0 +1,32 @@
+ClrHome
+Disp "Input‗ number:
+Input "",Str1
+Disp "","Input‗ base:
+Input "",B
+Disp "","Output base:
+Input "",C
+ClrHome
+"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ→Str2
+0→dim(L₁
+For(I,1,length(Str1
+	inString(Str2,sub(Str1,I,1))-1→L₁(I
+End
+DelVar Str1
+sum(L₁seq(B^I,I,dim(L₁)-1,0,⁻1
+int(CfPart(Ans/seq(C^I,I,iPart(1+log(Ans)/log(C)),1,⁻1→L₁
+0→X
+1→Y
+Disp "
+For(I,1,dim(L₁
+	X+1→X
+	If X>16
+	Then
+		1→X
+		Y+1→Y
+		Disp "
+	End
+	Output(Y,X,sub(Str2,L₁(I)+1,1
+End
+DelVar L₁
+DelVar Str1
+DelVar Str2

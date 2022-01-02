@@ -1,0 +1,9 @@
+ClrHome
+Disp "DEG:
+Input "",X
+ClrHome
+X/180→Y
+Y►Frac
+Output(2,16,"π
+Pause Y►Frac
+ClrHome

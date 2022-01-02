@@ -1,0 +1,91 @@
+ClrHome
+Disp "Fun‗ction:","* = type list","Y = fetch Y₁"
+Input "",Str1
+ClrHome
+If Str1="*
+Then
+	Disp "How many values?
+	Input "",θ
+	ClrHome
+	{0}→L₁
+	{0}→L₂
+	Disp "X values:
+	For(I,1,θ
+		Input "",Z
+		Z→L₁(I
+	End
+	ClrHome
+	Disp "Y values:
+	For(I,1,θ
+		Input "",Z
+		Z→L₂(I
+	End
+Else
+	If Str1="Y
+		Equ►String(Y₁,Str1
+	Disp Str1,""
+	Input "Left:  ",L
+	Input "Right: ",R
+	ClrHome
+	Disp "Sample rate?","(type : in front","for sample num)",""
+	Input "",Str2
+	If sub(Str2,1,1)=":
+	Then
+		(R-L-1)/(expr(sub(Str2,2,length(Str2)-1))-1)→S
+	Else
+		expr(Str2)→S
+	End
+End
+ClrHome
+DelVar Str2
+Output(4,1,"Doing TR method…
+0→A
+0→B
+0→C
+0→D
+If Str1="*
+Then
+	For(I,2,dim(L₁
+		A+(L₁(I)-L₁(I-1))*(L₂(I-1))→A
+		B+(L₁(I)-L₁(I-1))((L₂(I)+L₂(I-1))/2)→B
+		C+(L₁(I)-L₁(I-1))*L₂(I)→C
+		D+(L₁(I)-L₁(I-1))*((L₂(I)+L₂(I-1))/2)→D
+	End
+Else
+	For(X,L+S,R,S
+		C+Sexpr(Str1)→C
+		X-.5S→X
+		B+Sexpr(Str1)→B
+		X-.5S→X
+		A+Sexpr(Str1)→A
+		expr(Str1)→O
+		X+S→X
+		D+((O+expr(Str1))/2)S→D
+	End
+End
+ClrHome
+Disp "LRAM:","MRAM:","RRAM:","Trap:
+If Str1≠"*
+Then
+	Disp "Rea‗l:………","Area:………","Avg val of func:
+End
+Output(1,6,A
+Output(2,6,B
+Output(3,6,C
+Output(4,6,D
+If Str1≠"*
+Then
+	String►Equ(Str1,Y₀
+	fnInt(Y₀,X,L,R)→E
+	Output(5,6,"   
+	Output(5,6,E
+	Output(8,1,E/(R-L)
+	String►Equ("abs("+Str1,Y₀
+	fnInt(Y₀,X,L,R)→F
+	Output(6,6,"   
+	Output(6,6,F
+	DelVar Y₀
+End
+Pause 
+ClrHome
+DelVar Str1

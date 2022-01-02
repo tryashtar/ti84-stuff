@@ -1,0 +1,31 @@
+ClrHome
+Disp "(Ax^B+Cy^D)^E","If‗ no Y variable","set C and‗ D to 1
+Input "A: ",A
+Input "B: ",B
+Input "C: ",C
+Input "D: ",D
+Input "E: ",E
+ClrHome
+0→Y
+If C=1 and D=1
+Then
+	Disp "Input‗ 0 if there","is a Y variable.","","If‗ not, input","the constant.",""
+	Input "",Y
+End
+ClrHome
+For(I,0,E
+	(E nCr I)A^(E-1)C^I→W
+	If Y≠0
+		W*(Y^(ID))→W
+	Output(I+1,1,W
+	Output(I+1,8,"X^
+	Output(I+1,10,(E-I)B
+	If Y=0
+	Then
+		Output(I+1,12,"*Y^
+		Output(I+1,15,ID
+	End
+	Output(I+1,16,"+
+End
+Pause 
+ClrHome

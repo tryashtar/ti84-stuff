@@ -1,0 +1,86 @@
+ClrHome
+Disp "X * Y"
+Input "",Str1
+Input "",Str2
+ClrHome
+DelVar L₁
+DelVar L₂
+length(Str1)→dim(L₁)
+length(Str2)→dim(L₂)
+Output(1,1,"Piecing list 1…
+For(I,1,dim(L₁
+	Output(2,1,round(I/(dim(L₁))*100,0)
+	expr(sub(Str1,I,1)→L₁(I
+End
+ClrHome
+Output(1,1,"Piecing list 2…
+For(I,1,dim(L₂
+	Output(2,1,(round(I/(dim(L₂))*100,0))
+	expr(sub(Str2,I,1)→L₂(I
+End
+ClrHome
+Output(1,1,"Multipling…
+DelVar Str1
+DelVar Str2
+DelVar [A]
+{dim(L₂),dim(L₁)}→dim([A]
+For(I,1,dim(L₂))
+	Output(2,1,round((I/(dim(L₂)))*100,0)
+	For(J,1,dim(L₁))
+		L₂(I)*L₁(J)→[A](I,J)
+	End
+End
+DelVar L₁
+DelVar L₂
+ClrHome
+Output(1,1,"Cross-adding…
+dim([A])→L₃
+DelVar L₄
+sum(L₃)-1→dim(L₄)
+For(I,1,dim(L₄))
+	Output(2,1,round((I/(dim(L₄)))*100,0
+	If I≤L₃(1)
+	Then
+		1→X
+		I→Y
+	Else
+		I-L₃(1)+1→X
+		L₃(1)→Y
+	End
+	[A](Y,X)→N
+	While X<L₃(2) and Y>1
+		X+1→X
+		Y-1→Y
+		N+[A](Y,X)→N
+	End
+	N→L₄(I)
+End
+DelVar [A]
+ClrHome
+Output(1,1,"Fixing places…
+For(I,dim(L₄),1,⁻1)
+	Output(2,1,round(((dim(L₄)-I)/(dim(L₄)))*100,0
+	If L₄(I)≥10
+	Then
+		If I=1
+		Then
+			augment({0},L₄)→L₄
+			I+1→I
+		End
+		L₄(I-1)+iPart(L₄(I)/10)→L₄(I-1)
+		fPart(L₄(I)/10)*10→L₄(I)
+	End
+End
+ClrHome
+For(I,1,min({dim(L₄),128}))
+	Output(iPart((I/16)-0.000001)+1,I-(16*iPart((I/16)-0.000001)),L₄(I
+End
+Pause 
+ClrHome
+Pause L₄
+ClrHome
+Output(1,1,dim(L₄
+Output(2,1,"digits
+Pause 
+ClrHome
+DelVar L₄
