@@ -41,7 +41,6 @@ for s1 in symbol_list:
         for s2 in symbol_list:
             if s2.endswith(s1) and len(s2) > len(s1):
                 ambiguous_symbols[s1].append(s2)
-print(ambiguous_symbols)
 
 class Program:
     def __init__(self, name, comment, code, version=(0,0), archived=False):
@@ -50,6 +49,7 @@ class Program:
         self.code = code
         self.archived = archived
         self.version = version
+
     def __init__(self, data):
         self.name = data[60:60+8].decode('ascii').rstrip(' \0')
         self.version = int(data[68])
@@ -79,6 +79,7 @@ class Program:
                 after_newline = True
             self.code += symbol
             pos += lg
+
     def compile(self):
         data = bytes()
         data += "**TI83F*".encode('ascii')
@@ -106,6 +107,7 @@ class Program:
         data += section
         data += (sum(section) & 0xFFFF).to_bytes(2, 'little')
         return data
+
     def write_symbol(self, so_far, stream, position):
         symbol = None
         bc = 0
@@ -119,11 +121,11 @@ class Program:
                 symbol = "‗" + symbol
                 break
         return (symbol, bc, byte_string)
+
     def parse_token(self, stream, position):
         current = position + 1
         too_far = False
         possible = symbol_list
-        
         while True:
             word = stream[position:current]
             if len(word) == 0:

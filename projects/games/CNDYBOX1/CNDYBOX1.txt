@@ -1,0 +1,502 @@
+ClrHome
+While 0
+	?=BOOLEAN
+	---------
+	L=LOLLIPOPS IN    DECIMAL
+	V=LOLLY+ RATE
+	R=CANDY+ RATE
+	S=MENU
+	T=SELECTION
+	U=IN A MAP        SELECTION
+	H=HP
+	M=MAX HP
+	E=CANDY EATEN
+	P=LOLLIPOPS       PLANTED
+	W=NOT IN A        MAP?
+	G=IN A MAP WITH   FIGHTING?
+	L₁=SWEETS
+	L₂=EQUIPMENT
+	L₃=HAS WEAPON?
+	L₆=SWRD PRICES
+	θ=FORCE MENU      DISP?
+	A=TIMER 1
+	B=TIMER 2
+	[A]=AREA IN
+	0=EMPTY
+	1=PLAYER
+	2=TREE
+	3=CHEST
+	4=GOBLIN
+End
+0→G
+1→S
+1→T
+1→U
+0→L
+0→V
+1→R
+100→H
+100→M
+0→E
+0→P
+0→W
+{0000,0,0}→L₁
+{0,0,0}→L₂
+{0,0,0,0,0,0}→L₃
+{150,300,500,1000,2000,3000}→L₆
+1→θ
+1→W
+startTmr→A
+While 1
+	A→B
+	startTmr→A
+	If A≠B
+	Then
+		L₁(1)+R→L₁(1)
+		L+V→L
+		iPart(L)→L₁(2
+		min({H+1,M})→H
+		If S=3
+			Output(8,1,H
+		If S=1
+			Output(2,5,L₁(1
+		If S=1
+			Output(3,5,L₁(2
+		If S=3 and T=1 and W=0
+			Output(3,1,L₁(2
+	End
+	0→K
+	getKey→K
+	If W=0 and not(K=105 or K=25 or K=34 or K=45)
+		0→K
+	If (K=45 and W=0 and G=0) or (K=105 and W=0 and G=1)
+	Then
+		1→W
+		1→θ
+	End
+	If K=24 or K=26
+	Then
+		If K=24
+			S-1→S
+		If K=26
+			S+1→S
+		If S>3
+			1→S
+		If S<1
+			3→S
+	End
+	If K=25 or K=34
+	Then
+		If W=1
+		Then
+			If S=1
+				Output(T+5,1," 
+			If S=2
+				Output(T+1,1," 
+			If S=3
+				Output(T+1,1," 
+			If K=25
+				T-1→T
+			If K=34
+				T+1→T
+			If S=1 and T>3
+				1→T
+			If S=1 and T<1
+				3→T
+			If S=2 and T>3
+				1→T
+			If S=2 and T<1
+				3→T
+			If S=3 and T>6
+				1→T
+			If S=3 and T<1
+				6→T
+			If S=1
+				Output(T+5,1,"►
+			If S=2
+				Output(T+1,1,"►
+			If S=3
+				Output(T+1,1,"►
+		Else
+			If T=1
+				Output(U+4,1," 
+			If K=25
+				U-1→U
+			If K=34
+				U+1→U
+			Output(3,10,"    
+			If T=1 and U>3
+				1→U
+			If T=1 and U<1
+				3→U
+			If T=1
+				Output(U+4,1,"►
+		End
+	End
+	If S=1
+	Then
+		Output(3,10,"    
+		If T=2
+			Output(3,10,60
+		If T=3 and sum(L₃)+1≤dim(L₆
+			Output(3,10,L₆(sum(L₃)+1)
+	End
+	If K=105 and G=0
+	Then
+		If S=1
+		Then
+			If T=1
+			Then
+				E+L₁(1)→E
+				iPart(100+(2.1*(E^0.4)))→M
+				0→L₁(1
+				Output(2,5,"          
+				Output(2,5,L₁(1
+			End
+			If T=2 and L₁(1)≥60
+			Then
+				L₁(2)+1→L₁(2
+				L+1→L
+				L₁(1)-60→L₁(1
+				Output(2,5,"          
+				Output(2,5,L₁(1
+				Output(3,5,L₁(2
+			End
+			If T=3 and sum(L₃)≠dim(L₃
+			Then
+				0→X
+				For(I,1,dim(L₃
+					If L₃(I)=0
+					Then
+						I→X
+						1000→I
+					End
+				End
+				If L₁(1)≥L₆(X
+				Then
+					L₁(1)-L₆(X)→L₁(1)
+					1→L₃(X)
+					1→θ
+				End
+			End
+		End
+		If S=2
+		Then
+			If T=1
+			Then
+				L₂(1)+1→L₂(1
+				If L₂(1)>sum(L₃
+					0→L₂(1
+				1→θ
+			End
+			If T=2
+			Then
+			End
+			If T=3
+			Then
+			End
+		End
+		If S=3
+		Then
+			If W=1
+			Then
+				0→W
+				For(I,1,7
+					Output(I,1,"                
+				End
+				If T=1
+				Then
+					Output(U+4,1,"►
+					Output(1,1,"Lollipop Farm
+					Output(2,1,P
+					Output(2,12,round(V,2
+					Output(3,1,L₁(2
+					Output(5,2,"Add 1
+					Output(6,2,"Add 10
+					Output(7,2,"Add 100
+				End
+				If T=2
+				Then
+					1→G
+					DelVar [A]
+					{2,16}→dim([A]
+					For(I,1,2
+						For(J,2,16
+							If randInt(1,3)=1
+							Then
+								2→[A](I,J
+								Output(I,J,"|
+							End
+							If randInt(1,500)=1
+							Then
+								3→[A](I,J
+								Output(I,J,"invertedequal
+							End
+						End
+					End
+					Output(1,1,"o
+				End
+				If T=3
+				Then
+					1→G
+					DelVar [A]
+					{3,16}→dim([A]
+					For(I,1,3
+						For(J,2,16
+							If randInt(1,5)=1
+							Then
+								4→[A](I,J)
+								randInt(1,3)→Z
+								If Z=1
+									Output(I,J,"Ö
+								If Z=2
+									Output(I,J,"ô
+								If Z=3
+									Output(I,J,"ö
+							End
+							If randInt(1,500)=1
+							Then
+								3→[A](I,J)
+								Output(I,J,"invertedequal
+							End
+						End
+					End
+					Output(1,1,"o
+				End
+				If T=4
+				Then
+					1→G
+					DelVar [A]
+					{3,16}→dim([A]
+					For(I,1,randInt(4,7
+						randInt(2,16)→X
+						randInt(1,2)→Y
+						5→[A](Y,X
+						Output(Y,X,"ρ
+					End
+					For(I,1,randInt(2,3
+						randInt(2,16)→X
+						randInt(2,3)→Y
+						6→[A](Y,X
+						Output(Y,X,"∫
+					End
+					7→[A](3,16
+					Output(3,16,"@
+					Output(1,1,"o
+				End
+				If T=5
+				Then
+					Output(1,1,"place5
+				End
+				If T=6
+				Then
+					Output(1,1,"place6
+				End
+				If G=1
+				Then
+					1→[A](1,1
+					1→X
+					1→Y
+					{0,0,0}→ʟCBQV
+					0→Z
+					0→K
+					While not((sum({Y,X}>dim([A]))>0)) and (K≠45) and (H>0
+						getKey→K
+						If K≠45
+							0→K
+						If ʟCBQV(1)=0
+						Then
+							If [A](Y,X+1)=2
+								{5,0,randInt(0,1)}→ʟCBQV
+							If [A](Y,X+1)=3
+								{50,0,randInt(59,123)}→ʟCBQV
+							If [A](Y,X+1)=4
+								{randInt(18,22),randInt(3,5),randInt(15,22)}→ʟCBQV
+							If [A](Y,X+1)=5
+								{4,1,randInt(5,10)}→ʟCBQV
+							If [A](Y,X+1)=6
+								{randInt(20,25),randInt(3,5),randInt(26,38)}→ʟCBQV
+							If [A](Y,X+1)=7
+								{200,4,randInt(600,800)}→ʟCBQV
+						End
+						If ʟCBQV(1)>0
+						Then
+							ʟCBQV(1)-L₂(1)→ʟCBQV(1
+							max({H-ʟCBQV(2),0})→H
+							Output(8,1,"      
+							Output(8,1,H
+							Output(7,1,"       
+							If ʟCBQV(1)>0
+								Output(7,1,ʟCBQV(1
+						End
+						If [A](Y,X+1)≠0 and ʟCBQV(1)≤0
+						Then
+							Z+ʟCBQV(3)→Z
+							0→[A](Y,X+1
+							Output(Y,X+1," 
+							{0,0,0}→ʟCBQV
+						End
+						0→[A](Y,X
+						If [A](Y,X+1)=0
+						Then
+							Output(Y,X," 
+							X+1→X
+						End
+						If X=16
+						Then
+							Y+1→Y
+							1→X
+						End
+						If not(sum({Y,X}>dim([A]))>0)
+						Then
+							1→[A](Y,X
+							Output(Y,X,"o
+						End
+					End
+					For(I,1,7
+						Output(I,1,"                
+					End
+					If K=45
+					Then
+						Output(1,1,"You escaped the
+						Output(2,1,"quest alive.
+						Output(4,1,"No rewards.
+					End
+					If H≤0
+					Then
+						Output(1,1,"You lost your
+						Output(2,1,"energy and‗ m‗ust
+						Output(3,1,"recover.
+						Output(5,1,"No rewards.
+					End
+					If K≠45 and H>0
+					Then
+						Output(1,1,"You completed
+						Output(2,1,"the quest!
+						Output(4,1,"Candies:
+						Output(4,10,Z
+						L₁(1)+Z→L₁(1
+					End
+				End
+			Else
+				If T=1
+				Then
+					10^‗(U-1)→X
+					If L₁(2)≥X
+					Then
+						L₁(2)-X→L₁(2
+						L-X→L
+						Output(3,1,"          
+						Output(3,1,L₁(2
+						P+X→P
+						Output(2,1,P
+						If P<293
+							(P²)/86400→V
+						If P≥293
+							((P-122)*500)/86400→V
+						If V>100
+							100→V
+						Output(2,12,"     
+						Output(2,12,round(V,2
+					End
+				End
+				If T=2
+				Then
+				End
+				If T=3
+				Then
+				End
+				If T=4
+				Then
+				End
+				If T=5
+				Then
+				End
+				If T=6
+				Then
+				End
+			End
+		End
+	End
+	If K=105 and G=1
+	Then
+		0→G
+		1→θ
+	End
+	If K=24 or K=26 or θ=1
+	Then
+		If θ=0
+			1→T
+		1→U
+		0→θ
+		ClrHome
+		If S=1
+			Output(T+5,1,"►
+		If S=2
+			Output(T+1,1,"►
+		If S=3
+			Output(T+1,1,"►
+		If S=1
+		Then
+			Output(2,1,">O<
+			Output(2,5,L₁(1
+			Output(3,1,"--O
+			Output(3,5,L₁(2
+			Output(4,1,"[=]
+			Output(4,5,L₁(3
+			Output(6,2,"Eat candies
+			Output(7,2,"Buy lollipop
+			sum(L₃)→X
+			If X=0
+				Output(8,2,"Wood sword
+			If X=1
+				Output(8,2,"Copper sword
+			If X=2
+				Output(8,2,"Iron sword
+			If X=3
+				Output(8,2,"Silver sword
+			If X=4
+				Output(8,2,"Gem sword
+			If X=5
+				Output(8,2,"Candy sword
+			If X=6
+				Output(8,2,"No more swords!
+			Output(1,1,"BOX  equip  map
+		End
+		If S=2
+		Then
+			If L₂(1)=0
+				Output(2,2,"No weapon
+			If L₂(1)=1
+				Output(2,2,"Wood sword
+			If L₂(1)=2
+				Output(2,2,"Copper sword
+			If L₂(1)=3
+				Output(2,2,"Iron sword
+			If L₂(1)=4
+				Output(2,2,"Silver sword
+			If L₂(1)=5
+				Output(2,2,"Gem sword
+			If L₂(1)=6
+				Output(2,2,"Candy sword
+			Output(3,2,"No hat
+			Output(4,2,"No armor
+			Output(1,1,"box  EQUIP  map
+		End
+		If S=3
+		Then
+			Output(2,2,"Lollipop Farm
+			Output(3,2,"Forest
+			Output(4,2,"Mt. Goblin
+			Output(5,2,"Ocean
+			Output(6,2,"NYI
+			Output(7,2,"NYI
+			Output(8,1,H
+			Output(8,8,"/
+			Output(8,12,M
+			Output(1,1,"box  equip  MAP
+		End
+	End
+	
+	
+End

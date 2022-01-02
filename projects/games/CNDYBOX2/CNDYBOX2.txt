@@ -1,0 +1,186 @@
+ClrHome
+0→A
+0→B
+1→S
+1→T
+1→θ
+{0,0,0}→ʟCBS
+{100,100,0}→ʟCBH
+{0,0,0}→ʟCBE
+{0,0,0,0,0,0}→ʟCBW
+While 1
+	If θ=1
+	Then
+		0→θ
+		ClrHome
+		If S=1
+		Then
+			Output(1,1,"BOX  items  map
+			Output(T+5,1,"►
+			Output(2,1,">O<
+			Output(3,1,"--O
+			Output(4,1,"[=]
+			For(I,1,3
+				Output(I+1,5,ʟCBS(I
+			End
+			Output(6,2,"Eat candies
+			Output(7,2,"Buy lollipop
+			sum(ʟCBW)→X
+			If X=0
+				Output(8,2,"Wooden sword
+			If X=1
+				Output(8,2,"Copper sword
+			If X=2
+				Output(8,2,"Iron sword
+			If X=3
+				Output(8,2,"Silver sword
+			If X=4
+				Output(8,2,"Diamond sword
+			If X=5
+				Output(8,2,"Candy sword
+			If X=6
+				Output(8,2,"No more swords!
+		End
+		If S=2
+		Then
+			Output(1,1,"box  ITEMS  map
+			Output(T+1,1,"►
+			ʟCBE(1)→X
+			If X=0
+				Output(2,2,"No weapon
+			If X=1
+				Output(2,2,"Wooden sword
+			If X=2
+				Output(2,2,"Copper sword
+			If X=3
+				Output(2,2,"Iron sword
+			If X=4
+				Output(2,2,"Silver sword
+			If X=5
+				Output(2,2,"Diamond sword
+			If X=6
+				Output(2,2,"Candy sword
+			Output(2,2,"
+			Output(3,2,"No hat
+			Output(4,2,"No armor
+		End
+		If S=3
+		Then
+			Output(1,1,"box  items  MAP
+			Output(T+1,1,"►
+			Output(2,2,"Lollipop Farm
+			Output(3,2,"Witch Hut
+			Output(4,2,"Forest
+			Output(5,2,"Mt. Goblin
+			Output(6,2,"Ocean
+			Output(7,2,"Castle
+			Output(8,1,ʟCBH(1
+			Output(8,8,"/
+			Output(8,12,ʟCBH(2
+		End
+	End
+	0→K
+	getKey→K
+	If K=105
+	Then
+		If S=1
+		Then
+			If T=1
+			Then
+				ʟCBH(3)+ʟCBS(1)→ʟCBH(3
+				iPart(100+(2.1*(ʟCBH(3)^0.4)))→ʟCBH(2
+				0→ʟCBS(1
+				Output(2,5,"          
+				Output(2,5,0
+			End
+			If T=2 and ʟCBS(1)≥60
+			Then
+				ʟCBS(1)-60→ʟCBS(1
+				Output(2,5,"          
+				Output(2,5,ʟCBS(1
+				ʟCBS(2)+1→ʟCBS(2
+				Output(3,5,ʟCBS(2
+			End
+			If T=3 and sum(ʟCBW)≠dim(ʟCBW)
+			Then
+				1→ʟCBW(sum(ʟCBW)+1)
+				1→θ
+			End
+		End
+		If S=2
+		Then
+			If T=1
+			Then
+				1→θ
+				ʟCBE(1)+1→ʟCBE(1
+				If ʟCBE(1)>sum(ʟCBW)
+					0→ʟCBE(1
+			End
+			If T=2
+			Then
+			End
+			If T=3
+			Then
+			End
+		End
+		If S=3
+		Then
+		End
+	End
+	If K=24 or K=26
+	Then
+		1→θ
+		1→T
+		If K=24
+			S-1→S
+		If K=26
+			S+1→S
+		If S>3
+			1→S
+		If S<1
+			3→S
+	End
+	If K=25 or K=34
+	Then
+		If S=1
+			Output(T+5,1," 
+		If S=2
+			Output(T+1,1," 
+		If S=3
+			Output(T+1,1," 
+		If K=25
+			T-1→T
+		If K=34
+			T+1→T
+		If S=1
+			3→X
+		If S=2
+			3→X
+		If S=3
+			6→X
+		If T>X
+			1→T
+		If T<1
+			X→T
+		If S=1
+			Output(T+5,1,"►
+		If S=2
+			Output(T+1,1,"►
+		If S=3
+			Output(T+1,1,"►
+	End
+	A→B
+	startTmr→A
+	If A≠B
+	Then
+		If ʟCBH(1)<ʟCBH(2)
+		Then
+			ʟCBH(1)+1→ʟCBH(1
+			If S=3
+				Output(8,1,ʟCBH(1
+		End
+		ʟCBS(1)+1→ʟCBS(1
+		If S=1
+			Output(2,5,ʟCBS(1
+	End
+End

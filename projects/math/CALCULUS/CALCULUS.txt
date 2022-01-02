@@ -1,0 +1,114 @@
+ClrHome
+Disp "Input‗ equation:
+Input "",Str1
+If Str1="Y
+	Equ►String(Y₁,Str1
+ClrHome
+π^[e]→X
+expr(Str1
+1→S
+While 1
+	ClrHome
+	Output(1,1,Str1
+	Output(4,2,"Fun‗ction Info
+	Output(5,2,"Point Info
+	Output(6,2,"2 Point Info
+	0→K
+	Output(S+3,1,"►
+	While K≠105
+		0→K
+		While K=0
+			getKey→K
+			
+			If K=45
+			Then
+				ClrHome
+				Return
+			End
+			If K=25 or K=34
+			Then
+				Output(S+3,1," 
+				If K=25
+					S-1→S
+				If K=34
+					S+1→S
+				If S>3
+					1→S
+				If S<1
+					3→S
+				Output(S+3,1,"►
+			End
+		End
+	End
+	ClrHome
+	String►Equ(Str1,Y₀
+	If S=1
+	Then
+	End
+	If S=2
+	Then
+		ClrHome
+		Disp Str1,""
+		Input "X=",X
+		ClrHome
+		Output(1,1,"Lim+:
+		Output(2,1,"Lim-:
+		X+.0000000001→X
+		expr(Str1)→R
+		Output(1,6,R
+		X-.0000000002→X
+		expr(Str1)→L
+		Output(2,6,L
+		X+.0000000001→X
+		If abs(L-R)>.01
+		Then
+			Output(3,1,"Undifferentiable","at this point.
+		Else
+			Output(3,1,"IROC:
+			round(nDeriv(Y₀,X,X)→M
+			Output(3,6,M
+			Output(4,1,"Tan:Y=
+			Output(4,7,M
+			If M=0
+			Then
+				1→L
+			Else
+				int(log(abs(M))+1)+(M<0)+(fPart(M)≠0)→L
+				0→E
+				abs(fPart(M))→Z
+				While fPart(Z)>0
+					10Z→Z
+					E+1→E
+				End
+				L+E→L
+			End
+			expr(Str1)→Y
+			If Y>0
+				Output(4,7+L,"X+
+			If Y-MX<0
+				Output(4,7+L,"X-
+			If Y-MX=0
+				Output(4,7+L,"X
+			If Y-MX≠0
+				Output(4,9+L,abs(round(Y-MX,3
+		End
+	End
+	If S=3
+	Then
+		Disp Str1,""
+		Input "X₁=",A
+		Input "X₂=",B
+		ClrHome
+		A→X
+		expr(Str1)→C
+		B→X
+		expr(Str1)→D
+		Output(1,1,"AROC:
+		(D-C)/(B-A)►Frac
+		Output(1,6,Ans
+		Output(2,1,"∫:
+		Output(2,3,fnInt(Y₀,X,A,B
+	End
+	DelVar Y₀
+	Pause 
+End

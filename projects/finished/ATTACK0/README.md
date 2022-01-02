@@ -1,1 +1,0 @@
-A turn-based old RPG-style boss battle between the player and an unspecified monster. One of the first "serious" programs I ever completed. You can't actually kill the monster though, it just gets negative HP and keeps attacking.

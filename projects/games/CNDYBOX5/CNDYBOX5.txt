@@ -1,0 +1,813 @@
+ClrHome
+Output(2,5,"Candy Box
+Output(3,7,"5.2
+Output(5,2,"Resume
+Output(6,2,"New Game
+2→A
+1→θ
+0→K
+While K≠105
+	0→K
+	While K=0 and θ=0
+		getKey→K
+	End
+	If K=45
+	Then
+		ClrHome
+		Return
+	End
+	If K=25 or K=34 or θ=1
+	Then
+		0→θ
+		Output(A+4,1," 
+		A+1→A
+		If A>2
+			1→A
+		Output(A+4,1,"►
+	End
+End
+If A=2
+Then
+	{0,0,1,0,100,100,0,0,0,0,1,1,0,5000,0}→ʟCB5
+	While 0
+		1-CANDY
+		2-LOLLY
+		3-C/S
+		4-L/S
+		5-HP
+		6-MAXHP
+		7-PLANTED
+		8-CAULDCAND
+		9-CAULDLOLLY
+		10-STIRTIME
+		11-WEAPON
+		12-ARMOR
+		13-HAT
+		14-MILLPRICE
+		15-EATEN
+	End
+	{0,0,0,0,0,0}→ʟPOTS
+	While 0
+		1-HEAL
+		2-HEAL‗2
+		3-TELE
+		4-ACID
+		5-FIRE
+		6-BRSRK
+	End
+	{1,0,0,0,0,0,0}→ʟWPN5
+	{1,0,0,0,0,0,0}→ʟAMR5
+	{1,0,0,0,0,0,0}→ʟHAT5
+End
+
+
+
+
+ClrHome
+1→θ
+startTmr→A
+startTmr→B
+1→C
+1→D
+0→E
+0→F
+0→G
+0→H
+0→L
+0→M
+0→N
+"|invertedequalçÇ`δτñÑΔàinvertedequal|~@invertedequalẋ→Str1
+"XTreeChestGoblinTrollShrimpEelOctopusSquireKnightRockWolfChestBatWhaleMimicOgre→Str2
+{1,4,5,6,5,6,3,7,6,6,4,4,5,3,5,5,4}→ʟNAMES
+[[1,2,0,0,0][2,3,4,10,0][5,6,7,0,0][8,9,0,0,0][1,11,12,0,0][10,12,13,15,0]]→[A]
+[[5,0,3,0,1][50,0,150,58,126][10,5,5,4,16][15,5,7,9,22][4,1,5,1,3][15,6,8,18,31][30,4,9,26,42][32,6,5,51,74][38,5,7,68,89][5,0,4,0,2][40,6,5,68,94][100,0,200,428,646][32,5,4,27,61][200,3,1,156,328][55,3,50,194,208][400,6,1,1426,2015]]→[B]
+While 0
+	1-HP
+	2-DMG
+	3-RARITY
+	4-MIN CANDY
+	5-MAX CANDY
+End
+{5,3,4,4,2,6,6,3,3,6,6}→ʟSLCT
+{0,1,2,1,3,4,2,2,2,2,0}→ʟDISP
+{20,200,15,50,100,256}→ʟPOTC
+{1,50,3,10,5,80}→ʟPOTL
+{10,20,3,14,4,40}→ʟPOTT
+{0,100,500,1500,3000,10000}→ʟPRICE
+While 1
+	0→K
+	While K≠105 and θ=0
+		0→K
+		While K=0 and θ=0
+			startTmr→A
+			If A>B
+			Then
+				If L>0
+				Then
+					L-1→L
+					If L=0 and C=4
+						Output(6,1,"           
+				End
+				A-B→Z
+				If H>0
+				Then
+					H-1→H
+					If H=0 and C=4
+						Output(6,1,"                
+				End
+				If ʟCB5(10)>0
+				Then
+					ʟCB5(10)+Z→ʟCB5(10
+					If C=4
+						Output(6,13,ʟCB5(10
+				End
+				1→X
+				If ʟCB5(13)=2
+					3→X
+				ʟCB5(2)+XZʟCB5(4)→ʟCB5(2
+				ʟCB5(1)+ZʟCB5(3)→ʟCB5(1
+				If M=0
+					min(ʟCB5(5)+Z,ʟCB5(6))→ʟCB5(5
+				If M<0
+					0→M
+				If ʟDISP(C)=1 or ʟDISP(C)=3
+					Output(8,5,iPart(ʟCB5(2
+				If ʟDISP(C)=4
+					Output(8,1,ʟCB5(5
+				If ʟDISP(C)=1
+					Output(7,5,ʟCB5(1
+				If ʟDISP(C)=2
+					Output(8,5,ʟCB5(1
+				A→B
+			End
+			getKey→K
+		End
+		0→E
+		If F=2
+		Then
+			If K=23
+			Then
+				Output(D+1,7,"        
+				iPart(G/10)→G
+				Output(D+1,7,G
+			End
+			If (K≥72 and K≤94 and fPart(K/10)≥.2 and fPart(K/10)≤.4) or K=102
+			Then
+				(26-3iPart(K/10)+10fPart(K/10))→Z
+				If K=102
+					0→Z
+				If G<9999999
+					10G+Z→G
+				Output(D+1,7,G
+			End
+		End
+		If K=45 and F≥1
+		Then
+			If F=2
+			Then
+				If C=2
+					Output(D+1,2,"Eat candies     
+				If C=4 and D=1
+					Output(D+1,2,"Add candies     
+				If C=4 and D=2
+					Output(D+1,2,"Add lollipops   
+				If C=5
+					Output(D+1,2,"Plant lollipops 
+			End
+			D→E
+			⁻F→F
+			If F≠⁻2
+				1→θ
+		End
+		If K=45 and F=0
+		Then
+			If C=1
+			Then
+				ClrHome
+				Return
+			End
+			If C≥2 and C≤6
+			Then
+				C-1→E
+				1→C
+				1→θ
+			End
+			If C≥7 and C≤10
+			Then
+				C-6→E
+				3→C
+				1→θ
+			End
+			If C=11
+			Then
+				4→E
+				4→C
+				1→θ
+			End
+		End
+		If F<0
+			0→F
+		If (K=25 or K=34) and F=0
+		Then
+			If C=5 and D=2
+				Output(4,1,"                
+			If C=5 and D=1
+			Then
+				Output(4,1,ʟCB5(14
+				Output(4,14,"C⁄S
+				Output(4,12,ʟCB5(3)+1
+				Output(4,9,"--‗>
+			End
+			If C=2 and D=2
+				Output(7,15,"  
+			If C=7
+				Output(8,12,"     
+			Output(D+1,1," 
+			If K=25
+				D-1→D
+			If K=34
+				D+1→D
+			If D>ʟSLCT(C
+				1→D
+			If D<1
+				ʟSLCT(C)→D
+			Output(D+1,1,"►
+			If C=2 and D=2
+				Output(7,15,60
+			If C=2 and D=3
+				Output(7,15,30
+			If C=7 and ʟWPN5(D)=0
+				Output(8,12,ʟPRICE(D
+		End
+	End
+	If K=105
+	Then
+		C→Z
+		If Z=6 and F=0
+			D→M
+		If Z=4 and D=3 and (ʟCB5(8)ʟCB5(9)≠0)
+		Then
+			ʟCB5(10)→X
+			not(ʟCB5(10))→ʟCB5(10
+			If ʟCB5(10)=0
+			Then
+				Output(4,2,"Start stirring
+				Output(6,13,"    
+				Output(7,13,"    
+				Output(8,13,"    
+				0→Y
+				For(I,1,dim(ʟPOTS
+					If X=ʟPOTT(I) and (ʟCB5(8))/(ʟPOTC(I))=(ʟCB5(9))/(ʟPOTL(I)) and (CB5(8))/(ʟPOTC(I))≠0
+						I→Y
+				End
+				5→L
+				If Y=0
+				Then
+					Output(6,1,"Failure!
+				Else
+					Output(6,1,"Success! ×
+					Output(6,11,(ʟCB5(8))/(ʟPOTC(Y))
+					ʟPOTS(Y)+((ʟCB5(8))/(ʟPOTC(Y)))→ʟPOTS(Y
+					3→H
+				End
+				0→ʟCB5(8
+				0→ʟCB5(9
+			Else
+				Output(4,2,"Finish batch  
+				Output(6,13,1
+			End
+		End
+		If Z=2 and D=3 and ʟCB5(1)≥30
+		Then
+			ʟCB5(1)-30→ʟCB5(1
+			Output(7,5,"       
+			Output(7,5,ʟCB5(1
+			ʟCB5(6)→ʟCB5(5
+		End
+		If Z=2 and D=2 and ʟCB5(1)≥60
+		Then
+			ʟCB5(1)-60→ʟCB5(1
+			Output(7,5,"        
+			Output(7,5,ʟCB5(1
+			ʟCB5(2)+1→ʟCB5(2
+			Output(8,5,iPart(ʟCB5(2
+		End
+		If Z=7 and ʟWPN5(D)=0 and ʟCB5(1)≥ʟPRICE(D
+		Then
+			1→ʟWPN5(D
+			ʟCB5(1)-ʟPRICE(D)→ʟCB5(1
+			Output(8,5,"            
+			Output(8,5,ʟCB5(1
+		End
+		If Z=10 and F=1
+		Then
+			1→θ
+			0→K
+			0→F
+		End
+		If Z=10 and F=1
+		Then
+			D→E
+			1→θ
+		End
+		If Z=5 and D=2 and ʟCB5(2)≥ʟCB5(14
+		Then
+			ʟCB5(2)-ʟCB5(14)→ʟCB5(2
+			iPart(ʟCB5(14)*(1+ʟCB5(3)/10))→ʟCB5(14
+			ʟCB5(3)+1→ʟCB5(3
+			Output(8,5,"        
+			Output(8,5,iPart(ʟCB5(2
+			Output(4,1,ʟCB5(14
+			Output(4,14,"C⁄S
+			Output(4,12,ʟCB5(3)+1
+			Output(4,9,"--‗>
+		End
+		If Z=10 and F=0
+		Then
+			For(I,1,7
+				Output(I,1,"                
+			End
+			3→F
+			If D=1
+			Then
+				Output(2,1,"Restores 20% of
+				Output(3,1,"your max health.
+			End
+			If D=2
+			Then
+				Output(2,1,"Restores 50% of
+				Output(3,1,"your max health.
+			End
+			If D=3
+			Then
+				Output(2,1,"Teleports you to
+				Output(3,1,"the start of a
+				Output(4,1,"quest.
+			End
+			If D=4
+			Then
+				Output(2,1,"Deals 5 damage
+				Output(3,1,"to you and‗ all
+				Output(4,1,"enemies.
+			End
+			If D=5
+			Then
+				Output(2,1,"Burns an enemy
+				Output(3,1,"with 20 fire
+				Output(4,1,"damage.
+			End
+			If D=6
+			Then
+				Output(2,1,"Doubles your
+				Output(3,1,"attack damage
+				Output(4,1,"temporarily.
+			End
+			Output(6,1,"Press ? to use!
+			Output(6,7,D
+		End
+		If (Z=7 and ʟWPN5(D)=1) or (Z=8 and ʟAMR5(D)=1) or (Z=9 and ʟHAT5(D)=1)
+		Then
+			Output(ʟCB5(Z+4)+1,2," 
+			D→ʟCB5(Z+4)
+			Output(D+1,2,":
+		End
+		If F≥1
+		Then
+			If F=2
+			Then
+				If ((Z=2 and D=1) or (Z=4 and D=1)) and G≤ʟCB5(1
+				Then
+					ʟCB5(1)-G→ʟCB5(1
+					If Z=2
+					Then
+						ʟCB5(15)+G→ʟCB5(15
+						iPart(100+(2.1*(ʟCB5(15)^.4)))→ʟCB5(6
+						Output(7,5,"       
+						Output(7,5,ʟCB5(1
+						Output(D+1,2,"Eat candies     
+					End
+					If Z=4
+					Then
+						ʟCB5(8)+G→ʟCB5(8
+						Output(7,5,"        
+						Output(7,5,ʟCB5(1
+						Output(7,13,ʟCB5(8
+						Output(D+1,2,"Add candies     
+					End
+				End
+				If ((Z=4 and D=2) or (Z=5 and D=1)) and G≤ʟCB5(2
+				Then
+					ʟCB5(2)-G→ʟCB5(2
+					If Z=4
+					Then
+						ʟCB5(9)+G→ʟCB5(9
+						Output(8,5,"        
+						Output(8,5,iPart(ʟCB5(2
+						Output(8,13,ʟCB5(9
+						Output(D+1,2,"Add lollipops   
+					End
+					If Z=5
+					Then
+						ʟCB5(7)+G→ʟCB5(7
+						If ʟCB5(7)<293
+						Then
+							(ʟCB5(7)²)/8640→ʟCB5(4
+						Else
+							min((ʟCB5(7)-122)*500/86400,100)→ʟCB5(4
+						End
+					End
+				End
+			End
+			⁻F→F
+			If (F=⁻1 or (F=⁻2 and Z=5))
+				1→θ
+			If F=⁻3
+				1→F
+			D→E
+		End
+		If Z=1
+			D+1→C
+		If Z=3
+			D+6→C
+		If Z=4 and D=4
+			11→C
+		If F=0 and ((Z=2 and D=1) or (Z=4 and ʟCB5(10)=0 and (D=1 or D=2)) or (Z=5 and D=1))
+		Then
+			0→G
+			2→F
+			Output(D+1,2,"Num:           
+		End
+		If Z=11 and F=0
+		Then
+			1→F
+			For(I,2,8
+				Output(I,1,"                
+			End
+			Output(3,1,"Candies:
+			Output(4,1,"Lollipops:
+			Output(5,1,"Stir time:
+			Output(3,12,ʟPOTC(D
+			Output(4,12,ʟPOTL(D
+			Output(5,12,ʟPOTT(D
+		End
+		If C≠Z
+			1→θ
+	End
+	If F<0
+		0→F
+	If M>0
+	Then
+		For(I,1,7
+			Output(I,1,"                
+		End
+		Output(1,1,"o
+		Matr►list([A]ᵀ,M,L₁
+		If M=1
+			2→S
+		If M=2
+			3→S
+		If M=3
+			4→S
+		If M=4
+			3→S
+		If M=5
+			4→S
+		If M=6
+			3→S
+		DelVar [C]
+		{S,16}→dim([C]
+		For(I,1,S
+			For(J,1,16
+				If I=1 and J=1
+					J+1→J
+				For(K,1,dim(L₁
+					If (L₁(K)=0)
+					Then
+						dim(L₁)+1→K
+					Else
+						If randInt(1,[B](L₁(K),3))=1
+						Then
+							L₁(K)→[C](I,J
+							dim(L₁)+1→K
+						End
+					End
+				End
+				If [C](I,J)>0
+					Output(I,J,sub(Str1,[C](I,J),1
+			End
+		End
+		1→X
+		1→Y
+		1→V
+		1→W
+		0→U
+		0→T
+		0→Z
+		0→N
+		0→K
+		{0}→L₁
+		If M=3
+		Then
+			14→[C](S,16
+			Output(S,16,sub(Str1,14,1
+		End
+		If M=6
+		Then
+			16→[C](S,16
+			Output(S,16,sub(Str1,16,1
+		End
+		While M>0
+			getKey→K
+			If ʟCB5(12)=3
+			Then
+				L₁(1)+1→L₁(1
+				If L₁(1)=5
+				Then
+					0→L₁(1
+					min(ʟCB5(5)+1,ʟCB5(6))→ʟCB5(5
+					Output(8,1,ʟCB5(5
+				End
+			End
+			If U=0
+			Then
+				X+1→V
+				If V>16
+				Then
+					1→V
+					Y+1→W
+				End
+				If W≤S
+					[C](W,V)→U
+				If U>0
+				Then
+					[B](U,1)→T
+					Output(7,5,sub(Str2,sum(seq(ʟNAMES(I),I,1,U,1))+1,ʟNAMES(U+1))
+				End
+			End
+			If U>0
+			Then
+				T-ʟCB5(11)+1→T
+				Output(7,1,"    
+				Output(7,1,T
+				If T≤0
+				Then
+					Output(7,1,"    
+					Output(7,5,"       
+					If ʟCB5(13)≠3
+						Z+randInt([B](U,4),[B](U,5))→Z
+					If ʟCB5(13)=3
+						Z+3randInt([B](U,4),[B](U,5))→Z
+					Output(7,13,Z
+					0→T
+					0→U
+					If W≤S
+						0→[C](W,V
+				Else
+					If ʟCB5(12)≠2
+						max(ʟCB5(5)-[B](U,2),0→ʟCB5(5
+					If ʟCB5(12)=2
+						max(ʟCB5(5)-iPart([B](U,2)/2),0→ʟCB5(5
+					Output(8,1,"     
+					Output(8,1,ʟCB5(5
+				End
+			End
+			If U=0
+			Then
+				Output(Y,X," 
+				V→X
+				If W≤S
+					W→Y
+				Output(Y,X,"o
+			End
+			If K=105 and 0≥1 and N=0
+			Then
+				ʟPOTS(ʟCB5(14))-1→ʟPOTS(ʟCB5(14
+				5→N
+				^^^^^
+				If ʟCB5(14)=1
+					If ʟCB5(14)=2
+					If ʟCB5(14)=3
+					If ʟCB5(14)=4
+					If ʟCB5(14)=5
+					If ʟCB5(14)=6
+				End
+			If W>S or K=45 or ʟCB5(5)=0
+			Then
+				⁻M→M
+				For(I,1,7
+					Output(I,1,"                
+				End
+				If W>S
+				Then
+					Output(3,1,"Quest complete!
+					Output(4,1,"Candies: +
+					Output(4,11,Z
+					ʟCB5(1)+Z→ʟCB5(1
+					0→Y
+					If Y=0 and M=⁻1 and randInt(1,20)=1 and ʟAMR5(3)=0
+					Then
+						1→Y
+						1→ʟAMR5(3
+						Output(7,1,"Healthy armor!
+					End
+					If Y=0 and M=⁻4 and randInt(1,15)=1 and ʟAMR5(2)=0
+					Then
+						1→Y
+						1→ʟAMR5(2
+						Output(7,1,"Knight armor!
+					End
+					If Y=0 and randInt(1,100)=1 and ʟHAT5(2)=0
+					Then
+						1→Y
+						1→ʟHAT5(2
+						Output(7,1,"Farmer hat!
+					End
+					If Y=0 and randInt(1,200)=1 and ʟHAT5(3)=0
+					Then
+						1→Y
+						1→ʟHAT5(3
+						Output(7,1,"Candy hat!
+					End
+					If Y=1
+						Output(6,1,"BONUS! You found
+				Else
+					If ʟCB5(5)=0
+					Then
+						Output(3,1,"Quest failed…
+						Output(4,1,"No rewards.
+					Else
+						Output(3,1,"You escaped!
+						Output(4,1,"No rewards.
+					End
+				End
+				1→F
+			End
+		End
+	End
+	If θ=1
+	Then
+		0→F
+		ClrHome
+		0→θ
+		1→D
+		If E≠0
+			E→D
+		If C=1
+		Then
+			Output(1,7,"Menu
+			Output(2,2,"invertedequal Candy Box
+			Output(3,2,"$ Equipment
+			Output(4,2,"Ú Cauldron
+			Output(5,2,"Ä Lollipop Farm
+			Output(6,2,"λ Quests
+		End
+		If C=2
+		Then
+			Output(1,4,"Candy Box
+			Output(2,2,"Eat candies
+			Output(3,2,"Buy lollipop
+			Output(4,2,"Ful‗l heal
+		End
+		If C=3
+		Then
+			Output(1,4,"Equipment
+			Output(2,2,"Weapon
+			Output(3,2,"Armor
+			Output(4,2,"Hat
+			Output(5,2,"Potion
+		End
+		If C=4
+		Then
+			Output(1,5,"Cauldron
+			Output(2,2,"Add candies
+			Output(3,2,"Add lollipops
+			If ʟCB5(10)=0
+				Output(4,2,"Start stirring
+			If ʟCB5(10)>0
+				Output(4,2,"Finish batch
+			Output(5,2,"Recipes
+			If ʟCB5(10)>0
+				Output(6,13,ʟCB5(10
+			If ʟCB5(8)>0
+				Output(7,13,ʟCB5(8
+			If ʟCB5(9)>0
+				Output(8,13,ʟCB5(9
+		End
+		If C=5
+		Then
+			Output(1,7,"Farm
+			Output(2,2,"Plant lollipops
+			Output(3,2,"Feed mill
+			Output(6,1,"L⁄?
+			1→X
+			If ʟCB5(13)=2
+				3→X
+			If XʟCB5(4)≥0
+			Then
+				Output(6,3,"D
+				60*60*24→Y
+			End
+			If XʟCB5(4)≥1/60/60
+			Then
+				Output(6,3,"H
+				60*60→Y
+			End
+			If XʟCB5(4)≥1/60
+			Then
+				Output(6,3,"M
+				60→Y
+			End
+			If XʟCB5(4)≥1
+			Then
+				Output(6,3,"S
+				1→Y
+			End
+			Output(6,5,round(YXʟCB5(4),2
+			If X>1
+				Output(6,16,"*
+			Output(7,1,"Planted
+			Output(7,9,ʟCB5(7
+		End
+		If C=6
+		Then
+			Output(1,6,"Quests
+			Output(2,2,"Î Forest
+			Output(3,2,"Δ Mt. Goblin
+			Output(4,2,"|~ Ocean
+			Output(5,2,"Ω Castle
+			Output(6,2,"Í Dark Woods
+			Output(7,2,"σ Cave
+		End
+		If C=7
+		Then
+			Output(1,6,"Weapon
+			Output(2,3,"None
+			Output(3,3,"Wood sword
+			Output(4,3,"Copper sword
+			Output(5,3,"Iron sword
+			Output(6,3,"Titanium sword
+			Output(7,3,"Mithril sword
+		End
+		If C=8
+		Then
+			Output(1,7,"Armor
+			Output(2,3,"None
+			Output(3,3,"Knight armor
+			Output(4,3,"Healthy armor
+		End
+		If C=9
+		Then
+			Output(1,8,"Hat
+			Output(2,3,"None
+			Output(3,3,"Farmer hat
+			Output(4,3,"Candy hat
+		End
+		If C=10 or C=11
+		Then
+			If C=10
+				Output(1,6,"Potions
+			If C=11
+				Output(1,6,"Recipes
+			Output(2,2,"Healing I
+			Output(3,2,"Healing II
+			Output(4,2,"Teleport
+			Output(5,2,"Acid rain
+			Output(6,2,"Fire breath
+			Output(7,2,"Berserk
+			For(I,1,6
+				Output(I+1,14,"×
+				Output(I+1,15,ʟPOTS(I
+			End
+		End
+		If C≥7 and C≤9
+		Then
+			Output(ʟCB5(C+4)+1,2,":
+			For(I,1,ʟSLCT(C
+				If (C=7 and ʟWPN5(I)=0) or (C=8 and ʟAMR5(I)=0) or (C=9 and ʟHAT5(I)=0)
+					Output(I+1,2,"χ
+			End
+		End
+		Output(D+1,1,"►
+		If ʟDISP(C)=1
+		Then
+			Output(7,1,">O<
+			Output(7,5,ʟCB5(1
+		End
+		If ʟDISP(C)=2
+		Then
+			Output(8,1,">O<
+			Output(8,5,ʟCB5(1
+		End
+		If ʟDISP(C)=1 or ʟDISP(C)=3
+		Then
+			Output(8,1,"--O
+			Output(8,5,iPart(ʟCB5(2
+		End
+		If ʟDISP(C)=4
+		Then
+			Output(8,1,ʟCB5(5
+			Output(8,8,"⁄
+			Output(8,13,ʟCB5(6
+		End
+	End
+End

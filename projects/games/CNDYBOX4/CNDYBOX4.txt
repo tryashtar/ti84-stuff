@@ -1,0 +1,374 @@
+ClrHome
+While 0
+	ITM:
+	1-CAND
+	2-LOLLY
+	3-CHOCOLATE
+	4-WEAPON
+	5-ARMOR
+	6-HAT
+	STAT:
+	1-HP
+	2-MAXHP
+	3-EATEN
+	4-PLANTED
+	5-C/S
+	6-L/S
+	7-CAULDCAND
+	8-CAULDLOLLY
+	9-CAULDSTIR
+	WPNH:
+	1-WOOD
+	2-ROCK
+	3-COPPER
+	4-IRON
+	5-STEEL
+	6-TITANIUM
+	7-MITHRIL
+	8-CANDY
+	9-BLUDGEON
+	10-DAGGER
+	11-SHARPBLADE
+	AMRH:
+	1-KNIGHT
+	2-HEAL
+	HATH:
+	1-OCTOPUS
+	PTNH:
+	1-HEALTH1
+	2-HEALTH2
+	3-ACID
+	4-TELEPORT
+	5-FIRE
+End
+{1,2,3,4,5,6,7,8,11,5,6}→ʟWPDMG
+{1,1,1,1,1,1,1,1,0.4,1,1}→ʟWPSPD
+{2000,200,0,0,0,0}→ʟITM
+{0,0,0,0,0}→ʟPTNH
+{20,300,50,8,9}→ʟPTCC
+{1,100,2,2,1}→ʟPTLC
+{10,30,40,3,5}→ʟPTSC
+{100,100,0,0,1,0,0,0,0}→ʟSTAT
+{0,0,0,0,0,0,0,0,0,0}→ʟWPNH
+{0,0}→ʟAMRH
+{0}→ʟHATH
+{3,3,4}→ʟSLCT
+{3,4,2}→ʟESLCT
+1→C
+1→D
+0→E
+1→θ
+startTmr→A
+A→B
+While 1
+	0→K
+	While not(K=24 or K=25 or K=26 or K=34 or K=45 or K=105) and θ=0
+		getKey→K
+		startTmr→A
+		If A>B
+		Then
+			If ʟSTAT(9)≥1
+			Then
+				ʟSTAT(9)+1→ʟSTAT(9
+				If E=2
+					Output(6,13,ʟSTAT(9
+			End
+			ʟITM(1)+ʟSTAT(5)*(A-B)→ʟITM(1
+			If E=0 and (C=1 or C=2)
+				Output(6,5,ʟITM(1
+			If E=1
+				Output(8,5,ʟITM(1
+			If E=2
+				Output(7,5,ʟITM(1
+		End
+		A→B
+	End
+	If K=105
+	Then
+		If E=0
+		Then
+			If C=1
+			Then
+			End
+			If C=2
+			Then
+				If D≥1 and D≤3
+				Then
+					D→E
+					1→θ
+				End
+			End
+			If C=3
+			Then
+			End
+		Else
+			If E=1
+			Then
+			End
+			If E=2
+			Then
+				If D=1 or D=2
+				Then
+					Output(D+1,2,"Add:            
+					0→Z
+					getKey→K
+					0→K
+					While K≠10.5 and K≠4.5
+						0→K
+						While K=0
+							getKey→K
+						End
+						If K=23
+						Then
+							iPart(Z/10)→Z
+							Output(D+1,7,"        
+							Output(D+1,7,Z
+						End
+						K/10→K
+						If K=10.2
+							0→K
+						If K=0 or (iPart(K)≥7 and iPart(K)≤9 and fPart(K)≥.2 and fPart(K)≤.4)
+						Then
+							26-3iPart(K)+10fPart(K)→K
+							If K=26
+								0→K
+							If K≥0 and K≤9 and fPart(K)=0 and Z≤9999999
+							Then
+								10Z+K→Z
+								Output(D+1,7,Z
+							End
+						End
+					End
+					If D=1
+						Output(2,2,"Add candies     
+					If D=2
+						Output(3,2,"Add lollipops   
+					If K=10.5
+					Then
+						If ʟITM(D)≥Z
+						Then
+							ʟITM(D)-Z→ʟITM(D
+							Output(D+6,5,"       
+							Output(D+6,5,ʟITM(D
+							ʟSTAT(6+D)+Z→ʟSTAT(6+D)
+							If ʟSTAT(6+D)>0
+								Output(6+D,13,ʟSTAT(6+D
+						End
+					End
+				End
+				If D=3 and ʟSTAT(7)+ʟSTAT(8)>0
+				Then
+					ʟSTAT(9)→Y
+					not(ʟSTAT(9))→ʟSTAT(9
+					If ʟSTAT(9)=1
+						Output(6,13,ʟSTAT(9
+					If ʟSTAT(9)=0
+						Output(6,13,"    
+					If ʟSTAT(9)=0
+					Then
+						Output(4,2,"Start stirring
+						0→Z
+						For(I,1,dim(ʟPTNH
+							If (ʟSTAT(7))/(ʟPTCC(I))=(ʟSTAT(8))/(ʟPTLC(I)) and fPart((ʟSTAT(7))/(ʟPTLC(I)))=0 and Y=(ʟPTSC(I))
+								I→Z
+						End
+						If Z=0
+						Then
+							Output(6,3,"Failed!
+						Else
+							Output(6,3,"Success! ×
+							Output(6,13,(ʟSTAT(7))/(ʟPTCC(Z))
+							ʟPTNH(Z)+((ʟSTAT(7))/(ʟPTCC(Z)))→ʟPTNH(Z
+						End
+						0→ʟSTAT(7
+						0→ʟSTAT(8
+						Output(7,13,"    
+						Output(8,13,"    
+					End
+					If ʟSTAT(9)≥1
+						Output(4,2,"Finish batch  
+				End
+				If D=4
+				Then
+					ClrHome
+					Output(1,1,"Health
+					Output(2,1,"Health₂
+					Output(3,1,"Acid
+					Output(4,1,"Teleport
+					Output(5,1,"Fire
+					For(I,1,dim(ʟPTNH
+						Output(I,14,ʟPTNH(I
+					End
+					0→K
+					While K≠105 and K≠45
+						getKey→K
+					End
+					0→K
+					1→θ
+				End
+			End
+		End
+	End
+	If K=45
+	Then
+		If E=0
+		Then
+			ClrHome
+			Output(4,5,"Goodbye!
+			Stop
+		Else
+			0→E
+			1→θ
+		End
+	End
+	If K=25 or K=34
+	Then
+		If E=2 and ʟSTAT(9)=0
+			Output(6,1,"                
+		Output(D+1,1," 
+		If K=25
+			D-1→D
+		If K=34
+			D+1→D
+		If (E=0 and D>ʟSLCT(C))
+			1→D
+		If E>0
+		Then
+			If D>ʟESLCT(E)
+				1→D
+		End
+		If D<1
+		Then
+			If E=0
+				ʟSLCT(C)→D
+			If E>0
+				ʟESLCT(E)→D
+		End
+		Output(D+1,1,"►
+		If C=1
+		Then
+			Output(6,15,"  
+			If D=2
+				Output(6,15,60
+			If D=3
+				Output(6,15,30
+		End
+	End
+	If (E=0 and (K=24 or K=26)) or θ=1
+	Then
+		If θ=1
+			0→θ
+		If K=24
+			C-1→C
+		If K=26
+			C+1→C
+		If C>dim(ʟSLCT
+			1→C
+		If C<1
+			dim(ʟSLCT)→C
+		1→D
+		ClrHome
+		If E=0
+		Then
+			If C=1
+			Then
+				Output(1,1,"<  Candy Box   > 
+				Output(2,2,"Eat candies
+				Output(3,2,"Buy lollipop
+				Output(4,2,"Ful‗l heal
+			End
+			If C=1 or C=2
+			Then
+				Output(6,1,">O<
+				Output(7,1,"--O
+				Output(8,1,"[=]
+				For(I,1,3
+					Output(I+5,5,iPart(ʟITM(I
+				End
+			End
+			If C=2
+			Then
+				Output(1,1,"<  Item Menu   > 
+				Output(2,2,"Blacksmith
+				Output(3,2,"Cauldron
+				If ʟSTAT(9)≥1
+					Output(3,11,"δ
+				Output(4,2,"Lollipop farm
+			End
+			If C=3
+			Then
+				Output(1,1,"<    Quests    >
+				Output(2,2,"Î Forest
+				Output(3,2,"Δ Mt. Goblin
+				Output(4,2,"|~ Ocean
+				Output(5,2,"Ω Castle
+				Output(8,1,ʟSTAT(1
+				Output(8,8,"⁄
+				Output(8,13,ʟSTAT(2
+			End
+		Else
+			If E=1
+			Then
+				Output(1,4,"Blacksmith
+				Output(2,2,"Buy sword
+				Output(3,2,"Buy armor
+				Output(4,2,"Equipment
+				Output(8,1,">O<
+				Output(8,5,ʟITM(1
+			End
+			If E=2
+			Then
+				Output(1,5,"Cauldron
+				Output(2,2,"Add candies
+				Output(3,2,"Add lollipops
+				If ʟSTAT(9)=0
+					Output(4,2,"Start stirring
+				If ʟSTAT(9)≥1
+					Output(4,2,"Finish batch
+				Output(5,2,"Potions
+				Output(7,1,">O<
+				Output(8,1,"--O
+				Output(7,5,ʟITM(1
+				Output(8,5,iPart(ʟITM(2
+				If ʟSTAT(7)≥1
+					Output(7,13,ʟSTAT(7
+				If ʟSTAT(8)≥1
+					Output(8,13,ʟSTAT(8
+				If ʟSTAT(9)≥1
+					Output(6,13,ʟSTAT(9
+			End
+			If E=3
+			Then
+				Output(1,7,"Farm
+				Output(2,2,"Plant lollipops
+				Output(3,2,"Feed the mill
+				Output(6,1,"--O
+				Output(6,5,ʟITM(2
+				Output(7,1,"Planted:
+				Output(7,10,ʟSTAT(4
+				If ʟSTAT(6)≥1
+				Then
+					Output(8,1,"L⁄S:
+					Output(8,6,round(ʟSTAT(6),5
+				Else
+					If ʟSTAT(6)≥1/60
+					Then
+						Output(8,1,"L⁄M:
+						Output(8,6,round(ʟSTAT(6)*60,5
+					Else
+						If ʟSTAT(6)≥1/60/60/24
+						Then
+							Output(8,1,"L⁄H:
+							Output(8,6,round(ʟSTAT(6)*60*60,5
+						Else
+							Output(8,1,"L⁄D:
+							Output(8,6,round(ʟSTAT(6)*60*60*24,5
+						End
+					End
+				End
+			End
+		End
+		Output(2,1,"►
+	End
+End
+End

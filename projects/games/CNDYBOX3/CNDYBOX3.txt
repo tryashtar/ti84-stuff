@@ -1,0 +1,561 @@
+
+ClrHome
+Menu("Action","New game",1,"Resume",2
+Lbl 1
+Output(3,5,"Loading…
+Output(4,1," Creating game… 
+{0,0,0,0,0,0,1,100}→ʟSWT
+If 0
+	CANDIES,LOLLIESCHOCOLATE,EATEN,PLANTED,LOLS/SECCAND/SEC,FEEDPRC
+{100,100}→ʟHPM
+{0,0,0,0,0,0,0,0}→ʟSWD
+{0,0}→ʟARM
+{0}→ʟHAT
+{0,0,0}→ʟEQP
+Lbl 2
+Output(3,5,"Loading…
+Output(4,1," Updating data… 
+[[1,2,0,0][2,3,0,0][4,5,6,0][8,9,0,0][1,2,10,0]]→[A]
+{3,100,7,8,10,12,1,5,11,7}→ʟRRTY
+{5,50,15,3,14,20,130,35,50,55}→ʟOBHP
+{0,67,9,0,5,10,137,28,37,40}→OCMN
+{1,238,25,2,23,51,256,41,65,80}→OCMX
+{0,0,4,1,3,5,4,7,6,7}→ʟOBDG
+{3,2,6}→ʟSLCT
+{100,200,300,500,800,1200,1800,2500}→ʟSDP
+Output(4,1,"  Setting up…   
+DelVar [B]
+2→S
+1→T
+1→θ
+0→M
+0→W
+startTmr→B
+While 1
+	0→K
+	While K=0 and θ=0 and Z=0
+		getKey→K
+		startTmr→A
+		If A≠B
+		Then
+			ʟSWT(1)+(ʟSWT(7)*(A-B))→ʟSWT(1
+			ʟSWT(2)+ʟSWT(6)→ʟSWT(2
+			min({ʟHPM(1)+1,ʟHPM(2)})→ʟHPM(1
+			If S=1
+				Output(8,5,ʟSWT(1
+			If S=2
+			Then
+				Output(6,5,ʟSWT(1
+				Output(7,5,iPart(ʟSWT(2
+			End
+			If S=3 and W=1
+				Output(2,5,iPart(ʟSWT(2
+			If S=3 and W=0
+				Output(8,1,ʟHPM(1
+		End
+		A→B
+	End
+	If K=45 and W=0 and M=0
+	Then
+		ClrHome
+		Output(4,2,"See you soon!
+		Stop
+	End
+	If K=45 and W=1
+	Then
+		0→W
+		1→θ
+		1→T
+	End
+	If W≠1 and (K=24 or K=26 or K=25 or K=34)
+	Then
+		If K=24
+			S-1→S
+		If K=26
+			S+1→S
+		If K=25 or K=34
+			Output(T+1,1," 
+		If K=25
+			T-1→T
+		If K=34
+			T+1→T
+		If S>3
+			1→S
+		If S<1
+			3→S
+		If T<1
+			ʟSLCT(S)→T
+		If T>ʟSLCT(S
+			1→T
+	End
+	If W=1 and (K=24 or K=26)
+	Then
+		Output(8,1,"                
+		If T=1
+			Output(7,1,"  
+		If T=2
+			Output(7,4,"   
+		If T=3
+			Output(7,8,"    
+		If T=4
+			Output(7,13,"    
+		If K=24
+			T-1→T
+		If K=26
+			T+1→T
+		If T>4
+			1→T
+		If T<1
+			4→T
+		If T=1
+			Output(7,1,"|~|~
+		If T=2
+			Output(7,4,"|~|~|~
+		If T=3
+			Output(7,8,"|~|~|~|~
+		If T=4
+		Then
+			Output(7,13,"|~|~|~|~
+			Output(8,1,ʟSWT(8
+			Output(8,8,"-‗>    C⁄S
+			Output(8,11,ʟSWT(7)+1
+		End
+	End
+	If (K=25 or K=34 or Z=1) and not(S=3 and W=1)
+	Then
+		0→Z
+		Output(T+1,1,"►
+		If S=1
+		Then
+			Output(8,13,"    
+			If T=1
+				Output(8,13,60
+			If T=2 and X≠0
+				Output(8,13,ʟSDP(X
+			If T=3
+				Output(8,13,30
+		End
+	End
+	If K=105
+	Then
+		If S=1
+		Then
+			If T=1 and ʟSWT(1)≥60
+			Then
+				ʟSWT(1)-60→ʟSWT(1
+				ʟSWT(2)+1→ʟSWT(2
+				Output(8,5,"        
+				Output(8,5,ʟSWT(1
+			End
+			If T=2 and X≠0
+			Then
+				If ʟSWT(1)≥ʟSDP(X)
+				Then
+					ʟSWT(1)-ʟSDP(X)→ʟSWT(1
+					1→ʟSWD(X
+					1→θ
+				End
+			End
+			If T=3 and ʟSWT(1)≥30 and ʟHPM(1)<ʟHPM(2
+			Then
+				ʟSWT(1)-30→ʟSWT(1
+				ʟHPM(2)→ʟHPM(1
+				Output(8,5,"        
+				Output(8,5,ʟSWT(1
+			End
+		End
+		If S=2
+		Then
+			If T=1 and ʟSWT(1)>0
+			Then
+				Output(2,2,"Eat:            
+				0→K
+				0→C
+				While K≠105 and K≠45
+					0→K
+					While K=0
+						getKey→K
+					End
+					If K=23
+					Then
+						iPart(C/10)→C
+						Output(2,7,"         
+						Output(2,7,C
+					End
+					If K≠105 and K≠45 and K≠23
+					Then
+						K/10→K
+						If K=10.2
+							0→K
+						If iPart(K)≥7 and iPart(K)≤9 and fPart(K)≥.2 and fPart(K)≤.4
+							30-3iPart(K)-4+10fPart(K)→K
+						If K≥0 and K≤9 and fPart(K)=0 and C≤9999999
+						Then
+							10C+K→C
+							Output(2,7,C
+						End
+					End
+				End
+				If ʟSWT(1)≥C and C≥0 and fPart(C)=0 and K=105
+				Then
+					ʟSWT(1)-C→ʟSWT(1
+					ʟSWT(4)+C→ʟSWT(4
+					iPart(100+(2.1*(ʟSWT(4)^0.4)))→ʟHPM(2
+				End
+				1→θ
+			End
+			If T=2
+			Then
+				ClrHome
+				Disp "WEAPON
+				Input "",C
+				If ʟSWD(C)=1
+					C→ʟEQP(1)
+				ClrHome
+				Disp "ARMOR
+				Input "",C
+				If ʟARM(C)=1
+					C→ʟEQP(2
+				ClrHome
+				Disp "HAT
+				Input "",C
+				If ʟHAT(C)=1
+					C→ʟEQP(3
+				ClrHome
+				1→θ
+			End
+		End
+		If S=3 and W=1
+		Then
+			If T≥1 and T≤3
+			Then
+				10^‗(T-1)→V
+				If iPart(ʟSWT(2))≥V
+				Then
+					ʟSWT(2)-V→ʟSWT(2
+					ʟSWT(5)+V→ʟSWT(5
+					If ʟSWT(5)<293
+					Then
+						(ʟSWT(5)²)/86400→ʟSWT(6
+					Else
+						((ʟSWT(5)-122)*500/86400→ʟSWT(6
+					End
+					min({100,ʟSWT(6)})→ʟSWT(6
+					Output(2,5,"       
+					Output(2,5,iPart(ʟSWT(2
+					Output(3,10,"       
+					Output(3,10,ʟSWT(5
+					Output(4,6,"           
+					Output(4,6,round(ʟSWT(6),7)
+				End
+			End
+			If T=4 and iPart(ʟSWT(2))≥ʟSWT(8
+			Then
+				ʟSWT(2)-ʟSWT(8)→ʟSWT(2)
+				ʟSWT(7)+1→ʟSWT(7
+				iPart(1.5ʟSWT(8))→ʟSWT(8
+				Output(2,5,"        
+				Output(2,5,iPart(ʟSWT(2
+				Output(8,1,"       
+				Output(8,1,ʟSWT(8
+				Output(8,11,ʟSWT(7)+1
+			End
+		End
+		If S=3 and W=0
+		Then
+			If T=1
+			Then
+				1→W
+				For(I,2,8
+					Output(I,1,"                
+				End
+				Output(1,1,"Lollipop Farm   
+				Output(2,1,"--O
+				Output(2,5,iPart(ʟSWT(2
+				Output(3,1,"Planted:
+				Output(3,10,ʟSWT(5
+				Output(4,1,"L⁄S:
+				Output(4,6,round(ʟSWT(6),7)
+				Output(6,1,"+1 +10 +100 Feed
+				1→T
+				Output(7,1,"|~|~
+			End
+			If T≥2 and T≤ʟSLCT(3
+				T-1→M
+		End
+	End
+	If M>0
+	Then
+		0→R
+		For(I,1,7
+			Output(I,1,"                
+		End
+		1→D
+		1→E
+		Output(1,1,"o
+		DelVar [B]
+		16→G
+		If M=1
+			2→F
+		If M=2
+			3→F
+		If M=3
+			4→F
+		If M=4
+			3→F
+		If M=5
+			5→F
+		{F,G}→dim([B]
+		Matr►list([A]ᵀ,M,L₁
+		1→U
+		For(I,1,dim(L₁
+			If L₁(I)≠0
+				ʟRRTY(L₁(I))U→U
+		End
+		{U/(ʟRRTY(L₁(1)))}→L₂
+		1→I
+		While L₁(I)≠0
+			I+1→I
+			If L₁(I)≠0
+			Then
+				I→dim(L₂)
+				L₂(I-1)+(U/(ʟRRTY(L₁(I))))→L₂(I
+			End
+		End
+		For(I,1,F
+			For(L,1,G
+				If I=1 and L=1
+					2→L
+				Output(I,L,"mathprintbox
+				randInt(1,U)→C
+				0→R
+				For(J,1,dim(L₂
+					If C≤L₂(J
+					Then
+						L₁(J)→[B](I,L
+						L₁(J)→R
+						dim(L₂)+1→J
+					End
+				End
+				If R=0
+				Then
+					Output(I,L," 
+				Else
+					If R=1
+						Output(I,L,"|
+					If R=2
+						Output(I,L,"invertedequal
+					If R=3
+						Output(I,L,"Ç
+					If R=4
+						Output(I,L,"`
+					If R=5
+						Output(I,L,"δ
+					If R=6
+						Output(I,L,"ß
+					If R=8
+						Output(I,L,"ñ
+					If R=9
+						Output(I,L,"Ñ
+					If R=10
+						Output(I,L,"Φ
+				End
+			End
+		End
+		If M=3
+		Then
+			7→[B](F,G
+			Output(F,G,"@
+		End
+		0→O
+		0→P
+		0→Q
+		getKey→K
+		0→K
+		While M>0 and K≠45
+			getKey→K
+			If ʟEQP(2)=2
+			Then
+				Q+1→Q
+				If Q≥10
+				Then
+					0→Q
+					min({ʟHPM(1)+1,ʟHPM(2)})→ʟHPM(1
+					Output(8,1,ʟHPM(1
+				End
+			End
+			If O=0 and DE≠prod(dim([B]
+			Then
+				If E≠16
+					[B](D,E+1)→O
+				If E=16
+					[B](D+1,1)→O
+			End
+			If O=0
+			Then
+				Output(D,E," 
+				E+1→E
+				If E>16
+				Then
+					D+1→D
+					1→E
+				End
+				If D>F
+				Then
+					1→D
+					1→F
+					⁻M→M
+				End
+				Output(D,E,"o
+			Else
+				If P=0
+					ʟOBHP(O)→P
+				max({P-ʟEQP(1),0})→P
+				max({iPart(ʟHPM(1)-(ʟOBDG(O))/(ʟEQP(2)+1)),0})→ʟHPM(1
+				Output(8,1,"    
+				Output(8,1,ʟHPM(1
+				If ʟHPM(1)=0
+					⁻M→M
+				Output(7,1,"   
+				Output(7,1,P
+				If P≤0
+				Then
+					Output(7,1,"    
+					0→P
+					R+randInt(ʟOCMN(O),ʟOCMX(O))→R
+					Output(7,13,R
+					0→O
+					If E≠16
+						0→[B](D,E+1)
+					If E=16
+						0→[B](D+1,1)
+				End
+			End
+		End
+		1→θ
+		For(I,1,7
+			Output(I,1,"                
+		End
+		If K=45
+		Then
+			Output(2,1,"You escaped!
+			Output(3,1,"No rewards…
+			iPart((ʟHPM(1))/2)→ʟHPM(1
+			Output(8,1,"    
+			Output(8,1,ʟHPM(1
+		Else
+			If ʟHPM(1)>0
+			Then
+				ʟSWT(1)+R→ʟSWT(1
+				Output(2,1,"You are victory!
+				Output(3,1,"Candies: +
+				Output(3,11,R
+				If M=⁻1 and randInt(1,20)=1 and ʟARM(2)=0
+				Then
+					1→ʟARM(2
+					Output(4,1,"You found an
+					Output(5,1,"Out of HARM-or!
+				End
+				If M=⁻4 and randInt(1,4)=1 and ʟARM(1)=0
+				Then
+					1→ʟARM(1
+					Output(4,1,"You found a
+					Output(5,1,"Knight's Armor!
+				End
+			Else
+				Output(2,1,"You failed…
+				Output(3,1,"No rewards.
+			End
+		End
+		Pause 
+		0→M
+	End
+	If (K=24 or K=26 or θ=1) and not(S=3 and W=1)
+	Then
+		1→Z
+		If θ=0
+			1→T
+		0→θ
+		ClrHome
+		Output(T+1,1,"►
+		If S=1
+		Then
+			Output(1,1,"SHOP   inv   map
+			Output(2,2,"Lollipop
+			0→X
+			For(I,dim(ʟSWD),1,⁻1
+				If ʟSWD(I)=0
+					I→X
+			End
+			If X=1
+			Then
+				Output(3,2,"Wooden sword
+			Else
+				If X=2
+				Then
+					Output(3,2,"Stone sword
+				Else
+					If X=3
+					Then
+						Output(3,2,"Copper sword
+					Else
+						If X=4
+						Then
+							Output(3,2,"Iron sword
+						Else
+							If X=5
+							Then
+								Output(3,2,"Steel sword
+							Else
+								If X=6
+								Then
+									Output(3,2,"Titanium sword
+								Else
+									If X=7
+									Then
+										Output(3,2,"Mithril sword
+									Else
+										If X=8
+										Then
+											Output(3,2,"Candy sword
+										Else
+											Output(3,2,"Out of stock!
+										End
+									End
+								End
+							End
+						End
+					End
+				End
+			End
+			Output(4,2,"Ful‗l heal
+			Output(8,1,">O<
+			Output(8,5,ʟSWT(1
+		End
+		If S=2
+		Then
+			Output(1,1,"shop   INV   map
+			Output(6,1,">O<
+			Output(7,1,"--O
+			Output(8,1,"[=]
+			For(I,1,3
+				Output(I+5,5,iPart(ʟSWT(I
+			End
+			Output(2,2,"Eat candies
+			Output(3,2,"Equipment
+		End
+		If S=3
+		Then
+			Output(1,1,"shop   inv   MAP
+			Output(2,2,"Ä Lollipop farm
+			Output(3,2,"Î Forest
+			Output(4,2,"Δ Mt. Goblin
+			Output(5,2,"|~ Ocean
+			Output(6,2,"Ω Castle
+			Output(7,2,"∫ Dark woods
+			Output(8,1,ʟHPM(1
+			Output(8,8,"⁄
+			Output(8,13,ʟHPM(2
+		End
+	End
+End

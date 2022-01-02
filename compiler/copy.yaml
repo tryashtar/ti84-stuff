@@ -1,13 +1,22 @@
-finished:
+games:
 - ATTACK0
 - ATTACK1
 - ATTACK2
 - ATTACK3
+- CANDYBOX
+- CNDYBOX1
+- CNDYBOX2
+- CNDYBOX3
+- CNDYBOX4
+- CNDYBOX5
 - CNDYBOX6
 - QRCODE
 
 small:
 - _theta_CLRMEM
+
+math:
+- CALCULUS
 
 unfinished:
 - ALLDERIV
