@@ -1,0 +1,258 @@
+ClrHome
+300→G
+0→H
+1→M
+1→P
+Menu("SELECT","NEW GAME",0,"LOAD GAME",2)
+ClrHome
+While 0
+	|N=COOKIES
+	I%=CLICK PWR
+	PV=CLCK+ PRICE
+	PMT=LAST PRCHS
+	FV=TTL CKS/SEC
+	G=GLDN RARITY
+	H=GLDN TMR
+	M=CKIE MLTPLR
+End
+Lbl 0
+0→|N
+1→I%
+200→PV
+0→PMT
+0→FV
+{0,0,0,0,0,0,0,0,0,0,0}→ʟA
+{15,100,500,3000,10000,40000,200000,16666660,123456789,3999999999,75000000000}→ʟB
+ʟB→ʟBD
+{1,4,48,180,880,2400,112000,199980,3950600,49999950,600000000}→ʟC
+{10,8,12,18,22,24,28,30,40,50,60}→ʟD
+ʟD→ʟE
+{0,0,0,0,0,0,0,0,0,0,0}→ʟF
+While 0
+	A=NUMBER
+	B=DEF PRICE
+	BD=PRICE
+	C=ADD AMNT
+	D=DEF RATE
+	E=ADD RATE
+	F=TIMER
+End
+Lbl 2
+ClrHome
+Output(1,1,"θ")
+Output(1,3,|N)
+Output(2,1,"CPS:")
+Output(3,1,"CPC:")
+Output(2,6,FV)
+Output(3,6,I%)
+Output(8,1,"CLK")
+Output(8,8,PV)
+If PMT>0
+Then
+	If PMT=1
+		Output(7,1,"+")
+	If PMT=2
+		Output(7,1,"*")
+	If PMT=3
+		Output(7,1,"^")
+	If PMT=4
+		Output(7,1,"!")
+	If PMT=5
+		Output(7,1,"ᴇ")
+	If PMT=6
+		Output(7,1,"K")
+	If PMT=7
+		Output(7,1,"?")
+	If PMT=8
+		Output(7,1,"π")
+	If PMT=9
+		Output(7,1,"[i]")
+	If PMT=10
+		Output(7,1,"□")
+	If PMT=11
+		Output(7,1,":")
+	Output(7,3,ʟA(PMT))
+	Output(7,8,ʟBD(PMT))
+End
+Lbl 1
+If H<1
+Then
+	If randInt(1,G)=1
+	Then
+		Output(4,1,"(::)")
+		randInt(⁻9,⁻15)→H
+	End
+End
+If H<0
+Then
+	H+1→H
+	If H=0
+		Output(4,1,"     ")
+End
+If H>0
+Then
+	H-1→H
+	Output(4,1,"    ")
+	Output(4,1,H)
+	If H=0
+	Then
+		1→M
+		Output(4,1,"     ")
+	End
+End
+For(I,1,dim(ʟA))
+	If ʟA(I)>0
+	Then
+		ʟF(I)+1→ʟF(I)
+		If ʟF(I)>ʟE(I)
+		Then
+			0→ʟF(I)
+			|N+(ʟC(I)*M)→|N
+			Output(1,3,|N)
+		End
+	End
+End
+0→K
+0→S
+getKey→K
+If K=103
+Then
+	If H<0
+	Then
+		randInt(40,80)→H
+		Output(4,1,"     ")
+		7→M
+	End
+End
+If K=95
+Then
+	|N+(I%*M)→|N
+	Output(1,3,|N)
+End
+If K=93
+Then
+	If |N≥PV
+	Then
+		|N-PV→|N
+		I%+1→I%
+		PV+150→PV
+		Output(1,3,"         ")
+		Output(1,3,|N)
+		Output(3,6,I%)
+		Output(8,8,PV)
+	End
+End
+If K=105
+	Goto 11
+If K=92
+Then
+	If PMT>0
+	Then
+		If |N≥ʟBD(PMT)
+		Then
+			|N-ʟBD(PMT)→|N
+			ʟA(PMT)+1→ʟA(PMT)
+			iPart(ʟB(PMT)*(1.15^ʟA(PMT)))→ʟBD(PMT)
+			ʟD(PMT)/ʟA(PMT)→ʟE(PMT)
+			Output(1,3,"         ")
+			Output(1,3,|N)
+			Output(7,3,ʟA(PMT))
+			Output(7,8,ʟBD(PMT))
+			0→FV
+			For(I,1,dim(ʟA))
+				If ʟA(I)>0
+					FV+(ʟC(I)/ʟE(I))→FV
+			End
+			iPart(FV*100)/100→FV
+			Output(2,6,"         ")
+			Output(2,6,FV)
+		End
+	End
+End
+Goto 1
+Lbl 11
+ClrHome
+If P=1
+Then
+	Output(1,1,"+")
+	Output(2,1,"*")
+	Output(3,1,"^")
+	Output(4,1,"!")
+	Output(5,1,"ᴇ")
+	Output(6,1,"K")
+	Output(7,1,"?")
+	Output(8,1,"π")
+End
+If P=2
+Then
+	Output(1,1,"[i]")
+	Output(2,1,"﹢")
+	Output(3,1,":")
+End
+0→J
+For(I,8P-7,8P)
+	J+1→J
+	If I≤dim(ʟA)
+	Then
+		If ʟA(I)>0
+			Output(J,3,ʟA(I))
+		Output(J,8,ʟBD(I))
+	End
+End
+Lbl 12
+0→K
+0→S
+While K=0
+	getKey→K
+End
+If K=24
+Then
+	1→P
+	Goto 11
+End
+If K=26
+Then
+	2→P
+	Goto 11
+End
+If K=105
+	Goto 2
+If K=92
+	1→S
+If K=93
+	2→S
+If K=94
+	3→S
+If K=82
+	4→S
+If K=83
+	5→S
+If K=84
+	6→S
+If K=72
+	7→S
+If K=73
+	8→S
+S→Z
+If P=2 and S+8≤dim(ʟA)
+	S+8→S
+If S>0
+Then
+	If |N≥ʟBD(S)
+	Then
+		|N-ʟBD(S)→|N
+		ʟA(S)+1→ʟA(S)
+		iPart(ʟB(S)*(1.15^ʟA(S)))→ʟBD(S)
+		ʟD(S)/ʟA(S)→ʟE(S)
+		Output(Z,3,ʟA(S))
+		Output(Z,8,ʟBD(S))
+		S→PMT
+		0→FV
+		For(I,1,dim(ʟA))
+			If ʟA(I)>0
+				FV+(ʟC(I)/ʟE(I))→FV
+		End
+		iPart(FV*100)/100→FV
+	End
+End
+Goto 12

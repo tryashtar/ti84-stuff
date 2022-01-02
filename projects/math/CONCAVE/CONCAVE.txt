@@ -1,0 +1,30 @@
+ClrHome
+Disp "Input‗ function:
+Input "",Str1
+ClrHome
+Disp "Point to check:
+Input "",X
+ClrHome
+expr(Str1)→Y
+String►Equ(Str1,Y₀
+nDeriv(Y₀,X,X)→M
+DelVar Y₀
+Y-MX→B
+X+0.001→X
+MX+B→R
+X-0.002→X
+MX+B→L
+Output(1,1,"Uh-oh!
+If Y>R and Y<L
+	Output(1,1,"Concave up!
+If Y<R and Y>L
+	Output(1,1,"Concave down!
+If Y=L and Y=R
+	Output(1,1,"No concavity!
+Output(3,1,"Tan line:
+Output(4,1,"Y=
+Output(4,3,round(M,2
+Output(4,7,"X+
+Output(4,9,round(B,2
+Pause 
+ClrHome

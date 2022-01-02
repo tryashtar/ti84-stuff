@@ -1,0 +1,87 @@
+DelVar [A]
+{6,7}→dim([A]
+ClrHome
+For(I,2,7
+	Output(I,4,"|
+	Output(I,12,"|
+End
+For(I,4,12
+	Output(8,I,"-
+End
+1→A
+1→θ
+1→T
+While 1
+	0→K
+	While not(K=105 and [A](1,A)=0
+		0→K
+		While K=0 and θ=0
+			getKey→K
+		End
+		If K=24 or K=26 or θ=1
+		Then
+			0→θ
+			Output(1,A+4," 
+			If K=24
+				A-1→A
+			If K=26
+				A+1→A
+			If A>7
+				1→A
+			If A<1
+				7→A
+			Output(1,A+4,"↓
+		End
+	End
+	1→B
+	0→C
+	While C=0
+		If B>1
+			Output(B,A+4," 
+		B+1→B
+		If T=1
+			Output(B,A+4,"O
+		If T=2
+			Output(B,A+4,"@
+		rand
+		If B>6
+			1→C
+		If C=0
+		Then
+			If [A](B,A)≠0
+				1→C
+		End
+	End
+	B-1→B
+	T→[A](B,A
+	0→X
+	0→Y
+	For(I,max(1,A-3),min(7,A+3
+		If [A](B,I)=T
+			X+1→X
+		If [A](B,I)≠T
+			0→X
+	End
+	If X≥4
+		1→Y
+	0→X
+	For(I,max(1,B-3),min(6,B+3
+		If [A](I,A)=T
+			X+1→X
+		If [A](I,A)≠T
+			0→X
+	End
+	If X≥4
+		1→Y
+	If Y=1
+	Then
+		Output(1,1,"Winner: P
+		Output(1,10,T
+		Pause 
+		ClrHome
+		Return
+	End
+	T+1→T
+	If T>2
+		1→T
+End

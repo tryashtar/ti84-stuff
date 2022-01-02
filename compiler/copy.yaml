@@ -10,6 +10,9 @@ games:
 - CNDYBOX4
 - CNDYBOX5
 - CNDYBOX6
+- CONNECT4
+- COOKIES1
+- COOKIES2
 - QRCODE
 
 small:
@@ -17,6 +20,7 @@ small:
 
 math:
 - CALCULUS
+- CONCAVE
 
 unfinished:
 - ALLDERIV

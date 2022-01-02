@@ -1,0 +1,68 @@
+ClrHome
+1→R
+10000→C
+0→D
+{0,0,0,0,0,0}→L₁
+{50,100,150,200,250,300}→L₂
+{20,25,30,35,40,50}→L₃
+{1,3,6,9,13,20}→L₄
+While 0
+	L₁ IS NUMBER
+	L₂ IS PRICE
+	L₃ IS ADD RATE
+	L₄ IS ADD AMNT
+End
+0→T
+Output(1,1,"θ")
+Output(2,1,"/")
+Output(3,1,"π")
+Output(4,1,"*")
+Output(5,1,"^")
+Output(6,1,"=")
+Output(7,1,"°")
+For(I,1,dim(L₁))
+	Output(I+1,14,L₂(I))
+End
+Lbl 1
+If iPart(C*1.1)≥D
+	iPart(C*1.1)→D
+If C<D
+	C→D
+Output(1,2,D)
+T+1→T
+For(I,1,dim(L₁))
+	If L₁(I)≠0
+	Then
+		If fPart(T/L₃(I))=0
+			C+(L₄(I)*L₁(I))→C
+	End
+End
+getKey→K
+0→S
+If K=95
+	C+R→C
+If K=92
+	1→S
+If K=93
+	2→S
+If K=94
+	3→S
+If K=82
+	4→S
+If K=83
+	5→S
+If K=84
+	6→S
+If S≠0
+Then
+	If C≥L₂(S)
+	Then
+		L₁(S)+1→L₁(S)
+		Output(S+1,2,L₁(S))
+		C-L₂(S)→C
+		Output(1,2,"               ")
+		iPart(L₂(S)^1.015)→L₂(S)
+		Output(S+1,14,L₂(S))
+	End
+End
+Goto 1
