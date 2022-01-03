@@ -26,7 +26,7 @@ for category, items in data.items():
                 dest = os.path.join(cat_folder, nice_name)
                 os.makedirs(dest, exist_ok = True)
                 with open(file, "rb") as code:
-                    prgm = compiler.Program(code.read())
+                    prgm = compiler.load_program(code.read())
                 prgm.archived = False
                 if 'remove' in item:
                     lines = prgm.code.splitlines()
