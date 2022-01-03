@@ -1,4 +1,6 @@
 import os
+import sys
+sys.path.append('../compiler')
 import compiler
 
 output_files = True
