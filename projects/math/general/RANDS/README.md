@@ -1,0 +1,1 @@
+Generates a list of unique random numbers, after you input how many you want and in what range the numbers should be. Gets stuck trying to avoid duplicates if you ask for more numbers than exist in that range.

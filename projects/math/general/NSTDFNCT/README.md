@@ -1,0 +1,1 @@
+"Nested function." Input two expressions using X, then nests them, displaying the entirety of the second expression in place of X of the first, or vice versa. Has another mode to print the results of the nested expression for a given value of X.

@@ -1,0 +1,1 @@
+"Grunt force," a play on "brute force." Tries to solve an equation for X. The top of the program defines U and D as the number of digits before and after the decimal point to calculate. It appears to solve digit-by-digit, by choosing the largest digit in each place that wouldn't cause the equation to exceed the result.

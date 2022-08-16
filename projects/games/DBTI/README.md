@@ -1,0 +1,1 @@
+A primitive version of the game [Don't Break the Ice](https://en.wikipedia.org/wiki/Don%27t_Break_the_Ice). The `{}` represents the bear, and players alternate pressing keys on the calculator that correspond to blocks. The physics aren't exactly stellar -- blocks can easily hover with no support. First to topple the bear loses.
