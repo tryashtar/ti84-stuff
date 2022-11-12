@@ -1,0 +1,1 @@
+A decent recreation of the board game Go[https://en.wikipedia.org/wiki/Go_(game)], of course on a 16x8 board. Although the move logic seems to work and it even supports resuming games, I don't think there is any way for the game to naturally end. It even seems like I left an extra `End` instruction that would cause a syntax error if it did!

@@ -1,0 +1,1 @@
+A silly game attempting to resemble [Dance Dance Revolution](https://en.wikipedia.org/wiki/Dance_Dance_Revolution). Random directional arrows fly in from the left of the screen, and you must click each one in turn until you fail.

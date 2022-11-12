@@ -1,0 +1,1 @@
+This just draws a bunch of hardcoded lines on the graph screen that resemble the Pac-Man maze layout. I generally preferred using the home screen rather than the graph screen for games. It's possible I was testing the graph screen's performance; you can see the lines as they draw in.

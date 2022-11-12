@@ -1,0 +1,1 @@
+A mostly joke game based on the [FIFA](https://en.wikipedia.org/wiki/FIFA_(video_game_series)) sports game series. I wanted the animated menu and player selection to give the illusion of polish, before the realization that the actual game is just a single character representing a goalie blocking endless balls.

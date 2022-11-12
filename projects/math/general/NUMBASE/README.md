@@ -19,3 +19,5 @@ The number of digits required to write a number in a base is the log of the numb
 Another `seq` function creates a list of that length, populating it with `C^I`, counting down. Like before, this list represents the place values of the destination base, but the iteration is one value higher this time, multiplying all values by `C`.
 
 Next we element-wise divide `Ans` over the list, taking the remainder instead of the quotient. Again, there is a `remainder` function, but `CfPart(Ans)` works on older calculators. This leaves us with every digit properly fitting into the range for that place.
+
+If you aren't familiar with TI-Basic, it's worth noting that closing parentheses at the end of a line (or before a `→`) are redundant (and actually cause slowdown), and expressions by themselves on a line get assigned to `Ans`, which is faster than named variables.

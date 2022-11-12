@@ -1,0 +1,5 @@
+One of my proudest creations: a [QR code](https://en.wikipedia.org/wiki/QR_code) generator. It allows uppercase messages, 25 characters and shorter. Any deviations from that requirement will be filtered out with an informing message. This corresponds to the simplest text-based QR code configuration: version 1, alphanumeric mode, error correction level L.
+
+I used [this excellent tutorial](https://www.thonky.com/qr-code-tutorial/introduction) heavily as a reference. Of course, translating the operations to ones the calculator even had, let alone were performant at, was the biggest challenge. The code makes heavy use of listwise operations and precomputed results. I'm amazed I managed to get the polynomial long division to happen in a reasonable amount of time, and in such little code.
+
+Though the spec suggests trying multiple masks to find the one with maximal legibility, this just uses the simplest mask for performance reasons. The code is ultimately drawn on the graph screen, first small in the corner, then scaled up to fill the screen.

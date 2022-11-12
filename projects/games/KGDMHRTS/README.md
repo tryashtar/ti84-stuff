@@ -1,0 +1,1 @@
+Another parody game in the same vein of [FIFA15](../FIFA2015), with elaborate menus and joke gameplay. This one is ostensibly based on [Kingdom Hearts](https://en.wikipedia.org/wiki/Kingdom_Hearts_(video_game)). I thought it was interesting to have a character that could face left and right.

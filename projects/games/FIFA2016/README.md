@@ -1,0 +1,1 @@
+It's even funnier the second time! A sequel to [FIFA2015](../FIFA2015) with an even fancier title animation, slightly broken character selection menu, pointless loading page, and gameplay that doesn't even work as well as the first rendition. Highly accurate to the original franchise!
