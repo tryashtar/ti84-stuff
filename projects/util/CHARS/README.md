@@ -1,0 +1,1 @@
+Typing special characters on the calculator was challenging, but it was possible to copy the contents of one program into another, so I generated this by typing in the codes in assembly and translating it.

@@ -40,8 +40,10 @@ games:
 
 util:
 - _theta_CLRMEM
+- _theta_LC
+- _theta_UNLOCK
+- CHARS
 - MATRIXFY
-- TIMER
 
 math/general:
 - DEGRAD
@@ -57,6 +59,8 @@ math/specific:
 - CONCAVE
 - CUBICFRM
 - DERIVS
+- name: TEST
+  rename: DFA
 - DISTRIB
 - EXPLICIT
 - FRACAPPX
@@ -89,9 +93,9 @@ incomplete:
 - ALLDERIV
 - ARTISTIC
 - _theta_BINARY
-- TEST
 - TETRIS2
 - INFOCALC
 - MULTIRPS
 - PACMAN
 - MULTITTT
+- TIMER

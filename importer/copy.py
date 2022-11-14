@@ -20,7 +20,11 @@ for category, items in data.items():
         if type(item) is str:
             item = {'name':item}
         name = item['name']
+        prgm_name = None
         nice_name = name.replace("_theta_", "")
+        if 'rename' in item:
+            nice_name = item['rename']
+            prgm_name = nice_name
         print(nice_name)
         for folder in folders:
             file = os.path.join(folder, name + ".8xp")
@@ -30,6 +34,8 @@ for category, items in data.items():
                 with open(file, "rb") as code:
                     prgm = compiler.load_program(code.read())
                 prgm.archived = False
+                if prgm_name is not None:
+                    prgm.name = prgm_name
                 if 'remove' in item:
                     lines = prgm.code.splitlines()
                     remove = item['remove']
