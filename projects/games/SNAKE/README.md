@@ -1,0 +1,1 @@
+The worst version of [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)) ever made. I was so averse to the graph screen that I used the home screen instead. Growing beyond a length of two just leaves a piece of you behind and makes the game quickly very laggy. Touching the edge of the screen crashes it.

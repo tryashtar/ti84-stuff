@@ -1,1 +1,1 @@
-A very simple version of Cookie Clicker. You can click the + button to gain cookies, and purchase various symbols to earn cookies automatically. You start with 10,000 for testing purposes.
+A very simple version of the browser game [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/). You can click the + button to gain cookies, and purchase various symbols to earn cookies automatically. You start with 10,000 for testing purposes.

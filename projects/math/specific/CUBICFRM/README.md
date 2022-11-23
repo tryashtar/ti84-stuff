@@ -1,1 +1,1 @@
-Solves the [cubic formula](https://math.vanderbilt.edu/schectex/courses/cubic/), the obscure and very long cousin to the familiar quadratic formula.
+Solves the [cubic formula](https://mathworld.wolfram.com/CubicFormula.html/), the obscure and very long cousin to the familiar quadratic formula.

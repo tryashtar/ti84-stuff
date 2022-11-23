@@ -1,0 +1,1 @@
+A simple but polished game of [Simon](https://en.wikipedia.org/wiki/Simon_(game)), where a sequence of arrow keys is displayed in turn, growing in length each round, and must be replicated by the player.

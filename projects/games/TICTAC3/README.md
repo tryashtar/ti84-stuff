@@ -1,0 +1,1 @@
+Simple [Tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe). It has a two-player mode, but also a one-player mode, where the opponent's moves are decided by the most incompetent AI possible, which literally just picks random positions until it finds an empty one.
