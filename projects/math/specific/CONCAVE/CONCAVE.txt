@@ -1,5 +1,5 @@
 ClrHome
-Disp "Input‗ function:
+Disp "Input• function:
 Input "",Str1
 ClrHome
 Disp "Point to check:

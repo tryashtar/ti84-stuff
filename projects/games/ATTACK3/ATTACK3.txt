@@ -3,7 +3,7 @@ ClrHome
 If θ≠123698745
 Then
 	Output(3,5,"ATTACK 3
-	Output(4,5,"|~|~|~|~|~|~|~|~
+	Output(4,5,"~~~~~~~~
 End
 Output(6-(3*(θ=123698745)),3,"Yet another
 Output(7-(3*(θ=123698745)),1,"monster appears!
@@ -28,7 +28,7 @@ ClrHome
 0→T
 0→K
 0→I
-Output(1,1,"HP   MP   BOSS
+Output(1,1,"HP   MP   BOS•S
 Output(2,1,L₁(1
 Output(2,6,L₁(2
 Output(2,11,L₁(3
@@ -52,7 +52,7 @@ While 1
 		If Y≤4
 		Then
 			L₂(Y)+1→L₂(Y
-			Output(4,1,"You p‗ick up a
+			Output(4,1,"You p•ick up a
 			If Y=1
 				Output(5,1,"laser!
 			If Y=2
@@ -84,7 +84,7 @@ While 1
 			End
 			If K=45
 			Then
-				Output(8,1,"Rea‗lly quit?
+				Output(8,1,"Rea•lly quit?
 				0→K
 				While K≠45 and K≠105
 					getKey→K
@@ -112,7 +112,7 @@ While 1
 		End
 		If S=1
 		Then
-			Output(4,2,"Norma‗l hit
+			Output(4,2,"Norma•l hit
 			Output(5,2,"Strong blow
 			Output(6,2,"Multi-strike
 			Output(7,2,"Skill swing
@@ -172,7 +172,7 @@ While 1
 						randInt(17,26)→Y
 					Else
 						Output(4,1,"You swing your
-						Output(5,1,"weapon and‗ hit!
+						Output(5,1,"weapon and• hit!
 						randInt(7,15)→Y
 					End
 					Output(7,1,"Damage:
@@ -249,12 +249,12 @@ While 1
 				End
 				If T=4
 				Then
-					{1,2,4,7,11,16,22,29,37,46,56,67,79,92}→ʟSS
+					{1,2,4,7,11,16,22,29,37,46,56,67,79,92}→ʟS•S
 					" "→Str0
 					randInt(4,9)→θ
 					For(I,1,θ
 						randInt(3,12→Z
-						Str0+sub("OO O  O   O    O     O      O       O        O         O          O           O            O             O",ʟSS(Z),Z)→Str0
+						Str0+sub("OO O  O   O    O     O      O       O        O         O          O           O            O             O",ʟS•S(Z),Z)→Str0
 					End
 					Output(4,1,Str0
 					0→Z

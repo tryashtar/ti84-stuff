@@ -24,7 +24,7 @@ L₄→L₁
 0→L
 0→G
 0→O
-Output(1,1,"HP   MP   BOSS
+Output(1,1,"HP   MP   BOS•S
 Lbl 1
 If L₁(1)*L₁(3)=0
 	Goto 15
@@ -45,13 +45,13 @@ Then
 		End
 		L₂(Y)+1→L₂(Y
 		If Y=1
-			Output(4,1,"You p‗ick up a   laser!
+			Output(4,1,"You p•ick up a   laser!
 		If Y=2
-			Output(4,1,"You p‗ick up a   potion!
+			Output(4,1,"You p•ick up a   potion!
 		If Y=3
-			Output(4,1,"You p‗ick up a   shield!
+			Output(4,1,"You p•ick up a   shield!
 		If Y=4
-			Output(4,1,"You p‗ick up an  ether!
+			Output(4,1,"You p•ick up an  ether!
 		Pause 
 	End
 	If W>0
@@ -105,7 +105,7 @@ For(I,4,8)
 End
 If S=1
 Then
-	Output(4,2,"Norma‗l hit
+	Output(4,2,"Norma•l hit
 	Output(5,2,"Multi-strike
 	Output(6,2,"Strong blow
 	Output(7,2,"Skill swing
@@ -199,7 +199,7 @@ Then
 			Output(4,1,"You land a      critical blow!
 		Else
 			randInt(8,16)→Y
-			Output(4,1,"You swing your  sword and‗ hit!
+			Output(4,1,"You swing your  sword and• hit!
 		End
 		Output(7,1,"Damage:
 		Output(7,9,Y
@@ -297,7 +297,7 @@ Then
 				Else
 					2→Z
 					randInt(4,10)→Y
-					Output(4,1,"You fail the    attack and‗ hurt yourself!
+					Output(4,1,"You fail the    attack and• hurt yourself!
 					Output(8,1,"Damage:
 					Output(8,9,Y
 					L₁(1)-Y→L₁(1)
@@ -313,7 +313,7 @@ Then
 			For(I,4,8
 				Output(I,1,"                
 			End
-			Output(4,1,"You were too    slow and‗ the    monster dodged.
+			Output(4,1,"You were too    slow and• the    monster dodged.
 		End
 	End
 End

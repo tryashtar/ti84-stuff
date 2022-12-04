@@ -2,7 +2,7 @@ ClrHome
 Disp "Please connect","to another","calculator…
 rand→A
 A→B
-π[e]sin(8°→C
+π𝑒sin(8°→C
 C→D
 While A=B
 	GetCalc(A

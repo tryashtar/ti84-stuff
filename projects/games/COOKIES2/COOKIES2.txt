@@ -66,7 +66,7 @@ Then
 	If PMT=8
 		Output(7,1,"π")
 	If PMT=9
-		Output(7,1,"[i]")
+		Output(7,1,"𝑖")
 	If PMT=10
 		Output(7,1,"□")
 	If PMT=11
@@ -185,7 +185,7 @@ Then
 End
 If P=2
 Then
-	Output(1,1,"[i]")
+	Output(1,1,"𝑖")
 	Output(2,1,"﹢")
 	Output(3,1,":")
 End

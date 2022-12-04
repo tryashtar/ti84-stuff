@@ -11,7 +11,7 @@ If X=2
 Then
 	Input "RADIUS=",R
 	Input "HEIGHT=",H
-	Disp πR‗²H
+	Disp πR•²H
 End
 If X=3
 Then

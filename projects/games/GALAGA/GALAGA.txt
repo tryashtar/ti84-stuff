@@ -64,7 +64,7 @@ While 1
 				End
 			End
 			If L₁(I)≠0
-				Output(L₂(I),L₁(I),"|~
+				Output(L₂(I),L₁(I),"~
 		End
 	End
 End

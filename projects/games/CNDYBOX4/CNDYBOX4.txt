@@ -275,7 +275,7 @@ While 1
 				Output(1,1,"<  Candy Box   > 
 				Output(2,2,"Eat candies
 				Output(3,2,"Buy lollipop
-				Output(4,2,"Ful‗l heal
+				Output(4,2,"Ful•l heal
 			End
 			If C=1 or C=2
 			Then
@@ -300,7 +300,7 @@ While 1
 				Output(1,1,"<    Quests    >
 				Output(2,2,"Î Forest
 				Output(3,2,"Δ Mt. Goblin
-				Output(4,2,"|~ Ocean
+				Output(4,2,"~ Ocean
 				Output(5,2,"Ω Castle
 				Output(8,1,ʟSTAT(1
 				Output(8,8,"⁄

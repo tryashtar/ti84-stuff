@@ -77,7 +77,7 @@ While 1
 	If P=2
 	Then
 		ClrHome
-		Disp "Input‗ amount:
+		Disp "Input• amount:
 		Input "",A
 		ClrHome
 	End

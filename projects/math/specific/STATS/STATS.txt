@@ -22,7 +22,7 @@ While K≠105 and K≠45
 		Output(8,1,"with probability
 	Else
 		Output(7,1,"Infinite values 
-		Output(8,1,"using μ and‗ σ    
+		Output(8,1,"using μ and• σ    
 	End
 End
 ClrHome

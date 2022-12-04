@@ -6,7 +6,7 @@ ClrHome
 Disp "Type:","1 - F(X)","2 - F(3)"
 Input "",A
 ClrHome
-Output(1,1,"An‗swers in order
+Output(1,1,"An•swers in order
 Output(2,1,"F(G(X))
 Output(3,1,"G(F(X))
 Output(4,1,"F(F(X))

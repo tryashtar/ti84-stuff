@@ -49,7 +49,7 @@ Then
 	{0,0,0,0,0,0}→ʟPOTS
 	While 0
 		1-HEAL
-		2-HEAL‗2
+		2-HEAL•2
 		3-TELE
 		4-ACID
 		5-FIRE
@@ -76,7 +76,7 @@ startTmr→B
 0→L
 0→M
 0→N
-"|invertedequalçÇ`δτñÑΔàinvertedequal|~@invertedequalẋ→Str1
+"|invertedequalçÇ`δτñÑΔàinvertedequal~@invertedequalx̂→Str1
 "XTreeChestGoblinTrollShrimpEelOctopusSquireKnightRockWolfChestBatWhaleMimicOgre→Str2
 {1,4,5,6,5,6,3,7,6,6,4,4,5,3,5,5,4}→ʟNAMES
 [[1,2,0,0,0][2,3,4,10,0][5,6,7,0,0][8,9,0,0,0][1,11,12,0,0][10,12,13,15,0]]→[A]
@@ -216,7 +216,7 @@ While 1
 				Output(4,1,ʟCB5(14
 				Output(4,14,"C⁄S
 				Output(4,12,ʟCB5(3)+1
-				Output(4,9,"--‗>
+				Output(4,9,"--•>
 			End
 			If C=2 and D=2
 				Output(7,15,"  
@@ -320,7 +320,7 @@ While 1
 			Output(4,1,ʟCB5(14
 			Output(4,14,"C⁄S
 			Output(4,12,ʟCB5(3)+1
-			Output(4,9,"--‗>
+			Output(4,9,"--•>
 		End
 		If Z=10 and F=0
 		Then
@@ -347,7 +347,7 @@ While 1
 			If D=4
 			Then
 				Output(2,1,"Deals 5 damage
-				Output(3,1,"to you and‗ all
+				Output(3,1,"to you and• all
 				Output(4,1,"enemies.
 			End
 			If D=5
@@ -666,7 +666,7 @@ While 1
 			Output(1,4,"Candy Box
 			Output(2,2,"Eat candies
 			Output(3,2,"Buy lollipop
-			Output(4,2,"Ful‗l heal
+			Output(4,2,"Ful•l heal
 		End
 		If C=3
 		Then
@@ -733,7 +733,7 @@ While 1
 			Output(1,6,"Quests
 			Output(2,2,"Î Forest
 			Output(3,2,"Δ Mt. Goblin
-			Output(4,2,"|~ Ocean
+			Output(4,2,"~ Ocean
 			Output(5,2,"Ω Castle
 			Output(6,2,"Í Dark Woods
 			Output(7,2,"σ Cave

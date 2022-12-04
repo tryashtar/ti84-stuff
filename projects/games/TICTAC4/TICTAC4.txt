@@ -12,7 +12,7 @@ For(I,1,9
 	augment(L₁,L₂)→L₁
 End
 ClrHome
-If [A](3,11)=[e]^[e] and sum(L₁)≠0
+If [A](3,11)=𝑒^𝑒 and sum(L₁)≠0
 Then
 	Output(1,1,"There is an
 	Output(2,1,"unfinished game!
@@ -60,7 +60,7 @@ Else
 	Fill(0,[A]
 End
 ClrHome
-"-XO.﹢xo|~"→Str1
+"-XO.﹢xo~"→Str1
 DelVar L₁
 DelVar L₂
 Output(1,16,sub(Str1,1+T,1
@@ -91,7 +91,7 @@ While 1
 				ClrHome
 				F→[A](1,11
 				T→[A](2,11
-				[e]^[e]→[A](3,11
+				𝑒^𝑒→[A](3,11
 				DelVar Str1
 				DelVar L₁
 				Return

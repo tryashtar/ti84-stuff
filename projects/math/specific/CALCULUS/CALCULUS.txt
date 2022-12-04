@@ -1,16 +1,16 @@
 ClrHome
-Disp "Input‗ equation:
+Disp "Input• equation:
 Input "",Str1
 If Str1="Y
 	Equ►String(Y₁,Str1
 ClrHome
-π^[e]→X
+π^𝑒→X
 expr(Str1
 1→S
 While 1
 	ClrHome
 	Output(1,1,Str1
-	Output(4,2,"Fun‗ction Info
+	Output(4,2,"Fun•ction Info
 	Output(5,2,"Point Info
 	Output(6,2,"2 Point Info
 	0→K

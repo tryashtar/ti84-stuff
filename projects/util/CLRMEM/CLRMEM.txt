@@ -5,8 +5,8 @@ DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar J
 0→PV
 0→PMT
 0→FV
-1→|P/Y
-1→|C/Y
+1→P/Y
+1→C/Y
 Clear Entries
 ClrHome
 ClrDraw

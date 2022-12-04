@@ -56,7 +56,7 @@ Then
 	End
 	0→T
 	ClrHome
-	Disp H,M,F,"1-ATTACK","2-MAGIC","3-ITEMS",""
+	Disp H,M,F,"1-ATTACK","2-MAGIC","3-ITEM•S",""
 	Input X
 	ClrHome
 	If X=1
@@ -125,7 +125,7 @@ Then
 		Else
 			If X=3
 			Then
-				Disp "ITEMS",""
+				Disp "ITEM•S",""
 				If P>0
 				Then
 					Disp "1-POTION"

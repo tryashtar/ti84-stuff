@@ -1,5 +1,5 @@
 ClrHome
-Disp "Input‗ number of
+Disp "Input• number of
 Disp "outcomes:
 Input "",O
 DelVar L₁

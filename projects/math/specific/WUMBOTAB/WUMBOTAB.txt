@@ -5,27 +5,27 @@ Lbl 1
 For(I,J,4
 	ClrHome
 	If I=1
-		Disp "W[|e] |w[|a][n][t] i[n]fo o[n]…"," m[|e][|a][n]"," [p][r]o[p]o[r][t]io[n]"," [r][|e]g[r][|e][s][s]io[n]
+		Disp "W||e |w|a|n|t i|nfo o|n…"," m||e|a|n"," |p|ro|po|r|tio|n"," |r||eg|r||e|s|sio|n
 	If I=2
-		Disp "N|um [s][|a]m[p]l[|e][s]:"," o[n][|e] [s][|a]m[p]l[|e]"," [t]|wo [s][|a]m[p]l[|e][s]
+		Disp "N|um |s|am|pl||e|s:"," o|n||e |s|am|pl||e"," |t|wo |s|am|pl||e|s
 	If I=3
 	Then
 		If 1=L₁(1
-			Disp "O|u[r] [s][t][|d] [|d][|e]|v i[s]…"," [p]o[p]|ul[|a][t]io[n] σ"," [s][|a]m[p]l[|e] S
+			Disp "O|u|r |s|t|d |d||e|v i|s…"," |po|p|ul|a|tio|n σ"," |s|am|pl||e S
 		If 2=L₁(1) and 1=L₁(2
-			Disp "N|um [|c][|a][t][|e]go[r]i[|e][s]:"," [t]|wo (y[|e][s]/[n]o)"," m[|a][n]y (li[s][t])"," m[|a][n]y (m[|a][t][r]ix)
+			Disp "N|um |c|a|t||ego|ri||e|s:"," |t|wo (y||e|s/|no)"," m|a|ny (li|s|t)"," m|a|ny (m|a|t|rix)
 	End
 	If I=4
 	Then
 		If 1=L₁(1
-			Disp "Po[p] m[|e][|a][n] μ i[s]…
+			Disp "Po|p m||e|a|n μ i|s…
 		If 2=L₁(1
-			Disp "Po[p] [p][r]o[p] [p] i[s]…
-		Disp " k[n]o|w[n]"," |u[n]k[n]o|w[n]
+			Disp "Po|p |p|ro|p |p i|s…
+		Disp " k|no|w|n"," |u|nk|no|w|n
 	End
-	Output(8,1,"CLEAR = go [|b][|a][|c]k
+	Output(8,1,"CLEAR = go |b|a|ck
 	If I=1
-		Output(8,9,"[|e]xi[t]   
+		Output(8,9,"||exi|t   
 	1→A
 	If L₁(I
 		L₁(I→A
@@ -68,7 +68,7 @@ Repeat K≠45
 	ClrHome
 	If θ
 	Then
-		Disp "     ENTER:","[r][|e][t]y[p][|e] |v[|a]l|u[|e][s]","     CLEAR:","[r][|e][s][|e]l[|e][|c][t] i[n]fo
+		Disp "     ENTER:","|r||e|ty|p||e |v|al|u||e|s","     CLEAR:","|r||e|s||el||e|c|t i|nfo
 		Repeat K=105 or K=45
 			getKey→K
 		End
@@ -87,46 +87,46 @@ Repeat K≠45
 	Then
 		If 1=L₁(2
 		Then
-			Disp "Po[p] m[|e][|a][n] μ:
+			Disp "Po|p m||e|a|n μ:
 			Input "",M
 			Disp "
 		End
 		If 1=L₁(3
 		Then
-			Disp "Po[p] [s][t][|d] [|d][|e]|v σ"+sub(": ₁:",2L₁(2)-1,2
+			Disp "Po|p |s|t|d |d||e|v σ"+sub(": ₁:",2L₁(2)-1,2
 			Input "",S
 			If 2=L₁(2
 			Then
-				Disp "","Po[p] [s][t][|d] [|d][|e]|v σ₂:
+				Disp "","Po|p |s|t|d |d||e|v σ₂:
 				Input "",T
 			End
 		Else
-			Disp "S[|a]m[p] [s][t][|d] [|d][|e]|v S"+sub(": ₁:",2L₁(2)-1,2
+			Disp "S|am|p |s|t|d |d||e|v S"+sub(": ₁:",2L₁(2)-1,2
 			Input "",S
 			If 2=L₁(2
 			Then
-				Disp "","S[|a]m[p] [s][t][|d] [|d][|e]|v S₂:
+				Disp "","S|am|p |s|t|d |d||e|v S₂:
 				Input "",T
 			End
 		End
-		Disp "","S[|a]m[p]l[|e] m[|e][|a][n] ẋ"+sub(": ₁:",2L₁(2)-1,2
+		Disp "","S|am|pl||e m||e|a|n x̂"+sub(": ₁:",2L₁(2)-1,2
 		Input "",X
 		If 2=L₁(2
 		Then
-			Disp "","S[|a]m[p]l[|e] m[|e][|a][n] ẋ₂:
+			Disp "","S|am|pl||e m||e|a|n x̂₂:
 			Input "",Y
 		End
 		Disp "
 	End
 	If min(L₁={2,1,1,0
 	Then
-		Disp "Po[p] [p]o[r][t]io[n] [p]:
+		Disp "Po|p |po|r|tio|n |p:
 		Input "",M
 		Disp "
 	End
 	If 2=L₁(1) and 2>L₁(3
 	Then
-		Disp "S|u[|c][|c][|e][s][s] [n]|um x"+sub(": ₁:",2L₁(2)-1,2
+		Disp "S|u|c|c||e|s|s |n|um x"+sub(": ₁:",2L₁(2)-1,2
 		Input "",V
 		Disp "
 	End
@@ -134,26 +134,26 @@ Repeat K≠45
 	Then
 		If 2=L₁(3
 		Then
-			Disp "Li[s][t] l[|e][n]g[t]h:
+			Disp "Li|s|t l||e|ng|th:
 			Input "",N
 			N→dim(L₂
 			N→dim(L₃
 			ClrHome
-			Disp "O[|b][s][|e][r]|v[|e][|d] |v[|a]l|u[|e][s]:
+			Disp "O|b|s||e|r|v||e|d |v|al|u||e|s:
 			For(I,1,N
 				Input "",A
 				A→L₂(I
 			End
 			ClrHome
-			Disp "Ex[p][|e][|c][t][|e][|d] |v[|a]l|u[|e][s]:
+			Disp "Ex|p||e|c|t||e|d |v|al|u||e|s:
 			For(I,1,N
 				Input "",A
 				A→L₃(I
 			End
 		Else
-			Disp "M[|a][t][r]ix |wi[|d][t]h:
+			Disp "M|a|t|rix |wi|d|th:
 			Input "",N
-			Disp "","M[|a][t][r]ix h[|e]igh[t]:
+			Disp "","M|a|t|rix h||eigh|t:
 			Input "",O
 			{O,N→dim([A]
 			For(I,1,O
@@ -168,7 +168,7 @@ Repeat K≠45
 		End
 		Disp "
 	Else
-		Disp "S[|a]m[p]l[|e] [s]i[z][|e] [recursiven]"+sub(": ₁:",2L₁(2)-1,2
+		Disp "S|am|pl||e |si|z||e 𝑛"+sub(": ₁:",2L₁(2)-1,2
 		Input "",N
 		Disp "
 	End
@@ -177,20 +177,20 @@ Repeat K≠45
 		N→dim(L₂
 		N→dim(L₃
 		ClrHome
-		Disp "X |v[|a]l|u[|e][s]:
+		Disp "X |v|al|u||e|s:
 		For(I,1,N
 			Input "",A
 			A→L₂(I
 		End
 		ClrHome
-		Disp "Y |v[|a]l|u[|e][s]:
+		Disp "Y |v|al|u||e|s:
 		For(I,1,N
 			Input "",A
 			A→L₃(I
 		End
 		LinReg(a+bx) L₂,L₃,Y₀
 		Equ►String(Y₀,Str2
-		[|b]→B
+		|b→B
 		0→M
 		0→A
 		0→Z
@@ -206,19 +206,19 @@ Repeat K≠45
 	Then
 		If 2=L₁(1
 		Then
-			Disp "S|u[|c][|c][|e][s][s] [s]|um x₂:
+			Disp "S|u|c|c||e|s|s |s|um x₂:
 			Input "",W
 			Disp "
 		End
-		Disp "S[|a]m[p]l[|e] [s]i[z][|e] [recursiven]₂:
+		Disp "S|am|pl||e |si|z||e 𝑛₂:
 		Input "",O
 	End
 	ClrHome
 	If E
 	Then
-		sub("μ=   μ₁=μ₂[p]=   [p]₁=[p]₂β=   ",10L₁(1)+5L₁(2)-14,5→Str1
-		Disp "H₀: "+Str1,"W[|e] |w[|a][n][t] [t]o fi[n][|d]","[|e]|vi[|d][|e][n][|c][|e] [t]h[|a][t]…
-		Output(8,1,"CLEAR = go [|b][|a][|c]k
+		sub("μ=   μ₁=μ₂|p=   |p₁=|p₂β=   ",10L₁(1)+5L₁(2)-14,5→Str1
+		Disp "H₀: "+Str1,"W||e |w|a|n|t |to fi|n|d","||e|vi|d||e|n|c||e |th|a|t…
+		Output(8,1,"CLEAR = go |b|a|ck
 		For(I,4,6
 			Output(I,2,Str1
 		End
@@ -249,17 +249,17 @@ End
 ClrHome
 If min(L₁={1,1,1,1
 Then
-	Disp "1-S[|a]m[p] Z-T[|e][s][t]","","E[n][s]|u[r][|e] SRS!","E[n][s]|u[r][|e] [p]o[p]>
+	Disp "1-S|am|p Z-T||e|s|t","","E|n|s|u|r||e SRS!","E|n|s|u|r||e |po|p>
 	Output(4,12,10N
 	If N≥30
-		Disp "[recursiven] > 30, [n]i[|c][|e]!
+		Disp "𝑛 > 30, |ni|c||e!
 	If N<30
-		Disp "[recursiven] < 30, [|b][|a][|d] :(
+		Disp "𝑛 < 30, |b|a|d :(
 	Pause 
 	ClrHome
-	Disp "Z = (x-μ√[recursiven])/σ","Z =","
+	Disp "Z = (x-μ√𝑛)/σ","Z =","
 	Z-Test(M,S,X,N
-	[z]→Z
+	|z→Z
 	Output(2,5,Z
 	Disp "P =
 	If A=1
@@ -270,10 +270,10 @@ Then
 		Output(4,5,normalcdf(⁻ᴇ99,Z,0,1
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","μ f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","μ f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp X-(invNorm((1-C)/2,0,1)*S/√(N
 	Disp X+(invNorm((1-C)/2,0,1)*S/√(N
@@ -283,10 +283,10 @@ Then
 End
 If min(L₁={1,1,1,2
 Then
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","μ f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","μ f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp X-(invNorm((1-C)/2,0,1)*S/√(N
 	Disp X+(invNorm((1-C)/2,0,1)*S/√(N
@@ -296,33 +296,33 @@ Then
 End
 If min(L₁={1,1,2,1
 Then
-	Disp "1-S[|a]m[p] T-Test ","","E[n][s]|u[r][|e] SRS!","E[n][s]|u[r][|e] [p]o[p]>
+	Disp "1-S|am|p T-Test ","","E|n|s|u|r||e SRS!","E|n|s|u|r||e |po|p>
 	Output(4,12,10N
 	If N≥30
-		Disp "[recursiven] > 30, [n]i[|c][|e]!
+		Disp "𝑛 > 30, |ni|c||e!
 	If N<30
-		Disp "[recursiven] < 30, [|b][|a][|d] :(
+		Disp "𝑛 < 30, |b|a|d :(
 	Pause 
 	ClrHome
-	Disp "T = (x-μ√[recursiven])/S","T =","
+	Disp "T = (x-μ√𝑛)/S","T =","
 	T-Test (M,S,X,N
-	[t]→Z
+	|t→Z
 	Output(2,5,Z
-	Disp "[df] = 
-	Output(4,6,[df]
+	Disp "df = 
+	Output(4,6,df
 	Disp "P =
 	If A=1
-		Output(5,5,2tcdf(Z,ᴇ99,[df]
+		Output(5,5,2tcdf(Z,ᴇ99,df
 	If A=2
-		Output(5,5,tcdf(Z,ᴇ99,[df]
+		Output(5,5,tcdf(Z,ᴇ99,df
 	If A=3
-		Output(5,5,tcdf(⁻ᴇ99,Z,[df]
+		Output(5,5,tcdf(⁻ᴇ99,Z,df
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","μ f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","μ f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp X-(invT((1-C)/2,N-1)*S/√(N
 	Disp X+(invT((1-C)/2,N-1)*S/√(N
@@ -332,10 +332,10 @@ Then
 End
 If min(L₁={1,1,2,2
 Then
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","μ f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","μ f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp X-(invT((1-C)/2,N-1)*S/√(N
 	Disp X+(invT((1-C)/2,N-1)*S/√(N
@@ -345,18 +345,18 @@ Then
 End
 If min(L₁={1,2,1,0
 Then
-	Disp "2-S[|a]m[p] Z-T[|e][s][t]","","E[n][s]|u[r][|e] SRS!","E[n][s]|u[r][|e] [p]o[p]1>","E[n][s]|u[r][|e] [p]o[p]2>
+	Disp "2-S|am|p Z-T||e|s|t","","E|n|s|u|r||e SRS!","E|n|s|u|r||e |po|p1>","E|n|s|u|r||e |po|p2>
 	Output(4,13,10N
 	Output(5,13,10O
 	If N+O≥30
-		Disp "[recursiven] > 30, [n]i[|c][|e]!
+		Disp "𝑛 > 30, |ni|c||e!
 	If N+O<30
-		Disp "[recursiven] < 30, [|b][|a][|d] :(
+		Disp "𝑛 < 30, |b|a|d :(
 	Pause 
 	ClrHome
-	Disp "Z = (x1-x2)/σ","Z =","
+	Disp "Z = (x•1-x•2)/σ","Z =","
 	2-SampZTest(S,T,X,N,Y,O
-	[z]→Z
+	|z→Z
 	Output(2,5,Z
 	Disp "P =
 	If A=1
@@ -367,10 +367,10 @@ Then
 		Output(4,5,normalcdf(⁻ᴇ99,Z,0,1
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","[|d]iff i[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","|diff i|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp (X-Y)-(invNorm((1-C)/2,0,1)*√((S²/N)+(T²/O
 	Disp (X-Y)+(invNorm((1-C)/2,0,1)*√((S²/N)+(T²/O
@@ -380,58 +380,58 @@ Then
 End
 If min(L₁={1,2,2,0
 Then
-	Disp "2-S[|a]m[p] T-Test ","","E[n][s]|u[r][|e] SRS!","E[n][s]|u[r][|e] [p]o[p]1>","E[n][s]|u[r][|e] [p]o[p]2>
+	Disp "2-S|am|p T-Test ","","E|n|s|u|r||e SRS!","E|n|s|u|r||e |po|p1>","E|n|s|u|r||e |po|p2>
 	Output(4,13,10N
 	Output(5,13,10O
 	If N+O≥30
-		Disp "[recursiven] > 30, [n]i[|c][|e]!
+		Disp "𝑛 > 30, |ni|c||e!
 	If N+O<30
-		Disp "[recursiven] < 30, [|b][|a][|d] :(
+		Disp "𝑛 < 30, |b|a|d :(
 	Pause 
 	ClrHome
-	2-S[|a]m[p] T-Test X,S,N,Y,T,O,1
-	Disp "T = (x1-x2)/S","T =","
-	[s]→Z
+	2-S|am|p T-Test X,S,N,Y,T,O,1
+	Disp "T = (x•1-x•2)/S","T =","
+	|s→Z
 	Output(2,5,Z
 	Disp "P =
 	If A=1
-		Output(4,5,2normalcdf(Z,ᴇ99,[df]
+		Output(4,5,2normalcdf(Z,ᴇ99,df
 	If A=2
-		Output(4,5,normalcdf(Z,ᴇ99,[df]
+		Output(4,5,normalcdf(Z,ᴇ99,df
 	If A=3
-		Output(4,5,normalcdf(⁻ᴇ99,Z,[df]
-	Disp "[df] = 
-	Output(5,6,[df]
+		Output(4,5,normalcdf(⁻ᴇ99,Z,df
+	Disp "df = 
+	Output(5,6,df
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","[|d]iff i[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","|diff i|s |b||e|t|w||e||e|n
 	Output(1,8,100C
-	Disp (X-Y)-(invT((1-C)/2,[df])*√((S²/N)+(T²/O
-	Disp (X-Y)+(invT((1-C)/2,[df])*√((S²/N)+(T²/O
+	Disp (X-Y)-(invT((1-C)/2,df)*√((S²/N)+(T²/O
+	Disp (X-Y)+(invT((1-C)/2,df)*√((S²/N)+(T²/O
 	Pause 
 	ClrHome
 	Goto 5
 End
 If min(L₁={2,1,1,1
 Then
-	Disp "1-P[r]o[p] Z-T[|e][s][t]","","E[n][s]|u[r][|e] SRS!","E[n][s]|u[r][|e] [p]o[p]>
+	Disp "1-P|ro|p Z-T||e|s|t","","E|n|s|u|r||e SRS!","E|n|s|u|r||e |po|p>
 	Output(4,12,10N
 	If NP≥10
-		Disp "[recursiven][p] > 10, [n]i[|c][|e]!
+		Disp "𝑛|p > 10, |ni|c||e!
 	If NP<10
-		Disp "[recursiven][p] < 10, [|b][|a][|d]!
+		Disp "𝑛|p < 10, |b|a|d!
 	If N(1-M)≥10
-		Disp "[recursiven]-[recursiven][p] > 10, [n]i[|c][|e]!
+		Disp "𝑛-𝑛|p > 10, |ni|c||e!
 	If N(1-M)<10
-		Disp "[recursiven]-[recursiven][p] < 10, [|b][|a][|d]!
+		Disp "𝑛-𝑛|p < 10, |b|a|d!
 	Pause 
 	ClrHome
-	Disp "Z = ([ṗ]-[p])/√(([p]-[p]²)/[recursiven])","Z =","
+	Disp "Z = (p̂-|p)/√((|p-|p²)/𝑛)","Z =","
 	1-PropZTest(M,V,N
-	[z]→Z
+	|z→Z
 	Output(2,5,Z
 	Disp "P =
 	If A=1
@@ -442,10 +442,10 @@ Then
 		Output(4,5,normalcdf(⁻ᴇ99,Z,0,1
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","[p] f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","|p f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp (V/N)-(invNorm((1-C)/2,0,1)*√(((V/N)(1-(V/N)))/N
 	Disp (V/N)+(invNorm((1-C)/2,0,1)*√(((V/N)(1-(V/N)))/N
@@ -455,10 +455,10 @@ Then
 End
 If min(L₁={2,1,1,2
 Then
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","[p] f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","|p f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp (V/N)-(invNorm((1-C)/2,0,1)*√(((V/N)(1-(V/N)))/N
 	Disp (V/N)+(invNorm((1-C)/2,0,1)*√(((V/N)(1-(V/N)))/N
@@ -468,12 +468,12 @@ Then
 End
 If min(L₁={2,1,2,0
 Then
-	Disp "χ² GOF-T[|e][s][t]","","E[n][s]|u[r][|e] SRS!
+	Disp "χ² GOF-T||e|s|t","","E|n|s|u|r||e SRS!
 	If sum(L₃>5)>.8*dim(L₃
 	Then
-		Disp "Mo[s][t] >5, [n]i[|c][|e]!
+		Disp "Mo|s|t >5, |ni|c||e!
 	Else
-		Disp "Lo[t][s] <5, [|b][|a][|d]!
+		Disp "Lo|t|s <5, |b|a|d!
 	End
 	Pause 
 	ClrHome
@@ -481,63 +481,63 @@ Then
 	χ²GOF-Test(L₂,L₃,dim(L₂)-1
 	χ²→Z
 	Output(2,5,Z
-	Disp "[df] = 
-	Output(4,6,[df]
+	Disp "df = 
+	Output(4,6,df
 	Disp "P =
 	If A=1
-		Output(5,5,2χ²cdf(Z,ᴇ99,[df]
+		Output(5,5,2χ²cdf(Z,ᴇ99,df
 	If A=2
-		Output(5,5,χ²cdf(Z,ᴇ99,[df]
+		Output(5,5,χ²cdf(Z,ᴇ99,df
 	If A=3
-		Output(5,5,χ²cdf(⁻ᴇ99,Z,[df]
+		Output(5,5,χ²cdf(⁻ᴇ99,Z,df
 	Pause 
 	ClrHome
 	Goto 5
 End
 If min(L₁={2,1,3,0
 Then
-	Disp "χ² T[|e][s][t]","","E[n][s]|u[r][|e] SRS!
+	Disp "χ² T||e|s|t","","E|n|s|u|r||e SRS!
 	χ²-Test([A],[B]
 	χ²→Z
 	Pause 
 	ClrHome
-	Disp "Ex[p][|e][|c][t][|e][|d]:","(mo[s][t] > 5)
+	Disp "Ex|p||e|c|t||e|d:","(mo|s|t > 5)
 	Pause [B]
 	ClrHome
 	Pause 
 	ClrHome
 	Disp "χ² = Σ(O-E)²/E","χ² =
 	Output(2,5,Z
-	Disp "[df] = 
-	Output(4,6,[df]
+	Disp "df = 
+	Output(4,6,df
 	Disp "P =
 	If A=1
-		Output(5,5,2χ²cdf(Z,ᴇ99,[df]
+		Output(5,5,2χ²cdf(Z,ᴇ99,df
 	If A=2
-		Output(5,5,χ²cdf(Z,ᴇ99,[df]
+		Output(5,5,χ²cdf(Z,ᴇ99,df
 	If A=3
-		Output(5,5,χ²cdf(⁻ᴇ99,Z,[df]
+		Output(5,5,χ²cdf(⁻ᴇ99,Z,df
 	Pause 
 	ClrHome
 	Goto 5
 End
 If min(L₁={2,2,0,0
 Then
-	Disp "2-P[r]o[p] Z-T[|e][s][t]","","E[n][s]|u[r][|e] SRS!","E[n][s]|u[r][|e] [p]o[p]1>","E[n][s]|u[r][|e] [p]o[p]2>
+	Disp "2-P|ro|p Z-T||e|s|t","","E|n|s|u|r||e SRS!","E|n|s|u|r||e |po|p1>","E|n|s|u|r||e |po|p2>
 	Output(4,13,10N
 	Output(5,13,10O
 	If N+O≥30
-		Disp "[recursiven] > 30, [n]i[|c][|e]!
+		Disp "𝑛 > 30, |ni|c||e!
 	If N+O<30
-		Disp "[recursiven] < 30, [|b][|a][|d] :(
+		Disp "𝑛 < 30, |b|a|d :(
 	Pause 
 	ClrHome
 	V/N→I
 	W/O→J
 	(X+Y)/(N+O→K
-	Disp "Z = [|b]ig fo[r]m|ul[|a]","Z =","
+	Disp "Z = |big fo|rm|ul|a","Z =","
 	2-PropZTest(V,N,W,O
-	[z]→Z
+	|z→Z
 	Disp "P =
 	If A=1
 		Output(4,5,2normalcdf(Z,ᴇ99,0,1
@@ -547,10 +547,10 @@ Then
 		Output(4,5,normalcdf(⁻ᴇ99,Z,0,1
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","[|d]iff i[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","|diff i|s |b||e|t|w||e||e|n
 	Output(1,8,100C
 	Disp (I-J)-(invNorm((1-C)/2,0,1)*√(((I(1-I))/N)+((J(1-J))/O
 	Disp (I-J)+(invNorm((1-C)/2,0,1)*√(((I(1-I))/N)+((J(1-J))/O
@@ -560,29 +560,29 @@ Then
 End
 If min(L₁={3,0,0,0
 Then
-	Disp "Li[n]R[|e]g T-Test ","","E[n][s]|u[r][|e] li[n][|e][|a][r]!","E[n][s]|u[r][|e] i[n][|d][p][|d][t]!","E[n][s]|u[r][|e] [|c]o[n][s][t] σ!","E[n][s]|u[r][|e] [r][|e][s][p]o[n][s][|e]","|v[|a][r]i[|e][s] [n]o[r]m[|a]lly!
+	Disp "Li|nR||eg T-Test ","","E|n|s|u|r||e li|n||e|a|r!","E|n|s|u|r||e i|n|d|p|d|t!","E|n|s|u|r||e |co|n|s|t σ!","E|n|s|u|r||e |r||e|s|po|n|s||e","|v|a|ri||e|s |no|rm|ally!
 	Pause 
 	ClrHome
-	Disp "T = [|b]/SE[|b]","T =","
+	Disp "T = |b/SE|b","T =","
 	LinRegTTest L₂,L₃
-	[t]→Z
+	|t→Z
 	Output(2,5,Z
 	Disp "P =
 	If A=1
-		Output(4,5,2tcdf(Z,ᴇ99,[df]
+		Output(4,5,2tcdf(Z,ᴇ99,df
 	If A=2
-		Output(4,5,tcdf(Z,ᴇ99,[df]
+		Output(4,5,tcdf(Z,ᴇ99,df
 	If A=3
-		Output(4,5,tcdf(⁻ᴇ99,Z,[df]
+		Output(4,5,tcdf(⁻ᴇ99,Z,df
 	Pause 
 	ClrHome
-	Disp "Co[n]fi[|d][|e][n][|c][|e]:
+	Disp "Co|nfi|d||e|n|c||e:
 	Input "",C
 	ClrHome
-	Disp "W[|e] [|a][r][|e]   % [|c]o[n]f","β f[|a]ll[s] [|b][|e][t]|w[|e][|e][n]
+	Disp "W||e |a|r||e   % |co|nf","β f|all|s |b||e|t|w||e||e|n
 	Output(1,8,100C
-	Disp [|b]-(invT((1-C)/2,dim(L₂)-1)*[|b]/Z
-	Disp [|b]+(invT((1-C)/2,dim(L₂)-1)*[|b]/Z
+	Disp |b-(invT((1-C)/2,dim(L₂)-1)*|b/Z
+	Disp |b+(invT((1-C)/2,dim(L₂)-1)*|b/Z
 	Pause 
 	ClrHome
 	Goto 5

@@ -1,5 +1,5 @@
 ClrHome
-Disp "Fun‗ction:","* = type list","Y = fetch Y₁"
+Disp "Fun•ction:","* = type list","Y = fetch Y₁"
 Input "",Str1
 ClrHome
 If Str1="*
@@ -67,7 +67,7 @@ ClrHome
 Disp "LRAM:","MRAM:","RRAM:","Trap:
 If Str1≠"*
 Then
-	Disp "Rea‗l:………","Area:………","Avg val of func:
+	Disp "Rea•l:………","Area:………","Avg val of func:
 End
 Output(1,6,A
 Output(2,6,B

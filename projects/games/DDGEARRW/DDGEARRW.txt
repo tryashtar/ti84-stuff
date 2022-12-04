@@ -13,7 +13,7 @@ Then
 	Input "METEORS: ",M
 	Input "ALLW HORZ MOVE: ",H
 	Input "DRAW YOU!       ",Str1
-	Input "DRAW YOU DEAD..‗.",Str2
+	Input "DRAW YOU DEAD..•.",Str2
 	ClrHome
 End
 " "→Str3

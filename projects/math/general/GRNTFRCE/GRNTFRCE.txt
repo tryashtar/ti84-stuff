@@ -14,10 +14,10 @@ For(I,1,dim(L₁
 	Output(1,1,round(I/dim(L₁)*100,0
 	For(J,1,dim(L₁
 		If I≠J
-			A+(L₁(J)*10^‗(⁻J+U))→A
+			A+(L₁(J)*10^•(⁻J+U))→A
 	End
 	For(J,9,0,⁻1
-		A+(J*10^‗(⁻I+U))→X
+		A+(J*10^•(⁻I+U))→X
 		If expr(Str1)≤abs(θ
 		Then
 			J→L₁(I
@@ -27,15 +27,15 @@ For(I,1,dim(L₁
 End
 0→A
 For(I,1,dim(L₁
-	A+1(L₁(I)*(10^‗(⁻I+U)))→A
+	A+1(L₁(I)*(10^•(⁻I+U)))→A
 End
 ClrHome
 A→X
-If expr(Str1)<10^‗(⁻D+1)+θ
+If expr(Str1)<10^•(⁻D+1)+θ
 Then
 	Output(1,1,A
 Else
-	If ⁻expr(Str1)<10^‗(⁻D+1)+θ
+	If ⁻expr(Str1)<10^•(⁻D+1)+θ
 	Then
 		Output(1,1,⁻A
 		⁻A→X

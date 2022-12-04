@@ -1,6 +1,6 @@
 ClrHome
 "nDeriv("→Str1
-Disp "Input‗ equation:",""
+Disp "Input• equation:",""
 Input "",Str2
 ClrHome
 Str1+Str2+",X,"→Str1

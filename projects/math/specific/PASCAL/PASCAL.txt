@@ -1,5 +1,5 @@
 ClrHome
-Disp "(Ax^B+Cy^D)^E","If‗ no Y variable","set C and‗ D to 1
+Disp "(Ax^B+Cy^D)^E","If• no Y variable","set C and• D to 1
 Input "A: ",A
 Input "B: ",B
 Input "C: ",C
@@ -9,7 +9,7 @@ ClrHome
 0→Y
 If C=1 and D=1
 Then
-	Disp "Input‗ 0 if there","is a Y variable.","","If‗ not, input","the constant.",""
+	Disp "Input• 0 if there","is a Y variable.","","If• not, input","the constant.",""
 	Input "",Y
 End
 ClrHome

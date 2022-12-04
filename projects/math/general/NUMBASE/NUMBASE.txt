@@ -1,7 +1,7 @@
 ClrHome
-Disp "Input‗ number:
+Disp "Input• number:
 Input "",Str1
-Disp "","Input‗ base:
+Disp "","Input• base:
 Input "",B
 Disp "","Output base:
 Input "",C

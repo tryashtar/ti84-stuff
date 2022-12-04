@@ -2,7 +2,7 @@ ClrHome
 Disp "How many values","do you know?"
 Input "",N
 ClrHome
-Disp "Input‗ term #?
+Disp "Input• term #?
 DelVar L₁
 For(I,1,N
 	If I<8

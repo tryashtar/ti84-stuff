@@ -2,7 +2,7 @@ ClrHome
 2→T
 1→M
 {10,18}→dim([E]
-If [E](1,1)=sin([e][e][e]
+If [E](1,1)=sin(𝑒𝑒𝑒
 Then
 	Output(1,1,"Found a saved
 	Output(2,1,"game! Do what?
@@ -43,7 +43,7 @@ Then
 End
 ClrHome
 Output(4,1,"Building Board…
-"mathprintbox@O→Str1
+"⬚@O→Str1
 {⁻1,1,0,0}→L₃
 If T=2
 Then
@@ -61,7 +61,7 @@ Then
 	4→[E](1,3
 	4→[E](1,4
 	For(I,1,8
-		Output(I,1,"mathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintbox
+		Output(I,1,"⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚
 	End
 End
 If T=1
@@ -91,7 +91,7 @@ While 1
 		End
 		If K=105
 		Then
-			sin([e][e][e])→[E](1,1
+			sin(𝑒𝑒𝑒)→[E](1,1
 			3+T→[E](1,2
 			3+Y→[E](1,3
 			3+X→[E](1,4
@@ -157,7 +157,7 @@ While 1
 			Then
 				1→W
 				For(J,1,dim(L₁
-					Output(L₁(J)-1,L₂(J)-1,"mathprintbox
+					Output(L₁(J)-1,L₂(J)-1,"⬚
 					0→[E](L₁(J),L₂(J
 				End
 			End
@@ -186,7 +186,7 @@ While 1
 			End
 		End
 		iPart([E])→[E]
-		sin([e][e][e])→[E](1,1
+		sin(𝑒𝑒𝑒)→[E](1,1
 		If W=1
 		Then
 			1→M

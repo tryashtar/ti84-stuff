@@ -1,6 +1,6 @@
 Lbl 1
 ClrHome
-Disp "Fun‗ction:","* = type list","Y = fetch Y₁","
+Disp "Fun•ction:","* = type list","Y = fetch Y₁","
 Input "",Str1
 If Str1="Y
 	Equ►String(Y₁,Str1
@@ -37,7 +37,7 @@ While 1
 		Then
 			ClrHome
 			Output(1,1,"Calculus
-			Output(2,2,"Fun‗ction info
+			Output(2,2,"Fun•ction info
 			Output(3,2,"Point info
 			Output(4,2,"Range info
 			Output(5,2,"New function
@@ -113,7 +113,7 @@ While 1
 		AROC
 		CONCAVITY (UP, DOWN, NONE, OR  MIX)
 		MAXES, MINS,   AND INFLECTION  POINTS
-		AVG VAL OF FUNCACROSS INTERVAL
+		AVG VAL OF FUNCACROS•S INTERVAL
 		TOTAL AREA (ABSVALUE INTEGRAL)
 		USE P1 TAN LINETO APPX P2
 	End

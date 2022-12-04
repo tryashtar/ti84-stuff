@@ -1,5 +1,5 @@
 ClrHome
-Disp "Input‗ dy⁄dx:
+Disp "Input• dy⁄dx:
 Input "",Str0
 If Str0≠".
 	Str0→Str1

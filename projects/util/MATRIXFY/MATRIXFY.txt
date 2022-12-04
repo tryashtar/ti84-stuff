@@ -61,7 +61,7 @@ For(I,1,W
 End
 Pause 
 ClrHome
-Output(1,1,"Gran‗d Total:
+Output(1,1,"Gran•d Total:
 Output(2,1,B
 Pause 
 ClrHome

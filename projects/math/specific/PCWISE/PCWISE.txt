@@ -1,5 +1,5 @@
 ClrHome
-Disp "How many p‗ieces?"
+Disp "How many p•ieces?"
 Input "",X
 "("→Str1
 For(I,1,X
@@ -11,7 +11,7 @@ For(I,1,X
 	If I>1
 		Str1+"("+Str2+")"→Str1
 	ClrHome
-	Disp "Qualifier","use ≥<‗= or‗ logic",""
+	Disp "Qualifier","use ≥<•= or• logic",""
 	Input "",Str2
 	Str1+"("+Str2+")"→Str1
 	If I<X

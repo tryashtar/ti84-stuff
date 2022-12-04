@@ -88,11 +88,11 @@ For(I,2,dim(L₃
 		A+1→A
 	Else
 		B+1→B
-		L₃(I-1)+A[i]→L₄(B
+		L₃(I-1)+A𝑖→L₄(B
 		1→A
 	End
 End
-L₃(dim(L₃))+A[i]→L₄(B+1
+L₃(dim(L₃))+A𝑖→L₄(B+1
 max(0,min(real(L₄)-1)→Xmin
 max(real(L₄))+2→Xmax
 6max(imag(L₄))/5→Ymax
@@ -103,14 +103,14 @@ For(I,1,dim(L₄
 	Line(real(L₄(I)),imag(L₄(I)),real(L₄(I))+1,imag(L₄(I
 	Line(real(L₄(I))+1,0,real(L₄(I))+1,imag(L₄(I
 End
-Text(0,5,"Histogra‗m (interval=",E,")
+Text(0,5,"Histogra•m (interval=",E,")
 Pause 
 ClrDraw
 0→Xmin
 150→Xmax
 0→Ymin
 100→Ymax
-Circle(75,50,D,{[i]
+Circle(75,50,D,{𝑖
 sum(L₁)→B
 90→A
 For(I,1,dim(L₁
@@ -190,7 +190,7 @@ For(I,2,dim(L₃
 End
 If C=dim(L₁) and D=1
 	0→C
-Disp "Mean:","Median:","Mode:","Range:","StdDev:","Outly >","Outly <
+Disp "Mean:","Me•dian:","Mode:","Range:","StdDev:","Outly >","Outly <
 Output(1,9,round(mean(L₁),2
 Output(2,9,round(median(L₁),2
 If C=0

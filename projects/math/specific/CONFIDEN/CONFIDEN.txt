@@ -8,7 +8,7 @@ If A=1
 Then
 	Repeat B=1 or B=2 or B=3
 		ClrHome
-		Disp "Solving for","1- pop mean μ","2- sample size [recursiven]","3- significance","
+		Disp "Solving for","1- pop mean μ","2- sample size 𝑛","3- significance","
 		Input "",B
 	End
 	ClrHome
@@ -20,7 +20,7 @@ Then
 			Input "",C
 		End
 		ClrHome
-		Disp "Sample size [recursiven]:
+		Disp "Sample size 𝑛:
 		Input "",N
 		Disp "","Standard dev σ:
 		Input "",S
@@ -28,7 +28,7 @@ Then
 		Input "",F
 		While F>1
 			ClrHome
-			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Disp "Please type the","confidence as a","percent between","0 and• 1:
 			Input "",F
 		End
 		ClrHome
@@ -41,7 +41,7 @@ Then
 		Output(4,12,10N
 		Pause 
 		ClrHome
-		Disp "Standard Error:","","Margin of Error:","…","","  % confidence","ẋ-MOE ≤μ≥ ẋ+MOE
+		Disp "Standard Error:","","Margin of Error:","…","","  % confidence","x̂-MOE ≤μ≥ x̂+MOE
 		Output(2,1,S/√(N
 		If C=1
 			Output(4,1,⁻invNorm((1-F)/2,0,1)S/√(N
@@ -61,7 +61,7 @@ Then
 		Input "",F
 		While F>1
 			ClrHome
-			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Disp "Please type the","confidence as a","percent between","0 and• 1:
 			Input "",F
 		End
 		ClrHome
@@ -83,12 +83,12 @@ Then
 		Input "",M
 		Disp "","Pop std dev σ:
 		Input "",S
-		Disp "","Sample size [recursiven]:
+		Disp "","Sample size 𝑛:
 		Input "",N
-		Disp "","Sample mean ẋ:
+		Disp "","Sample mean x̂:
 		Input "",X
 		ClrHome
-		Disp "Uncool Toolbox:","Define μ","H₀: μ=","Ha: μ","Ensure SRS","Norma‗l? (N>30)","Indpt? (pop>10N)
+		Disp "Uncool Toolbox:","Define μ","H₀: μ=","Ha: μ","Ensure SRS","Norma•l? (N>30)","Indpt? (pop>10N)
 		If C=1
 			Output(4,6,">
 		If C=2
@@ -99,7 +99,7 @@ Then
 		Output(4,7,M
 		Pause 
 		ClrHome
-		Disp "Math:","((ẋ-μ)√(N))/σ","Z:
+		Disp "Math:","((x̂-μ)√(N))/σ","Z:
 		((X-M)√(N))/S→Z
 		Output(3,4,Z
 		Disp "P:
@@ -109,7 +109,7 @@ Then
 			Output(4,4,normalcdf(⁻1ᴇ99,Z,0,1
 		If C=3
 			Output(4,4,2(1-normalcdf(⁻1ᴇ99,Z,0,1
-		Disp "If‗ p<α, we can","reject H₀ and","accept Ha
+		Disp "If• p<α, we can","reject H₀ and","accept Ha
 		Pause 
 		ClrHome
 	End
@@ -118,26 +118,26 @@ If A=2
 Then
 	Repeat B=1 or B=2 or B=3
 		ClrHome
-		Disp "Solving for","1- pop portion p","2- sample size [recursiven]","3- significance","
+		Disp "Solving for","1- pop portion p","2- sample size 𝑛","3- significance","
 		Input "",B
 	End
 	ClrHome
 	If B=1
 	Then
-		Disp "Sample size [recursiven]:
+		Disp "Sample size 𝑛:
 		Input "",N
-		Disp "","Samp portion ṗ:
+		Disp "","Samp portion p̂:
 		Input "",P
 		While P>1
 			ClrHome
-			Disp "Please type the","proportion as a","percent between","0 and‗ 1:
+			Disp "Please type the","proportion as a","percent between","0 and• 1:
 			Input "",P
 		End
 		Disp "","Confidence:
 		Input "",F
 		While F>1
 			ClrHome
-			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Disp "Please type the","confidence as a","percent between","0 and• 1:
 			Input "",F
 		End
 		ClrHome
@@ -145,12 +145,12 @@ Then
 		Output(4,12,10N
 		If NP<10
 		Then
-			Disp "[!] Nṗ=    <10
+			Disp "[!] Np̂=    <10
 			Output(6,8,round(NP,1
 		End
 		If N(1-P)<10
 		Then
-			Disp "[!] N-Nṗ=    <10
+			Disp "[!] N-Np̂=    <10
 			Output(6+(NP<10),10,N-NP
 		End
 		Pause 
@@ -173,14 +173,14 @@ Then
 		Input "",P
 		While P>1
 			ClrHome
-			Disp "Please type the","estimate as a","percent between","0 and‗ 1:
+			Disp "Please type the","estimate as a","percent between","0 and• 1:
 			Input "",P
 		End
 		Disp "","Confidence:
 		Input "",F
 		While F>1
 			ClrHome
-			Disp "Please type the","confidence as a","percent between","0 and‗ 1:
+			Disp "Please type the","confidence as a","percent between","0 and• 1:
 			Input "",F
 		End
 		ClrHome

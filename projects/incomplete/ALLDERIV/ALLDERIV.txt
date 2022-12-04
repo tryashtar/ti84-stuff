@@ -17,7 +17,7 @@ While M>0
 	For(J,1,dim(L₃
 		If sub(Str2,5J-4,5)=Str3
 		Then
-			J[i]→L₁(I)
+			J𝑖→L₁(I)
 			1→P
 			M+L₂(J)→M
 		End
@@ -28,7 +28,7 @@ While M>0
 			sub(Str3,1,length(Str3)-2)→Str3
 		End
 		If Str3="X
-			⁻[i]→L₁(I
+			⁻𝑖→L₁(I
 		If Str3≠"X
 			expr(Str3)→L₁(I
 	End

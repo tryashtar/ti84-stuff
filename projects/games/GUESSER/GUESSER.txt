@@ -1,5 +1,5 @@
 ClrHome
-Disp "Choose a number","between..‗.",""
+Disp "Choose a number","between..•.",""
 Input "",A
 round(A,0)→A
 Disp "and

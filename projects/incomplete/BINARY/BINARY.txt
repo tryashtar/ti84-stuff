@@ -22,7 +22,7 @@ While K≠105
 	End
 End
 ClrHome
-Output(1,1,"Input‗ number…
+Output(1,1,"Input• number…
 " "→Str2
 0→K
 While not(K=105 and length(Str2)≥2

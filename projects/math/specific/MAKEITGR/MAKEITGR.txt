@@ -1,5 +1,5 @@
 ClrHome
-Disp "Input‗ F´(X):
+Disp "Input• F´(X):
 Input "",Str1
 Disp "","F(A)=B
 Input "A: ",A

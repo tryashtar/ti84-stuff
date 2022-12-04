@@ -43,7 +43,7 @@ While 1
 		End
 		If S=2
 		Then
-			Output(1,1,"box  ITEMS  map
+			Output(1,1,"box  ITEM•S  map
 			Output(T+1,1,"►
 			ʟCBE(1)→X
 			If X=0

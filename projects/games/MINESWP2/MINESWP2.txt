@@ -80,7 +80,7 @@ For(I,1,M
 End
 ClrHome
 For(I,1,B
-	Output(I,1,sub("mathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintboxmathprintbox",1,A
+	Output(I,1,sub("⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚⬚",1,A
 End
 If A<16
 Then
@@ -106,7 +106,7 @@ While W=0
 	Ans→K
 	If max(K={24,25,26,34
 	Then
-		Output(Y,X,sub("mathprintbox 123456789invertedequal",min(12,max([D](Y+1,X+1)-8,1)),1
+		Output(Y,X,sub("⬚ 123456789invertedequal",min(12,max([D](Y+1,X+1)-8,1)),1
 		If K=24
 			remainder(X+A-2,A)+1→X
 		If K=26

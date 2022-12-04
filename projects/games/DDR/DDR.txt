@@ -1,7 +1,7 @@
 ClrHome
 DelVar L₁
 For(I,1,7,2
-	Output(I,16,"mathprintbox
+	Output(I,16,"⬚
 End
 16→dim(L₁
 {0,24,26,25,34}→L₂
@@ -13,16 +13,16 @@ While 1
 	augment({A},L₁)→L₁
 	For(I,16,1,⁻1)
 		If L₁(I)≠0 and I>1
-			Output(2L₁(I)-1,I-1," "+sub("◄►bolduparrowbolddownarrow",L₁(I),1
+			Output(2L₁(I)-1,I-1," "+sub("◄►🠹🠻",L₁(I),1
 	End
 	If L₁(16)>0
 	Then
-		Output(2L₁(16)-1,16,"mathprintbox
+		Output(2L₁(16)-1,16,"⬚
 		S+1→S
 		Output(8,1,S
 	End
 	If A>0
-		Output(2A-1,1,sub("◄►bolduparrowbolddownarrow",A,1
+		Output(2A-1,1,sub("◄►🠹🠻",A,1
 	getKey→K
 	If L₂(L₁(16)+1)≠K
 	Then

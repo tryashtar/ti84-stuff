@@ -298,14 +298,14 @@ While 1
 			Output(1,4,"Candy Box
 			Output(2,2,"Eat candies
 			Output(3,2,"Buy lollipop>60
-			Output(4,2,"Ful‗l heal   >30
+			Output(4,2,"Ful•l heal   >30
 		End
 		If A=3
 		Then
 			Output(1,4,"Equipment
 			Output(2,2,"∠ Weapon
 			Output(3,2,"Ω Armor
-			Output(4,2,"|~ Hat
+			Output(4,2,"~ Hat
 			Output(5,2,"û Potions
 		End
 		If A=4
@@ -354,10 +354,10 @@ While 1
 		End
 		If A=6
 		Then
-			Output(1,6,"Quests -‗>
+			Output(1,6,"Quests -•>
 			Output(2,2,"Î Forest
 			Output(3,2,"Δ Mt. Goblin
-			Output(4,2,"|~ Ocean
+			Output(4,2,"~ Ocean
 			Output(5,2,"Ω Castle
 			Output(6,2,"∫ Dark Woods
 			Output(7,2,"σ Cave
@@ -365,14 +365,14 @@ While 1
 		If A=7
 		Then
 			Output(1,3,"<- Quests
-			Output(2,2,"bolduparrow Volcano
+			Output(2,2,"🠹 Volcano
 			Output(3,2,"ᵤ Sunken Abyss
 			Output(4,2,"α Dragon Lair
 			Output(5,2,"# Tundra
 		End
 		If A=8
 		Then
-			Output(1,5,"Weapons -‗>
+			Output(1,5,"Weapons -•>
 			Output(2,3,"None
 			If ʟCANDY(7)≤6
 				Output(ʟCANDY(7)+1,2,":

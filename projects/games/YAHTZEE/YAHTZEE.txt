@@ -24,7 +24,7 @@ While K≠105
 		Return
 	End
 End
-"Ones:Twos:Threes:Fours:Fives:Sixes:Ful‗lHouse:3ofKind:4ofKind:SmStraight:LgStraight:Yahtzee:Chance:→Str1
+"Ones:Twos:Threes:Fours:Fives:Sixes:Ful•lHouse:3ofKind:4ofKind:SmStraight:LgStraight:Yahtzee:Chance:→Str1
 "₁₂₃₄₅₆₇₈₉₁₀→Str2
 {1,5,5,7,6,6,6,10,8,8,11,11,8,7}→L₆
 cumSum(L₆)→L₆

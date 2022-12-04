@@ -1,6 +1,6 @@
 ClrHome
 Output(4,3,"Generating…
-"mathprintbox‗₁₂₃₄₅₆₇₈₉mathprintbox123456789"→Str1
+"⬚₁₂₃₄₅₆₇₈₉⬚123456789"→Str1
 {9,9}→dim([B]
 Fill(0,[B]
 ClrHome

@@ -6,7 +6,7 @@ ClrHome
 If P=0
 Then
 	Func
-	Disp "Input‗ function:
+	Disp "Input• function:
 	Input "",Str1
 Else
 	Param

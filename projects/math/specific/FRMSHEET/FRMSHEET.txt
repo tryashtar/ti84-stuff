@@ -11,7 +11,7 @@ DelVar Y₁
 While 1
 	ClrHome
 	Output(1,1,"FORMULA SHEET
-	Output(2,2,"Se‗quences
+	Output(2,2,"Se•quences
 	Output(3,2,"Trig IDs
 	Output(4,2,"Unit Circle
 	Output(5,2,"Law of Sines
@@ -110,7 +110,7 @@ While 1
 	Then
 		27→X
 		⁻13→O
-		Circle(0+O,0,X,{[i]
+		Circle(0+O,0,X,{𝑖
 		Line(0+O,X,0+O,⁻X
 		Line(X+O,0,⁻X+O,0
 		Line(1/2X+O,√(3)/2X,⁻1/2X+O,⁻√(3)/2X
@@ -215,10 +215,10 @@ While 1
 	Then
 		Text(⁻1,1,1,"Parabolas:
 		Text(10,1,"(X-h)² = 4p(Y-k)
-		Text(17,1,"Up or‗ down
+		Text(17,1,"Up or• down
 		Text(24,1,"Focus: (h,k+p)
 		Text(39,1,"(Y-k)² = 4p(X-h)
-		Text(46,1,"Right or‗ left
+		Text(46,1,"Right or• left
 		Text(53,1,"Focus: (h+p,k)
 		Pause 
 		ClrDraw
@@ -257,7 +257,7 @@ While 1
 		Pt-On(⁻5,4
 		Pt-On(⁻5,16
 		Text(⁻1,35,1,"Continuous:
-		Text(⁻1,47,12,"P[e]
+		Text(⁻1,47,12,"P𝑒
 		Text(45,25,"rt
 		Pause 
 		ClrDraw

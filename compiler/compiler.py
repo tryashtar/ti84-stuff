@@ -83,7 +83,7 @@ def write_symbol(so_far, stream, position):
     potential = so_far + symbol
     for ambig in ambiguous_symbols[symbol]:
         if potential.endswith(ambig):
-            symbol = "‗" + symbol
+            symbol = "•" + symbol
             break
     return (symbol, bc, byte_string)
 

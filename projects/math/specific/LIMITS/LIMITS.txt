@@ -3,25 +3,25 @@ Disp "Equation:","(Use X)",""
 Input "",Str1
 ClrHome
 9999999999999999999999999999999→θ
-Disp "As X-‗>?","(θ = infty)",""
+Disp "As X-•>?","(θ = infty)",""
 Input "",X
 ClrHome
 X-.000000001→X
 expr(Str1)→Y
 If Y>99999999999999999999999999
 Then
-	Disp "X-‗>⁻: infty
+	Disp "X-•>⁻: infty
 Else
-	Disp "X-‗>⁻: "
+	Disp "X-•>⁻: "
 	Output(1,7,round(Y,5
 End
 X+.000000002→X
 expr(Str1)→Y
 If Y>99999999999999999999999999
 Then
-	Disp "X-‗>+: infty"
+	Disp "X-•>+: infty"
 Else
-	Disp "X-‗>+: "
+	Disp "X-•>+: "
 	Output(2,7,round(Y,5
 End
 Pause 

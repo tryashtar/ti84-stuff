@@ -1,5 +1,5 @@
 ClrHome
-Disp "Fun‗ctions:","(Type . to end)
+Disp "Fun•ctions:","(Type . to end)
 "0"→Str1
 " "→Str2
 0→N

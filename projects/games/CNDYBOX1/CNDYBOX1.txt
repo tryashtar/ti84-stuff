@@ -2,7 +2,7 @@ ClrHome
 While 0
 	?=BOOLEAN
 	---------
-	L=LOLLIPOPS IN    DECIMAL
+	L=LOLLIPOPS IN    DE•CIMAL
 	V=LOLLY+ RATE
 	R=CANDY+ RATE
 	S=MENU
@@ -365,7 +365,7 @@ While 1
 					If H≤0
 					Then
 						Output(1,1,"You lost your
-						Output(2,1,"energy and‗ m‗ust
+						Output(2,1,"energy and• m•ust
 						Output(3,1,"recover.
 						Output(5,1,"No rewards.
 					End
@@ -381,7 +381,7 @@ While 1
 			Else
 				If T=1
 				Then
-					10^‗(U-1)→X
+					10^•(U-1)→X
 					If L₁(2)≥X
 					Then
 						L₁(2)-X→L₁(2

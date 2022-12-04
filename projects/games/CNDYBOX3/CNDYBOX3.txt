@@ -108,16 +108,16 @@ While 1
 		If T<1
 			4→T
 		If T=1
-			Output(7,1,"|~|~
+			Output(7,1,"~~
 		If T=2
-			Output(7,4,"|~|~|~
+			Output(7,4,"~~~
 		If T=3
-			Output(7,8,"|~|~|~|~
+			Output(7,8,"~~~~
 		If T=4
 		Then
-			Output(7,13,"|~|~|~|~
+			Output(7,13,"~~~~
 			Output(8,1,ʟSWT(8
-			Output(8,8,"-‗>    C⁄S
+			Output(8,8,"-•>    C⁄S
 			Output(8,11,ʟSWT(7)+1
 		End
 	End
@@ -229,7 +229,7 @@ While 1
 		Then
 			If T≥1 and T≤3
 			Then
-				10^‗(T-1)→V
+				10^•(T-1)→V
 				If iPart(ʟSWT(2))≥V
 				Then
 					ʟSWT(2)-V→ʟSWT(2
@@ -278,7 +278,7 @@ While 1
 				Output(4,6,round(ʟSWT(6),7)
 				Output(6,1,"+1 +10 +100 Feed
 				1→T
-				Output(7,1,"|~|~
+				Output(7,1,"~~
 			End
 			If T≥2 and T≤ʟSLCT(3
 				T-1→M
@@ -326,7 +326,7 @@ While 1
 			For(L,1,G
 				If I=1 and L=1
 					2→L
-				Output(I,L,"mathprintbox
+				Output(I,L,"⬚
 				randInt(1,U)→C
 				0→R
 				For(J,1,dim(L₂
@@ -528,7 +528,7 @@ While 1
 					End
 				End
 			End
-			Output(4,2,"Ful‗l heal
+			Output(4,2,"Ful•l heal
 			Output(8,1,">O<
 			Output(8,5,ʟSWT(1
 		End
@@ -550,7 +550,7 @@ While 1
 			Output(2,2,"Ä Lollipop farm
 			Output(3,2,"Î Forest
 			Output(4,2,"Δ Mt. Goblin
-			Output(5,2,"|~ Ocean
+			Output(5,2,"~ Ocean
 			Output(6,2,"Ω Castle
 			Output(7,2,"∫ Dark woods
 			Output(8,1,ʟHPM(1
