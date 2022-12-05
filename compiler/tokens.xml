@@ -459,16 +459,24 @@ to include changes if they're better!
     <Token byte="$01" string="ZYscl" />
     <Token byte="$02" string="Xscl" />
     <Token byte="$03" string="Yscl" />
-    <Token byte="$04" string="u(nMin)" />
-    <Token byte="$05" string="v(nMin)" />
-    <Token byte="$06" string="Un-₁" stringTerminator="false">
+    <Token byte="$04" string="u(𝑛Min)" stringTerminator="false">
+      <Alt string="u(nMin)" />
+    </Token>
+    <Token byte="$05" string="v(𝑛Min)" stringTerminator="false">
+      <Alt string="v(nMin)" />
+    </Token>
+    <Token byte="$06" string="U𝑛-₁" stringTerminator="false">
       <Alt string="Un-1" />
     </Token>
-    <Token byte="$07" string="Vn-₁" stringTerminator="false">
+    <Token byte="$07" string="V𝑛-₁" stringTerminator="false">
       <Alt string="Vn-1" />
     </Token>
-    <Token byte="$08" string="Zu(nmin)" />
-    <Token byte="$09" string="Zv(nmin)" />
+    <Token byte="$08" string="Zu(𝑛min)" stringTerminator="false">
+      <Alt string="Zu(nmin)" />
+    </Token>
+    <Token byte="$09" string="Zv(𝑛min)" stringTerminator="false">
+      <Alt string="Zv(nmin)" />
+    </Token>
     <Token byte="$0A" string="Xmin" />
     <Token byte="$0B" string="Xmax" />
     <Token byte="$0C" string="Ymin" />
@@ -496,10 +504,18 @@ to include changes if they're better!
     <Token byte="$1A" string="TblStart" />
     <Token byte="$1B" string="PlotStart" />
     <Token byte="$1C" string="ZPlotStart" />
-    <Token byte="$1D" string="nMax" />
-    <Token byte="$1E" string="ZnMax" />
-    <Token byte="$1F" string="nMin" />
-    <Token byte="$20" string="ZnMin" />
+    <Token byte="$1D" string="𝑛Max" stringTerminator="false">
+      <Alt string="nMax" />
+    </Token>
+    <Token byte="$1E" string="Z𝑛Max" stringTerminator="false">
+      <Alt string="ZnMax" />
+    </Token>
+    <Token byte="$1F" string="𝑛Min" stringTerminator="false">
+      <Alt string="nMin" />
+    </Token>
+    <Token byte="$20" string="Z𝑛Min" stringTerminator="false">
+      <Alt string="ZnMin" />
+    </Token>
     <Token byte="$21" string="∆Tbl" stringTerminator="false">
       <Alt string="DeltaTbl" />
     </Token>
@@ -529,8 +545,12 @@ to include changes if they're better!
     <Token byte="$2F" string="FV" />
     <Token byte="$30" string="P/Y" />
     <Token byte="$31" string="C/Y" />
-    <Token byte="$32" string="w(nMin)" />
-    <Token byte="$33" string="Zw(nMin)" />
+    <Token byte="$32" string="w(𝑛Min)" stringTerminator="false">
+      <Alt string="w(nMin)" />
+    </Token>
+    <Token byte="$33" string="Zw(𝑛Min)" stringTerminator="false">
+      <Alt string="Zw(nMin)" />
+    </Token>
     <Token byte="$34" string="PlotStep" />
     <Token byte="$35" string="ZPlotStep" />
     <Token byte="$36" string="Xres" />
@@ -872,7 +892,9 @@ to include changes if they're better!
       <Alt string="chi²cdf(" />
       <Alt string="chi^2cdf(" />
     </Token>
-    <Token byte="$14" string="Fcdf(" />
+    <Token byte="$14" string="𝙵cdf(" stringTerminator="false">
+      <Alt string="Fcdf(" />
+    </Token>
     <Token byte="$15" string="binompdf(" />
     <Token byte="$16" string="binomcdf(" />
     <Token byte="$17" string="poissonpdf(" />
@@ -886,12 +908,16 @@ to include changes if they're better!
       <Alt string="chi²pdf(" />
       <Alt string="chi^2pdf(" />
     </Token>
-    <Token byte="$1E" string="Fpdf(" />
+    <Token byte="$1E" string="𝙵pdf(" stringTerminator="false">
+      <Alt string="Fpdf(" />
+    </Token>
     <Token byte="$1F" string="randNorm(" />
     <Token byte="$20" string="tvm_Pmt" />
     <Token byte="$21" string="tvm_I%" />
     <Token byte="$22" string="tvm_PV" />
-    <Token byte="$23" string="tvm_N" />
+    <Token byte="$23" string="tvm_𝗡" stringTerminator="false">
+      <Alt string="tvm_N" />
+    </Token>
     <Token byte="$24" string="tvm_FV" />
     <Token byte="$25" string="conj(" />
     <Token byte="$26" string="real(" stringTerminator="false">
@@ -965,7 +991,9 @@ to include changes if they're better!
       <Alt string="Shadechi²(" />
       <Alt string="Shadechi^2(" />
     </Token>
-    <Token byte="$38" string="ShadeF(" />
+    <Token byte="$38" string="Shade𝙵(" stringTerminator="false">
+      <Alt string="ShadeF(" />
+    </Token>
     <Token byte="$39" string="Matr►list(" stringTerminator="false">
       <Alt string="Matr&gt;list(" />
     </Token>
@@ -988,7 +1016,9 @@ to include changes if they're better!
     <Token byte="$44" string="2-PropZInt(" />
     <Token byte="$45" string="GraphStyle(" style="Keyword" />
     <Token byte="$46" string="2-SampTTest " />
-    <Token byte="$47" string="2-SampFTest " />
+    <Token byte="$47" string="2-Samp𝙵Test " stringTerminator="false">
+      <Alt string="2-SampFTest " />
+    </Token>
     <Token byte="$48" string="TInterval " />
     <Token byte="$49" string="2-SampTInt " />
     <Token byte="$4A" string="SetUpEditor " />
