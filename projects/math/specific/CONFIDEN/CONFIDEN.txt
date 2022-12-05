@@ -41,7 +41,7 @@ Then
 		Output(4,12,10N
 		Pause 
 		ClrHome
-		Disp "Standard Error:","","Margin of Error:","…","","  % confidence","x̂-MOE ≤μ≥ x̂+MOE
+		Disp "Standard Error:","","Margin of Error:","…","","  % confidence","x̄-MOE ≤μ≥ x̄+MOE
 		Output(2,1,S/√(N
 		If C=1
 			Output(4,1,⁻invNorm((1-F)/2,0,1)S/√(N
@@ -85,7 +85,7 @@ Then
 		Input "",S
 		Disp "","Sample size 𝑛:
 		Input "",N
-		Disp "","Sample mean x̂:
+		Disp "","Sample mean x̄:
 		Input "",X
 		ClrHome
 		Disp "Uncool Toolbox:","Define μ","H₀: μ=","Ha: μ","Ensure SRS","Norma•l? (N>30)","Indpt? (pop>10N)
@@ -99,7 +99,7 @@ Then
 		Output(4,7,M
 		Pause 
 		ClrHome
-		Disp "Math:","((x̂-μ)√(N))/σ","Z:
+		Disp "Math:","((x̄-μ)√(N))/σ","Z:
 		((X-M)√(N))/S→Z
 		Output(3,4,Z
 		Disp "P:

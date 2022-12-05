@@ -429,7 +429,7 @@ While 1
 				4→ʟSLCT(6
 				Output(1,3,"<-
 				Output(2,2,"🠹 Volcano
-				Output(3,2,"ᵤ Sunken Trench
+				Output(3,2,"⎵ Sunken Trench
 				Output(4,2,"α Dragon Lair
 				Output(5,2,"# Tundra
 			End

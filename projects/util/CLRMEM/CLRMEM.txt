@@ -1,6 +1,6 @@
 ClrHome
 DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar θDelVar L₁DelVar L₂DelVar L₃DelVar L₄DelVar L₅DelVar L₆DelVar [A]DelVar [B]DelVar [C]DelVar [D]DelVar [E]DelVar [F]DelVar [G]DelVar [H]DelVar [I]DelVar [J]DelVar Y₁DelVar Y₂DelVar Y₃DelVar Y₄DelVar Y₅DelVar Y₆DelVar Y₇DelVar Y₈DelVar Y₉DelVar Y₀DelVar X₁ᴛDelVar Y₁ᴛDelVar X₂ᴛDelVar Y₂ᴛDelVar X₃ᴛDelVar Y₃ᴛDelVar X₄ᴛDelVar Y₄ᴛDelVar X₅ᴛDelVar Y₅ᴛDelVar X₆ᴛDelVar Y₆ᴛDelVar r₁DelVar r₂DelVar r₃DelVar r₄DelVar r₅DelVar r₆DelVar Str1DelVar Str2DelVar Str3DelVar Str4DelVar Str5DelVar Str6DelVar Str7DelVar Str8DelVar Str9DelVar Str0DelVar GDB1DelVar GDB2DelVar GDB3DelVar GDB4DelVar GDB5DelVar GDB6DelVar GDB7DelVar GDB8DelVar GDB9DelVar GDB0DelVar Pic1DelVar Pic2DelVar Pic3DelVar Pic4DelVar Pic5DelVar Pic6DelVar Pic7DelVar Pic8DelVar Pic9DelVar Pic0
-0→|N
+0→𝗡
 0→I%
 0→PV
 0→PMT

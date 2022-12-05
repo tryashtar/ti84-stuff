@@ -46,7 +46,7 @@ If X=20
 If X=22
 	Output(5,4,"μαθ𝑛ματ𝑖kα
 If X=23
-	Output(5,2,"d⁄dx 𝑒^|F = |F𝑒
+	Output(5,2,"d⁄dx 𝑒^𝙵 = 𝙵𝑒
 If X=24
 	Output(5,3,"NP is in P!
 If X=25

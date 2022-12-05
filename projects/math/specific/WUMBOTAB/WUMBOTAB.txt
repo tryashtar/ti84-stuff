@@ -109,11 +109,11 @@ Repeat K≠45
 				Input "",T
 			End
 		End
-		Disp "","S|am|pl||e m||e|a|n x̂"+sub(": ₁:",2L₁(2)-1,2
+		Disp "","S|am|pl||e m||e|a|n x̄"+sub(": ₁:",2L₁(2)-1,2
 		Input "",X
 		If 2=L₁(2
 		Then
-			Disp "","S|am|pl||e m||e|a|n x̂₂:
+			Disp "","S|am|pl||e m||e|a|n x̄₂:
 			Input "",Y
 		End
 		Disp "

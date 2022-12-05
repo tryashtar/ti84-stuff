@@ -6,7 +6,7 @@ ClrHome
 Menu("SELECT","NEW GAME",0,"LOAD GAME",2)
 ClrHome
 While 0
-	|N=COOKIES
+	𝗡=COOKIES
 	I%=CLICK PWR
 	PV=CLCK+ PRICE
 	PMT=LAST PRCHS
@@ -16,7 +16,7 @@ While 0
 	M=CKIE MLTPLR
 End
 Lbl 0
-0→|N
+0→𝗡
 1→I%
 200→PV
 0→PMT
@@ -40,7 +40,7 @@ End
 Lbl 2
 ClrHome
 Output(1,1,"θ")
-Output(1,3,|N)
+Output(1,3,𝗡)
 Output(2,1,"CPS:")
 Output(3,1,"CPC:")
 Output(2,6,FV)
@@ -107,8 +107,8 @@ For(I,1,dim(ʟA))
 		If ʟF(I)>ʟE(I)
 		Then
 			0→ʟF(I)
-			|N+(ʟC(I)*M)→|N
-			Output(1,3,|N)
+			𝗡+(ʟC(I)*M)→𝗡
+			Output(1,3,𝗡)
 		End
 	End
 End
@@ -126,18 +126,18 @@ Then
 End
 If K=95
 Then
-	|N+(I%*M)→|N
-	Output(1,3,|N)
+	𝗡+(I%*M)→𝗡
+	Output(1,3,𝗡)
 End
 If K=93
 Then
-	If |N≥PV
+	If 𝗡≥PV
 	Then
-		|N-PV→|N
+		𝗡-PV→𝗡
 		I%+1→I%
 		PV+150→PV
 		Output(1,3,"         ")
-		Output(1,3,|N)
+		Output(1,3,𝗡)
 		Output(3,6,I%)
 		Output(8,8,PV)
 	End
@@ -148,14 +148,14 @@ If K=92
 Then
 	If PMT>0
 	Then
-		If |N≥ʟBD(PMT)
+		If 𝗡≥ʟBD(PMT)
 		Then
-			|N-ʟBD(PMT)→|N
+			𝗡-ʟBD(PMT)→𝗡
 			ʟA(PMT)+1→ʟA(PMT)
 			iPart(ʟB(PMT)*(1.15^ʟA(PMT)))→ʟBD(PMT)
 			ʟD(PMT)/ʟA(PMT)→ʟE(PMT)
 			Output(1,3,"         ")
-			Output(1,3,|N)
+			Output(1,3,𝗡)
 			Output(7,3,ʟA(PMT))
 			Output(7,8,ʟBD(PMT))
 			0→FV
@@ -238,9 +238,9 @@ If P=2 and S+8≤dim(ʟA)
 	S+8→S
 If S>0
 Then
-	If |N≥ʟBD(S)
+	If 𝗡≥ʟBD(S)
 	Then
-		|N-ʟBD(S)→|N
+		𝗡-ʟBD(S)→𝗡
 		ʟA(S)+1→ʟA(S)
 		iPart(ʟB(S)*(1.15^ʟA(S)))→ʟBD(S)
 		ʟD(S)/ʟA(S)→ʟE(S)

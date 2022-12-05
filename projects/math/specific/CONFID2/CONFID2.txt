@@ -41,7 +41,7 @@ Then
 		Output(4,12,10N
 		Pause 
 		ClrHome
-		Disp "S|t|a|n|d|a|r|d E|r|ro|r:","","M|a|rgi|n of E|r|ro|r:","…","","  % |co|nfi|d||e|n|c||e","x̂-MOE ≤μ≥ x̂+MOE
+		Disp "S|t|a|n|d|a|r|d E|r|ro|r:","","M|a|rgi|n of E|r|ro|r:","…","","  % |co|nfi|d||e|n|c||e","x̄-MOE ≤μ≥ x̄+MOE
 		Output(2,1,S/√(N
 		If C=1
 			Output(4,1,⁻invNorm((1-F)/2,0,1)S/√(N
@@ -85,7 +85,7 @@ Then
 		Input "",S
 		Disp "","S|am|pl||e |si|z||e 𝑛:
 		Input "",N
-		Disp "","S|am|pl||e m||e|a|n x̂:
+		Disp "","S|am|pl||e m||e|a|n x̄:
 		Input "",X
 		ClrHome
 		Disp "U|n|cool Tool|box:","D||efi|n||e μ","H₀: μ=","H|a: μ","E|n|s|u|r||e SRS","Normal? (N>30)","I|n|d|p|t? (|po|p>10N)
@@ -99,7 +99,7 @@ Then
 		Output(4,7,M
 		Pause 
 		ClrHome
-		Disp "M|a|th:","((x̂-μ)√(N))/σ","Z:
+		Disp "M|a|th:","((x̄-μ)√(N))/σ","Z:
 		((X-M)√(N))/S→Z
 		Output(3,4,Z
 		Disp "P:

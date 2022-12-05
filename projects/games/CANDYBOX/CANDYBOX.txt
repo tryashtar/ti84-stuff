@@ -366,7 +366,7 @@ While 1
 		Then
 			Output(1,3,"<- Quests
 			Output(2,2,"🠹 Volcano
-			Output(3,2,"ᵤ Sunken Abyss
+			Output(3,2,"⎵ Sunken Abyss
 			Output(4,2,"α Dragon Lair
 			Output(5,2,"# Tundra
 		End
