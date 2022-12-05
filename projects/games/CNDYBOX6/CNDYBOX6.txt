@@ -57,7 +57,7 @@ End
 {0,1,2,1,3,4,2,2,2,2,2}→ʟDISP
 {0,100,500,1200,2000,3000,5000,8000,12500,20000,40000,60000}→ʟPRICE
 {5,3,4,4,2,6,6,4,5,6,6}→ʟSLCT
-"|invertedequalçÇ`δτñÑΔêinvertedequal~@invertedequalÖ→Str1
+"|invertedequalçÇ‘δτñÑΔêinvertedequal~@invertedequalÖ→Str1
 "TreeChestGoblinTrollShrimpEelOctopusSquireKnightRockWolfChestBatWhaleMimicOgre→Str2
 {4,5,6,5,6,3,7,6,6,4,4,5,3,5,5,4}→ʟNAMES
 [[1]]→[A]

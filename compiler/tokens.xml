@@ -1071,13 +1071,9 @@ to include changes if they're better!
     <Token byte="$98" string="Ñ" group="Accented Letters" />
     <Token byte="$99" string="ñ" group="Accented Letters" />
     <Token byte="$9A" string="´" stringTerminator="false">
-      <Alt string="|'" />
-      <Alt string="^^'" />
+      <Alt string="|`" />
     </Token>
-    <Token byte="$9B" string="|`" stringTerminator="false">
-      <Alt string="||'" />
-      <Alt string="^^`" />
-    </Token>
+    <Token byte="$9B" string="`" />
     <Token byte="$9C" string="¨" stringTerminator="false">
       <Alt string="|:" />
       <Alt string="^^:" />
@@ -1175,7 +1171,9 @@ to include changes if they're better!
     <Token byte="$D2" string="#" />
     <Token byte="$D3" string="$" />
     <Token byte="$D4" string="&amp;" />
-    <Token byte="$D5" string="`" />
+    <Token byte="$D5" string="‘" stringTerminator="false">
+      <Alt string="|'" />
+    </Token>
     <Token byte="$D6" string=";" />
     <Token byte="$D7" string="\" />
     <Token byte="$D8" string="|" />
