@@ -1,119 +1,174 @@
 ClrHome
-Output(3,5,"Players
-2→P
-Output(4,8,2
-0
-Repeat Ans
-	Repeat Ans
-		getKey
+150→dim(ʟSKY•2
+6→A
+If ʟSKY•2(1
+Then
+	Output(1,1,"There is an
+	Output(2,1,"unfinished game!
+	Output(3,1,"What to do?
+	Output(5,1,"►Continue
+	Output(6,2,"Restart
+	Output(7,2,"Discard
+	Output(8,2,"Quit
+	5→A
+	0
+	Repeat Ans=105
+		Repeat Ans
+			getKey
+		End
+		If Ans=45
+		Then
+			ClrHome
+			Return
+		End
+		Output(A,1," 
+		If Ans=25
+			A-1→A
+		If Ans=34
+			A+1→A
+		If A>8
+			5→A
+		If A<5
+			8→A
+		Output(A,1,"►
 	End
-	Output(4,9," 
-	If Ans≠92 and Ans≠74 and 2>abs(5-abs(5-abs(Ans-83
-		round(13fPart(Ans/13→P
-	If Ans=25 or Ans=26
-		min(8,P+1→P
-	If Ans=34 or Ans=24
-		max(2,P-1→P
-	Output(4,8,P
-	If Ans=45
-	Then
-		ClrHome
-		Return
-	End
-	If Ans≠105
-		0
 End
 ClrHome
-Output(4,5,"Loading…
-augment(augment(seq(0,I,1,15),seq(⁻1,I,1,10)),seq(⁻2,I,1,5
-For(I,1,12
-	augment(Ans,seq(I,J,1,10
+If A=7
+Then
+	DelVar ʟSKY•1
+	DelVar ʟSKY•2
+	DelVar ʟSKY•3
+	DelVar ʟSKY•4
 End
-Ans→L₁
-{0→L₄
-P→dim(L₄
-Output(4,4,"Shuffling…
-randIntNoRep(1,150→L₂
-Output(4,4," Dealing… 
-seq(L₁(L₂(I)),I,1,12P→L₃
-12P+2→D
-L₁(L₂(D-1→L
-0→C
+If A≥7
+	Return
+If A=6
+Then
+	Output(3,5,"Players
+	2→P
+	Output(4,8,2
+	0
+	Repeat Ans
+		Repeat Ans
+			getKey
+		End
+		Output(4,9," 
+		If Ans≠92 and Ans≠74 and 2>abs(5-abs(5-abs(Ans-83
+			round(13fPart(Ans/13→P
+		If Ans=25 or Ans=26
+			min(8,P+1→P
+		If Ans=34 or Ans=24
+			max(2,P-1→P
+		Output(4,8,P
+		If Ans=45
+		Then
+			ClrHome
+			Return
+		End
+		If Ans≠105
+			0
+		ClrHome
+		Output(4,5,"Loading…
+		augment(augment(seq(0,I,1,15),seq(⁻1,I,1,10)),seq(⁻2,I,1,5
+		For(I,1,12
+			augment(Ans,seq(I,J,1,10
+		End
+		Ans→ʟSKY•1
+		{0→ʟSKY•4
+		P+3→dim(ʟSKY•4
+		Output(4,4,"Shuffling…
+		randIntNoRep(1,150→ʟSKY•2
+		Output(4,4," Dealing… 
+		seq(ʟSKY•1(ʟSKY•2(I)),I,1,12P→ʟSKY•3
+		12P+2→D
+		ʟSKY•1(ʟSKY•2(D-1→ʟSKY•4(P+3
+		1→ʟSKY•4(P+1
+		1→ʟSKY•4(P+2
+	End
+Else
+	dim(ʟSKY•4)-3→P
+End
 99→M
 While 1
 	ClrHome
-	Output(4,4,"Flip two:
-	If not(C
+	If ʟSKY•4(P+2
 	Then
-		1→C
-		⁻9→M
-	End
-	For(I,1,P
-		Output(1,1,sub("₁₂₃₄₅₆₇₈",1,P
-		Output(1,I,I
-		Output(2,max(1,I-1)," 
-		Output(2,I,"^
-		"[==][==][==][==]
-		Output(6,1,Ans
-		Output(7,1,Ans
-		Output(8,1,Ans
-		Output(6,1,"►==◄
-		61→A
-		2→F
-		0→G
-		While F
-			0
-			Repeat Ans
-				getKey
-			End
-			Output(iPart(A/10),40fPart(A/10)-3,"[
-			Output(iPart(A/10),40fPart(A/10),"]
-			If Ans=24
-				A-1→A
-			If Ans=26
-				A+1→A
-			If Ans=34
-				A+10→A
-			If Ans=25
-				A-10→A
-			If A≥90
-				60+10fPart(A/10→A
-			If A≤55
-				80+10fPart(A/10→A
-			If .4<fPart(A/10
-				1+10iPart(A/10→A
-			If not(fPart(A/10
-				4+A→A
-			Output(iPart(A/10),40fPart(A/10)-3,"►
-			Output(iPart(A/10),40fPart(A/10),"◄
-			If Ans=105
-			Then
-				12I-36+4iPart(A/10)+10fPart(A/10
-				If not(fPart(L₃(Ans
+		Output(4,4,"Flip two:
+		If 1=ʟSKY•4(P+2
+		Then
+			1→ʟSKY•4(P+1
+			⁻9→M
+		End
+		For(I,ʟSKY•4(P+1),P
+			I→ʟSKY•4(P+1
+			Output(1,1,sub("₁₂₃₄₅₆₇₈",1,P
+			Output(1,I,I
+			Output(2,max(1,I-1)," 
+			Output(2,I,"^
+			"[==][==][==][==]
+			Output(6,1,Ans
+			Output(7,1,Ans
+			Output(8,1,Ans
+			Output(6,1,"►==◄
+			61→A
+			2→F
+			0→G
+			While F
+				0
+				Repeat Ans
+					getKey
+				End
+				Output(iPart(A/10),40fPart(A/10)-3,"[
+				Output(iPart(A/10),40fPart(A/10),"]
+				If Ans=24
+					A-1→A
+				If Ans=26
+					A+1→A
+				If Ans=34
+					A+10→A
+				If Ans=25
+					A-10→A
+				If A≥90
+					60+10fPart(A/10→A
+				If A≤55
+					80+10fPart(A/10→A
+				If .4<fPart(A/10
+					1+10iPart(A/10→A
+				If not(fPart(A/10
+					4+A→A
+				Output(iPart(A/10),40fPart(A/10)-3,"►
+				Output(iPart(A/10),40fPart(A/10),"◄
+				If Ans=105
 				Then
-					Output(iPart(A/10),40fPart(A/10)-2,"  
-					Output(iPart(A/10),40fPart(A/10)-2,L₃(Ans
-					Output(iPart(A/10),40fPart(A/10)-3,"[
-					Output(iPart(A/10),40fPart(A/10),"]
-					.1+L₃(Ans→L₃(Ans
-					Ans+G-.1→G
-					F-1→F
-					If G>M and not(F
+					12I-36+4iPart(A/10)+10fPart(A/10
+					If not(fPart(ʟSKY•3(Ans
 					Then
-						I→C
-						G→M
+						Output(iPart(A/10),40fPart(A/10)-2,"  
+						Output(iPart(A/10),40fPart(A/10)-2,ʟSKY•3(Ans
+						Output(iPart(A/10),40fPart(A/10)-3,"[
+						Output(iPart(A/10),40fPart(A/10),"]
+						.1+ʟSKY•3(Ans→ʟSKY•3(Ans
+						Ans+G-.1→G
+						F-1→F
+						If G>M and not(F
+						Then
+							I→ʟSKY•4(P+1
+							G→M
+						End
 					End
 				End
 			End
+			Pause 
 		End
-		Pause 
+		Output(2,P," 
+		0→ʟSKY•4(P+2
 	End
-	Output(2,P," 
 	Output(4,4,"[==]  [  ]
-	Output(4,11,L
+	Output(4,11,ʟSKY•4(P+3
 	0
 	Repeat Ans
-		C→A
+		ʟSKY•4(P+1→A
 		Output(1,1,sub("₁₂₃₄₅₆₇₈",1,P
 		Output(1,Ans,Ans
 		1→E
@@ -139,10 +194,10 @@ While 1
 				A-1→A
 			If Ans=26
 				A+1→A
-			If A=C and (Ans=34 or Ans=105
+			If A=ʟSKY•4(P+1) and (Ans=34 or Ans=105
 				11→A
 			If Ans=25 and A≤12
-				C→A
+				ʟSKY•4(P+1→A
 			If A≤9
 			Then
 				If 2>abs(5-abs(5-abs(Ans-83
@@ -157,18 +212,18 @@ While 1
 					P→A
 				Output(2,A,"^
 				Output(1,14,"   
-				Output(1,14,int(L₄(A
-				sub("[==][==][==][==]",1,4*(4-10fPart(99+L₄(A
+				Output(1,14,int(ʟSKY•4(A
+				sub("[==][==][==][==]",1,4*(4-10fPart(9+ʟSKY•4(A
 				Output(6,1,Ans
 				Output(7,1,Ans
 				Output(8,1,Ans
 				1
 				For(Y,6,8
 					For(X,2,14,4
-						If .1=fPart(9+L₃(12A-12+Ans
+						If .1=fPart(9+ʟSKY•3(12A-12+Ans
 						Then
 							Output(Y,X,"  
-							Output(Y,X,int(L₃(12A-12+Ans
+							Output(Y,X,int(ʟSKY•3(12A-12+Ans
 						End
 						Ans+1
 					End
@@ -186,13 +241,13 @@ While 1
 						If A=11
 						Then
 							1→B
-							L₁(L₂(D→K
+							ʟSKY•1(ʟSKY•2(D→K
 							Output(4,5,"  
 							Output(4,5,Ans
 							D+1→D
 						Else
 							0→B
-							L→K
+							ʟSKY•4(P+3→K
 						End
 						61→A
 					End
@@ -215,23 +270,45 @@ While 1
 					Output(iPart(A/10),40fPart(A/10),"◄
 					If Ans=105
 					Then
-						int(L₃(12C-36+4iPart(A/10)+10fPart(A/10→L
-						K+.1→L₃(12C-36+4iPart(A/10)+10fPart(A/10
+						int(ʟSKY•3(12ʟSKY•4(P+1)-36+4iPart(A/10)+10fPart(A/10→ʟSKY•4(P+3
+						K+.1→ʟSKY•3(12ʟSKY•4(P+1)-36+4iPart(A/10)+10fPart(A/10
 						Output(iPart(A/10),40fPart(A/10)-3,"[  ]
 						Output(iPart(A/10),40fPart(A/10)-2,K
+						0
+					Else
+						If Ans=45
+						Then
+							12ʟSKY•4(P+1)-36+4iPart(A/10)+10fPart(A/10
+							If not(fPart(ʟSKY•3(Ans
+							Then
+								.1+ʟSKY•3(Ans→ʟSKY•3(Ans
+								Output(iPart(A/10),40fPart(A/10)-3,"[  ]
+								Output(iPart(A/10),40fPart(A/10)-2,int(Ans
+								K→ʟSKY•4(P+3
+								0
+							End
+						End
+					End
+					If not(Ans
+					Then
 						Output(4,5,"==
 						Output(4,11,"  
-						Output(4,11,L
+						Output(4,11,ʟSKY•4(P+3
 						Output(3,5,"       
+						For(I,⁻11,⁻8
+							If .1=fPart(9+ʟSKY•3(12ʟSKY•4(P+1)+I)) and ʟSKY•3(12ʟSKY•4(P+1)+I)=ʟSKY•3(12ʟSKY•4(P+1)+I+4) and ʟSKY•3(12ʟSKY•4(P+1)+I)=ʟSKY•3(12ʟSKY•4(P+1)+I+8
+							Then
+								Disp "WOW
+							End
+						End
 						Pause 
-						0
 					End
 				End
 			End
 		End
-		C+1→C
-		If C>P
-			1→C
+		1+ʟSKY•4(P+1→ʟSKY•4(P+1
+		If ʟSKY•4(P+1)>P
+			1→ʟSKY•4(P+1
 		0
 	End
 End
