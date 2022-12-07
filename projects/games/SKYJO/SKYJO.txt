@@ -1,0 +1,237 @@
+ClrHome
+Output(3,5,"Players
+2→P
+Output(4,8,2
+0
+Repeat Ans
+	Repeat Ans
+		getKey
+	End
+	Output(4,9," 
+	If Ans≠92 and Ans≠74 and 2>abs(5-abs(5-abs(Ans-83
+		round(13fPart(Ans/13→P
+	If Ans=25 or Ans=26
+		min(8,P+1→P
+	If Ans=34 or Ans=24
+		max(2,P-1→P
+	Output(4,8,P
+	If Ans=45
+	Then
+		ClrHome
+		Return
+	End
+	If Ans≠105
+		0
+End
+ClrHome
+Output(4,5,"Loading…
+augment(augment(seq(0,I,1,15),seq(⁻1,I,1,10)),seq(⁻2,I,1,5
+For(I,1,12
+	augment(Ans,seq(I,J,1,10
+End
+Ans→L₁
+{0→L₄
+P→dim(L₄
+Output(4,4,"Shuffling…
+randIntNoRep(1,150→L₂
+Output(4,4," Dealing… 
+seq(L₁(L₂(I)),I,1,12P→L₃
+12P+2→D
+L₁(L₂(D-1→L
+0→C
+99→M
+While 1
+	ClrHome
+	Output(4,4,"Flip two:
+	If not(C
+	Then
+		1→C
+		⁻9→M
+	End
+	For(I,1,P
+		Output(1,1,sub("₁₂₃₄₅₆₇₈",1,P
+		Output(1,I,I
+		Output(2,max(1,I-1)," 
+		Output(2,I,"^
+		"[==][==][==][==]
+		Output(6,1,Ans
+		Output(7,1,Ans
+		Output(8,1,Ans
+		Output(6,1,"►==◄
+		61→A
+		2→F
+		0→G
+		While F
+			0
+			Repeat Ans
+				getKey
+			End
+			Output(iPart(A/10),40fPart(A/10)-3,"[
+			Output(iPart(A/10),40fPart(A/10),"]
+			If Ans=24
+				A-1→A
+			If Ans=26
+				A+1→A
+			If Ans=34
+				A+10→A
+			If Ans=25
+				A-10→A
+			If A≥90
+				60+10fPart(A/10→A
+			If A≤55
+				80+10fPart(A/10→A
+			If .4<fPart(A/10
+				1+10iPart(A/10→A
+			If not(fPart(A/10
+				4+A→A
+			Output(iPart(A/10),40fPart(A/10)-3,"►
+			Output(iPart(A/10),40fPart(A/10),"◄
+			If Ans=105
+			Then
+				12I-36+4iPart(A/10)+10fPart(A/10
+				If not(fPart(L₃(Ans
+				Then
+					Output(iPart(A/10),40fPart(A/10)-2,"  
+					Output(iPart(A/10),40fPart(A/10)-2,L₃(Ans
+					Output(iPart(A/10),40fPart(A/10)-3,"[
+					Output(iPart(A/10),40fPart(A/10),"]
+					.1+L₃(Ans→L₃(Ans
+					Ans+G-.1→G
+					F-1→F
+					If G>M and not(F
+					Then
+						I→C
+						G→M
+					End
+				End
+			End
+		End
+		Pause 
+	End
+	Output(2,P," 
+	Output(4,4,"[==]  [  ]
+	Output(4,11,L
+	0
+	Repeat Ans
+		C→A
+		Output(1,1,sub("₁₂₃₄₅₆₇₈",1,P
+		Output(1,Ans,Ans
+		1→E
+		While Ans
+			0
+			Repeat Ans or E
+				getKey
+			End
+			If E
+				0→E
+			If A≤8
+				Output(2,A," 
+			If A>8 and A≤12
+				Output(3,6A-61," 
+			If A≥61
+			Then
+				Output(iPart(A/10),40fPart(A/10)-3,"[
+				Output(iPart(A/10),40fPart(A/10),"]
+				If Ans=45 and not(B
+					12→A
+			End
+			If Ans=24
+				A-1→A
+			If Ans=26
+				A+1→A
+			If A=C and (Ans=34 or Ans=105
+				11→A
+			If Ans=25 and A≤12
+				C→A
+			If A≤9
+			Then
+				If 2>abs(5-abs(5-abs(Ans-83
+				Then
+					round(13fPart(Ans/13
+					If Ans≤P
+						Ans→A
+				End
+				If A>P
+					1→A
+				If A<1
+					P→A
+				Output(2,A,"^
+				Output(1,14,"   
+				Output(1,14,int(L₄(A
+				sub("[==][==][==][==]",1,4*(4-10fPart(99+L₄(A
+				Output(6,1,Ans
+				Output(7,1,Ans
+				Output(8,1,Ans
+				1
+				For(Y,6,8
+					For(X,2,14,4
+						If .1=fPart(9+L₃(12A-12+Ans
+						Then
+							Output(Y,X,"  
+							Output(Y,X,int(L₃(12A-12+Ans
+						End
+						Ans+1
+					End
+				End
+			Else
+				If A≤13
+				Then
+					If A>12
+						11→A
+					If A<11
+						12→A
+					Output(3,6A-61,"↓
+					If Ans=105
+					Then
+						If A=11
+						Then
+							1→B
+							L₁(L₂(D→K
+							Output(4,5,"  
+							Output(4,5,Ans
+							D+1→D
+						Else
+							0→B
+							L→K
+						End
+						61→A
+					End
+				End
+				If A≥60
+				Then
+					If Ans=34
+						A+10→A
+					If Ans=25
+						A-10→A
+					If A≥90
+						60+10fPart(A/10→A
+					If A≤55
+						80+10fPart(A/10→A
+					If .4<fPart(A/10
+						1+10iPart(A/10→A
+					If not(fPart(A/10
+						4+A→A
+					Output(iPart(A/10),40fPart(A/10)-3,"►
+					Output(iPart(A/10),40fPart(A/10),"◄
+					If Ans=105
+					Then
+						int(L₃(12C-36+4iPart(A/10)+10fPart(A/10→L
+						K+.1→L₃(12C-36+4iPart(A/10)+10fPart(A/10
+						Output(iPart(A/10),40fPart(A/10)-3,"[  ]
+						Output(iPart(A/10),40fPart(A/10)-2,K
+						Output(4,5,"==
+						Output(4,11,"  
+						Output(4,11,L
+						Output(3,5,"       
+						Pause 
+						0
+					End
+				End
+			End
+		End
+		C+1→C
+		If C>P
+			1→C
+		0
+	End
+End
