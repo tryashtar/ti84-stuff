@@ -1,6 +1,7 @@
 import os
 import bisect
 import xmltodict
+import re
 
 here = os.path.dirname(os.path.abspath(__file__))
 
@@ -106,6 +107,7 @@ def parse_token(stream, position):
         current += (-1 if too_far else 1)
 
 
+comment_re = re.compile('\t*//.*')
 class Program:
     def __init__(self, name, comment, code, version=0, archived=False):
         self.name = name
@@ -120,9 +122,10 @@ class Program:
         data += bytes([26, 10, 0])
         data += (self.comment.ljust(42, '\0')).encode('ascii')
         token_data = bytes()
+        code = '\n'.join(filter(lambda x: not comment_re.match(x), self.code.split('\n')))
         pos = 0
-        while pos<len(self.code):
-            word = parse_token(self.code, pos)
+        while pos < len(code):
+            word = parse_token(code, pos)
             if word is not None:
                 token_data += symbol_token[word]
                 pos += len(word)

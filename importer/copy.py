@@ -2,7 +2,7 @@ import os
 import yaml
 import datetime
 import sys
-sys.path.append('../compiler')
+sys.path.append(os.path.join(os.path.dirname(__file__),'../compiler'))
 import compiler
 
 here = os.path.dirname(os.path.abspath(__file__))

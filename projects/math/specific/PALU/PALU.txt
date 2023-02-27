@@ -1,0 +1,69 @@
+ClrHome
+Input "Matrix size: ",S
+DelVar [A]
+{S,S->dim([A]
+DelVar [B]
+{S,S->dim([B]
+For(I,1,S
+	1->[B](I,I
+	For(J,1,S
+		ClrHome
+		Disp "Row    #
+		Output(1,5,I
+		Output(1,9,J
+		Input "",A
+		A->[A](I,J
+	End
+End
+ClrHome
+// 4->S
+// [[2,1,1,0][4,3,3,1][8,7,9,5][6,7,9,8]]->[A]
+// [[1,0,0,0][0,1,0,0][0,0,1,0][0,0,0,1]]->[B]
+For(K,1,S-1
+	0->L
+	K->R
+	For(I,K,S
+		If abs(L)<abs([A](I,K
+		Then
+			[A](I,K->L
+			I->R
+		End
+	End
+	If R>K
+	Then
+		Disp "Row swap",K,"and",R
+		rowSwap([A],K,R->[A]
+		rowSwap([B],K,R->[B]
+	End
+	For(I,K+1,S
+		[A](I,K)n/d[A](K,K->M
+		M->[A](I,K
+		For(J,K+1,S
+			[A](I,J)-M[A](K,J->[A](I,J
+		End
+	End
+	Pause [A]
+End
+Disp "Answer ready
+Pause 
+ClrHome
+Disp "P
+Pause [B]
+ClrHome
+Disp "L
+[A]->[B]
+For(I,1,S
+	For(J,1,I-1
+		[A](I,J->[B](I,J
+		0->[A](I,J
+	End
+	For(J,I,S
+		// tricky way to make identity
+		J=I->[B](I,J
+	End
+End
+Pause [B]
+ClrHome
+Disp "U
+Pause [A]
+ClrHome

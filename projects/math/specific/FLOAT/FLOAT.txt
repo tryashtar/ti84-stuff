@@ -1,0 +1,159 @@
+ClrHome
+Disp "Number:
+Input "",Str1
+ClrHome
+0->B
+// if it's 32 long and all characters are 1 or 0, assume float input
+If 32=length(Str1
+Then
+	For(I,1,32
+		sub(Str1,I,1
+		If Ans!="1" and Ans!="0
+			999->I
+	End
+	If I<999
+		1->B
+End
+If B
+Then
+	// input was float
+	// convert to decimal number
+	If sub(Str1,2,8)="11111111
+	Then
+		// infinity or NaN
+		If sub(Str1,10,23)="00000000000000000000000
+		Then
+			If sub(Str1,1,1)="1
+			Then
+				Pause "|-Infinity
+			Else
+				Pause "Infinity
+			End
+		Else
+			Pause "NaN
+		End
+	Else
+		// read exponent into E
+		// read implicit leading value into N
+		If sub(Str1,2,8)="00000000
+		Then
+			// denormal
+			|-126->E
+			0->N
+		Else
+			// normal (implicit leading 1)
+			|-127->E
+			For(I,0,7)
+				If sub(Str1,I+2,1)="1
+					E+2^(7-I->E
+			End
+			2^E->N
+		End
+		// read rest of number
+		For(I,1,23)
+			If sub(Str1,I+9,1)="1
+				N+2^(E-I->N
+		End
+		// sign bit
+		If sub(Str1,1,1)="1
+			|-N->N
+		Pause N
+	End
+Else
+	// input was number
+	// convert to float
+	expr(Str1->N
+	If not(N
+	Then
+		// special case for 0
+		Disp "0000000000000000","0000000000000000
+		Pause 
+	Else
+		// write sign bit
+		If N>0
+		Then
+			"0->Str1
+		Else
+			"1->Str1
+		End
+		// integer part to binary
+		abs(N->N
+		0->dim(L1
+		If int(N
+		Then
+			// calculate binary digits needed for integer part
+			// don't store implicit leading 1
+			int(logBASE(N,2->B
+			N-2^B->N
+			For(I,B-1,0,|-1
+				2^I->E
+				If N>=E
+				Then
+					1->L1(B-I
+					N-E->N
+				Else
+					0->L1(B-I
+				End
+			End
+			dim(L1->L
+		Else
+			.5->L
+		End
+		If N
+		Then
+			// fraction part to binary
+			// if integer part was 0, don't store implicit leading 1
+			For(I,1,30
+				2N->N
+				If N>=1
+				Then
+					If L=.5
+					Then
+						|-I->L
+					Else
+						1->L1(1+dim(L1
+					End
+					N-1->N
+					If not(N
+						999->I
+			Else
+					If L!=.5
+						0->L1(1+dim(L1
+				End
+			End
+		End
+		// exponent to binary with bias
+		L+127->B
+		For(I,7,0,|-1
+			2^I->N
+			If B>=N
+			Then
+				Str1+"1->Str1
+				B-N->B
+			Else
+				Str1+"0->Str1
+			End
+		End
+		// write mantissa
+		0->R
+		For(I,1,dim(L1
+			If L1(I
+			Then
+				Str1+"1->Str1
+			Else
+				Str1+"0->Str1
+			End
+		End
+		// write trailing zeroes
+		32-length(Str1->R
+		For(I,1,R
+			Str1+"0->Str1
+		End
+		// print
+		For(I,0,31
+			Output(int(I/16)+1,16fPart(I/16)+1,sub(Str1,I+1,1
+		End
+		Disp "","
+		Pause 
+	End
+End

@@ -1,0 +1,96 @@
+ClrHome
+
+// transitions matrix
+DelVar [A]
+{1,1->dim([A]
+
+// we need to know the alphabet beforehand
+// otherwise we'd need to insert rows in the transition matrix
+Disp "Alphabet:
+Input "",Str4
+length(Str4->L
+
+Disp "Initial State Name:"
+
+Input "",Str3
+ClrHome
+
+// all state names crammed together preceded by #
+"#"+Str3->Str2
+
+// positions of state names
+{2,3+length(Str3->L1
+// total number of states
+1->T
+
+// queue of state IDs that haven't been input yet
+// end of list is next to be input
+// state ID->name is sub(Str2,L1(X),L1(X+1)-L1(X)-1)
+{1->L2
+
+
+While dim(L2
+	// ID of state we are working on
+	L2(dim(L2->S
+	Disp "Transitions for State",sub(Str2,L1(S),L1(S+1)-L1(S)-1
+	// state string to be parsed
+	"!->Str3
+	While Str3!="." and Str3!="*
+		Input "",Str3
+		If Str3!="." and Str3!="*
+		Then
+			// parse out character and its ID
+			sub(Str3,1,1->Str5
+			inString(Str4,Str5->C
+			// parse out destination state name and its ID
+			"#"+sub(Str3,2,length(Str3)-1->Str5
+			inString(Str2,Str5->N
+			If not(N
+			Then
+				// remember new state name
+				// write where the next new name will start
+				// (this one's start plus its length)
+				Str2+Str5->Str2
+				length(Str3)+L1(dim(L1->L1(1+dim(L1
+				T+1->T
+				augment({T},L2->L2
+				T->N
+			Else
+				// look for matching state ID
+				For(I,1,T)
+					If N+1=L1(I
+					Then
+						I->N
+						T+1->I
+					End
+				End
+			End
+			// record this transition in the matrix
+			// row = (StateID-1)*AlphabetLength+CharacterID
+			// first available column
+			C+L*(S-1->R
+			dim([A]->L3
+			{L*T,L3(2->dim([A]
+			For(I,1,L3(2))
+				If not([A](R,I
+				Then
+					N->[A](R,I
+					1+L3(2->I
+				End
+			End
+			If I=1+L3(2
+			Then
+				// we didn't break early
+				// new column required
+				{L*T,I->dim([A]
+				N->[A](R,I
+			End
+		End
+	End
+	dim(L2)-1->dim(L2
+End
+
+// if transitions matrix has a single column and no zeros, this is a DFA
+Matr>list([A],L4
+If 1=L3(2) and min(L4
+	Disp "This is a DFA!
